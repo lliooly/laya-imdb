@@ -1,0 +1,49 @@
+{
+  "cache": ".cache/tokenized/validation-l256-3e76e1a0ca717236",
+  "identity": {
+    "schema": 1,
+    "split": "validation",
+    "length": 256,
+    "data_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "tokenizer_sha256": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1",
+    "binary_sha256": "8ceec5649d359580812badf5882d8589da9835e206819a8150faf2bf18d43c3f",
+    "rust_version": "imdb-tokenizer 0.1.0 tokenizers=0.22.2 offsets=unicode-codepoints",
+    "python_tokenizers": "0.22.2",
+    "source": {
+      "scripts/cache_tokens.py": "f952a238251bce026350c85a67446dc065509c5399d596221d278b295d9ceec1",
+      "rust-tokenizer/Cargo.lock": "c099e2ce862e584ceb9698bd03d90b6562857c7c7067c21c50a3f18611802090",
+      "rust-tokenizer/src/main.rs": "246b5d6e9cec5f977edb45e1042ce1e9657bdd052db92bae330858ce132128b9"
+    },
+    "offset_unit": "unicode_codepoints",
+    "add_special_tokens": true,
+    "pad_id": 50283,
+    "truncation": "right",
+    "padding": "fixed_right",
+    "rayon_threads": 2
+  },
+  "timing": {
+    "wall_seconds": 0.7614035839942517,
+    "rust": {
+      "elapsed_seconds": 0.752522708,
+      "length": 256,
+      "offset_unit": "unicode_codepoints",
+      "rows": 2500
+    }
+  },
+  "verification": {
+    "passed": true,
+    "rows": 2500,
+    "fields": [
+      "id",
+      "label",
+      "ids",
+      "mask",
+      "offsets"
+    ],
+    "verification_wall_seconds": 0.9955674589946284
+  },
+  "files": {
+    "tokens.jsonl": "fca725672d66edfa9bad24287b04f44d5dcfacf4f481326fda8521a5ccf14619",
+    "arrays.npz": "ef44d5ffe270197b27e6a4bf8ff94b5391aee21bfa061627c6b8235cbb6f9834"
+  }
+}

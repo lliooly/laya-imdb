@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "cases": [
+    "empty",
+    "negation",
+    "Unicode accents",
+    "combining characters",
+    "emoji/ZWJ",
+    "literal special tokens",
+    "truncation",
+    "batch remainder"
+  ],
+  "results": [
+    {
+      "length": 256,
+      "passed": true,
+      "rows": 263,
+      "fields": [
+        "id",
+        "label",
+        "ids",
+        "mask",
+        "offsets"
+      ],
+      "verification_wall_seconds": 0.04021133299829671,
+      "timing": {
+        "wall_seconds": 0.05184512499545235,
+        "rust": {
+          "elapsed_seconds": 0.042984,
+          "length": 256,
+          "offset_unit": "unicode_codepoints",
+          "rows": 263
+        }
+      }
+    },
+    {
+      "length": 512,
+      "passed": true,
+      "rows": 263,
+      "fields": [
+        "id",
+        "label",
+        "ids",
+        "mask",
+        "offsets"
+      ],
+      "verification_wall_seconds": 0.05326620799314696,
+      "timing": {
+        "wall_seconds": 0.06942095900012646,
+        "rust": {
+          "elapsed_seconds": 0.056526167,
+          "length": 512,
+          "offset_unit": "unicode_codepoints",
+          "rows": 263
+        }
+      }
+    }
+  ],
+  "rejected_cases": [
+    "overwrite_input",
+    "overwrite_existing_output",
+    "too_short",
+    "duplicate_option"
+  ],
+  "scope": "Rust CLI vs Python bindings of the same pinned Hugging Face tokenizer; integration parity, not independent algorithm validation"
+}
