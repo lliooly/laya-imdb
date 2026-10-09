@@ -1,0 +1,36 @@
+{
+  "epoch": 1,
+  "scope": "validation-only descriptive strata; no causal attribution",
+  "groups": {
+    "fits_256": {
+      "count": 1449,
+      "accuracy": 0.9537612146307799,
+      "macro_f1": 0.9537259515128925,
+      "confusion_matrix_rows_true": [
+        [
+          711,
+          27
+        ],
+        [
+          40,
+          671
+        ]
+      ]
+    },
+    "truncated_256": {
+      "count": 1051,
+      "accuracy": 0.9248334919124643,
+      "macro_f1": 0.9248310420844406,
+      "confusion_matrix_rows_true": [
+        [
+          483,
+          29
+        ],
+        [
+          50,
+          489
+        ]
+      ]
+    }
+  }
+}

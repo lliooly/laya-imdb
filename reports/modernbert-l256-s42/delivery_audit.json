@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "training_source_identity_unchanged": true,
+  "saved_state_step": 8439,
+  "best_epoch": 3,
+  "independently_recounted_validation": {
+    "accuracy": 0.9464,
+    "macro_f1": 0.9463999656959781,
+    "confusion_matrix_rows_true": [
+      [
+        1184,
+        66
+      ],
+      [
+        68,
+        1182
+      ]
+    ]
+  },
+  "inference_ids_are_validation_only": true,
+  "cache_integrity": [
+    {
+      "split": "train",
+      "length": 256,
+      "rows": 22500,
+      "passed": true
+    },
+    {
+      "split": "train",
+      "length": 512,
+      "rows": 22500,
+      "passed": true
+    },
+    {
+      "split": "validation",
+      "length": 256,
+      "rows": 2500,
+      "passed": true
+    },
+    {
+      "split": "validation",
+      "length": 512,
+      "rows": 2500,
+      "passed": true
+    }
+  ],
+  "source_snapshot_sha256": {
+    "README.md": "dc9fda064c64653cc69d966deab457f45c1a89a4ae73fcf6bdc88f97faeeabd3",
+    "configs/day1.json": "cd3ffbd2e41ef0926e925174b4b7b1b792345c7757a8820a6d24f64d5c27c56e",
+    "configs/day2.json": "d6a61888dc729b5679c62b0d66cce64286d8f1c4ab8d41ca045cc0b695574ed1",
+    "configs/day3.json": "5d297421553e22fa94e1cebed29ef61afb7b98354086c6f832002dd2fe7dac2d",
+    "configs/model_lock.json": "bd9c1257543ec1609d0616aaae654f64a2f6467150105f5bb4ec1f9389fc646f",
+    "configs/tokenizer_lock.json": "792af87d1b19508dd6c4992365e9ea390da3c9730438eced81448e2acbb1261d",
+    "docs/day3-plan.md": "259be1ab9c19a6d652a99c903b2e27e9dc6ca977c598c60cf11fdf70d728688c",
+    "pyproject.toml": "d2e1af42881474386abf0f2e2545665f9b7849e4f69ed39a69c7ddd4a2a43929",
+    "rust-tokenizer/Cargo.lock": "c099e2ce862e584ceb9698bd03d90b6562857c7c7067c21c50a3f18611802090",
+    "rust-tokenizer/Cargo.toml": "9698c9ef2faf9252a78da8207a1e3b4b58bf633eb0e26d039936166a9228a872",
+    "rust-tokenizer/src/main.rs": "246b5d6e9cec5f977edb45e1042ce1e9657bdd052db92bae330858ce132128b9",
+    "scripts/analyze_baseline_errors.py": "59f7514e3b701c3bfdb4641f8a6a28c03de36586e24b9331707dd6e5574b7625",
+    "scripts/analyze_tokenizers.py": "7a071c46580edd59734200a0c9e8bd3a6551f15c78e67d7028bd1eb795615ebf",
+    "scripts/benchmark_day2.py": "a41afb626d1a915b7c4e2f1c7385dc06036d64e6d22d86811429766e1cc2d42e",
+    "scripts/benchmark_inference.py": "d1ba7bb4b455470e9a0a803410d17439c79ca358e3301b3549031cdb28b07a93",
+    "scripts/cache_tokens.py": "f952a238251bce026350c85a67446dc065509c5399d596221d278b295d9ceec1",
+    "scripts/check_environment.py": "70ada49fe652a42e412021ab89967d16448290b049a621997d4880153b9a345f",
+    "scripts/checkpointing.py": "583eaa55228adf7d828649357fd492e314ebd2e3f3145605251be9198046f87e",
+    "scripts/common.py": "cb58f328e770428e75162f94065c0568d82d6f9e767296a0142c36bac416e02e",
+    "scripts/day2_data.py": "0bc476dbadaaa343d4f584afdd9598402ebf7d141d4459d6c815216ba28880f1",
+    "scripts/day2_runtime.py": "7d2b92ab9e9692ba32edfeffe964731623dba53f811c229bb46074d2176e80b6",
+    "scripts/debug_parity.py": "59dd4f49de01293f55441fc9d2e71f4026de1063e3b24169347ab470a078f4a0",
+    "scripts/download_model.py": "4ede2625fb9efc93dcd48453a10a5f61414dcb62ab6fb6bf6799b629ff9091db",
+    "scripts/modernbert_mlx.py": "cda1a1068f11e01c30e4dc16128173387ef57c704f6a53f6dbe65da5a4d79bd2",
+    "scripts/pilot_day2.py": "1e305c65f626f3e1a0ae719922bec81b18258a8988dcfd9badc4181c96716543",
+    "scripts/predict.py": "9d2a7cf4fc251a9f1a3d2f29854b6e02e8a4a5657017ae8412f73e61f2e962fe",
+    "scripts/prepare_data.py": "376eda5b2ff328ab1781e4f774dcf0e0b05133b53ec65e7c6fbc0a97e1e49df7",
+    "scripts/summarize_day1.py": "91e6b0c6cf4d149ad0af1f4c6fff7afdc32b56aca8cbbb33c55ae56557527fc9",
+    "scripts/summarize_day2.py": "9a1dfef1567cb31a81169e401f5a210b0e35ad80dd2bd011453b488b87680b6e",
+    "scripts/summarize_day3.py": "5bee7343d39faa22c5e3dad1399b8657b416768d5e32309c142cfb6998431e98",
+    "scripts/train_baseline.py": "4276bf497239250477fcf7f2d362e3e9a14e9307415a09d92241482a482c10bc",
+    "scripts/training_utils.py": "40e53fd103676be1353c04c3c860058dc51233d5f3aaa300ebd11ed598f28bdb",
+    "scripts/validate_modernbert.py": "dd2b1b2730f1283f27f47f5688a6564adccc74998c1b2fd0be0a303a2d29a158",
+    "scripts/validate_resume.py": "3fbc4ad494a9d04b1bb4d20055c12fa65c66bcec70e65f60eba9954bfff40217",
+    "scripts/validate_rust_tokenizer.py": "b8e4a0ea387bbd581099b7f1356ac73479caf2aab948092160aaed9ae41a9cd4",
+    "scripts/verify_data.py": "12cd0724c3e1a3fde34d7e096914046d6a497e8ff05653e000a3bca3e79f1260",
+    "tests/test_data.py": "e7a06e55b0d10f8b778bd4993b2721ba90249c0f39dee4a4a631f1e6ba70e3ba",
+    "tests/test_training.py": "4bff68f6eff55c651da72af0842f2faec9545f7c989489fc208ea81bfdc8fea9",
+    "uv.lock": "19db783168ce85a9821abf7eb89271c75aa9997a96a8b02098b9d21ce4dd191f"
+  },
+  "retained_best_weights_sha256": {
+    "best-epoch3.safetensors": "7c1ec659afabdda6642c7a3fdb9c5876c66447b8db794a3b8fd900899dec9146",
+    "best-epoch2.safetensors": "f1d6a2635796f21f73b4e1557455df483e85ba532c33fe00cf96641c3dda2325",
+    "best-epoch1.safetensors": "a2e3d811e38eee12dae9ca7d6b5bba87cbf65fc55434b9fa8b2b6a244bcfb9cd"
+  },
+  "scope": "completion integrity audit; source snapshot is observational and broader than the resume identity; no official test performance evaluation"
+}

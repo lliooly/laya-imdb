@@ -1,0 +1,258 @@
+{
+  "scope": "selected baseline on validation only; descriptive strata, not a causal length experiment",
+  "loss_note": "stratum losses reconstructed from probabilities clipped at 1e-12; original logits-based full-validation loss is in result.json",
+  "best_epoch": 3,
+  "groups": {
+    "all": {
+      "count": 2500,
+      "loss": 0.2844424934822582,
+      "accuracy": 0.9464,
+      "macro_f1": 0.9463999656959781,
+      "confusion_matrix_rows_true": [
+        [
+          1184,
+          66
+        ],
+        [
+          68,
+          1182
+        ]
+      ]
+    },
+    "fits_256": {
+      "count": 1449,
+      "loss": 0.23397271175142403,
+      "accuracy": 0.9572118702553485,
+      "macro_f1": 0.9571947245039928,
+      "confusion_matrix_rows_true": [
+        [
+          708,
+          30
+        ],
+        [
+          32,
+          679
+        ]
+      ]
+    },
+    "truncated_256": {
+      "count": 1051,
+      "loss": 0.35402452367062986,
+      "accuracy": 0.9314938154138915,
+      "macro_f1": 0.9314485737476809,
+      "confusion_matrix_rows_true": [
+        [
+          476,
+          36
+        ],
+        [
+          36,
+          503
+        ]
+      ]
+    }
+  },
+  "truncated_fraction": 0.4204,
+  "highest_uncalibrated_confidence_errors": [
+    {
+      "id": "train/pos/3160_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 4.178710878477432e-05,
+      "original_token_count_including_special": 218,
+      "truncated": false,
+      "loss": 10.082922668277453,
+      "excerpt": "This show has all the typical characters in a comedy: the good guy, the idiot, the pervert, the rich girl... but it's set on the 70's. That's the only difference that it has with other TV comedies. I don't know how you can like this show. Its humor is pathetic! I mean, the jokes are so direct... A typical dialog is this: \"Fez: Oh, Jackie I want to have sex with you. (audience laughs) Jackie: Fez y"
+    },
+    {
+      "id": "train/pos/5539_10.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 4.860275657847524e-05,
+      "original_token_count_including_special": 406,
+      "truncated": true,
+      "loss": 9.931830308944615,
+      "excerpt": "When I watched this film the first time, it was a taped copy and the title was/is Caged Terror. I still own the tape, and I confess, I've watched it more than once from beginning to end! The film is extremely low budget and the dialogue is often unintentionally amusing! I have gotten a few of my friends to watch this and we've had some great laughs from the terrible script. The film concerns a cou"
+    },
+    {
+      "id": "train/pos/12230_9.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 9.710581070976332e-05,
+      "original_token_count_including_special": 539,
+      "truncated": true,
+      "loss": 9.239709341926455,
+      "excerpt": "THE MELTING MAN...a tragic victim of the space race, he perished MELTING...never comprehending the race had LONG GONE BY...! A man (Burr DeBenning) burns his hand on the kitchen stove. But instead of screaming something a NORMAL person would scream, he shouts something that sounds like \"AAAAATCH-KAH!!\" This movie you've popped in...isn't a normal movie. You've just taken your first step into THE I"
+    },
+    {
+      "id": "train/pos/5624_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.00010810199455590919,
+      "original_token_count_including_special": 175,
+      "truncated": false,
+      "loss": 9.132435382463342,
+      "excerpt": "I've never been a fan of Farrah Fawcett...Until now. She was truly amazing in this movie. The emotion she must have gone through shooting re-take after re-take doesn't bare thinking about. This was a very hard movie to watch, the subject matter is decidedly unpleasant and you feel so helpless just sitting and watching a woman being abused for what seems like an eternity. I actually felt that the w"
+    },
+    {
+      "id": "train/pos/6588_9.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.00017111323541030288,
+      "original_token_count_including_special": 324,
+      "truncated": true,
+      "loss": 8.673185025234345,
+      "excerpt": "After viewing several episodes of this series, I have come to the conclusion that television producers are completely devoid of any form of originality. Here is an old science fiction standby, ingeniously wrapped in the form of a truly original concept - and still they can only -almost - make it work. The dialog is good! The male actors are reasonably proficient at their professions. Most of the c"
+    },
+    {
+      "id": "train/pos/1838_10.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.00018550553068052977,
+      "original_token_count_including_special": 1298,
+      "truncated": true,
+      "loss": 8.592425861371863,
+      "excerpt": "WAQT is a perfect example of a chicken soup not exactly for your soul. The broth unfortunately has lost its actual taste thanks to all the excess dilution and garnishing that went into its making. What's surprising and disappointing about WAQT is that it comes from a director who stayed away from the usual clichés of Hindi cinema in his first venture but who in his second outing gives in for all t"
+    },
+    {
+      "id": "train/neg/3155_1.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9998053908348083,
+      "original_token_count_including_special": 29,
+      "truncated": false,
+      "loss": 8.544517291728155,
+      "excerpt": "Great movie - especially the music - Etta James - \"At Last\". This speaks volumes when you have finally found that special someone."
+    },
+    {
+      "id": "train/pos/6159_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.0002456297806929797,
+      "original_token_count_including_special": 355,
+      "truncated": true,
+      "loss": 8.31168511214907,
+      "excerpt": "This place in England during 1940. Three orphans (Carrie, Charles and Paul) are sent to live with Miss Price (Angela Lansbury). She doesn't want them but reluctantly takes them in. It seems she is studying to be a witch through a correspondence course with the College of Witchcraft. (OK--I realize this is a family film but--College of Witchcraft??? Come ON!!) Before she can finish the course thoug"
+    },
+    {
+      "id": "train/pos/1762_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.0002468687598593533,
+      "original_token_count_including_special": 896,
+      "truncated": true,
+      "loss": 8.30665369914742,
+      "excerpt": "All right, here's the deal: if you're easily offended then you might want to stay far, far away from this one. There are some painfully funny moments in the movie, but I probably blushed about as much as I laughed. Actually, I probably blushed MORE than I laughed. And if I wasn't literally blushing on the outside, then I was blushing on the inside. If there is absolutely nothing in this movie that"
+    },
+    {
+      "id": "train/neg/7026_4.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9997472167015076,
+      "original_token_count_including_special": 194,
+      "truncated": false,
+      "loss": 8.282977963964097,
+      "excerpt": "On his birthday a small boys tells his mother he is not her son, and that he wants to go home to his real mother. In some ways Comedy De L'Innocence feels like it comes from a different time of movie-making, perhaps the 60's or 70's. Certainly it reminded me of Losey's Secret Ceremony (1968), and Richard Loncraine's Full Circle (1977), both of which deal with loss, grief and relationships between "
+    },
+    {
+      "id": "train/pos/8527_8.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.00029270019149407744,
+      "original_token_count_including_special": 152,
+      "truncated": false,
+      "loss": 8.13636171003338,
+      "excerpt": "Allow me to just get to the bottom line here: I've got 3 kids, ages 5 to 10. I consider a trip to the theater a success when there are no talking animals. I've seen most of the children's videos in our collection at least 72 times. I can tell you when the film gets reversed in The Wizard of Oz, the over-18 sexual joke in El Dorado and the tragic flaw with the ending of Rudolph the Red-Nosed Reinde"
+    },
+    {
+      "id": "train/neg/641_4.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9995988011360168,
+      "original_token_count_including_special": 214,
+      "truncated": false,
+      "loss": 7.821053333427974,
+      "excerpt": "In my knowledge, Largo winch was a famous Belgium comics (never read) telling the adventures of a playboy, a sort of James Bond without the spy life! So, when I had to choose a movie for a 5 years-old kid, I picked it up because the kid was already a great fan of James Bond! But, just after the opening credits, I got heavy doubts: when American movies offer amazing start, here, no action and a tor"
+    },
+    {
+      "id": "train/neg/6939_4.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9995548129081726,
+      "original_token_count_including_special": 344,
+      "truncated": true,
+      "loss": 7.717015933081621,
+      "excerpt": "R Balki tries to tell you a story that had been earlier told by Ram Gopal Verma in Nishabd in a sensuous way. This time it is mixed with mature humors. Amitabh Bachchan is a Chef and owns an Indian Cuisine in London. He is very dominating and arrogant and respects his job just like any other job. According to him, Cooking is an art. Still cannot make Hyderabadi Biryani properly. Enter Tabu who sen"
+    },
+    {
+      "id": "train/pos/8647_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.00045166039490140975,
+      "original_token_count_including_special": 96,
+      "truncated": false,
+      "loss": 7.702579999242128,
+      "excerpt": "If this is supposed to be a portrayal of the American serial killer, it comes across as decidedly average. A journalist [Duchovny] travels across country to California to document America's most famous murderers, unaware that one of his white trailer trash travelling companions [Pitt] is a serial killer himself. Rather predictable throughout, this has its moments of action and Pitt and Lewis portr"
+    },
+    {
+      "id": "train/pos/1230_10.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.0004791686951648444,
+      "original_token_count_including_special": 143,
+      "truncated": false,
+      "loss": 7.643457840582338,
+      "excerpt": "after seeing this film for the 3rd time now i think it is almost Adam's worst film PUNCH DRUNK LOVE IS POOR in comparison to this i must say at the end when Dickie gets thrown of the boat it is so funny (the hair is different to his and i like it when he flips everyone off. This film should only be brought if your a true Adam Sandler fan. the characters are poor in comparison to his funny films li"
+    },
+    {
+      "id": "train/pos/495_7.txt",
+      "label": 1,
+      "prediction": 0,
+      "positive_probability_uncalibrated": 0.0005050118779763579,
+      "original_token_count_including_special": 467,
+      "truncated": true,
+      "loss": 7.59092860822026,
+      "excerpt": "There is STAR TREK canon -- lots of it. From canon we know the history of the future. Advances in technology, events, places, first contacts with new beings, names, dates, etc. ENTERPRISE pretty much disregards much of ST canon. An unfortunate fact for long time serious fans. As one, I assumed that the producers would at least take a look at the first few episodes of TOS and retro back from there "
+    },
+    {
+      "id": "train/neg/838_2.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9994575381278992,
+      "original_token_count_including_special": 1172,
+      "truncated": true,
+      "loss": 7.519392756861332,
+      "excerpt": "[CONTAINS SPOILERS!!!] Timon and Pumbaa are watching The Lion King. Timon decides to go back BEFORE the beginning, to when the story really began. So they go back. Way back. Back even before Simba was born. Back to Timon's old home which was miles away from Pride Rock. A clan of meerkats burrowed underground to hide from hyenas. The worst digger in the clan was a pompous, self-centered meerkat nam"
+    },
+    {
+      "id": "train/neg/7927_1.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9994339346885681,
+      "original_token_count_including_special": 218,
+      "truncated": false,
+      "loss": 7.476801095195735,
+      "excerpt": "This movie is AWESOME. I watched it the other day with my cousin Jay-Jay. He said it was alright, but i think it RULEZZZ! I mean, it's so cool. Ted V. Mikels is so brave and smart. He made a movie totally unlike those terrible Hollywood films, like the Matrix and STop or my Mom will Shoot. It could have been better, though. I like ninjas and pirates. I also like that big talon that the funny man w"
+    },
+    {
+      "id": "train/neg/10566_3.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9994284510612488,
+      "original_token_count_including_special": 112,
+      "truncated": false,
+      "loss": 7.467160446285006,
+      "excerpt": "While I count myself as a fan of the Babylon 5 television series, the original movie that introduced the series was a weak start. Although many of the elements that would later mature and become much more compelling in the series are there, the pace of The Gathering is slow, the makeup somewhat inadequate, and the plot confusing. Worse, the characterization in the premiere episode is poor. Althoug"
+    },
+    {
+      "id": "train/neg/7397_4.txt",
+      "label": 0,
+      "prediction": 1,
+      "positive_probability_uncalibrated": 0.9993165731430054,
+      "original_token_count_including_special": 108,
+      "truncated": false,
+      "loss": 7.288390919970359,
+      "excerpt": "I've seen this film several times in a variety of short-film festivals and it always causes me the impression that i have seen a movie trailer! For a school-film is very well produced and directed, but the story... well it needed something else to be a bigger and interesting film. The character named Tim Watcher needed some in-dept approach. This is something that lacks in some Portuguese short fi"
+    }
+  ]
+}
