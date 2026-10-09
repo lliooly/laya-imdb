@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "restored_global_step": 2,
+  "loss_abs_error": 0.0,
+  "parameter_max_abs_error": 0.0,
+  "optimizer_max_abs_error": 0.0,
+  "identity_mismatch_rejected": true,
+  "scope": "synthetic dropout model; saved optimizer state, list parameter trees and RNG continuation"
+}
