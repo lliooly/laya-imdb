@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "validation_per_class": 1250,
+  "tokenizer_models": ["google-bert/bert-base-uncased", "answerdotai/ModernBERT-base"],
+  "length_candidates": [256, 512, 1024],
+  "tokenizer_batch_size": 256,
+  "preprocessing": "html-br-to-space; html-unescape; collapse-whitespace; preserve-case-and-punctuation"
+}

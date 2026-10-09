@@ -1,0 +1,133 @@
+{
+  "source": "https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz",
+  "archive_sha256": "c40f74a18d3b61f90feba1e17730e0d38e8b97c05fde7008942e91923d1658fe",
+  "seed": 42,
+  "preprocessing": "html-br-to-space; html-unescape; collapse-whitespace; preserve-case-and-punctuation",
+  "split_policy": "stratified cleaned-text groups; mixed-label groups stay in train",
+  "official_train_test_overlap_unique_texts": 123,
+  "train_validation_overlap_unique_texts": 0,
+  "official_train": {
+    "count": 25000,
+    "labels": {
+      "0": 12500,
+      "1": 12500
+    },
+    "characters": {
+      "count": 25000,
+      "min": 52,
+      "mean": 1302.37212,
+      "p50": 964,
+      "p90": 2568,
+      "p95": 3379,
+      "p99": 5133,
+      "max": 13593
+    },
+    "whitespace_words": {
+      "count": 25000,
+      "min": 10,
+      "mean": 231.48692,
+      "p50": 173,
+      "p90": 454,
+      "p95": 592,
+      "p99": 907,
+      "max": 2459
+    },
+    "duplicate_extra_rows": 98,
+    "conflicting_label_groups": 0
+  },
+  "splits": {
+    "train": {
+      "count": 22500,
+      "labels": {
+        "0": 11250,
+        "1": 11250
+      },
+      "characters": {
+        "count": 22500,
+        "min": 52,
+        "mean": 1298.7702666666667,
+        "p50": 961,
+        "p90": 2560,
+        "p95": 3376,
+        "p99": 5119,
+        "max": 13593
+      },
+      "whitespace_words": {
+        "count": 22500,
+        "min": 10,
+        "mean": 230.87657777777778,
+        "p50": 172,
+        "p90": 453,
+        "p95": 593,
+        "p99": 903,
+        "max": 2459
+      },
+      "duplicate_extra_rows": 85,
+      "conflicting_label_groups": 0
+    },
+    "validation": {
+      "count": 2500,
+      "labels": {
+        "0": 1250,
+        "1": 1250
+      },
+      "characters": {
+        "count": 2500,
+        "min": 80,
+        "mean": 1334.7888,
+        "p50": 981,
+        "p90": 2633,
+        "p95": 3431,
+        "p99": 5320,
+        "max": 7564
+      },
+      "whitespace_words": {
+        "count": 2500,
+        "min": 14,
+        "mean": 236.98,
+        "p50": 176,
+        "p90": 464,
+        "p95": 587,
+        "p99": 928,
+        "max": 1347
+      },
+      "duplicate_extra_rows": 13,
+      "conflicting_label_groups": 0
+    },
+    "test": {
+      "count": 25000,
+      "labels": {
+        "0": 12500,
+        "1": 12500
+      },
+      "characters": {
+        "count": 25000,
+        "min": 32,
+        "mean": 1271.477,
+        "p50": 946,
+        "p90": 2498,
+        "p95": 3280,
+        "p99": 5063,
+        "max": 12710
+      },
+      "whitespace_words": {
+        "count": 25000,
+        "min": 4,
+        "mean": 226.2506,
+        "p50": 170,
+        "p90": 439,
+        "p95": 576,
+        "p99": 889,
+        "max": 2235
+      },
+      "duplicate_extra_rows": 201,
+      "conflicting_label_groups": 0
+    }
+  },
+  "jsonl_sha256": {
+    "train": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "validation": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "test": "ab58e99484731abe6f9733a37436fd34c7b951befb870be56f93da7649b15705"
+  },
+  "test_policy": "integrity audit only; no tokenizer fitting, selection or model evaluation"
+}
