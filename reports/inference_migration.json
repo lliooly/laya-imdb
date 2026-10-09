@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "backend": "mlx",
+  "dtype": "float16",
+  "torch_imported": false,
+  "validation_checks": [
+    {
+      "sample_id": "train/neg/10006_4.txt",
+      "label": "negative",
+      "probability_difference_vs_batch8_export": 0.0,
+      "input_tokens": 250,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/10026_2.txt",
+      "label": "negative",
+      "probability_difference_vs_batch8_export": 2.1475611090077812e-05,
+      "input_tokens": 344,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/1292_4.txt",
+      "label": "negative",
+      "probability_difference_vs_batch8_export": 0.0,
+      "input_tokens": 512,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/neg/3438_4.txt",
+      "label": "negative",
+      "probability_difference_vs_batch8_export": 0.0007722228463675762,
+      "input_tokens": 252,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/7677_4.txt",
+      "label": "negative",
+      "probability_difference_vs_batch8_export": 7.61492162359087e-05,
+      "input_tokens": 188,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/12332_8.txt",
+      "label": "positive",
+      "probability_difference_vs_batch8_export": 4.078172488630738e-05,
+      "input_tokens": 206,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/5539_10.txt",
+      "label": "positive",
+      "probability_difference_vs_batch8_export": 0.0002600090159764479,
+      "input_tokens": 450,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/9_7.txt",
+      "label": "positive",
+      "probability_difference_vs_batch8_export": 0.002488614117467036,
+      "input_tokens": 265,
+      "truncated": false
+    }
+  ],
+  "test_accessed": false,
+  "training_performed": false,
+  "script_sha256": "f951aade254f141e099853a7319877bc6d3492ce9377a286c7309bf17e8fdfb4",
+  "cli_checks": {
+    "positive_review": "positive",
+    "negative_review": "negative",
+    "explicit_modernbert": "passed",
+    "historical_pilot_checkpoint_inference": "passed",
+    "empty_review_rejected": true
+  }
+}
