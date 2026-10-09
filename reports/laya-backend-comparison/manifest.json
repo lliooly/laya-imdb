@@ -1,0 +1,28 @@
+{
+  "hardware": {
+    "chip_type": "Apple M5 Pro",
+    "physical_memory": "64 GB",
+    "machine_model": "Mac17,9"
+  },
+  "validation_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+  "checkpoint_sha256": "a2800be9f26d85db2a35e3ae0307c9dd730fbf82176c225c15f8ecd6bbefd5d7",
+  "uv_lock_sha256": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe",
+  "script_sha256": "d5d03ad29aac51acdb116b5157c9e4f0fb395fb1605291d0c8413dd84168b243",
+  "test_accessed": false,
+  "training_performed": false,
+  "numerical_evaluation_cache_limit_bytes": null,
+  "benchmark_cache_limits": {
+    "mps-fp32": null,
+    "mlx-fp32": 2147483648,
+    "mlx-fp16": 2147483648
+  },
+  "execution_order": [
+    "eval/mps-fp32",
+    "eval/mlx-fp32",
+    "eval/mlx-fp16",
+    "bench/mps-fp32",
+    "bench/mlx-fp32",
+    "bench/mlx-fp16"
+  ],
+  "note": "Initial full evaluation used runtime-default MLX cache. Benchmark used 2 GiB; final reproduction script defaults to 2 GiB in both phases."
+}

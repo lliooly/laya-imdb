@@ -1,0 +1,23 @@
+{
+  "mps-fp32-eval.json": "8dfe1f0e53046e3c39a065b9dead7dd9d797c8eb9e7c2f32381e3b38f08b1bea",
+  "mlx-fp32-eval.json": "e66095db02bdeb9997be94f6fdd70e8963fa813c7f46dcc71f8084878e38258b",
+  "parity.json": "6e4447bf6127a58f7a3054778c00edd5d25863be843c46015e8a11356e1b74b8",
+  "REPORT.md": "15740a054fadc42c6d141ac362221f656e0cff17eb9bce3766228337a5b0616d",
+  "benchmark.csv": "92dec540140f349adf0b46aed358e65301d48ac18226bb300cab0cecece75e1d",
+  "mlx-fp32-predictions.jsonl": "a671534a40e957f3a265168f6be8b5180e105154cf592dc164d23abba10f8f42",
+  "mlx-fp32-predictions.csv": "8b0fff085f07abcb18bed243815c353894da173beac3fe50f233649276516cc6",
+  "mlx-fp16-predictions.csv": "0ab808d222b71bffc851f61ad0364e9f89d8d140234b6e8d0c75ee39feae01bb",
+  "mlx-fp16-predictions.jsonl": "685683fdd77c5d7cff6847d79bcb9a319763accb01f6ed1d2ddad94aab025790",
+  "manifest.json": "c68142ff48803630521432fc7de4766f52db7692384ae2b4e29028fbf2b164d2",
+  "mlx-fp32-bench.json": "6c29e31add308a8b9910b77fc673acce8fee43ae28948e6d22da7c23d0868c9d",
+  "mps-fp32-predictions.jsonl": "2dc363dec0bcfcb0acad05e93e37e982b8163885239485bd9a8d6ffe9b12907d",
+  "mlx-fp16-bench.json": "cb33073d4bfa237184768d427ab4a693c4e003a0f9ab4f8f7a56698dc5c7857e",
+  "mps-fp32-predictions.csv": "efc6fab173b2372494e08f3df80648381587ccf4986d99b40247cdc0f8a07be7",
+  "mlx-fp16-eval.json": "e4fe1ffc25fca5f171a6a591a8e716b7a75f65e0d6c978f85ecf779a4c9d260d",
+  "mps-fp32-bench.json": "6f916e1b13f87722e03bf335ecc44330e77660964142c76e4c691aab26e16bf4",
+  "default-cache-diagnostic/mlx-fp32-eval.json": "e66095db02bdeb9997be94f6fdd70e8963fa813c7f46dcc71f8084878e38258b",
+  "default-cache-diagnostic/mlx-fp32-predictions.jsonl": "a671534a40e957f3a265168f6be8b5180e105154cf592dc164d23abba10f8f42",
+  "default-cache-diagnostic/README.md": "0dfea451bf420b3171cd9afe0f2c97a55649561de0cd20c8cb2415a724a74ee8",
+  "default-cache-diagnostic/mlx-fp16-predictions.jsonl": "685683fdd77c5d7cff6847d79bcb9a319763accb01f6ed1d2ddad94aab025790",
+  "default-cache-diagnostic/mlx-fp16-eval.json": "e4fe1ffc25fca5f171a6a591a8e716b7a75f65e0d6c978f85ecf779a4c9d260d"
+}

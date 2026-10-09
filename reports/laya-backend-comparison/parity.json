@@ -1,0 +1,20 @@
+{
+  "mps-fp32": {
+    "prediction_disagreements": 0,
+    "max_abs_logit_difference": 0.0,
+    "max_abs_calibrated_probability_difference": 0.0,
+    "mean_abs_calibrated_probability_difference": 0.0
+  },
+  "mlx-fp32": {
+    "prediction_disagreements": 0,
+    "max_abs_logit_difference": 0.00011968612670898438,
+    "max_abs_calibrated_probability_difference": 1.1023762956363647e-05,
+    "mean_abs_calibrated_probability_difference": 1.0664560223226293e-07
+  },
+  "mlx-fp16": {
+    "prediction_disagreements": 0,
+    "max_abs_logit_difference": 0.02043437957763672,
+    "max_abs_calibrated_probability_difference": 0.0043462549089466895,
+    "mean_abs_calibrated_probability_difference": 5.128766521021212e-05
+  }
+}
