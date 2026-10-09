@@ -1,0 +1,222 @@
+{
+  "data_hashes": {
+    "train": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "validation": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "test": "ab58e99484731abe6f9733a37436fd34c7b951befb870be56f93da7649b15705"
+  },
+  "timing_policy": "warm-up excluded; encode_batch only; no disk/network; one pass, exploratory",
+  "models": {
+    "google-bert/bert-base-uncased": {
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594",
+      "tokenizer_sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+      "vocab_size": 30522,
+      "splits": {
+        "train": {
+          "tokens_including_specials": {
+            "count": 22500,
+            "min": 13,
+            "mean": 296.80457777777775,
+            "p50": 221,
+            "p90": 582,
+            "p95": 763,
+            "p99": 1143,
+            "max": 3047
+          },
+          "truncated_fraction": {
+            "256": 0.4099111111111111,
+            "512": 0.1320888888888889,
+            "1024": 0.017511111111111113
+          },
+          "tokenize_seconds": 0.7632017539508524,
+          "reviews_per_second": 29481.06432345663
+        },
+        "validation": {
+          "tokens_including_specials": {
+            "count": 2500,
+            "min": 24,
+            "mean": 304.4336,
+            "p50": 228,
+            "p90": 587,
+            "p95": 757,
+            "p99": 1177,
+            "max": 1713
+          },
+          "truncated_fraction": {
+            "256": 0.4252,
+            "512": 0.1388,
+            "1024": 0.0236
+          },
+          "tokenize_seconds": 0.09440270899358438,
+          "reviews_per_second": 26482.290886058156
+        }
+      },
+      "examples": [
+        {
+          "text": "This movie is not good.",
+          "tokens": [
+            "[CLS]",
+            "this",
+            "movie",
+            "is",
+            "not",
+            "good",
+            ".",
+            "[SEP]"
+          ],
+          "ids": [
+            101,
+            2023,
+            3185,
+            2003,
+            2025,
+            2204,
+            1012,
+            102
+          ]
+        },
+        {
+          "text": "The beginning was slow, but the ending made it worthwhile.",
+          "tokens": [
+            "[CLS]",
+            "the",
+            "beginning",
+            "was",
+            "slow",
+            ",",
+            "but",
+            "the",
+            "ending",
+            "made",
+            "it",
+            "worth",
+            "##while",
+            ".",
+            "[SEP]"
+          ],
+          "ids": [
+            101,
+            1996,
+            2927,
+            2001,
+            4030,
+            1010,
+            2021,
+            1996,
+            4566,
+            2081,
+            2009,
+            4276,
+            19927,
+            1012,
+            102
+          ]
+        }
+      ]
+    },
+    "answerdotai/ModernBERT-base": {
+      "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "tokenizer_sha256": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1",
+      "vocab_size": 50368,
+      "splits": {
+        "train": {
+          "tokens_including_specials": {
+            "count": 22500,
+            "min": 13,
+            "mean": 295.67404444444446,
+            "p50": 220,
+            "p90": 580,
+            "p95": 761,
+            "p99": 1143,
+            "max": 3220
+          },
+          "truncated_fraction": {
+            "256": 0.40684444444444445,
+            "512": 0.13155555555555556,
+            "1024": 0.017511111111111113
+          },
+          "tokenize_seconds": 0.9255021320277592,
+          "reviews_per_second": 24311.12713992661
+        },
+        "validation": {
+          "tokens_including_specials": {
+            "count": 2500,
+            "min": 23,
+            "mean": 303.2108,
+            "p50": 225,
+            "p90": 590,
+            "p95": 753,
+            "p99": 1187,
+            "max": 1755
+          },
+          "truncated_fraction": {
+            "256": 0.4204,
+            "512": 0.1364,
+            "1024": 0.0236
+          },
+          "tokenize_seconds": 0.07391441398794996,
+          "reviews_per_second": 33822.902261087635
+        }
+      },
+      "examples": [
+        {
+          "text": "This movie is not good.",
+          "tokens": [
+            "[CLS]",
+            "This",
+            "Ġmovie",
+            "Ġis",
+            "Ġnot",
+            "Ġgood",
+            ".",
+            "[SEP]"
+          ],
+          "ids": [
+            50281,
+            1552,
+            6440,
+            310,
+            417,
+            1175,
+            15,
+            50282
+          ]
+        },
+        {
+          "text": "The beginning was slow, but the ending made it worthwhile.",
+          "tokens": [
+            "[CLS]",
+            "The",
+            "Ġbeginning",
+            "Ġwas",
+            "Ġslow",
+            ",",
+            "Ġbut",
+            "Ġthe",
+            "Ġending",
+            "Ġmade",
+            "Ġit",
+            "Ġworthwhile",
+            ".",
+            "[SEP]"
+          ],
+          "ids": [
+            50281,
+            510,
+            5068,
+            369,
+            3468,
+            13,
+            533,
+            253,
+            12365,
+            1160,
+            352,
+            32811,
+            15,
+            50282
+          ]
+        }
+      ]
+    }
+  }
+}
