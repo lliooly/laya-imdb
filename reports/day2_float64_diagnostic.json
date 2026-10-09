@@ -1,0 +1,15 @@
+{
+  "case": "same real train comments as parity, length16",
+  "results": {
+    "torch32": {
+      "max": 0.003204345703125,
+      "mean": 8.525376870238688e-06,
+      "relative_l2": 2.8349882995826192e-05
+    },
+    "mlx32": {
+      "max": 0.010000228881835938,
+      "mean": 2.472902269801125e-05,
+      "relative_l2": 8.811664883978665e-05
+    }
+  }
+}

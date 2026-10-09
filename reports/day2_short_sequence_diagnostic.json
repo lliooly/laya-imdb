@@ -1,0 +1,433 @@
+{
+  "reference": "Transformers CPU eager float32; reference_compile=False",
+  "MLX_ENABLE_TF32": "0",
+  "versions": {
+    "torch": "2.14.1",
+    "transformers": "4.57.6",
+    "mlx": "0.32.3",
+    "numpy": "2.5.3"
+  },
+  "model_lock": {
+    "model": "answerdotai/ModernBERT-base",
+    "revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+    "files": {
+      "config.json": "1609d59e627c33eaed524b4f01e546d42e84190a079a5a5ded84b212c41c324f",
+      "tokenizer.json": "9fd55248d51d33976b324fc11592e28071da7d41e0e9401dfb7082e30574b7b1",
+      "model.safetensors": "340ac08b74eef0d7bdec2d7981a6a3d4249bf0e6aab60634b72ad02c2b8023a9"
+    }
+  },
+  "cases": {
+    "16": {
+      "valid_tokens": 32,
+      "hidden": {
+        "passed": true,
+        "elementwise_allclose": false,
+        "max_abs_error": 0.0067958831787109375,
+        "mean_abs_error": 1.7302298147114925e-05,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 5.983757858086573e-05,
+        "relative_l2_limit": 0.0003
+      },
+      "logits": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 3.218650817871094e-05,
+        "mean_abs_error": 1.5154015272855759e-05,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 7.115630868328264e-05,
+        "relative_l2_limit": null
+      }
+    },
+    "160": {
+      "valid_tokens": 320,
+      "hidden": {
+        "passed": true,
+        "elementwise_allclose": false,
+        "max_abs_error": 0.024936676025390625,
+        "mean_abs_error": 8.923804671212565e-06,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 7.547332910631769e-05,
+        "relative_l2_limit": 0.0003
+      },
+      "logits": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 4.589557647705078e-06,
+        "mean_abs_error": 2.6579946279525757e-06,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 7.460836957526867e-06,
+        "relative_l2_limit": null
+      }
+    },
+    "256": {
+      "valid_tokens": 512,
+      "hidden": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 0.00014162063598632812,
+        "mean_abs_error": 3.000340257131029e-06,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 2.967717001505387e-06,
+        "relative_l2_limit": 0.0003
+      },
+      "logits": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.7415732145309448e-06,
+        "mean_abs_error": 8.302740752696991e-07,
+        "atol": 0.0003,
+        "rtol": 0.0003,
+        "relative_l2": 2.9691208009446604e-06,
+        "relative_l2_limit": null
+      }
+    }
+  },
+  "scope": "encoder + our masked-mean linear head; not HF sequence-classification head",
+  "criteria_note": "Strict elementwise random-model check; pretrained hidden/gradients use relative L2 because large activation outliers amplify fp32 reduction-order rounding. Elementwise errors remain disclosed.",
+  "tiny_architecture": {
+    "passed": true,
+    "checks": {
+      "hidden": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 4.76837158203125e-07,
+        "mean_abs_error": 5.337311748121465e-08,
+        "atol": 3e-05,
+        "rtol": 3e-05,
+        "relative_l2": 8.563798145714012e-08,
+        "relative_l2_limit": null
+      },
+      "logits": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 5.587935447692871e-09,
+        "mean_abs_error": 2.6775524020195007e-09,
+        "atol": 3e-05,
+        "rtol": 3e-05,
+        "relative_l2": 6.959902941533048e-08,
+        "relative_l2_limit": null
+      },
+      "loss": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "atol": 3e-05,
+        "rtol": 3e-05,
+        "relative_l2": 0.0,
+        "relative_l2_limit": null
+      },
+      "gradient:model.embeddings.tok_embeddings.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 2.9802322387695312e-08,
+        "mean_abs_error": 9.125864508519044e-10,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.1948608467540068e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.embeddings.norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 9.313225746154785e-10,
+        "mean_abs_error": 2.546585164964199e-10,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.5932775258342863e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.0.attn.Wqkv.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 8.731149137020111e-11,
+        "mean_abs_error": 3.5329462879513107e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.4071681618078123e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.0.attn.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.7462298274040222e-10,
+        "mean_abs_error": 2.4403257192773253e-11,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.2254148832714184e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.0.mlp_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.1368683772161603e-12,
+        "mean_abs_error": 4.1877612488860905e-13,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 4.695990276484974e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.0.mlp.Wi.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.8189894035458565e-11,
+        "mean_abs_error": 1.152542579603566e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 3.0345730708741016e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.0.mlp.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 2.9103830456733704e-11,
+        "mean_abs_error": 2.513660286862507e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 2.0860472013697266e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.attn_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 3.637978807091713e-12,
+        "mean_abs_error": 1.4148682225822995e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.2231460263085895e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.attn.Wqkv.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.1641532182693481e-10,
+        "mean_abs_error": 4.489119145856257e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.5112932667960775e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.attn.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 2.0372681319713593e-10,
+        "mean_abs_error": 2.8694518983130024e-11,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.5944249019785928e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.mlp_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.4779288903810084e-12,
+        "mean_abs_error": 3.0531133177191805e-13,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 4.950048333733457e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.mlp.Wi.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.1368683772161603e-11,
+        "mean_abs_error": 1.1476927264456038e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 3.121077791687742e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.1.mlp.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 3.2741809263825417e-11,
+        "mean_abs_error": 2.9113436921662794e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 2.8352019520208486e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.attn_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 8.185452315956354e-12,
+        "mean_abs_error": 2.1156409957256983e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 3.195106626798379e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.attn.Wqkv.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.7462298274040222e-10,
+        "mean_abs_error": 4.8796956059193874e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.3665282863204813e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.attn.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 2.3283064365386963e-10,
+        "mean_abs_error": 2.7071164754310928e-11,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.217061234020458e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.mlp_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 8.526512829121202e-13,
+        "mean_abs_error": 2.69562150378988e-13,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 3.110729354528407e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.mlp.Wi.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.1823431123048067e-11,
+        "mean_abs_error": 1.143340305244378e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 2.856522312970133e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.layers.2.mlp.Wo.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 2.1827872842550278e-11,
+        "mean_abs_error": 2.845368038406626e-12,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 3.2005566742645486e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:model.final_norm.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 9.313225746154785e-10,
+        "mean_abs_error": 2.212345862062648e-10,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.3333819703421169e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:classifier.weight": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 3.725290298461914e-08,
+        "mean_abs_error": 1.1631072993623093e-08,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 1.2700647919380027e-07,
+        "relative_l2_limit": null
+      },
+      "gradient:classifier.bias": {
+        "passed": true,
+        "elementwise_allclose": true,
+        "max_abs_error": 1.4901161193847656e-08,
+        "mean_abs_error": 7.450580596923828e-09,
+        "atol": 3e-05,
+        "rtol": 0.0003,
+        "relative_l2": 9.318044312488102e-07,
+        "relative_l2_limit": null
+      }
+    },
+    "scope": "3-layer random weights; both local/global attention; padding; every parameter gradient"
+  },
+  "padding_invariance": {
+    "passed": true,
+    "elementwise_allclose": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "atol": 3e-05,
+    "rtol": 3e-05,
+    "relative_l2": 0.0,
+    "relative_l2_limit": null
+  },
+  "masked_id_invariance": {
+    "passed": true,
+    "elementwise_allclose": true,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "atol": 3e-05,
+    "rtol": 3e-05,
+    "relative_l2": 0.0,
+    "relative_l2_limit": null
+  },
+  "loss": {
+    "passed": true,
+    "elementwise_allclose": true,
+    "max_abs_error": 3.5762786865234375e-07,
+    "mean_abs_error": 3.5762786865234375e-07,
+    "atol": 3e-05,
+    "rtol": 3e-05,
+    "relative_l2": 3.5166830270575935e-07,
+    "relative_l2_limit": null
+  },
+  "gradients": {
+    "classifier.weight": {
+      "passed": true,
+      "elementwise_allclose": true,
+      "max_abs_error": 6.67572021484375e-06,
+      "mean_abs_error": 7.842774607524916e-07,
+      "atol": 0.0003,
+      "rtol": 0.003,
+      "relative_l2": 1.4371540971697482e-06,
+      "relative_l2_limit": 0.001
+    },
+    "model.final_norm.weight": {
+      "passed": true,
+      "elementwise_allclose": true,
+      "max_abs_error": 1.1920928955078125e-07,
+      "mean_abs_error": 1.1576479330699385e-08,
+      "atol": 0.0003,
+      "rtol": 0.003,
+      "relative_l2": 9.19912002698093e-07,
+      "relative_l2_limit": 0.001
+    },
+    "model.layers.0.attn.Wqkv.weight": {
+      "passed": true,
+      "elementwise_allclose": true,
+      "max_abs_error": 1.298263669013977e-06,
+      "mean_abs_error": 1.736083632408736e-08,
+      "atol": 0.0003,
+      "rtol": 0.003,
+      "relative_l2": 2.645337161094117e-05,
+      "relative_l2_limit": 0.001
+    },
+    "model.layers.21.mlp.Wo.weight": {
+      "passed": true,
+      "elementwise_allclose": true,
+      "max_abs_error": 1.1548399925231934e-07,
+      "mean_abs_error": 9.162930414419179e-10,
+      "atol": 0.0003,
+      "rtol": 0.003,
+      "relative_l2": 1.929974836458863e-06,
+      "relative_l2_limit": 0.001
+    },
+    "model.embeddings.tok_embeddings.weight": {
+      "passed": true,
+      "elementwise_allclose": true,
+      "max_abs_error": 3.60049307346344e-06,
+      "mean_abs_error": 1.85429713250862e-10,
+      "atol": 0.0003,
+      "rtol": 0.003,
+      "relative_l2": 4.195981693113989e-05,
+      "relative_l2_limit": 0.001
+    }
+  },
+  "gradient_check_length": 256,
+  "all_gradients_finite": true,
+  "status": "passed"
+}
