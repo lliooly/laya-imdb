@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "parity_atol": 0.0003,
+  "parity_rtol": 0.0003,
+  "gradient_atol": 0.0003,
+  "gradient_rtol": 0.003,
+  "hidden_relative_l2_limit": 0.0003,
+  "gradient_relative_l2_limit": 0.001,
+  "gradient_check_length": 256,
+  "lengths": [256, 512],
+  "batch_sizes": [4, 8],
+  "dtypes": ["float32", "bfloat16"],
+  "benchmark_warmup_steps": 2,
+  "benchmark_measured_steps": 5,
+  "learning_rate": 0.00002,
+  "weight_decay": 0.01,
+  "pilot_train_count": 256,
+  "pilot_validation_count": 128,
+  "pilot_length": 256,
+  "pilot_batch_size": 8,
+  "pilot_steps": 32
+}

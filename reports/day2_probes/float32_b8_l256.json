@@ -1,0 +1,33 @@
+{
+  "length": 256,
+  "batch_size": 8,
+  "dtype": "float32",
+  "MLX_ENABLE_TF32": "0",
+  "full_encoder_finetuning": true,
+  "gradient_checkpointing": false,
+  "warmup_steps": 2,
+  "measured_steps": 5,
+  "step_seconds": [
+    0.3961043330054963,
+    0.39579124999727355,
+    0.39524533299845643,
+    0.4091256660030922,
+    0.4140295410034014
+  ],
+  "mean_step_seconds": 0.402059224601544,
+  "median_step_seconds": 0.3961043330054963,
+  "reviews_per_second": 19.897566105909657,
+  "mlx_peak_gib": 5.950054422020912,
+  "losses": [
+    1.369317889213562,
+    0.7541027069091797,
+    0.6620622873306274,
+    0.877484917640686,
+    1.4535067081451416
+  ],
+  "gradients_finite": true,
+  "padded_token_fraction": 0.1944754464285714,
+  "train_22500_epoch_minutes": 18.84987664673572,
+  "train_3_epochs_minutes": 56.54962994020716,
+  "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+}

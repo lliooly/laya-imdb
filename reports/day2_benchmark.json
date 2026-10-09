@@ -1,0 +1,302 @@
+{
+  "device": "Apple M5 Pro / MLX Metal GPU",
+  "config": {
+    "seed": 42,
+    "parity_atol": 0.0003,
+    "parity_rtol": 0.0003,
+    "gradient_atol": 0.0003,
+    "gradient_rtol": 0.003,
+    "hidden_relative_l2_limit": 0.0003,
+    "gradient_relative_l2_limit": 0.001,
+    "gradient_check_length": 256,
+    "lengths": [
+      256,
+      512
+    ],
+    "batch_sizes": [
+      4,
+      8
+    ],
+    "dtypes": [
+      "float32",
+      "bfloat16"
+    ],
+    "benchmark_warmup_steps": 2,
+    "benchmark_measured_steps": 5,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "pilot_train_count": 256,
+    "pilot_validation_count": 128,
+    "pilot_length": 256,
+    "pilot_batch_size": 8,
+    "pilot_steps": 32
+  },
+  "protocol": "fresh process per shape; real train reviews; pretokenized fixed padding; synchronized forward+backward+clipping+AdamW; 2 warmup +5 timed steps",
+  "precision_caveat": "bfloat16 uses low-precision parameters and optimizer states; finite steps do not prove convergence or accuracy",
+  "probes": [
+    {
+      "length": 256,
+      "batch_size": 4,
+      "dtype": "float32",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.2377313749966561,
+        0.23050716600118903,
+        0.22659962499892572,
+        0.22798550000152318,
+        0.2265713329979917
+      ],
+      "mean_step_seconds": 0.22987899979925713,
+      "median_step_seconds": 0.22798550000152318,
+      "reviews_per_second": 17.400458517276558,
+      "mlx_peak_gib": 4.364250313490629,
+      "losses": [
+        0.708145797252655,
+        0.5287637114524841,
+        1.1151273250579834,
+        0.7156810164451599,
+        0.939605712890625
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.236328125,
+      "train_22500_epoch_minutes": 21.551156231180357,
+      "train_3_epochs_minutes": 64.65346869354107,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 256,
+      "batch_size": 8,
+      "dtype": "float32",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.3961043330054963,
+        0.39579124999727355,
+        0.39524533299845643,
+        0.4091256660030922,
+        0.4140295410034014
+      ],
+      "mean_step_seconds": 0.402059224601544,
+      "median_step_seconds": 0.3961043330054963,
+      "reviews_per_second": 19.897566105909657,
+      "mlx_peak_gib": 5.950054422020912,
+      "losses": [
+        1.369317889213562,
+        0.7541027069091797,
+        0.6620622873306274,
+        0.877484917640686,
+        1.4535067081451416
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.1944754464285714,
+      "train_22500_epoch_minutes": 18.84987664673572,
+      "train_3_epochs_minutes": 56.54962994020716,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 512,
+      "batch_size": 4,
+      "dtype": "float32",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.44756033299927367,
+        0.4457544999968377,
+        0.44535545899998397,
+        0.44513370800268603,
+        0.461343458002375
+      ],
+      "mean_step_seconds": 0.44902949160023126,
+      "median_step_seconds": 0.4457544999968377,
+      "reviews_per_second": 8.908100859355537,
+      "mlx_peak_gib": 6.394568618386984,
+      "losses": [
+        0.7030491828918457,
+        0.5280335545539856,
+        2.137545347213745,
+        0.7917912006378174,
+        1.5797255039215088
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.5426897321428572,
+      "train_22500_epoch_minutes": 42.09651483752168,
+      "train_3_epochs_minutes": 126.28954451256504,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 512,
+      "batch_size": 8,
+      "dtype": "float32",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.8849406249937601,
+        0.8816481249959907,
+        0.8518119159998605,
+        0.8281780000033905,
+        0.8300421249950887
+      ],
+      "mean_step_seconds": 0.8553241581976181,
+      "median_step_seconds": 0.8518119159998605,
+      "reviews_per_second": 9.353179053024762,
+      "mlx_peak_gib": 9.730653177946806,
+      "losses": [
+        1.4274479150772095,
+        0.772298276424408,
+        0.681490957736969,
+        0.8434387445449829,
+        1.3622052669525146
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.4639718191964286,
+      "train_22500_epoch_minutes": 40.10044761683166,
+      "train_3_epochs_minutes": 120.30134285049499,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 256,
+      "batch_size": 4,
+      "dtype": "bfloat16",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.08891924999625189,
+        0.08861550000438001,
+        0.0888572909971117,
+        0.08918662499490893,
+        0.08880700000008801
+      ],
+      "mean_step_seconds": 0.0888771331985481,
+      "median_step_seconds": 0.0888572909971117,
+      "reviews_per_second": 45.00595210540999,
+      "mlx_peak_gib": 2.241084238514304,
+      "losses": [
+        0.9552258849143982,
+        1.2346287965774536,
+        0.5432332158088684,
+        0.6605952978134155,
+        0.7862171530723572
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.236328125,
+      "train_22500_epoch_minutes": 8.332231237363885,
+      "train_3_epochs_minutes": 24.996693712091655,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 256,
+      "batch_size": 8,
+      "dtype": "bfloat16",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.14307954199466622,
+        0.14277574999869103,
+        0.14325054200162413,
+        0.1427975830010837,
+        0.14563600000110455
+      ],
+      "mean_step_seconds": 0.14350788339943393,
+      "median_step_seconds": 0.14307954199466622,
+      "reviews_per_second": 55.74606642154375,
+      "mlx_peak_gib": 2.984403893351555,
+      "losses": [
+        1.221011996269226,
+        0.8103933334350586,
+        0.9698458313941956,
+        0.6850811243057251,
+        0.8931440114974976
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.1944754464285714,
+      "train_22500_epoch_minutes": 6.728127933376794,
+      "train_3_epochs_minutes": 20.184383800130384,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 512,
+      "batch_size": 4,
+      "dtype": "bfloat16",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.17212529099924723,
+        0.16893366699514445,
+        0.16703987499931827,
+        0.16717720800079405,
+        0.16619041699595982
+      ],
+      "mean_step_seconds": 0.16829329159809275,
+      "median_step_seconds": 0.16717720800079405,
+      "reviews_per_second": 23.7680299791898,
+      "mlx_peak_gib": 3.195082899183035,
+      "losses": [
+        0.840055525302887,
+        1.2370491027832031,
+        0.5900842547416687,
+        0.6510671377182007,
+        0.5887571573257446
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.5426897321428572,
+      "train_22500_epoch_minutes": 15.777496087321195,
+      "train_3_epochs_minutes": 47.33248826196358,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    },
+    {
+      "length": 512,
+      "batch_size": 8,
+      "dtype": "bfloat16",
+      "MLX_ENABLE_TF32": "0",
+      "full_encoder_finetuning": true,
+      "gradient_checkpointing": false,
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "step_seconds": [
+        0.31567899999936344,
+        0.3148444170001312,
+        0.3153354579990264,
+        0.3216122079975321,
+        0.33007508300215704
+      ],
+      "mean_step_seconds": 0.31950923319964203,
+      "median_step_seconds": 0.31567899999936344,
+      "reviews_per_second": 25.03840004836819,
+      "mlx_peak_gib": 4.866465074941516,
+      "losses": [
+        1.2383198738098145,
+        0.7939972877502441,
+        0.9212085008621216,
+        0.6451059579849243,
+        0.9072397351264954
+      ],
+      "gradients_finite": true,
+      "padded_token_fraction": 0.4639718191964286,
+      "train_22500_epoch_minutes": 14.97965788317655,
+      "train_3_epochs_minutes": 44.93897364952965,
+      "estimate_excludes": "validation, checkpoint IO, startup, sustained thermal effects; fixed padding upper workload"
+    }
+  ]
+}
