@@ -1,0 +1,54 @@
+# Local environments and generated caches
+.venv/
+venv/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+**/target/
+
+# Data, model weights and generated artifacts
+/data/
+/artifacts/
+/checkpoints/
+/reports/**/data/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.zip
+*.tar
+*.tar.gz
+*.mp4
+*.mov
+*.mkv
+*.webm
+
+# Credentials and machine-local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+.aws/
+.ssh/
+.vscode/
+.idea/
+
+# OS and editor leftovers
+.DS_Store
+._*
+*.swp
+*.swo
+*~
+*.tmp
+*.part

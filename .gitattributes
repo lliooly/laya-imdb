@@ -1,0 +1,12 @@
+# Normalize maintained source and docs across platforms.
+* text=auto eol=lf
+
+# Preserve historical evidence byte-for-byte, including CRLF CSV exports.
+reports/** -text
+
+# Binary media and archives.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.zip binary
