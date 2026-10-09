@@ -1,0 +1,18 @@
+{
+  "run_id": "modernbert-l256-s42-recording",
+  "seed": 42,
+  "length": 256,
+  "batch_size": 8,
+  "epochs": 3,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "adam_bias_correction": true,
+  "warmup_fraction": 0.1,
+  "gradient_clip_norm": 1.0,
+  "early_stopping_patience": 2,
+  "checkpoint_every_steps": 500,
+  "log_every_steps": 100,
+  "train_monitor_count": 2048,
+  "dtype": "float32",
+  "MLX_ENABLE_TF32": "0"
+}
