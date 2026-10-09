@@ -1,0 +1,73 @@
+{
+  "validation_count": 2500,
+  "model_reloaded_from_fp16_checkpoint": true,
+  "checkpoint_weights_sha256": "a2800be9f26d85db2a35e3ae0307c9dd730fbf82176c225c15f8ecd6bbefd5d7",
+  "calibrated": {
+    "items": 2500,
+    "loss": 0.1233,
+    "accuracy": 0.9576,
+    "mean_confidence": 0.9744,
+    "ece": 0.0168,
+    "brier": 0.0675,
+    "brier_top1": 0.0338,
+    "by_type": {
+      "choice": {
+        "items": 2500,
+        "loss": 0.1233,
+        "accuracy": 0.9576,
+        "mean_confidence": 0.9744,
+        "ece": 0.0168,
+        "brier": 0.0675,
+        "brier_top1": 0.0338
+      }
+    }
+  },
+  "uncalibrated": {
+    "items": 2500,
+    "loss": 0.1528,
+    "accuracy": 0.9576,
+    "mean_confidence": 0.9898,
+    "ece": 0.0322,
+    "brier": 0.0727,
+    "brier_top1": 0.0363,
+    "by_type": {
+      "choice": {
+        "items": 2500,
+        "loss": 0.1528,
+        "accuracy": 0.9576,
+        "mean_confidence": 0.9898,
+        "ece": 0.0322,
+        "brier": 0.0727,
+        "brier_top1": 0.0363
+      }
+    }
+  },
+  "macro_f1": 0.9575997557745932,
+  "class_order": [
+    "negative",
+    "positive"
+  ],
+  "confusion_matrix_actual_rows_predicted_columns": [
+    [
+      1194,
+      56
+    ],
+    [
+      50,
+      1200
+    ]
+  ],
+  "correct": 2394,
+  "errors": 106,
+  "accuracy_matches_in_memory_report": true,
+  "comparison_same_validation_ids": true,
+  "baseline_correct": 2366,
+  "baseline_errors": 134,
+  "both_correct": 2329,
+  "both_wrong": 69,
+  "laya_fixes_baseline": 65,
+  "laya_breaks_baseline": 37,
+  "python_socket_guard_enabled": true,
+  "evaluation_scope": "Full 2500-row development validation set; official test untouched",
+  "comparability_limits": "Different model size, input budgets, training epochs and calibration; not an isolated architecture ablation."
+}

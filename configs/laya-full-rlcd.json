@@ -1,0 +1,32 @@
+{
+  "run_id": "laya-l512-s42-rlcd",
+  "device": "mps",
+  "train_limit": null,
+  "validation_limit": null,
+  "eval_batch_size": 1,
+  "training": {
+    "epochs": 1,
+    "micro_batch": 1,
+    "grad_accum": 8,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "rlcd",
+    "rl_samples": 4,
+    "shuffle_options": [
+      "choice"
+    ],
+    "freeze_encoder": false,
+    "calib_max": 400,
+    "calib_frac": 0.1,
+    "calib_seed": 42,
+    "seed": 42,
+    "max_len": 512,
+    "head_max_len": 192,
+    "amp": false,
+    "gradient_checkpointing": true,
+    "log_every": 16
+  }
+}
