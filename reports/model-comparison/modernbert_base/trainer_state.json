@@ -1,0 +1,46 @@
+{
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.30325563458510574,
+      "train_loss_type": "online CE",
+      "train_monitor_loss": 0.13155647643475277,
+      "train_monitor_accuracy": 0.962890625,
+      "val_loss": 0.21965084323212505,
+      "val_loss_type": "uncalibrated CE/NLL",
+      "val_accuracy": 0.9416,
+      "val_macro_f1": 0.9415891963377547,
+      "validation_count": 2500,
+      "optimizer_updates_cumulative": 2813
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.15142615587293792,
+      "train_loss_type": "online CE",
+      "train_monitor_loss": 0.04750335242329129,
+      "train_monitor_accuracy": 0.98779296875,
+      "val_loss": 0.18911862667091192,
+      "val_loss_type": "uncalibrated CE/NLL",
+      "val_accuracy": 0.9448,
+      "val_macro_f1": 0.9447998586876383,
+      "validation_count": 2500,
+      "optimizer_updates_cumulative": 5626
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.048169326145390774,
+      "train_loss_type": "online CE",
+      "train_monitor_loss": 0.024799984410066145,
+      "train_monitor_accuracy": 0.9951171875,
+      "val_loss": 0.28444230092081707,
+      "val_loss_type": "uncalibrated CE/NLL",
+      "val_accuracy": 0.9464,
+      "val_macro_f1": 0.9463999656959781,
+      "validation_count": 2500,
+      "optimizer_updates_cumulative": 8439
+    }
+  ],
+  "step_log_count": 0,
+  "note": "Baseline step console log was not persisted; no observed step-loss series is available. Do not fabricate it.",
+  "multi_epoch_overfitting_analysis_available": true
+}

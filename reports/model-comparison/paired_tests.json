@@ -1,0 +1,62 @@
+[
+  {
+    "model_a": "modernbert_base",
+    "model_b": "laya_ce_full",
+    "a_only_correct": 32,
+    "b_only_correct": 55,
+    "both_correct": 1956,
+    "both_wrong": 57,
+    "mcnemar_exact_two_sided_p": 0.017827552929735955,
+    "holm_adjusted_p_over_six_exploratory_pairs": 0.07131021171894382
+  },
+  {
+    "model_a": "modernbert_base",
+    "model_b": "laya_rlcd_pilot",
+    "a_only_correct": 76,
+    "b_only_correct": 55,
+    "both_correct": 1912,
+    "both_wrong": 57,
+    "mcnemar_exact_two_sided_p": 0.08016994071057768,
+    "holm_adjusted_p_over_six_exploratory_pairs": 0.1828147578469804
+  },
+  {
+    "model_a": "modernbert_base",
+    "model_b": "laya_ce_pilot",
+    "a_only_correct": 74,
+    "b_only_correct": 52,
+    "both_correct": 1914,
+    "both_wrong": 60,
+    "mcnemar_exact_two_sided_p": 0.06093825261566013,
+    "holm_adjusted_p_over_six_exploratory_pairs": 0.1828147578469804
+  },
+  {
+    "model_a": "laya_ce_full",
+    "model_b": "laya_rlcd_pilot",
+    "a_only_correct": 68,
+    "b_only_correct": 24,
+    "both_correct": 1943,
+    "both_wrong": 65,
+    "mcnemar_exact_two_sided_p": 4.9353514190469894e-06,
+    "holm_adjusted_p_over_six_exploratory_pairs": 2.4676757095234946e-05
+  },
+  {
+    "model_a": "laya_ce_full",
+    "model_b": "laya_ce_pilot",
+    "a_only_correct": 66,
+    "b_only_correct": 21,
+    "both_correct": 1945,
+    "both_wrong": 68,
+    "mcnemar_exact_two_sided_p": 1.410078387314761e-06,
+    "holm_adjusted_p_over_six_exploratory_pairs": 8.460470323888566e-06
+  },
+  {
+    "model_a": "laya_rlcd_pilot",
+    "model_b": "laya_ce_pilot",
+    "a_only_correct": 35,
+    "b_only_correct": 34,
+    "both_correct": 1932,
+    "both_wrong": 99,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "holm_adjusted_p_over_six_exploratory_pairs": 1.0
+  }
+]

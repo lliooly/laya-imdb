@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "7c1ec659afabdda6642c7a3fdb9c5876c66447b8db794a3b8fd900899dec9146",
+  "total_parameters": 149015810,
+  "trainable_parameters": 149015810,
+  "encoder_parameters": 149014272,
+  "head_parameters": 1538,
+  "inference_dtype": "float32",
+  "batch_size": 8,
+  "predictions_sha256": "393c81de754704d9430f775e29f7520743951285819bbd73e92e5fe9bc1e20d4"
+}

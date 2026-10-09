@@ -1,0 +1,20 @@
+{
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.23842975464112268,
+      "train_loss_type": "soft-ce",
+      "train_monitor_loss": null,
+      "train_monitor_accuracy": null,
+      "val_loss": 0.19876123324591638,
+      "val_loss_type": "uncalibrated saved-checkpoint NLL; full 2500 re-evaluation",
+      "val_accuracy": 0.9352,
+      "val_macro_f1": 0.9351865602851407,
+      "validation_count": 2500,
+      "optimizer_updates_cumulative": 112
+    }
+  ],
+  "step_log_count": 56,
+  "note": "Step losses are actual sparse console samples (every 16 micro-steps), rounded to 4 decimals; learning rates reconstructed from the pinned cosine schedule, not recorded measurements.",
+  "multi_epoch_overfitting_analysis_available": false
+}

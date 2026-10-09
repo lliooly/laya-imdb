@@ -1,0 +1,2 @@
+﻿epoch,train_loss,train_loss_type,train_monitor_loss,train_monitor_accuracy,val_loss,val_loss_type,val_accuracy,val_macro_f1,validation_count,optimizer_updates_cumulative
+1,0.805874081551581,rlcd,,,0.862236243258471,uncalibrated saved-checkpoint NLL; full 2500 re-evaluation,0.9372,0.9371999899519984,2500,112

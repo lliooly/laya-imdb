@@ -1,0 +1,12 @@
+{
+  "python_version": "3.12.14",
+  "weights_included": false,
+  "review_text_included": false,
+  "commands_run": [
+    "export_comparison_predictions.py --batch-size 8",
+    "build_comparison_report.py"
+  ],
+  "test_results": "10 unittest tests passed; including four analytical metric checks",
+  "source_directory": "scripts/ in original project; standalone bundle paths are for audit",
+  "source_data_and_model_weights_required_for_inference": true
+}

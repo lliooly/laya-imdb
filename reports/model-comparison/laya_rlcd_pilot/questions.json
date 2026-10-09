@@ -1,0 +1,10 @@
+{
+  "sentiment": {
+    "type": "choice",
+    "instructions": "What is the reviewer's overall opinion of this movie?",
+    "criteria": {
+      "negative": "The reviewer dislikes or criticizes the movie overall.",
+      "positive": "The reviewer likes or praises the movie overall."
+    }
+  }
+}

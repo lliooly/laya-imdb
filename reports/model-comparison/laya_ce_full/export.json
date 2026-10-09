@@ -1,0 +1,21 @@
+{
+  "run_id": "laya-l512-s42-ce",
+  "checkpoint_sha256": "a2800be9f26d85db2a35e3ae0307c9dd730fbf82176c225c15f8ecd6bbefd5d7",
+  "total_parameters": 421293827,
+  "trainable_parameters": 421293827,
+  "encoder_parameters": 394781696,
+  "head_parameters": 26512131,
+  "action_head_parameters_not_used_by_classification_loss": 263938,
+  "saved_weights_dtype": "fp16; upstream loads as fp32",
+  "inference_dtype": "float32",
+  "batch_size": 8,
+  "head_layers": 2,
+  "hidden_size": 1024,
+  "head_attention_heads": 16,
+  "native_temperature": 1.4808366298675537,
+  "head_token_length": 45,
+  "review_token_budget": 466,
+  "validation_accuracy": 0.9576,
+  "elapsed_export_seconds": 308.4584616669963,
+  "predictions_sha256": "deafef202b0781f71084b9a2566b43a0d53ae630c9044e61ec7a2eb34d364980"
+}

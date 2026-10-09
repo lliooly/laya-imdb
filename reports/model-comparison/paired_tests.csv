@@ -1,0 +1,7 @@
+﻿model_a,model_b,a_only_correct,b_only_correct,both_correct,both_wrong,mcnemar_exact_two_sided_p,holm_adjusted_p_over_six_exploratory_pairs
+modernbert_base,laya_ce_full,32,55,1956,57,0.017827552929735955,0.07131021171894382
+modernbert_base,laya_rlcd_pilot,76,55,1912,57,0.08016994071057768,0.1828147578469804
+modernbert_base,laya_ce_pilot,74,52,1914,60,0.06093825261566013,0.1828147578469804
+laya_ce_full,laya_rlcd_pilot,68,24,1943,65,4.9353514190469894e-06,2.4676757095234946e-05
+laya_ce_full,laya_ce_pilot,66,21,1945,68,1.410078387314761e-06,8.460470323888566e-06
+laya_rlcd_pilot,laya_ce_pilot,35,34,1932,99,1.0,1.0

@@ -1,0 +1,35 @@
+{
+  "config": {
+    "run_id": "modernbert-l256-s42",
+    "seed": 42,
+    "length": 256,
+    "batch_size": 8,
+    "epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "adam_bias_correction": true,
+    "warmup_fraction": 0.1,
+    "gradient_clip_norm": 1.0,
+    "early_stopping_patience": 2,
+    "checkpoint_every_steps": 500,
+    "log_every_steps": 100,
+    "train_monitor_count": 2048,
+    "dtype": "float32",
+    "MLX_ENABLE_TF32": "0"
+  },
+  "split_manifest": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+  "model_lock": "bd9c1257543ec1609d0616aaae654f64a2f6467150105f5bb4ec1f9389fc646f",
+  "source": {
+    "train_baseline.py": "4276bf497239250477fcf7f2d362e3e9a14e9307415a09d92241482a482c10bc",
+    "modernbert_mlx.py": "cda1a1068f11e01c30e4dc16128173387ef57c704f6a53f6dbe65da5a4d79bd2",
+    "checkpointing.py": "583eaa55228adf7d828649357fd492e314ebd2e3f3145605251be9198046f87e",
+    "training_utils.py": "40e53fd103676be1353c04c3c860058dc51233d5f3aaa300ebd11ed598f28bdb",
+    "day2_data.py": "0bc476dbadaaa343d4f584afdd9598402ebf7d141d4459d6c815216ba28880f1",
+    "day2_runtime.py": "7d2b92ab9e9692ba32edfeffe964731623dba53f811c229bb46074d2176e80b6"
+  },
+  "versions": {
+    "mlx": "0.32.3",
+    "tokenizers": "0.22.2",
+    "numpy": "2.5.3"
+  }
+}
