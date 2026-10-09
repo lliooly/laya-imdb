@@ -1,0 +1,78 @@
+Full Laya encoder + decision head fine-tuning; objective=rlcd
+Training rows 1024; validation rows 256; calibration is held out FROM TRAINING.
+Loading local model; initial validation runs before the first training step.
+eval items 256 from /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-l512-s42-pilot-rlcd/data/validation.jsonl (skipped {}, 0 overlapping training/calibration items)
+train items 896, calibration items 128, eval items 256 (/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-l512-s42-pilot-rlcd/data/validation.jsonl), skipped {}, device mps
+optimizer budget: 896 train item(s), effective batch up to 8 (micro_batch 1 x grad_accum 8), 112 optimizer updates over 1 epoch(s)
+epoch 1/1 step 16 loss -0.0640
+epoch 1/1 step 32 loss -0.0000
+epoch 1/1 step 48 loss -0.0000
+epoch 1/1 step 64 loss -0.0000
+epoch 1/1 step 80 loss -0.0000
+epoch 1/1 step 96 loss 0.1698
+epoch 1/1 step 112 loss 0.0555
+epoch 1/1 step 128 loss -0.0000
+epoch 1/1 step 144 loss 0.7492
+epoch 1/1 step 160 loss 3.7632
+epoch 1/1 step 176 loss -0.0000
+epoch 1/1 step 192 loss 7.9476
+epoch 1/1 step 208 loss -0.0000
+epoch 1/1 step 224 loss -0.0000
+epoch 1/1 step 240 loss -0.0000
+epoch 1/1 step 256 loss -0.0000
+epoch 1/1 step 272 loss -0.0000
+epoch 1/1 step 288 loss -0.0000
+epoch 1/1 step 304 loss -0.0000
+epoch 1/1 step 320 loss -0.0000
+epoch 1/1 step 336 loss -0.0000
+epoch 1/1 step 352 loss -0.0000
+epoch 1/1 step 368 loss -0.0000
+epoch 1/1 step 384 loss -0.0000
+epoch 1/1 step 400 loss -0.0000
+epoch 1/1 step 416 loss -0.1700
+epoch 1/1 step 432 loss -0.0000
+epoch 1/1 step 448 loss -0.0000
+epoch 1/1 step 464 loss -0.0000
+epoch 1/1 step 480 loss -0.0000
+epoch 1/1 step 496 loss -0.0000
+epoch 1/1 step 512 loss 0.0000
+epoch 1/1 step 528 loss 0.0361
+epoch 1/1 step 544 loss 0.3166
+epoch 1/1 step 560 loss -0.4017
+epoch 1/1 step 576 loss -0.0000
+epoch 1/1 step 592 loss 0.0000
+epoch 1/1 step 608 loss -0.0216
+epoch 1/1 step 624 loss -0.0000
+epoch 1/1 step 640 loss 0.0000
+epoch 1/1 step 656 loss -0.0312
+epoch 1/1 step 672 loss 0.0252
+epoch 1/1 step 688 loss -0.0000
+epoch 1/1 step 704 loss -0.0000
+epoch 1/1 step 720 loss 0.0503
+epoch 1/1 step 736 loss -0.0000
+epoch 1/1 step 752 loss -0.0595
+epoch 1/1 step 768 loss -0.0000
+epoch 1/1 step 784 loss -0.0000
+epoch 1/1 step 800 loss 11.8228
+epoch 1/1 step 816 loss -0.0000
+epoch 1/1 step 832 loss 0.0553
+epoch 1/1 step 848 loss -0.0000
+epoch 1/1 step 864 loss -0.0000
+epoch 1/1 step 880 loss -0.0000
+epoch 1/1 step 896 loss -0.0000
+epoch 1/1 mean loss 0.8059
+/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/scripts/train_laya.py:164: RuntimeWarning: laya.train: choice calibration: the fitted temperature 5 is on the [0.5, 5] clamp
+  summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)
+
+=== Evaluation (before vs after fine-tuning on 256 held-out items from /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-l512-s42-pilot-rlcd/data/validation.jsonl) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               0.9023         0.9375         +0.0352       
+Loss                   0.2260         0.2191         -0.0069       
+ECE                    0.0397         0.0367         -0.0030       
+Brier (multi-class)    0.1354         0.1088         -0.0266       
+Brier (top-1)          0.0677         0.0544         -0.0133       
+Mean Confidence        0.8945         0.9706         +0.0761       
+-----------------------------------------------------------------
+
+Finished. Report: /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-l512-s42-pilot-rlcd/result.json

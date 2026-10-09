@@ -1,0 +1,68 @@
+{
+  "validation_count": 256,
+  "model_reloaded_from_fp16_checkpoint": true,
+  "checkpoint_weights_sha256": "8fe32e2a6414a1dbeee72dc133e5ba925b25eaed441ab49d7491dd892ada3e03",
+  "calibrated": {
+    "items": 256,
+    "loss": 0.183,
+    "accuracy": 0.9375,
+    "mean_confidence": 0.9569,
+    "ece": 0.0354,
+    "brier": 0.1039,
+    "brier_top1": 0.0519,
+    "by_type": {
+      "choice": {
+        "items": 256,
+        "loss": 0.183,
+        "accuracy": 0.9375,
+        "mean_confidence": 0.9569,
+        "ece": 0.0354,
+        "brier": 0.1039,
+        "brier_top1": 0.0519
+      }
+    }
+  },
+  "uncalibrated": {
+    "items": 256,
+    "loss": 0.2115,
+    "accuracy": 0.9375,
+    "mean_confidence": 0.9753,
+    "ece": 0.0501,
+    "brier": 0.1097,
+    "brier_top1": 0.0548,
+    "by_type": {
+      "choice": {
+        "items": 256,
+        "loss": 0.2115,
+        "accuracy": 0.9375,
+        "mean_confidence": 0.9753,
+        "ece": 0.0501,
+        "brier": 0.1097,
+        "brier_top1": 0.0548
+      }
+    }
+  },
+  "macro_f1": 0.9374847374847375,
+  "class_order": [
+    "negative",
+    "positive"
+  ],
+  "confusion_matrix_actual_rows_predicted_columns": [
+    [
+      118,
+      10
+    ],
+    [
+      6,
+      122
+    ]
+  ],
+  "correct": 240,
+  "errors": 16,
+  "error_mean_calibrated_confidence": 0.8509008819312041,
+  "errors_with_confidence_ge_0_95": 4,
+  "accuracy_matches_in_memory_report": true,
+  "same_data_and_hyperparameters_as_rlcd_except_loss": true,
+  "python_socket_guard_enabled": true,
+  "evaluation_scope": "256-row development validation subset; not official test"
+}

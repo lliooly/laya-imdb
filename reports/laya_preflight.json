@@ -1,0 +1,112 @@
+{
+  "offline_flags": true,
+  "python_socket_guard": true,
+  "model_hashes_unchanged_after_loading": true,
+  "checks": [
+    {
+      "run": "laya-smoke-rlcd",
+      "all_parameters_finite": true,
+      "parameters": 421293827,
+      "saved_reload_metrics": {
+        "items": 4,
+        "loss": 0.0,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "ece": 0.0,
+        "brier": 0.0,
+        "brier_top1": 0.0,
+        "by_type": {
+          "choice": {
+            "items": 4,
+            "loss": 0.0,
+            "accuracy": 1.0,
+            "mean_confidence": 1.0,
+            "ece": 0.0,
+            "brier": 0.0,
+            "brier_top1": 0.0
+          }
+        }
+      },
+      "in_memory_metrics": {
+        "items": 4,
+        "loss": 0.0,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "ece": 0.0,
+        "brier": 0.0,
+        "brier_top1": 0.0,
+        "by_type": {
+          "choice": {
+            "items": 4,
+            "loss": 0.0,
+            "accuracy": 1.0,
+            "mean_confidence": 1.0,
+            "ece": 0.0,
+            "brier": 0.0,
+            "brier_top1": 0.0
+          }
+        }
+      },
+      "same_predictions_on_four_smoke_rows": true,
+      "status": {
+        "state": "completed",
+        "started_utc": "2026-10-09T03:51:15.257054+00:00",
+        "elapsed_seconds": 10.847381750005297,
+        "mps_driver_allocated_bytes": 8653373440
+      }
+    },
+    {
+      "run": "laya-smoke-soft-ce",
+      "all_parameters_finite": true,
+      "parameters": 421293827,
+      "saved_reload_metrics": {
+        "items": 4,
+        "loss": 0.0001,
+        "accuracy": 1.0,
+        "mean_confidence": 0.9999,
+        "ece": 0.0001,
+        "brier": 0.0,
+        "brier_top1": 0.0,
+        "by_type": {
+          "choice": {
+            "items": 4,
+            "loss": 0.0001,
+            "accuracy": 1.0,
+            "mean_confidence": 0.9999,
+            "ece": 0.0001,
+            "brier": 0.0,
+            "brier_top1": 0.0
+          }
+        }
+      },
+      "in_memory_metrics": {
+        "items": 4,
+        "loss": 0.0001,
+        "accuracy": 1.0,
+        "mean_confidence": 0.9999,
+        "ece": 0.0001,
+        "brier": 0.0,
+        "brier_top1": 0.0,
+        "by_type": {
+          "choice": {
+            "items": 4,
+            "loss": 0.0001,
+            "accuracy": 1.0,
+            "mean_confidence": 0.9999,
+            "ece": 0.0001,
+            "brier": 0.0,
+            "brier_top1": 0.0
+          }
+        }
+      },
+      "same_predictions_on_four_smoke_rows": true,
+      "status": {
+        "state": "completed",
+        "started_utc": "2026-10-09T03:51:58.733081+00:00",
+        "elapsed_seconds": 6.0300476670017815,
+        "mps_driver_allocated_bytes": 8653340672
+      }
+    }
+  ],
+  "scope": "8 training-source rows / 4 validation rows per objective; not an accuracy estimate"
+}

@@ -1,0 +1,91 @@
+{
+  "spec": {
+    "run_id": "laya-smoke-rlcd",
+    "device": "mps",
+    "train_limit": 8,
+    "validation_limit": 4,
+    "eval_batch_size": 1,
+    "training": {
+      "epochs": 1,
+      "micro_batch": 1,
+      "grad_accum": 2,
+      "encoder_lr": 2.5e-05,
+      "head_lr": 0.0001,
+      "min_lr": 1e-06,
+      "weight_decay": 0.01,
+      "grad_clip": 1.0,
+      "loss": "rlcd",
+      "rl_samples": 4,
+      "shuffle_options": [
+        "choice"
+      ],
+      "freeze_encoder": false,
+      "calib_max": 2,
+      "calib_frac": 0.25,
+      "calib_seed": 42,
+      "seed": 42,
+      "max_len": 512,
+      "head_max_len": 192,
+      "amp": false,
+      "gradient_checkpointing": true,
+      "log_every": 1
+    }
+  },
+  "model_lock": {
+    "model_id": "convaiinnovations/laya",
+    "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "laya_version": "0.4.1",
+    "local_dir": ".cache/laya/english",
+    "sha256": {
+      "model.safetensors": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+      "rl_agent_config.json": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+      "encoder/config.json": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+      "tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "tokenizer/tokenizer_config.json": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+    }
+  },
+  "train": {
+    "source_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "typed_sha256": "c3798935a3638633c20b3e019431f138d10df0467ebb1237f6bf9b9b4739e737",
+    "count": 8,
+    "ids": [
+      "train/neg/9432_4.txt",
+      "train/pos/10752_10.txt",
+      "train/neg/5146_4.txt",
+      "train/neg/10860_4.txt",
+      "train/pos/6139_10.txt",
+      "train/pos/10940_10.txt",
+      "train/pos/3140_7.txt",
+      "train/neg/10898_3.txt"
+    ]
+  },
+  "validation": {
+    "source_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "typed_sha256": "b2015df66bf2315681f5ff7f6d13e686ab6bbc7602746e7ddceb116fcbfcc087",
+    "count": 4,
+    "ids": [
+      "train/neg/8988_1.txt",
+      "train/pos/2510_10.txt",
+      "train/neg/974_4.txt",
+      "train/pos/8124_9.txt"
+    ]
+  },
+  "question": {
+    "type": "choice",
+    "instructions": "What is the reviewer's overall opinion of this movie?",
+    "criteria": {
+      "negative": "The reviewer dislikes or criticizes the movie overall.",
+      "positive": "The reviewer likes or praises the movie overall."
+    }
+  },
+  "versions": {
+    "laya": "0.4.1",
+    "torch": "2.14.1",
+    "transformers": "4.57.6",
+    "numpy": "2.5.3"
+  },
+  "script_sha256": "912a444a2ea601af959b3883bce19285775248e45f50e9dcd778a866a2f82f52",
+  "uv_lock_sha256": "538bb8ecb5da04d28e956595f72d3155446edbdd97872fdaa5e77074ce762a43",
+  "upstream_train_sha256": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645",
+  "network": "HF offline flags and Python IPv4/IPv6 socket guard enabled"
+}

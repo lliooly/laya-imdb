@@ -1,0 +1,28 @@
+Full Laya encoder + decision head fine-tuning; objective=rlcd
+Training rows 8; validation rows 4; calibration is held out FROM TRAINING.
+Loading local model; initial validation runs before the first training step.
+eval items 4 from /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-smoke-rlcd/data/validation.jsonl (skipped {}, 0 overlapping training/calibration items)
+train items 6, calibration items 2, eval items 4 (/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-smoke-rlcd/data/validation.jsonl), skipped {}, device mps
+optimizer budget: 6 train item(s), effective batch up to 2 (micro_batch 1 x grad_accum 2), 3 optimizer updates over 1 epoch(s)
+epoch 1/1 step 1 loss 0.0793
+epoch 1/1 step 2 loss -0.1513
+epoch 1/1 step 3 loss -0.0593
+epoch 1/1 step 4 loss -0.3633
+epoch 1/1 step 5 loss 5.6157
+epoch 1/1 step 6 loss 1.5347
+epoch 1/1 mean loss 1.1093
+/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/scripts/train_laya.py:161: RuntimeWarning: laya.train: choice calibration: not fitted: 2 calibration items, fewer than 10, so the temperature stays 1.0
+  summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)
+
+=== Evaluation (before vs after fine-tuning on 4 held-out items from /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-smoke-rlcd/data/validation.jsonl) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               1.0000         1.0000         +0.0000       
+Loss                   0.0590         0.0000         -0.0590       
+ECE                    0.0552         0.0000         -0.0552       
+Brier (multi-class)    0.0136         0.0000         -0.0136       
+Brier (top-1)          0.0068         0.0000         -0.0068       
+Mean Confidence        0.9448         1.0000         +0.0552       
+-----------------------------------------------------------------
+
+Finished. Report: /Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/laya-smoke-rlcd/result.json
