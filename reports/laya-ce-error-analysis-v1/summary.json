@@ -1,0 +1,129 @@
+{
+  "created_utc": "2026-10-10T03:51:13.116652+00:00",
+  "scope": "development validation; descriptive analysis, not causal attribution",
+  "test_accessed": false,
+  "training_performed": false,
+  "weights_loaded": false,
+  "template_tokens": 45,
+  "review_budget": 466,
+  "temperature": 1.4808366298675537,
+  "groups": {
+    "all": {
+      "count": 2500,
+      "accuracy": 0.9576,
+      "correct": 2394,
+      "macro_f1": 0.9575997557745932,
+      "nll": 0.12332123804473342,
+      "brier_multiclass": 0.06754413986689961,
+      "ece_15_equal_width_top_label": 0.016782676388665575,
+      "error_mean_confidence": 0.8578392703175676,
+      "errors_with_confidence_ge_095": 32,
+      "errors": 106
+    },
+    "untruncated": {
+      "count": 2093,
+      "accuracy": 0.9608217869087434,
+      "correct": 2011,
+      "macro_f1": 0.960814264004267,
+      "nll": 0.11658802116112206,
+      "brier_multiclass": 0.06266985661325716,
+      "ece_15_equal_width_top_label": 0.014707564733789265,
+      "error_mean_confidence": 0.8568658998497936,
+      "errors_with_confidence_ge_095": 27,
+      "errors": 82
+    },
+    "truncated": {
+      "count": 407,
+      "accuracy": 0.941031941031941,
+      "correct": 383,
+      "macro_f1": 0.9405926142169025,
+      "nll": 0.15794684722753097,
+      "brier_multiclass": 0.09261017143907069,
+      "ece_15_equal_width_top_label": 0.02985813139383836,
+      "error_mean_confidence": 0.8611649527491286,
+      "errors_with_confidence_ge_095": 5,
+      "errors": 24
+    },
+    "review_tokens_1_128": {
+      "count": 301,
+      "accuracy": 0.946843853820598,
+      "correct": 285,
+      "macro_f1": 0.9464126758055902,
+      "nll": 0.1594447795550104,
+      "brier_multiclass": 0.08779235776906925,
+      "ece_15_equal_width_top_label": 0.03394706608659447,
+      "error_mean_confidence": 0.8847836507063043,
+      "errors_with_confidence_ge_095": 7,
+      "errors": 16
+    },
+    "review_tokens_129_256": {
+      "count": 1157,
+      "accuracy": 0.9645635263612792,
+      "correct": 1116,
+      "macro_f1": 0.9644803158037398,
+      "nll": 0.11265699677706016,
+      "brier_multiclass": 0.05881203882738022,
+      "ece_15_equal_width_top_label": 0.014218244010229659,
+      "error_mean_confidence": 0.8677561683429561,
+      "errors_with_confidence_ge_095": 15,
+      "errors": 41
+    },
+    "review_tokens_257_466": {
+      "count": 635,
+      "accuracy": 0.9606299212598425,
+      "correct": 610,
+      "macro_f1": 0.9606299212598425,
+      "nll": 0.10343575491828615,
+      "brier_multiclass": 0.05779052170043856,
+      "ece_15_equal_width_top_label": 0.019899620185437922,
+      "error_mean_confidence": 0.8211384989728404,
+      "errors_with_confidence_ge_095": 5,
+      "errors": 25
+    },
+    "review_tokens_467_1024": {
+      "count": 348,
+      "accuracy": 0.9425287356321839,
+      "correct": 328,
+      "macro_f1": 0.9421542553191489,
+      "nll": 0.15969780161599387,
+      "brier_multiclass": 0.09303224805906994,
+      "ece_15_equal_width_top_label": 0.03108189027434703,
+      "error_mean_confidence": 0.8772277181096069,
+      "errors_with_confidence_ge_095": 5,
+      "errors": 20
+    },
+    "review_tokens_1025_plus": {
+      "count": 59,
+      "accuracy": 0.9322033898305084,
+      "correct": 55,
+      "macro_f1": 0.9312354312354313,
+      "nll": 0.1476191840549022,
+      "brier_multiclass": 0.0901206347651767,
+      "ece_15_equal_width_top_label": 0.057085834574440136,
+      "error_mean_confidence": 0.7808511259467379,
+      "errors_with_confidence_ge_095": 0,
+      "errors": 4
+    }
+  },
+  "truncated_fraction": 0.1628,
+  "errors_truncated_fraction": 0.22641509433962265,
+  "baseline_overlap": {
+    "both_wrong": 69,
+    "baseline_correct_laya_wrong": 37
+  },
+  "target": {
+    "accuracy": 0.98,
+    "allowed_errors": 50,
+    "net_errors_to_fix": 56,
+    "idealized_truncation_only_accuracy": 0.9672,
+    "idealized_bound_note": "Assumes correcting every currently truncated error, preserving every other prediction; not a predicted gain or an upper bound on all possible training effects."
+  },
+  "source_sha256": {
+    "validation": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "predictions": "deafef202b0781f71084b9a2566b43a0d53ae630c9044e61ec7a2eb34d364980",
+    "checkpoint": "a2800be9f26d85db2a35e3ae0307c9dd730fbf82176c225c15f8ecd6bbefd5d7",
+    "tokenizer": "0b3214f8efe1327290428b84e5d344ff3f2442686c1b89fb7b42c13a79ce6779",
+    "script": "4d609fe0d00ae8f39f0e72e7e92788cc910001783dd1366c7adeb0460574e53c",
+    "upstream_train": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645"
+  }
+}

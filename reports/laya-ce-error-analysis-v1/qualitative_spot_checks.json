@@ -1,0 +1,179 @@
+{
+  "reviewer": "Codex qualitative reading; not independent human annotation",
+  "selection": "purposive examples from errors, not a random sample",
+  "reviewed_count": 16,
+  "all_error_count": 106,
+  "limitations": "Tags may overlap and are hypotheses. No population prevalence, causal diagnosis or label correction is inferred.",
+  "official_labels_modified": false,
+  "items": [
+    {
+      "sample_id": "train/pos/1230_10.txt",
+      "text_sha256": "fdbba25f08f9f6d272f4ddc79eb28d04701ca82db399542bf7a2b767c5239111",
+      "tags": [
+        "label_text_tension"
+      ],
+      "note": "多处直接批评影片并建议进入 bottom 100，与原正面标签存在张力；不能据此确认标签错误。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/3160_7.txt",
+      "text_sha256": "9c5ba3e1b3c4063e5afac2495fa4ea7387cb6634c99496dc0af37610f487701b",
+      "tags": [
+        "label_text_tension"
+      ],
+      "note": "文字直接批评节目并写出 4 out of 10，与原正面标签存在张力。评分文字来自评论本身，未使用文件名评分作特征。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/neg/3155_1.txt",
+      "text_sha256": "802a59c02c7e423e77cbd5002c47391e5cc07d348af199ba5d3b5998bab15c08",
+      "tags": [
+        "label_text_tension"
+      ],
+      "note": "很短的评论直接称 Great movie，原标签为负面；缺乏上下文，保留标签。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/neg/792_1.txt",
+      "text_sha256": "cf4799a000c540c747dbc4600e4206811b92d2458f2eaeae927c197725c92e02",
+      "tags": [
+        "possible_sarcasm"
+      ],
+      "note": "夸张描述看节目后人生骤变，可能是反讽；需要独立人工复核，不能由词面赞扬确定真实立场。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/11192_10.txt",
+      "text_sha256": "5b611effa71cc7f1802d9451d066fe8aad45c7cae76a77075c3e16df331dcc9c",
+      "tags": [
+        "camp_appreciation",
+        "mixed_sentiment"
+      ],
+      "note": "作者批评拍摄、写作和演技，却反复重看并以 camp 欣赏影片；负面词不等于整体负面。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/6372_7.txt",
+      "text_sha256": "aa990e1d2c68c3555b76f649de40cfd19e0025504e0d7360cee7ccda06d2a908",
+      "tags": [
+        "mixed_sentiment",
+        "label_text_tension"
+      ],
+      "note": "先赞美画面，随后批评叙事；整体文本含明显批评，正面标签的评价边界需要复核。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/5506_10.txt",
+      "text_sha256": "083b48f2b65298a5a9a2d948b58faac3cad2df2d1535a329fafd2fe6b0562d7d",
+      "tags": [
+        "negation_scope",
+        "opinion_target"
+      ],
+      "note": "作者反驳他人对纪录片的差评并赞叹拍摄过程；他人差评与作者立场需要分开。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/neg/11233_2.txt",
+      "text_sha256": "c3bbb8be0fbb6a5f3fdc97b7bb73bb8623820457c1ec9b47ae407f8229998b19",
+      "tags": [
+        "possible_sarcasm"
+      ],
+      "note": "以仅值 98 cents、99 cents 就要争辩来表达低价值评价，词面 worth 不代表正面。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/2435_8.txt",
+      "text_sha256": "0497966bd7427faca52fcaa4e0bff5a5fb19653e729e0f1327cceaebf370bef0",
+      "tags": [
+        "emotion_vs_evaluation",
+        "mixed_sentiment"
+      ],
+      "note": "悲伤、压抑来自作品内容和观影情绪，同时承认经典；不能直接等同于否定作品。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/neg/2291_4.txt",
+      "text_sha256": "e9d429315b9f9b184f1311ba9caf0be7614aa1ce7a41ac044bcfe7fa847af63b",
+      "tags": [
+        "omitted_final_judgment",
+        "opinion_target"
+      ],
+      "note": "被丢弃的后文批评影片回避传主核心故事。可检验尾部信息的作用，但尚未做替换输入的反事实推理。",
+      "truncated": true,
+      "review_scope": "opening, ending and full omitted suffix"
+    },
+    {
+      "sample_id": "train/pos/12230_9.txt",
+      "text_sha256": "8ce56d751489abd3c40079417fd51ad0fdb7f1bc5afec7b277d0748e86a10d0b",
+      "tags": [
+        "omitted_final_judgment",
+        "camp_appreciation"
+      ],
+      "note": "被丢弃的后文明确写出 brainless 却 a lot of fun，是首尾保留的候选证据；未证明保留后必然预测正确。",
+      "truncated": true,
+      "review_scope": "opening, ending and full omitted suffix"
+    },
+    {
+      "sample_id": "train/pos/655_10.txt",
+      "text_sha256": "4224dc6d8fe473dbac009d25531fba2b307eabaca793d19c346468f260c01236",
+      "tags": [
+        "omitted_final_judgment",
+        "mixed_sentiment"
+      ],
+      "note": "被丢弃的后文给出有条件的欣赏和推荐，存在前面批评、后面赞赏的结构。",
+      "truncated": true,
+      "review_scope": "opening, ending and full omitted suffix"
+    },
+    {
+      "sample_id": "train/neg/10566_3.txt",
+      "text_sha256": "f8ac26149667a8c128558dadbe169f2503eeae22d6addd0b15986a59957d27dc",
+      "tags": [
+        "opinion_target"
+      ],
+      "note": "作者欣赏 Babylon 5 系列，但明确批评先导电影；可能混淆不同评价对象，尚未定位模型机制。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/11727_7.txt",
+      "text_sha256": "bf2a00d03e496094ade554cb0b9dd01eb62b43ac5d30d6666acbdee3d7416725",
+      "tags": [
+        "camp_appreciation",
+        "mixed_sentiment"
+      ],
+      "note": "短评论明确表示电影 fun，同时说明不是 fine cinema；无截断，说明长度策略无法直接解释该错误。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/neg/4632_4.txt",
+      "text_sha256": "a3f7b82cea975c7c52be08e2f9943cd5d81dfd793a1d8c90ccf15d9bd234b300",
+      "tags": [
+        "mixed_sentiment",
+        "opinion_target"
+      ],
+      "note": "称赞演员表现，但结尾仍批评影片过长、节奏和戏剧结构；需要区分局部赞美与整体评价。",
+      "truncated": false,
+      "review_scope": "full text"
+    },
+    {
+      "sample_id": "train/pos/3033_8.txt",
+      "text_sha256": "c142745aba24e7298bae29e0fef5fbf43e4e5ea260d14030b46e1b07138ac0d0",
+      "tags": [
+        "contrast_target"
+      ],
+      "note": "批评当代 Hollywood 作品以赞美当前老电影；完整短评论未截断，可能涉及比较对象混淆。",
+      "truncated": false,
+      "review_scope": "full text"
+    }
+  ]
+}

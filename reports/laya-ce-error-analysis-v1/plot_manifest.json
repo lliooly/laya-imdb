@@ -1,0 +1,7 @@
+{
+  "summary_sha256": "933bcd47c4ebf1e7d5a0df46a7403565713ad615f5289cea66aa1d79ec4960d6",
+  "script_sha256": "70cce412a678d476fb66f34e2af87f402ba4c803c8e6e29a9977bdd71b08944e",
+  "plot_sha256": "a67478047b03cd831f310134dd2f7eb54b8d90fcf0d42d9fa157eed9e4ebc82a",
+  "confidence": "original checkpoint temperature, not comparison-analysis temperature",
+  "scope": "descriptive development strata; not a causal length comparison"
+}
