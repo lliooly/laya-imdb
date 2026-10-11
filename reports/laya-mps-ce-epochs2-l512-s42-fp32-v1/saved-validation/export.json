@@ -1,0 +1,21 @@
+{
+  "run_id": "laya-mps-ce-epochs2-l512-s42-fp32-v1",
+  "checkpoint_sha256": "e3fde5c96111b478ab19067b6a11291c0a4577d5c1754f898eccb3f445adf92a",
+  "total_parameters": 421293827,
+  "trainable_parameters": 421293827,
+  "encoder_parameters": 394781696,
+  "head_parameters": 26512131,
+  "action_head_parameters_not_used_by_classification_loss": 263938,
+  "saved_weights_dtype": "fp16; upstream loads as fp32",
+  "inference_dtype": "float32",
+  "batch_size": 1,
+  "head_layers": 2,
+  "hidden_size": 1024,
+  "head_attention_heads": 16,
+  "native_temperature": 1.8161842823028564,
+  "head_token_length": 45,
+  "review_token_budget": 466,
+  "validation_accuracy": 0.9696,
+  "elapsed_export_seconds": 131.5541977499961,
+  "predictions_sha256": "8e0dbb239a73e2cfbfc6c4b0ac48c1cf2e17e1d9e5be2d9bd3f17ebe33bce06c"
+}
