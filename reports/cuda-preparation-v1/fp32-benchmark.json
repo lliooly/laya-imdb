@@ -1,0 +1,98 @@
+{
+  "test_accessed": false,
+  "checkpoint_saved": false,
+  "dtype": "float32",
+  "tf32": false,
+  "gradient_checkpointing": true,
+  "optimizer_lr": 0.0,
+  "parameters_modified": false,
+  "fp32_weights_digest_before": "efa4166abee28f93e57f0d97e0261cb46802d511521fe79572e000cf8423bb4d",
+  "fp32_weights_digest_after": "efa4166abee28f93e57f0d97e0261cb46802d511521fe79572e000cf8423bb4d",
+  "digest_scope": "Named parameters, signed zeros normalized; excludes runtime buffers",
+  "timing_scope": "Synchronized forward/backward/clip/AdamW with preloaded GPU inputs; excludes tokenization, checkpoint IO and validation. Zero LR benchmark is not an accuracy experiment.",
+  "gpu": "NVIDIA RTX 6000D",
+  "source_sha256": "b0d21812dbdef5bfbcf75852731790755a448f89fb4104d68e316b688e0757c3",
+  "train_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+  "uv_lock_sha256": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe",
+  "versions": {
+    "torch": "2.14.1",
+    "laya": "0.4.1",
+    "transformers": "4.57.6"
+  },
+  "elapsed_seconds": 9.554035336244851,
+  "results": [
+    {
+      "micro_batch": 1,
+      "sequence_length": 512,
+      "sample_ids": [
+        "train/neg/10000_4.txt"
+      ],
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "seconds": [
+        0.12168025597929955,
+        0.12010924704372883,
+        0.12112149596214294,
+        0.12281208485364914,
+        0.12107683764770627
+      ],
+      "median_seconds": 0.12112149596214294,
+      "reviews_per_second": 8.25617279621905,
+      "estimated_gradient_train_seconds_22100": 2676.785060763359,
+      "peak_allocated_bytes": 8490098688,
+      "peak_reserved_bytes": 9183428608
+    },
+    {
+      "micro_batch": 4,
+      "sequence_length": 512,
+      "sample_ids": [
+        "train/neg/10000_4.txt",
+        "train/neg/10003_1.txt",
+        "train/neg/10019_3.txt",
+        "train/neg/10022_4.txt"
+      ],
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "seconds": [
+        0.19667170802131295,
+        0.19756075600162148,
+        0.19700002809986472,
+        0.19766399404034019,
+        0.1968305790796876
+      ],
+      "median_seconds": 0.19700002809986472,
+      "reviews_per_second": 20.304565631697727,
+      "estimated_gradient_train_seconds_22100": 1088.4251552517526,
+      "peak_allocated_bytes": 8501395456,
+      "peak_reserved_bytes": 9281994752
+    },
+    {
+      "micro_batch": 8,
+      "sequence_length": 512,
+      "sample_ids": [
+        "train/neg/10000_4.txt",
+        "train/neg/10003_1.txt",
+        "train/neg/10019_3.txt",
+        "train/neg/10022_4.txt",
+        "train/neg/10025_1.txt",
+        "train/neg/10030_1.txt",
+        "train/neg/10041_1.txt",
+        "train/neg/10043_1.txt"
+      ],
+      "warmup_steps": 2,
+      "measured_steps": 5,
+      "seconds": [
+        0.3412265731021762,
+        0.34068258106708527,
+        0.34004984190687537,
+        0.3397057158872485,
+        0.33984273998066783
+      ],
+      "median_seconds": 0.34004984190687537,
+      "reviews_per_second": 23.525963003361273,
+      "estimated_gradient_train_seconds_22100": 939.3876882677432,
+      "peak_allocated_bytes": 8490418176,
+      "peak_reserved_bytes": 9032433664
+    }
+  ]
+}

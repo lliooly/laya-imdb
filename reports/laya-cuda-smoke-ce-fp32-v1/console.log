@@ -1,0 +1,7 @@
+Full Laya encoder + decision head fine-tuning; objective=soft-ce
+Training rows 8; validation rows 4; calibration is held out FROM TRAINING.
+Loading local model; initial validation runs before the first training step.
+eval items 4 from /root/autodl-tmp/End-IMDB/reports/laya-cuda-smoke-ce-fp32-v1/data/validation.jsonl (skipped {}, 0 overlapping training/calibration items)
+train items 6, calibration items 2, eval items 4 (/root/autodl-tmp/End-IMDB/reports/laya-cuda-smoke-ce-fp32-v1/data/validation.jsonl), skipped {}, device cuda
+optimizer budget: 6 train item(s), effective batch up to 2 (micro_batch 1 x grad_accum 2), 3 optimizer updates over 1 epoch(s)
+epoch 1/1 step 1 loss 0.0027

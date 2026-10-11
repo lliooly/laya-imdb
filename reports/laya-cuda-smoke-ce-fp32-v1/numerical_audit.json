@@ -1,0 +1,24 @@
+{
+  "state": "failed",
+  "test_accessed": false,
+  "optimizer_steps": [],
+  "gradient_windows": [
+    {
+      "norm_before_clipping": 0.2505437731742859,
+      "finite": true
+    }
+  ],
+  "losses": [
+    0.0026700582820922136,
+    0.002439976902678609
+  ],
+  "scheduler_steps": 0,
+  "checkpoint_reload": null,
+  "instrumentation_changes_training_math": false,
+  "source_sha256": "1855e3c0076f87d65912d5f650a651342f8a10c46c12d55af229dc263ae77730",
+  "passed": false,
+  "error": "AcceleratorError(\"CUDA error: device-side assert triggered\\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\n\")",
+  "elapsed_seconds_with_audit": 15.42175120813772,
+  "peak_allocated_bytes": 4275563008,
+  "peak_reserved_bytes": 4508876800
+}

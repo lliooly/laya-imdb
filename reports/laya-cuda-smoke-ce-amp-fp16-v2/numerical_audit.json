@@ -1,0 +1,47 @@
+{
+  "state": "failed",
+  "test_accessed": false,
+  "optimizer_steps": [
+    {
+      "parameters_finite": true,
+      "sample_max_abs_update_by_group": [
+        2.5212764739990234e-05,
+        0.00010144710540771484
+      ]
+    },
+    {
+      "parameters_finite": true,
+      "sample_max_abs_update_by_group": [
+        1.9073486328125e-05,
+        7.191812619566917e-05
+      ]
+    }
+  ],
+  "gradient_windows": [
+    {
+      "norm_before_clipping": 0.2364281266927719,
+      "finite": true
+    },
+    {
+      "norm_before_clipping": 0.008651244454085827,
+      "finite": true
+    }
+  ],
+  "losses": [
+    0.0027831175830215216,
+    0.0020609109196811914,
+    5.6265202147187665e-05,
+    0.00010227633902104571,
+    5.397118091583252,
+    1.478665828704834
+  ],
+  "scheduler_steps": 2,
+  "checkpoint_reload": null,
+  "instrumentation_changes_training_math": false,
+  "source_sha256": "89271e2d08a765185ae5a8ad939cae9570fcf9ebd96af26213e75ac6b2642261",
+  "passed": false,
+  "error": "RuntimeError('The total norm of order 2.0 for gradients from `parameters` is non-finite, so it cannot be clipped. To disable this error and scale the gradients by the non-finite norm anyway, set `error_if_nonfinite=False`')",
+  "elapsed_seconds_with_audit": 6.360080332029611,
+  "peak_allocated_bytes": 8386356224,
+  "peak_reserved_bytes": 9055502336
+}

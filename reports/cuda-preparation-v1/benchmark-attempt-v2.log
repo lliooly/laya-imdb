@@ -1,0 +1,9 @@
+{"micro_batch": 1, "sequence_length": 512, "sample_ids": ["train/neg/10000_4.txt"], "warmup_steps": 2, "measured_steps": 5, "seconds": [0.11953574884682894, 0.11808004835620522, 0.1175259011797607, 0.11881355615332723, 0.11823200900107622], "median_seconds": 0.11823200900107622, "reviews_per_second": 8.457946443174263, "estimated_gradient_train_seconds_22100": 2612.9273989237845, "peak_allocated_bytes": 8490098688, "peak_reserved_bytes": 9183428608}
+{"micro_batch": 4, "sequence_length": 512, "sample_ids": ["train/neg/10000_4.txt", "train/neg/10003_1.txt", "train/neg/10019_3.txt", "train/neg/10022_4.txt"], "warmup_steps": 2, "measured_steps": 5, "seconds": [0.1985039678402245, 0.1955574918538332, 0.1992473448626697, 0.19579220097512007, 0.19559353403747082], "median_seconds": 0.19579220097512007, "reviews_per_second": 20.429822945339343, "estimated_gradient_train_seconds_22100": 1081.7519103875384, "peak_allocated_bytes": 8497201152, "peak_reserved_bytes": 9179234304}
+{"micro_batch": 8, "sequence_length": 512, "sample_ids": ["train/neg/10000_4.txt", "train/neg/10003_1.txt", "train/neg/10019_3.txt", "train/neg/10022_4.txt", "train/neg/10025_1.txt", "train/neg/10030_1.txt", "train/neg/10041_1.txt", "train/neg/10043_1.txt"], "warmup_steps": 2, "measured_steps": 5, "seconds": [0.3401450142264366, 0.3395389895886183, 0.3407367868348956, 0.34030980011448264, 0.3402682482264936], "median_seconds": 0.3402682482264936, "reviews_per_second": 23.510862508320024, "estimated_gradient_train_seconds_22100": 939.9910357256886, "peak_allocated_bytes": 8490418176, "peak_reserved_bytes": 9032433664}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/End-IMDB/scripts/benchmark_laya_cuda.py", line 119, in <module>
+    main()
+  File "/root/autodl-tmp/End-IMDB/scripts/benchmark_laya_cuda.py", line 105, in main
+    raise ValueError('Zero LR benchmark unexpectedly modified model weights')
+ValueError: Zero LR benchmark unexpectedly modified model weights

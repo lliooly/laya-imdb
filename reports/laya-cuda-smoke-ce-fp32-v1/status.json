@@ -1,0 +1,6 @@
+{
+  "state": "failed",
+  "started_utc": "2026-10-10T07:26:38.491365+00:00",
+  "error": "AcceleratorError(\"CUDA error: device-side assert triggered\\nSearch for `cudaErrorAssert' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\n\")",
+  "elapsed_seconds": 14.627537917811424
+}

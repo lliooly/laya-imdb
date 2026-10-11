@@ -1,0 +1,8 @@
+{
+  "source_sha256": "427e39037ab13b8c7a58b514f19251f40f6a1ebbc9b3f273643f96c12ef0a164",
+  "script_sha256": "422dfd3bce56246c7adf7e36a945dc547ec45ccc01d333b521dfd89dc4e8af7a",
+  "plots": {
+    "fp32-training-benchmark.png": "4d1bdf35245c03a0afd6fe14aaceff783093e08c4aaa9ad5adefcbc54fa83c15",
+    "fp32-training-benchmark.pdf": "6ede3cf31105fca73d1b90e4e4157896364337a93a0b1dd3679732252d2cd14d"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "state": "completed",
+  "test_accessed": false,
+  "optimizer_steps": [
+    {
+      "parameters_finite": true,
+      "sample_max_abs_update_by_group": [
+        2.5212764739990234e-05,
+        0.00010156631469726562
+      ]
+    },
+    {
+      "parameters_finite": true,
+      "sample_max_abs_update_by_group": [
+        1.874566078186035e-05,
+        7.116957567632198e-05
+      ]
+    },
+    {
+      "parameters_finite": true,
+      "sample_max_abs_update_by_group": [
+        6.616115570068359e-06,
+        2.2470951080322266e-05
+      ]
+    }
+  ],
+  "gradient_windows": [
+    {
+      "norm_before_clipping": 0.2505437731742859,
+      "finite": true
+    },
+    {
+      "norm_before_clipping": 0.007527990732342005,
+      "finite": true
+    },
+    {
+      "norm_before_clipping": 370.6007385253906,
+      "finite": true
+    }
+  ],
+  "losses": [
+    0.0026700582820922136,
+    0.002439976902678609,
+    5.5549986427649856e-05,
+    8.868777513271198e-05,
+    5.259735584259033,
+    1.6175466775894165
+  ],
+  "scheduler_steps": 3,
+  "checkpoint_reload": {
+    "weights_match_fp16_representation": true,
+    "validation_items": 4,
+    "predictions_match": true,
+    "max_abs_logit_delta_fp32_vs_saved_fp16": 0.1277141571044922,
+    "checkpoint_sha256": "648c71ff3bf9d976cea21328cd9d48cd16247412ac2868ad54817f3cf75bfc45",
+    "config_max_len": 512,
+    "validation_predictions": [
+      {
+        "sample_id": "train/neg/8988_1.txt",
+        "input_sha256": "5b784ae958d64d3d8795c8654a8b9f1f430c9c79729b17437215d17d2c5809a3",
+        "logits": [
+          9.160083770751953,
+          -4.476243019104004
+        ],
+        "probabilities": [
+          0.9999988037608761,
+          1.1962391238442706e-06
+        ],
+        "pred_label": 0
+      },
+      {
+        "sample_id": "train/pos/2510_10.txt",
+        "input_sha256": "13521c54b85dbea4650d8e2bdf2c672dc98fb4f99d2d25601107a0f12d95ed94",
+        "logits": [
+          -4.563640594482422,
+          5.797321319580078
+        ],
+        "probabilities": [
+          3.1643001433659494e-05,
+          0.9999683569985665
+        ],
+        "pred_label": 1
+      },
+      {
+        "sample_id": "train/neg/974_4.txt",
+        "input_sha256": "88c59713cd1152c3a99c57b726d72217803fef99352ef58cdb5669cee7c68fa5",
+        "logits": [
+          6.127974987030029,
+          -4.4058122634887695
+        ],
+        "probabilities": [
+          0.9999733790982797,
+          2.6620901720453537e-05
+        ],
+        "pred_label": 0
+      },
+      {
+        "sample_id": "train/pos/8124_9.txt",
+        "input_sha256": "911aa6e13ef81855742cd1cce6c0ce8156b281374be6ef8aaadbe398e1cbe36d",
+        "logits": [
+          -2.5164761543273926,
+          5.936391353607178
+        ],
+        "probabilities": [
+          0.00021324245075687677,
+          0.9997867575492432
+        ],
+        "pred_label": 1
+      }
+    ]
+  },
+  "instrumentation_changes_training_math": false,
+  "source_sha256": "89271e2d08a765185ae5a8ad939cae9570fcf9ebd96af26213e75ac6b2642261",
+  "expected_optimizer_steps": 3,
+  "passed": true,
+  "elapsed_seconds_with_audit": 9.35386514198035,
+  "peak_allocated_bytes": 8386276864,
+  "peak_reserved_bytes": 9065988096
+}

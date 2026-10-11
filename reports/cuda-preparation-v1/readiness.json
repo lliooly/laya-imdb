@@ -1,0 +1,60 @@
+{
+  "status": "local_inputs_verified",
+  "test_accessed": false,
+  "training_performed": false,
+  "weights_loaded": false,
+  "input_hash_checks": {
+    ".cache/laya/english/model.safetensors": true,
+    ".cache/laya/english/rl_agent_config.json": true,
+    ".cache/laya/english/encoder/config.json": true,
+    ".cache/laya/english/tokenizer/tokenizer.json": true,
+    ".cache/laya/english/tokenizer/tokenizer_config.json": true,
+    "data/processed/train.jsonl": true,
+    "data/processed/validation.jsonl": true
+  },
+  "configs": {
+    "laya-cuda-smoke-ce-amp-fp16.json": {
+      "config_valid": true,
+      "run_id": "laya-cuda-smoke-ce-amp-fp16-v1",
+      "run_directory_available": true,
+      "train_limit": 8,
+      "validation_limit": 4,
+      "amp": true
+    },
+    "laya-cuda-smoke-ce-fp32.json": {
+      "config_valid": true,
+      "run_id": "laya-cuda-smoke-ce-fp32-v1",
+      "run_directory_available": true,
+      "train_limit": 8,
+      "validation_limit": 4,
+      "amp": false
+    }
+  },
+  "versions": {
+    "laya": "0.4.1",
+    "torch": "2.14.1",
+    "transformers": "4.57.6",
+    "tokenizers": "0.22.2",
+    "numpy": "2.5.3"
+  },
+  "torch_cuda_build": "13.0",
+  "cuda_available": true,
+  "devices": [
+    {
+      "index": 0,
+      "name": "NVIDIA RTX 6000D",
+      "total_memory_bytes": 89173131264
+    }
+  ],
+  "upstream_amp": {
+    "forward_explicit_float16": true,
+    "note": "Installed trainer explicitly requests FP16 autocast; checkpoint amp_dtype is not the training dtype selector."
+  },
+  "cuda_functional_validation": "pending real CUDA forward/backward/save/reload and Mac parity",
+  "cuda_training_ready": false,
+  "source_sha256": {
+    "upstream_train": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645",
+    "train_adapter": "8b171984b8aa3a5cdeb4fdb11349ed838ab924295e88b9d0f084d9c2a2bb27ee",
+    "uv_lock": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe"
+  }
+}

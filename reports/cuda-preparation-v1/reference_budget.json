@@ -1,0 +1,10 @@
+{
+  "run_id": "laya-cuda-reference-ce-l512-s42-fp32-v1",
+  "authorized_route": "Laya-CE first; total project cap 250 CNY",
+  "stage": "CE same-platform reference",
+  "hourly_price_cny_from_user_screenshot": 6.46,
+  "max_runtime_seconds": 2700,
+  "estimated_runtime_cost_cap_cny": 4.845,
+  "note": "Estimate excludes prior setup, later file transfer/storage and platform billing differences; no official test access",
+  "recorded_utc": "2026-10-10T07:44:21.228988+00:00"
+}

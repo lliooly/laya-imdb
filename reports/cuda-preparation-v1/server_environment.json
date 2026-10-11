@@ -1,0 +1,17 @@
+{
+  "recorded_utc": "2026-10-10T07:42:20.380470+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+  "driver": "NVIDIA RTX 6000D, 595.71.05, 85651 MiB",
+  "initial_transfer_verified_files": 77,
+  "installation": "uv export --locked; uv pip sync --require-hashes with Tencent mirror; uv sync --offline --locked passed",
+  "official_test_text_transferred": false,
+  "source_sha256": {
+    "scripts/train_laya.py": "433890bb56b6d7b3e8f47c1c15c68129f911f00124c3714a55f7c4e93e7933a2",
+    "scripts/cuda_numerics.py": "523d455d6112e2f36ca719bc95e2b7b2b2d00dd6170981b4947a2af48d4f3c08",
+    "scripts/audit_cuda_training.py": "89271e2d08a765185ae5a8ad939cae9570fcf9ebd96af26213e75ac6b2642261",
+    "scripts/benchmark_laya_cuda.py": "b0d21812dbdef5bfbcf75852731790755a448f89fb4104d68e316b688e0757c3",
+    "configs/laya-cuda-reference-ce-fp32.json": "f3ee0d2b25fb2143ae60722f760983b5ff77f6a64f6752c8a89d69bc92b1e671",
+    "uv.lock": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe"
+  }
+}
