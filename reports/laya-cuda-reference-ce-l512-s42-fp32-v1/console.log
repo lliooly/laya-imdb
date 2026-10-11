@@ -1,0 +1,47 @@
+Full Laya encoder + decision head fine-tuning; objective=soft-ce
+Training rows 22500; validation rows 2500; calibration is held out FROM TRAINING.
+Loading local model; initial validation runs before the first training step.
+eval items 2500 from /root/autodl-tmp/End-IMDB/reports/laya-cuda-reference-ce-l512-s42-fp32-v1/data/validation.jsonl (skipped {}, 0 overlapping training/calibration items)
+train items 22100, calibration items 400, eval items 2500 (/root/autodl-tmp/End-IMDB/reports/laya-cuda-reference-ce-l512-s42-fp32-v1/data/validation.jsonl), skipped {}, device cuda
+optimizer budget: 22100 train item(s), effective batch up to 8 (micro_batch 8 x grad_accum 1), 2763 optimizer updates over 1 epoch(s)
+epoch 1/1 step 100 loss 0.0264
+epoch 1/1 step 200 loss 0.0096
+epoch 1/1 step 300 loss 0.0068
+epoch 1/1 step 400 loss 0.8693
+epoch 1/1 step 500 loss 0.4297
+epoch 1/1 step 600 loss 0.3601
+epoch 1/1 step 700 loss 0.0504
+epoch 1/1 step 800 loss 0.1469
+epoch 1/1 step 900 loss 0.0279
+epoch 1/1 step 1000 loss 1.1279
+epoch 1/1 step 1100 loss 0.7022
+epoch 1/1 step 1200 loss 0.8959
+epoch 1/1 step 1300 loss 0.0047
+epoch 1/1 step 1400 loss 0.1555
+epoch 1/1 step 1500 loss 0.0016
+epoch 1/1 step 1600 loss 0.3771
+epoch 1/1 step 1700 loss 0.1438
+epoch 1/1 step 1800 loss 0.3199
+epoch 1/1 step 1900 loss 0.0011
+epoch 1/1 step 2000 loss 0.0007
+epoch 1/1 step 2100 loss 0.0011
+epoch 1/1 step 2200 loss 0.0020
+epoch 1/1 step 2300 loss 0.0018
+epoch 1/1 step 2400 loss 0.5197
+epoch 1/1 step 2500 loss 0.0118
+epoch 1/1 step 2600 loss 0.0585
+epoch 1/1 step 2700 loss 0.0038
+epoch 1/1 mean loss 0.2034
+
+=== Evaluation (before vs after fine-tuning on 2500 held-out items from /root/autodl-tmp/End-IMDB/reports/laya-cuda-reference-ce-l512-s42-fp32-v1/data/validation.jsonl) ===
+Metric                 Before         After          Delta         
+-----------------------------------------------------------------
+Accuracy               0.9232         0.9628         +0.0396       
+Loss                   0.2025         0.1128         -0.0897       
+ECE                    0.0271         0.0153         -0.0118       
+Brier (multi-class)    0.1159         0.0618         -0.0541       
+Brier (top-1)          0.0580         0.0309         -0.0271       
+Mean Confidence        0.9049         0.9769         +0.0720       
+-----------------------------------------------------------------
+
+Finished. Report: /root/autodl-tmp/End-IMDB/reports/laya-cuda-reference-ce-l512-s42-fp32-v1/result.json
