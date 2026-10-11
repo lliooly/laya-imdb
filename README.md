@@ -2,9 +2,11 @@
 
 基于 Laya 的 IMDB 电影评论情感分类项目：使用 **PyTorch 微调**，在 **Apple Silicon Mac 上通过 MLX FP16 推理**，研究分类准确率、概率可信度与部署成本之间的关系。
 
-这是 NLP 课程大作业的研究与工程仓库。当前已完成 Mac 微调和同权重推理后端对照；下一阶段计划迁移到 CUDA 训练，优化训练方法与长评论处理，并交付最高准确率版和高效单模型版。
+这是 NLP 课程大作业的研究与工程仓库。当前已完成 Mac 微调、首轮完整 CUDA 参照和同权重推理后端对照；下一阶段继续优化 Laya-CE，再将有效方法迁移到 ModernBERT-base 和 Laya-RLCD，分别重新训练和对照，按开发验证 Accuracy 选择最终方案，保留全部实验结果用于论文图表。
 
-> 官方测试集尚未正式评估。98% 是后续研究目标，不是已取得的成绩。CUDA、混合精度训练和最终集成方案尚未完成验证。
+> 官方测试集尚未正式评估。98% 是后续研究目标，不是已取得的成绩。当前最佳开发验证 Accuracy 为 Mac 两轮 CE 的 96.96%；MLX FP16 的全部验证标签一致，但个别概率差超过 1%，严格概率核对未通过。AMP FP16 未通过训练准入。
+
+目标是实际分类 Accuracy 尽量达到 98%；IMDB 成绩与真实应用成绩分别报告。98% 不作为方法迁移的硬性门槛，达到目标或用完 Laya-CE 阶段预算后冻结最佳方法继续比较。方案冻结后再进行官方测试；实际应用效果需要另用贴近场景的独立标注数据验证。
 
 ## 当前结果
 
@@ -15,6 +17,10 @@
 | ModernBERT-base / MLX | 94.64% | 历史完整基线，256 token，3 轮训练 |
 | Laya-CE / PyTorch MPS FP32 | 95.76% | 512 token 总预算，1 轮训练 |
 | 同一 Laya-CE / MLX FP16 | 95.76% | 与 MPS FP32 的验证预测标签全部一致 |
+| Laya-CE CUDA 参照 / PyTorch FP32 | 96.28% | 512 token，1 轮，单 seed；平台和 micro-batch 分组不同 |
+| 同一 CUDA 参照 / MLX FP16 | 96.28% | 2,500 条输入与 CUDA 一致，预测标签全部一致 |
+| Laya-CE Mac 两轮 / MPS FP32 | **96.96%** | 当前最佳候选，原学习率；单 seed |
+| Laya-CE Mac 两轮、学习率 ×0.6 / MPS FP32 | 96.12% | 退步结果保留；两组 MLX FP16 分类标签均一致 |
 
 Laya 约 4.21 亿参数，ModernBERT-base 约 1.49 亿参数。两套训练配置的规模、文本预算、训练与校准设置不同，不能将准确率差异单独归因于 Decision Head。
 
@@ -22,14 +28,18 @@ Laya 约 4.21 亿参数，ModernBERT-base 约 1.49 亿参数。两套训练配�
 
 - [模型比较与证据边界](reports/model-comparison/REPORT.md)
 - [同权重推理后端对照](reports/laya-backend-comparison/REPORT.md)
-- [新路线与 14 天计划（讨论稿）](docs/laya-revised-roadmap.md)
+- [已确认的优化、方法迁移与 14 天计划](docs/laya-revised-roadmap.md)
+- [CUDA 验证、FP16 问题与训练测速](reports/cuda-preparation-v1/REPORT.md)
+- [完整 CUDA 参照与 Mac 核对](reports/laya-cuda-reference-ce-l512-s42-fp32-v1/REPORT.md)
+- [CE 对照计划与 Mac 执行结果](docs/laya-ce-next-experiments.md)
+- [Mac 两轮 CE 对照、图表与部署概率差](reports/laya-mac-ce-comparison-v1/REPORT.md)
 
 ## 环境与依赖
 
 - Python 3.12；依赖由 `uv` 管理，版本锁定在 `uv.lock`。
 - Mac 推理：Apple Silicon 与 Metal，使用 `laya-mlx` extra。
 - 当前已验证的 Laya 训练：PyTorch / MPS，使用 `laya` extra。
-- CUDA 训练：计划使用 RTX 4090，适配与实测尚待完成。
+- CUDA 训练：RTX 6000D / FP32 完整参照已验证；配置见 `configs/laya-cuda-reference-ce-fp32.json`。
 - Rust tokenizer 是可选工程工具；仅复现相关实验时需要 Rust/Cargo。
 
 克隆仓库后进入项目根目录，以下命令均在根目录执行：
@@ -97,7 +107,7 @@ uv run --offline --locked --extra laya python scripts/train_laya.py \
 运行现有 CPU 单元测试，无需启动训练或读取官方测试集：
 
 ```bash
-uv run --offline --locked python -m unittest discover -s tests -v
+uv run --offline --locked --extra laya python -m unittest discover -s tests -v
 ```
 
 GPU 数值核对与性能验证需要可访问 Metal/CUDA 的设备；普通单元测试通过不代表 GPU 迁移已验证。
