@@ -8,6 +8,7 @@ for name in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_DATASETS_OFFLINE",
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import argparse
+from contextlib import nullcontext
 from datetime import datetime, timezone
 from functools import partial
 from importlib.metadata import version
@@ -75,10 +76,23 @@ def block_network():
     socket.socket.sendto = sendto
 
 
+def require_device(torch, device):
+    """Check the requested accelerator before claiming preflight success."""
+    resolved = torch.device(device)
+    if resolved.type == 'mps' and not torch.backends.mps.is_available():
+        raise RuntimeError('Apple MPS unavailable. Run from macOS Terminal, not the restricted sandbox.')
+    if resolved.type == 'cuda':
+        if not torch.cuda.is_available():
+            raise RuntimeError('CUDA unavailable; check the NVIDIA driver and CUDA-enabled PyTorch installation.')
+        index = resolved.index if resolved.index is not None else torch.cuda.current_device()
+        if index >= torch.cuda.device_count():
+            raise RuntimeError(f'CUDA device index {index} is unavailable')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/laya-full-ce.json")
-    parser.add_argument("--check-only", action="store_true", help="Check hashes/dependencies/MPS without training")
+    parser.add_argument("--check-only", action="store_true", help="Check hashes, config, dependencies and requested device without training")
     parser.add_argument("--smoke-test", action="store_true", help="8 train / 4 validation rows; real full-model updates")
     args = parser.parse_args()
     spec = json.loads((ROOT / args.config).read_text())
@@ -94,8 +108,8 @@ def main():
     import laya.train as upstream
 
     device = spec["device"]
-    if device == "mps" and not torch.backends.mps.is_available():
-        raise RuntimeError("Apple MPS unavailable. Run from macOS Terminal, not the restricted sandbox.")
+    require_device(torch, device)
+    upstream.TrainConfig(**spec['training']).validate()
     manifest = json.loads((ROOT / "reports/split_manifest.json").read_text())
     for split in ("train", "validation"):
         if file_digest(ROOT / "data/processed" / (split + ".jsonl")) != manifest["jsonl_sha256"][split]:
@@ -129,6 +143,8 @@ def main():
                "script_sha256": file_digest(Path(__file__)),
                "uv_lock_sha256": file_digest(ROOT / "uv.lock"),
                "upstream_train_sha256": file_digest(Path(upstream.__file__)),
+               "cuda_fail_fast_guards": device.startswith('cuda'),
+               "cuda_guard_sha256": (file_digest(ROOT / 'scripts/cuda_numerics.py') if device.startswith('cuda') else None),
                "network": "HF offline flags and Python IPv4/IPv6 socket guard enabled"})
     # Upstream's fixed eval batch=16 can consume too much MPS memory. Only its
     # evaluation batch size is adapted; training/loss/checkpoint code stays upstream.
@@ -161,7 +177,9 @@ def main():
             print("Training rows %d; validation rows %d; calibration is held out FROM TRAINING."
                   % (train_info["count"], validation_info["count"]), flush=True)
             print("Loading local model; initial validation runs before the first training step.", flush=True)
-            summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)
+            from cuda_numerics import guard_training
+            with guard_training(torch, upstream) if device.startswith('cuda') else nullcontext():
+                summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)
             status.update(state="completed", elapsed_seconds=time.monotonic() - started,
                           mps_driver_allocated_bytes=(torch.mps.driver_allocated_memory() if device == "mps" else None))
             write_json(report_dir / "result.json", summary)
