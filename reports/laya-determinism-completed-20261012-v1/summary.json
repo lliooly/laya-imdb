@@ -1,0 +1,1582 @@
+{
+  "state": "completed_local_records_verified",
+  "workers": {
+    "baseline-original-1": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "baseline",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "baseline-original-2": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "baseline",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "no-checkpoint-original-1": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "no-checkpoint",
+        "parameter_details": true,
+        "gradient_checkpointing": false,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 30,
+        "aten::_scaled_dot_product_efficient_attention": 30,
+        "aten::_efficient_attention_forward": 30,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "no-checkpoint-original-2": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "no-checkpoint",
+        "parameter_details": true,
+        "gradient_checkpointing": false,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 30,
+        "aten::_scaled_dot_product_efficient_attention": 30,
+        "aten::_efficient_attention_forward": 30,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "math-sdp-original-1": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": false,
+        "mem_efficient_sdp_enabled": false,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "math-sdp",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": false,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_attention_math": 60
+      },
+      "parameter_count": 205
+    },
+    "math-sdp-original-2": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": false,
+        "mem_efficient_sdp_enabled": false,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": null,
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "math-sdp",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": false,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_attention_math": 60
+      },
+      "parameter_count": 205
+    },
+    "strict-original-1": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": true,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": ":4096:8",
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "strict",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "strict-original-2": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": true,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": ":4096:8",
+        "cuda_visible_devices": null,
+        "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+        "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "strict",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "strict-control-1": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": true,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": ":4096:8",
+        "cuda_visible_devices": null,
+        "entry_sha256": "18a6bad97994dba2ef4e265d703455ba6bf4254c6add70822cee948264b0b690",
+        "executed_entry": "reports/laya-resampling-45-preparation-v2/reproduction/scripts/train_laya.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "strict",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    },
+    "strict-control-2": {
+      "environment": {
+        "torch": "2.14.1+cu130",
+        "cuda_runtime": "13.0",
+        "cudnn": 92400,
+        "deterministic_algorithms": true,
+        "cudnn_deterministic": true,
+        "cudnn_benchmark": false,
+        "matmul_tf32": false,
+        "cudnn_tf32": true,
+        "float32_matmul_precision": "highest",
+        "flash_sdp_enabled": true,
+        "mem_efficient_sdp_enabled": true,
+        "math_sdp_enabled": true,
+        "cublas_workspace_config": ":4096:8",
+        "cuda_visible_devices": null,
+        "entry_sha256": "18a6bad97994dba2ef4e265d703455ba6bf4254c6add70822cee948264b0b690",
+        "executed_entry": "reports/laya-resampling-45-preparation-v2/reproduction/scripts/train_laya.py",
+        "trace_module_sha256": "3b9bf97285fde240d205560d66b37b54e48b54df1cfc4153c5f75a5c2f597dd3",
+        "device_names": [
+          "NVIDIA GeForce RTX 4090"
+        ],
+        "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+        "runtime_profile": "strict",
+        "parameter_details": true,
+        "gradient_checkpointing": true,
+        "cudnn_sdp_enabled": true,
+        "determinism_module_sha256": "1ac343a42adaebf85902a9deed7fbb8b431b146a167403db4d1914f19244215c",
+        "upstream_common_sha256": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+        "nvidia_smi": {
+          "exit_code": 0,
+          "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+          "error": ""
+        }
+      },
+      "result": {
+        "state": "diagnostic_completed",
+        "completed_updates": 16,
+        "full_schedule_updates": 5526,
+        "expected_training_entry_status": "failed_due_to_intentional_DiagnosticStop",
+        "test_accessed": false
+      },
+      "attention_operators": {
+        "aten::scaled_dot_product_attention": 60,
+        "aten::_scaled_dot_product_efficient_attention": 60,
+        "aten::_efficient_attention_forward": 60,
+        "autograd::engine::evaluate_function: ScaledDotProductEfficientAttentionBackward0": 30,
+        "ScaledDotProductEfficientAttentionBackward0": 30,
+        "aten::_scaled_dot_product_efficient_attention_backward": 30,
+        "aten::_efficient_attention_backward": 30
+      },
+      "parameter_count": 205
+    }
+  },
+  "comparisons": {
+    "baseline-original": {
+      "identical": false,
+      "compared_updates": 16,
+      "differences": [
+        {
+          "update": 1,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 2,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 3,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 4,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 5,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 6,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 7,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 8,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 9,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 10,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 11,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 12,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 13,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 14,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 15,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 16,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        }
+      ],
+      "first_gradient_changed_parameters": [
+        "encoder.embeddings.tok_embeddings.weight"
+      ],
+      "first_gradient_changed_modules": {
+        "encoder.embeddings.tok_embeddings": 1
+      },
+      "parameter_count": 205,
+      "first_parameter_in_model_order": "encoder.embeddings.tok_embeddings.weight",
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    },
+    "no-checkpoint-original": {
+      "identical": false,
+      "compared_updates": 16,
+      "differences": [
+        {
+          "update": 1,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 2,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 3,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 4,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 5,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 6,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 7,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 8,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 9,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 10,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 11,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 12,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 13,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 14,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 15,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 16,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        }
+      ],
+      "first_gradient_changed_parameters": [
+        "encoder.embeddings.tok_embeddings.weight"
+      ],
+      "first_gradient_changed_modules": {
+        "encoder.embeddings.tok_embeddings": 1
+      },
+      "parameter_count": 205,
+      "first_parameter_in_model_order": "encoder.embeddings.tok_embeddings.weight",
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    },
+    "math-sdp-original": {
+      "identical": false,
+      "compared_updates": 16,
+      "differences": [
+        {
+          "update": 1,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256"
+          ]
+        },
+        {
+          "update": 2,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256"
+          ]
+        },
+        {
+          "update": 3,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 4,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 5,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 6,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 7,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 8,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 9,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 10,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 11,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 12,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 13,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 14,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 15,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        },
+        {
+          "update": 16,
+          "fields": [
+            "gradient_after_clip_sha256",
+            "gradient_before_clip_sha256",
+            "gradient_norm_before_clipping",
+            "logits_sha256",
+            "loss",
+            "loss_sha256",
+            "model_after_update_sha256"
+          ]
+        }
+      ],
+      "first_gradient_changed_parameters": [
+        "encoder.embeddings.tok_embeddings.weight"
+      ],
+      "first_gradient_changed_modules": {
+        "encoder.embeddings.tok_embeddings": 1
+      },
+      "parameter_count": 205,
+      "first_parameter_in_model_order": "encoder.embeddings.tok_embeddings.weight",
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    },
+    "strict-original": {
+      "identical": true,
+      "compared_updates": 16,
+      "differences": [],
+      "first_gradient_changed_parameters": [],
+      "first_gradient_changed_modules": {},
+      "parameter_count": 205,
+      "first_parameter_in_model_order": null,
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    },
+    "strict-control": {
+      "identical": true,
+      "compared_updates": 16,
+      "differences": [],
+      "first_gradient_changed_parameters": [],
+      "first_gradient_changed_modules": {},
+      "parameter_count": 205,
+      "first_parameter_in_model_order": null,
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    },
+    "strict-original-vs-control": {
+      "identical": true,
+      "compared_updates": 16,
+      "differences": [],
+      "first_gradient_changed_parameters": [],
+      "first_gradient_changed_modules": {},
+      "parameter_count": 205,
+      "first_parameter_in_model_order": null,
+      "parameter_order_is_not_backward_execution_order": true,
+      "environment_difference_fields": []
+    }
+  },
+  "operator_probes": {
+    "embedding-probe-compiled-strict": {
+      "profile": "compiled-strict",
+      "synthetic_inputs": true,
+      "real_training_inputs": false,
+      "data_accessed": false,
+      "model_weights_accessed": false,
+      "test_accessed": false,
+      "configuration_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+      "shape": [
+        50368,
+        1024
+      ],
+      "input_shape": [
+        8,
+        512
+      ],
+      "unique_tokens": 1006,
+      "embedding_dropout": 0.0,
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "rows": [
+        {
+          "repeat": 1,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "6301410ba1c550af46ea5a293541ce13fddb0513e9d021d1eb8523af70b43c41",
+            "norm.weight": "7daed65e91b0acc577d0c40fd17b4c12044416d5e8a2d48266ca30d540e941a2"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 7,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 2,
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f2npfme5t36o7ndf3r3xckxgumebtlc3ks5p5awurtpfpqtqfl4a ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph frkjfn7u4mme6unv6fvqxu37duuq7ajdlvbn7amtfzlux7i3efjk ##": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_0": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 2,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "6301410ba1c550af46ea5a293541ce13fddb0513e9d021d1eb8523af70b43c41",
+            "norm.weight": "7daed65e91b0acc577d0c40fd17b4c12044416d5e8a2d48266ca30d540e941a2"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f2npfme5t36o7ndf3r3xckxgumebtlc3ks5p5awurtpfpqtqfl4a ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph frkjfn7u4mme6unv6fvqxu37duuq7ajdlvbn7amtfzlux7i3efjk ##": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_0": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 3,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "6301410ba1c550af46ea5a293541ce13fddb0513e9d021d1eb8523af70b43c41",
+            "norm.weight": "7daed65e91b0acc577d0c40fd17b4c12044416d5e8a2d48266ca30d540e941a2"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f2npfme5t36o7ndf3r3xckxgumebtlc3ks5p5awurtpfpqtqfl4a ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph frkjfn7u4mme6unv6fvqxu37duuq7ajdlvbn7amtfzlux7i3efjk ##": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_0": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 4,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "6301410ba1c550af46ea5a293541ce13fddb0513e9d021d1eb8523af70b43c41",
+            "norm.weight": "7daed65e91b0acc577d0c40fd17b4c12044416d5e8a2d48266ca30d540e941a2"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f2npfme5t36o7ndf3r3xckxgumebtlc3ks5p5awurtpfpqtqfl4a ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph frkjfn7u4mme6unv6fvqxu37duuq7ajdlvbn7amtfzlux7i3efjk ##": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_0": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        }
+      ],
+      "state": "completed",
+      "outputs_identical": true,
+      "rng_identical": true,
+      "gradients_identical": true
+    },
+    "embedding-probe-eager": {
+      "profile": "eager",
+      "synthetic_inputs": true,
+      "real_training_inputs": false,
+      "data_accessed": false,
+      "model_weights_accessed": false,
+      "test_accessed": false,
+      "configuration_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+      "shape": [
+        50368,
+        1024
+      ],
+      "input_shape": [
+        8,
+        512
+      ],
+      "unique_tokens": 1006,
+      "embedding_dropout": 0.0,
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "rows": [
+        {
+          "repeat": 1,
+          "output_sha256": "85f2e01bb6689bf0455db5ce57485b5f3392c8fb845370434ab163740aa82a01",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "738d0d7aab8c7d34cb730e818237c24f7ca19443903f5c2fe991fc3713c0769b",
+            "norm.weight": "173b76d0a1c2758b27a2b8389402f8bf056c6ef1756b08887e9aa5d765b12803"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 1,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 1
+          }
+        },
+        {
+          "repeat": 2,
+          "output_sha256": "85f2e01bb6689bf0455db5ce57485b5f3392c8fb845370434ab163740aa82a01",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "738d0d7aab8c7d34cb730e818237c24f7ca19443903f5c2fe991fc3713c0769b",
+            "norm.weight": "173b76d0a1c2758b27a2b8389402f8bf056c6ef1756b08887e9aa5d765b12803"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 1,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 1
+          }
+        },
+        {
+          "repeat": 3,
+          "output_sha256": "85f2e01bb6689bf0455db5ce57485b5f3392c8fb845370434ab163740aa82a01",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "738d0d7aab8c7d34cb730e818237c24f7ca19443903f5c2fe991fc3713c0769b",
+            "norm.weight": "173b76d0a1c2758b27a2b8389402f8bf056c6ef1756b08887e9aa5d765b12803"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 1,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 1
+          }
+        },
+        {
+          "repeat": 4,
+          "output_sha256": "85f2e01bb6689bf0455db5ce57485b5f3392c8fb845370434ab163740aa82a01",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "738d0d7aab8c7d34cb730e818237c24f7ca19443903f5c2fe991fc3713c0769b",
+            "norm.weight": "173b76d0a1c2758b27a2b8389402f8bf056c6ef1756b08887e9aa5d765b12803"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 1,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 1
+          }
+        }
+      ],
+      "state": "completed",
+      "outputs_identical": true,
+      "rng_identical": true,
+      "gradients_identical": true
+    },
+    "embedding-probe-compiled": {
+      "profile": "compiled",
+      "synthetic_inputs": true,
+      "real_training_inputs": false,
+      "data_accessed": false,
+      "model_weights_accessed": false,
+      "test_accessed": false,
+      "configuration_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+      "shape": [
+        50368,
+        1024
+      ],
+      "input_shape": [
+        8,
+        512
+      ],
+      "unique_tokens": 1006,
+      "embedding_dropout": 0.0,
+      "torch": "2.14.1+cu130",
+      "cuda": "13.0",
+      "rows": [
+        {
+          "repeat": 1,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "54de6ecde5610d92f8b3de8deacdfeb3613386a7a03475331d0231468b01da13",
+            "norm.weight": "c5539f81c93e9690df3d9fc280a16937821e435fd1bec0a2c8e5281527d567ce"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "aten::embedding": 7,
+            "autograd::engine::evaluate_function: EmbeddingBackward0": 1,
+            "EmbeddingBackward0": 1,
+            "aten::embedding_backward": 1,
+            "aten::embedding_dense_backward": 2,
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f3tttmpv2hurdam7konrlttsbnkk3mlqg7yvr44kmekdbspmopgq ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph fbx7yv3waic4epuyxtflj42ilfz7xeoyr3wae54ovmxehvq62ep4 ##": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_2": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 2,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "a16ff059cbd8dcbf802bfe7936cae8b5857452e068bd4e3a110bf7bf7909e538",
+            "norm.weight": "c5539f81c93e9690df3d9fc280a16937821e435fd1bec0a2c8e5281527d567ce"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 155824,
+              "max_absolute_difference": 1.9073486328125e-06
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f3tttmpv2hurdam7konrlttsbnkk3mlqg7yvr44kmekdbspmopgq ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph fbx7yv3waic4epuyxtflj42ilfz7xeoyr3wae54ovmxehvq62ep4 ##": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_2": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 3,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "ad986b708262f1fe64e4d03e7e59cbf9eae79e4b130f07afeae6471810bedd16",
+            "norm.weight": "c5539f81c93e9690df3d9fc280a16937821e435fd1bec0a2c8e5281527d567ce"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 151116,
+              "max_absolute_difference": 1.9073486328125e-06
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f3tttmpv2hurdam7konrlttsbnkk3mlqg7yvr44kmekdbspmopgq ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph fbx7yv3waic4epuyxtflj42ilfz7xeoyr3wae54ovmxehvq62ep4 ##": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_2": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        },
+        {
+          "repeat": 4,
+          "output_sha256": "044b022ef4c66c5d4a865805cdab92158049e0cfe5bb2950b9705ed7dc98c86b",
+          "rng_after_sha256": "dee4eae63574cfa1205510b9ba373f41531a087b6a192c13dcacd19833a7a343",
+          "gradient_sha256": {
+            "tok_embeddings.weight": "d825771d71058b26e7f26b4fea4723d66a1fe889534e6d187b64c6ec54e8737a",
+            "norm.weight": "c5539f81c93e9690df3d9fc280a16937821e435fd1bec0a2c8e5281527d567ce"
+          },
+          "gradient_differences_vs_first": {
+            "tok_embeddings.weight": {
+              "different_elements": 152717,
+              "max_absolute_difference": 1.9073486328125e-06
+            },
+            "norm.weight": {
+              "different_elements": 0,
+              "max_absolute_difference": 0.0
+            }
+          },
+          "embedding_operators": {
+            "Torch-Compiled Region: 0/0": 1,
+            "CompiledFunction": 1,
+            "## Call CompiledFxGraph f3tttmpv2hurdam7konrlttsbnkk3mlqg7yvr44kmekdbspmopgq ##": 1,
+            "triton_per_fused_embedding_native_layer_norm_0": 1,
+            "autograd::engine::evaluate_function: CompiledFunctionBackward": 1,
+            "CompiledFunctionBackward": 1,
+            "## Call CompiledFxGraph fbx7yv3waic4epuyxtflj42ilfz7xeoyr3wae54ovmxehvq62ep4 ##": 1,
+            "triton_poi_fused_embedding_dense_backward_native_layer_norm_backward_2": 1,
+            "triton_per_fused_embedding_dense_backward_native_layer_norm_backward_3": 1
+          }
+        }
+      ],
+      "state": "completed",
+      "outputs_identical": true,
+      "rng_identical": true,
+      "gradients_identical": false
+    }
+  },
+  "completed_workers": 10,
+  "completed_optimizer_updates": 160,
+  "additional_full_training": false,
+  "test_accessed": false,
+  "historical_accuracy_drift_cause_proven": false,
+  "instrumentation_changes_timing_and_synchronization": true
+}

@@ -1,0 +1,121 @@
+{
+  "state": "completed_local_records_verified",
+  "workers": 4,
+  "actual_updates_per_worker": 16,
+  "actual_updates_total": 64,
+  "actual_train_exposures_per_worker": 128,
+  "full_schedule_updates_per_worker": 5526,
+  "comparisons": {
+    "original-1_vs_original-2": {
+      "initial_parameters_equal": true,
+      "all_16_encoded_batches_equal": true,
+      "all_16_learning_rates_equal": true,
+      "all_16_rng_before_forward_equal": true,
+      "all_16_rng_after_forward_equal": true,
+      "all_16_rng_after_update_equal": true,
+      "first_update_logits_equal": true,
+      "first_update_loss_equal": true,
+      "first_update_gradient_norms": [
+        9.041407585144043,
+        9.041407585144043
+      ],
+      "first_difference_logits_sha256": 2,
+      "first_difference_loss_sha256": 2,
+      "first_difference_gradient_before_clip_sha256": 1,
+      "first_difference_gradient_after_clip_sha256": 1,
+      "first_difference_gradient_norm_before_clipping": 2,
+      "first_difference_model_after_update_sha256": 1,
+      "first_update_different_fields": [
+        "gradient_after_clip_sha256",
+        "gradient_before_clip_sha256",
+        "model_after_update_sha256"
+      ],
+      "environment_difference_fields_excluding_entry": []
+    },
+    "control-1_vs_control-2": {
+      "initial_parameters_equal": true,
+      "all_16_encoded_batches_equal": true,
+      "all_16_learning_rates_equal": true,
+      "all_16_rng_before_forward_equal": true,
+      "all_16_rng_after_forward_equal": true,
+      "all_16_rng_after_update_equal": true,
+      "first_update_logits_equal": true,
+      "first_update_loss_equal": true,
+      "first_update_gradient_norms": [
+        9.041407585144043,
+        9.041407585144043
+      ],
+      "first_difference_logits_sha256": 5,
+      "first_difference_loss_sha256": 5,
+      "first_difference_gradient_before_clip_sha256": 1,
+      "first_difference_gradient_after_clip_sha256": 1,
+      "first_difference_gradient_norm_before_clipping": 5,
+      "first_difference_model_after_update_sha256": 1,
+      "first_update_different_fields": [
+        "gradient_after_clip_sha256",
+        "gradient_before_clip_sha256",
+        "model_after_update_sha256"
+      ],
+      "environment_difference_fields_excluding_entry": []
+    },
+    "original-1_vs_control-1": {
+      "initial_parameters_equal": true,
+      "all_16_encoded_batches_equal": true,
+      "all_16_learning_rates_equal": true,
+      "all_16_rng_before_forward_equal": true,
+      "all_16_rng_after_forward_equal": true,
+      "all_16_rng_after_update_equal": true,
+      "first_update_logits_equal": true,
+      "first_update_loss_equal": true,
+      "first_update_gradient_norms": [
+        9.041407585144043,
+        9.041407585144043
+      ],
+      "first_difference_logits_sha256": 4,
+      "first_difference_loss_sha256": 4,
+      "first_difference_gradient_before_clip_sha256": 1,
+      "first_difference_gradient_after_clip_sha256": 1,
+      "first_difference_gradient_norm_before_clipping": 4,
+      "first_difference_model_after_update_sha256": 2,
+      "first_update_different_fields": [
+        "gradient_after_clip_sha256",
+        "gradient_before_clip_sha256"
+      ],
+      "environment_difference_fields_excluding_entry": []
+    }
+  },
+  "environment": {
+    "torch": "2.14.1+cu130",
+    "cuda_runtime": "13.0",
+    "cudnn": 92400,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "matmul_tf32": false,
+    "cudnn_tf32": true,
+    "float32_matmul_precision": "highest",
+    "flash_sdp_enabled": true,
+    "mem_efficient_sdp_enabled": true,
+    "math_sdp_enabled": true,
+    "cublas_workspace_config": null,
+    "cuda_visible_devices": null,
+    "entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+    "executed_entry": "reports/laya-resampling45-control-drift-audit-v2/historical-train_laya.reconstructed.py",
+    "trace_module_sha256": "f22fc903bbb2dd673f101bf3f2ca0f7315669d4928e6525a5b4032e327debec9",
+    "device_names": [
+      "NVIDIA GeForce RTX 4090"
+    ],
+    "instrumented_run_is_not_uninstrumented_historical_reproduction": true,
+    "nvidia_smi": {
+      "exit_code": 0,
+      "output": "NVIDIA GeForce RTX 4090, GPU-365894d2-0dbf-5545-9d69-af7b089eff76, 580.105.08\n",
+      "error": ""
+    }
+  },
+  "full_training_started": false,
+  "test_accessed": false,
+  "connection": "user_provided_existing_Ghostty_session",
+  "exact_historical_accuracy_drift_cause_proven": false,
+  "particular_nondeterministic_operator_identified": false,
+  "instrumentation_changes_timing_and_synchronization": true
+}
