@@ -1,4 +1,4 @@
-"""Offline IMDB adapter for the pinned upstream Laya trainer (PyTorch/MPS)."""
+"""Offline IMDB adapter for the pinned upstream Laya trainer (PyTorch/MPS/CUDA)."""
 import os
 
 # Set before importing Hugging Face or Laya. Training only uses local files.
@@ -8,7 +8,7 @@ for name in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_DATASETS_OFFLINE",
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import argparse
-from contextlib import nullcontext
+from contextlib import ExitStack
 from datetime import datetime, timezone
 from functools import partial
 from importlib.metadata import version
@@ -19,6 +19,11 @@ import socket
 import time
 
 from common import ROOT, file_digest, read_jsonl, write_json
+from laya_optimization import optimize_training, validate_optimization
+from laya_epoch_checkpoints import keep_epoch_checkpoints, validate_epoch_checkpoints
+from laya_resampling import resample_training, validate_sampling
+from laya_runtime import prepare_runtime, apply_runtime
+from laya_semantic_training import validate_semantic, load_semantic, semantic_training
 
 QUESTION = {"type": "choice",
             "instructions": "What is the reviewer's overall opinion of this movie?",
@@ -92,33 +97,59 @@ def require_device(torch, device):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/laya-full-ce.json")
-    parser.add_argument("--check-only", action="store_true", help="Check hashes, config, dependencies and requested device without training")
-    parser.add_argument("--smoke-test", action="store_true", help="8 train / 4 validation rows; real full-model updates")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--check-only", action="store_true", help="Check hashes, config, dependencies and requested device without training")
+    mode.add_argument("--smoke-test", action="store_true", help="8 train / 4 validation rows; real full-model updates")
+    mode.add_argument("--validate-config", action="store_true", help="Validate config and installed trainer without data, model or accelerator access")
     args = parser.parse_args()
     spec = json.loads((ROOT / args.config).read_text())
     lock = json.loads((ROOT / "configs/laya_model_lock.json").read_text())
+    if version("laya") != lock["laya_version"]:
+        raise ValueError("Laya version differs from model lock")
+    optimization = validate_optimization(spec.get('optimization'))
+    epoch_checkpoints = validate_epoch_checkpoints(spec.get('epoch_checkpoints', False))
+    sampling = validate_sampling(spec.get('sampling'))
+    semantic = validate_semantic(spec.get('semantic_pairs'))
+    if semantic:
+        if (sampling or spec.get('runtime_profile') != 'strict' or spec['train_limit'] is not None
+                or not epoch_checkpoints or spec['training']['epochs'] != 2
+                or spec['training']['seed'] not in (42,43) or spec['training']['max_len'] != 512
+                or spec['training']['head_max_len'] != 192 or spec['training']['loss'] != 'soft-ce'
+                or optimization is None or optimization.get('rdrop_alpha',0)):
+            raise ValueError('Semantic pairs require standalone full-source strict two-epoch CE protocol')
+    if (optimization and optimization.get('rdrop_alpha', 0) > 0
+            and spec['training']['loss'] != 'soft-ce'):
+        raise ValueError('R-Drop only supports soft-ce training')
+    runtime_profile = prepare_runtime(spec)
+    block_network()
+    import laya.train as upstream
+    upstream.TrainConfig(**spec['training']).validate()
+    if args.validate_config:
+        print(json.dumps({'state': 'config_valid', 'run_id': spec['run_id'],
+                          'optimization': optimization, 'accelerator_checked': False,
+                          'data_accessed': False, 'model_accessed': False}))
+        return
     model_dir = ROOT / lock["local_dir"]
     for name, expected in lock["sha256"].items():
         if file_digest(model_dir / name) != expected:
             raise ValueError("Local Laya model hash mismatch: " + name)
-    if version("laya") != lock["laya_version"]:
-        raise ValueError("Laya version differs from model lock")
-    block_network()
     import torch
-    import laya.train as upstream
+    runtime = apply_runtime(torch, runtime_profile)
 
     device = spec["device"]
     require_device(torch, device)
-    upstream.TrainConfig(**spec['training']).validate()
     manifest = json.loads((ROOT / "reports/split_manifest.json").read_text())
     for split in ("train", "validation"):
         if file_digest(ROOT / "data/processed" / (split + ".jsonl")) != manifest["jsonl_sha256"][split]:
             raise ValueError("Frozen dataset hash mismatch: " + split)
+    semantic_bundle = load_semantic(semantic)
+    if semantic_bundle and semantic_bundle['tokenizer_sha256'] != lock['sha256']['tokenizer/tokenizer.json']:
+        raise ValueError('Semantic pack tokenizer differs from frozen model')
     print("Offline checks passed: local model, frozen data, pinned Laya, device=" + device, flush=True)
     if args.check_only:
         return
     if args.smoke_test:
-        spec = dict(spec, run_id="laya-smoke-" + spec["training"]["loss"], train_limit=8, validation_limit=4,
+        spec = dict(spec, run_id=spec['run_id'] + '-smoke', train_limit=8, validation_limit=4,
                     training=dict(spec["training"], epochs=1, calib_max=2, calib_frac=0.25,
                                   micro_batch=1, grad_accum=2, log_every=1))
     output = ROOT / "checkpoints" / spec["run_id"]
@@ -136,6 +167,9 @@ def main():
     config.validate()
     gradient_ids, calibration_ids = upstream.split_calibration(
         train_info["ids"], config.calib_max, config.calib_frac, config.calib_seed)
+    if semantic_bundle and (gradient_ids != semantic_bundle['gradient_ids']
+                            or calibration_ids != semantic_bundle['calibration_ids']):
+        raise ValueError('Semantic training changed the frozen gradient/calibration partition')
     write_json(report_dir / "manifest.json", {"spec": spec, "model_lock": lock,
                "train": train_info, "validation": validation_info, "question": QUESTION,
                "gradient_train_ids": gradient_ids, "calibration_ids": calibration_ids,
@@ -145,9 +179,23 @@ def main():
                "upstream_train_sha256": file_digest(Path(upstream.__file__)),
                "cuda_fail_fast_guards": device.startswith('cuda'),
                "cuda_guard_sha256": (file_digest(ROOT / 'scripts/cuda_numerics.py') if device.startswith('cuda') else None),
+               "runtime": runtime,
+               "runtime_adapter_sha256": (file_digest(ROOT / "scripts/laya_runtime.py") if runtime else None),
+               "optimization": optimization,
+               "semantic_pairs": semantic,
+               "semantic_adapter_sha256": (file_digest(ROOT / "scripts/laya_semantic_training.py") if semantic else None),
+               "sampling": sampling,
+               "sampling_adapter_sha256": (file_digest(ROOT / "scripts/laya_resampling.py") if sampling else None),
+               "epoch_checkpoints": epoch_checkpoints,
+               "epoch_checkpoint_adapter_sha256": (file_digest(ROOT / 'scripts/laya_epoch_checkpoints.py') if epoch_checkpoints else None),
+               "optimization_adapter_sha256": (file_digest(ROOT / 'scripts/laya_optimization.py') if optimization is not None else None),
+               "rdrop_adapter_sha256": (file_digest(ROOT / 'scripts/laya_rdrop.py')
+                                        if optimization and optimization.get('rdrop_alpha', 0) > 0 else None),
+               "label_smoothing_scope": ('gradient_training_only' if optimization is not None else 'upstream'),
                "network": "HF offline flags and Python IPv4/IPv6 socket guard enabled"})
     # Upstream's fixed eval batch=16 can consume too much MPS memory. Only its
-    # evaluation batch size is adapted; training/loss/checkpoint code stays upstream.
+    # evaluation batch size is adapted here. Opt-in training adaptation below
+    # preserves the upstream loop/loss/checkpoint code.
     upstream.calibration_records = partial(upstream.calibration_records,
                                             batch_size=spec["eval_batch_size"])
     log_path = report_dir / "console.log"
@@ -178,7 +226,16 @@ def main():
                   % (train_info["count"], validation_info["count"]), flush=True)
             print("Loading local model; initial validation runs before the first training step.", flush=True)
             from cuda_numerics import guard_training
-            with guard_training(torch, upstream) if device.startswith('cuda') else nullcontext():
+            with ExitStack() as stack:
+                if device.startswith('cuda'):
+                    stack.enter_context(guard_training(torch, upstream))
+                if sampling:
+                    gradient_id_set = set(gradient_ids)
+                    label_by_id = {r['id']: r['label'] for r in read_jsonl(ROOT / 'data/processed/train.jsonl') if r['id'] in gradient_id_set}
+                    stack.enter_context(resample_training(upstream, sampling, gradient_ids, label_by_id, report_dir))
+                stack.enter_context(semantic_training(upstream, semantic_bundle, report_dir))
+                stack.enter_context(optimize_training(torch, upstream, optimization, report_dir))
+                stack.enter_context(keep_epoch_checkpoints(upstream, epoch_checkpoints, output, report_dir))
                 summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)
             status.update(state="completed", elapsed_seconds=time.monotonic() - started,
                           mps_driver_allocated_bytes=(torch.mps.driver_allocated_memory() if device == "mps" else None))

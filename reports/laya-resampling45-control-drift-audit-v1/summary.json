@@ -1,0 +1,50 @@
+{
+  "state": "local_audit_complete_root_cause_unresolved",
+  "historical_manifest_fields_equal": {
+    "model_lock": true,
+    "train": true,
+    "validation": true,
+    "question": true,
+    "gradient_train_ids": true,
+    "calibration_ids": true,
+    "versions": true,
+    "uv_lock_sha256": true,
+    "upstream_train_sha256": true,
+    "cuda_fail_fast_guards": true,
+    "cuda_guard_sha256": true,
+    "optimization": true,
+    "epoch_checkpoints": true,
+    "epoch_checkpoint_adapter_sha256": true,
+    "optimization_adapter_sha256": true,
+    "rdrop_adapter_sha256": true,
+    "label_smoothing_scope": true
+  },
+  "training_config_equal": true,
+  "historical_shuffle_reconstructed_matches_current_control": [
+    true,
+    true
+  ],
+  "validation_id_label_input_hash_equal_all_2500": true,
+  "sampled_update_record_count_per_run": 364,
+  "sampled_learning_rate_trajectory_equal": true,
+  "first_4_update_records_identical": true,
+  "first_observed_different_update": 5,
+  "first_gradient_norm_old": 20.12495994567871,
+  "first_gradient_norm_new": 20.126680374145508,
+  "historical_to_current_control": {
+    "fixed": 20,
+    "regressed": 33,
+    "both_correct": 2379,
+    "both_wrong": 68,
+    "net_correct_delta": -13
+  },
+  "historical_training_entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+  "current_training_entry_sha256": "18a6bad97994dba2ef4e265d703455ba6bf4254c6add70822cee948264b0b690",
+  "exact_historical_entry_snapshots_found": [],
+  "backup_record_completed": true,
+  "backup_record_file_count": 57,
+  "backup_file_bytes_rehashed_in_this_audit": false,
+  "training_performed": false,
+  "remote_access": false,
+  "test_accessed": false
+}

@@ -1,0 +1,22 @@
+{
+  "state": "exact_historical_entry_reconstructed_and_hash_verified",
+  "source_snapshot": "reports/laya-resampling-45-preparation-v2/reproduction/scripts/train_laya.py",
+  "historical_entry_sha256": "e0310de3c0c9dd21e14b0a64c03899790d4b498bdd2c8f98374594ba753fb581",
+  "current_entry_sha256": "18a6bad97994dba2ef4e265d703455ba6bf4254c6add70822cee948264b0b690",
+  "historical_manifest_sha_match": true,
+  "current_manifest_sha_match": true,
+  "removed_blocks": [
+    "from laya_resampling import resample_training, validate_sampling\n",
+    "    sampling = validate_sampling(spec.get('sampling'))\n",
+    "               \"sampling\": sampling,\n",
+    "               \"sampling_adapter_sha256\": (file_digest(ROOT / \"scripts/laya_resampling.py\") if sampling else None),\n",
+    "                if sampling:\n                    gradient_id_set = set(gradient_ids)\n                    label_by_id = {r['id']: r['label'] for r in read_jsonl(ROOT / 'data/processed/train.jsonl') if r['id'] in gradient_id_set}\n                    stack.enter_context(resample_training(upstream, sampling, gradient_ids, label_by_id, report_dir))\n"
+  ],
+  "sampling_additions_are_only_entry_difference": true,
+  "linked_per_run_cuda_runtime_driver_and_determinism_snapshot_available": false,
+  "historical_runtime_recovered": false,
+  "root_cause_confirmed": false,
+  "remote_access": false,
+  "training_performed": false,
+  "test_accessed": false
+}

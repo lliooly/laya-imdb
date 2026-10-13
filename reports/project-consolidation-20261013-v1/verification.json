@@ -1,0 +1,18 @@
+{
+  "existing_report_files_unchanged": 1062,
+  "report_mutations": [],
+  "canonical_docs_checked": 27,
+  "broken_links": [],
+  "archived_entries_sha_verified": [
+    "scripts/run_laya_resampling_pair.py",
+    "scripts/run_seed43_pair.py",
+    "scripts/ghostty_ssh_bridge.py",
+    "configs/laya-rtx4090-ce-resampling-control-s43-epochs2-fp32.json",
+    "configs/laya-rtx4090-smoke-ce-resampling-control-s43-epochs2-fp32.json",
+    "configs/laya-rtx4090-smoke-ce-resampling-resampled-s43-epochs2-fp32.json",
+    "configs/laya-rtx4090-ce-resampling-resampled-s43-epochs2-fp32.json"
+  ],
+  "unit_tests_passed": 84,
+  "gpu_training_started": false,
+  "official_test_body_accessed": false
+}

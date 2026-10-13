@@ -52,3 +52,12 @@ htmlcov/
 *~
 *.tmp
 *.part
+
+# New report runs: publish concise outcomes, keep full diagnostics locally.
+# Existing tracked audit snapshots remain tracked and unchanged.
+/reports/**
+!/reports/*/
+!/reports/*/REPORT.md
+!/reports/*/summary.json
+!/reports/project-consolidation-20261013-v1/*.json
+!/reports/semantic30-abc-completed-20261013-v1/verified-remote-status.json

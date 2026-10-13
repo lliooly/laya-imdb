@@ -1,0 +1,110 @@
+[
+  {
+    "old": "docs/inference.md",
+    "new": "docs/guides/inference.md",
+    "original_sha256": "e9de09b8714ec43efc1c679dd9c943e762386407b576df191c4eba088f889bff",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/laya-training.md",
+    "new": "docs/guides/training.md",
+    "original_sha256": "a83c9813f4738de121bddc68b198f94a919486087f9199275a16099bc6d5f3a4",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/cuda-local-preparation.md",
+    "new": "docs/guides/cuda-preparation.md",
+    "original_sha256": "9ad4ab7cf4d5445c7b8fb399139cc834f9ebccc1ebef72c6c274f65717091904",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/historical-workflows.md",
+    "new": "docs/guides/historical-reproduction.md",
+    "original_sha256": "2294e4b8a5c6960d443e0f9ae29d711460aa1d18c29f4c3a52575ab60f28ed25",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/references.md",
+    "new": "docs/guides/references.md",
+    "original_sha256": "1d926c65c0eeebab69c700e84a6d31a62142b5c5b0d00ebead1b65f0a8a01587",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/laya-backend-design.md",
+    "new": "docs/archive/designs/laya-backend-design.md",
+    "original_sha256": "54cbfcbaad7ff59e34a67212ef2a33ee036670a5108315a6692130db25fb7185",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/day1-design.md",
+    "new": "docs/archive/plans/day-01-design.md",
+    "original_sha256": "c7f3d50400d12453bc9fce0138dc52000bfb3dfde61db7fff8c2d634f3442fa5",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/day2-plan.md",
+    "new": "docs/archive/plans/day-02-plan.md",
+    "original_sha256": "ceb595c483379a11a24e54163e6ff50ba407f452f85bd5ed89ba38724f2bb922",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/day3-plan.md",
+    "new": "docs/archive/plans/day-03-plan.md",
+    "original_sha256": "259be1ab9c19a6d652a99c903b2e27e9dc6ca977c598c60cf11fdf70d728688c",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/laya-revised-roadmap.md",
+    "new": "docs/archive/roadmaps/2026-10-09-research-roadmap.md",
+    "original_sha256": "b7df81946a963468e0c4e0a969649145125ae1ee470f313be5d03f7c7a78bd41",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "docs/laya-ce-next-experiments.md",
+    "new": "docs/archive/roadmaps/2026-10-10-ce-experiments.md",
+    "original_sha256": "6177692bf55e34900902df8053b374a5ea2498c3905deeebef5ee9786bea488e",
+    "action": "move_document_keep_historical_link"
+  },
+  {
+    "old": "scripts/run_laya_resampling_pair.py",
+    "new": "archive/legacy-code/scripts/run_laya_resampling_pair.py",
+    "original_sha256": "1764dcfceb6e3155596b8df7b3083f4df943dcf8c5ebd025c501243026e7b402",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "scripts/run_seed43_pair.py",
+    "new": "archive/legacy-code/scripts/run_seed43_pair.py",
+    "original_sha256": "12b044e0e77ac8466691304546620f0ec71e2fc08e3574ccaf07ace49db18826",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "scripts/ghostty_ssh_bridge.py",
+    "new": "archive/legacy-code/scripts/ghostty_ssh_bridge.py",
+    "original_sha256": "fed20d6e6e0ad29db3ee2cca8717f9c6acdd3d68cc129b1f03d4a9f944d40792",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "configs/laya-rtx4090-ce-resampling-control-s43-epochs2-fp32.json",
+    "new": "archive/legacy-code/configs/laya-rtx4090-ce-resampling-control-s43-epochs2-fp32.json",
+    "original_sha256": "34db4b0af18c4d1ca67e8404924274f947a55f1f79363675a7a46b21c0a82e1a",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "configs/laya-rtx4090-smoke-ce-resampling-control-s43-epochs2-fp32.json",
+    "new": "archive/legacy-code/configs/laya-rtx4090-smoke-ce-resampling-control-s43-epochs2-fp32.json",
+    "original_sha256": "1a4cb06795bc8650041762eef2af0224d8f3bb6f00f9ee182d1b596fc4a51855",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "configs/laya-rtx4090-smoke-ce-resampling-resampled-s43-epochs2-fp32.json",
+    "new": "archive/legacy-code/configs/laya-rtx4090-smoke-ce-resampling-resampled-s43-epochs2-fp32.json",
+    "original_sha256": "5da0504c06cf178c38a172f0bcf250a4f38912fd337312c85d387ed525ac0589",
+    "action": "archive_obsolete_entry"
+  },
+  {
+    "old": "configs/laya-rtx4090-ce-resampling-resampled-s43-epochs2-fp32.json",
+    "new": "archive/legacy-code/configs/laya-rtx4090-ce-resampling-resampled-s43-epochs2-fp32.json",
+    "original_sha256": "9d9e423e307522d22d5b5456007eefb5d91c61ee7d183127944d61454b1cd191",
+    "action": "archive_obsolete_entry"
+  }
+]

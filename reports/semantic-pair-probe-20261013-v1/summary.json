@@ -1,0 +1,135 @@
+{
+  "state": "completed_fixed_weight_diagnostic",
+  "training_performed": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "seen_training_sources": true,
+  "human_review_completed": false,
+  "checkpoint": "/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/checkpoints/laya-mps-ce-epochs2-l512-s42-fp32-v1",
+  "checkpoint_sha256": "e3fde5c96111b478ab19067b6a11291c0a4577d5c1754f898eccb3f445adf92a",
+  "pack_sha256": "e7784eb050b9bfcd42305a767d71775e16f49c657ce080f701807b1de2c2d3cb",
+  "script_sha256": "e3ae1426090546517ae536cd54c48f35a481eab02ab6d02dab22933aeb1b3f91",
+  "dtype": "float16",
+  "backend": "mlx",
+  "compile": false,
+  "versions": {
+    "mlx": "0.32.3",
+    "laya-mlx": "0.3.0"
+  },
+  "elapsed_seconds": 1.7215378339751624,
+  "overall": {
+    "count": 30,
+    "correct_against_unverified_inherited_labels": {
+      "original": 24,
+      "ordinary": 21,
+      "semantic": 23
+    },
+    "transitions": {
+      "ordinary": {
+        "fixed": [],
+        "regressed": [
+          "train/pos/12042_10.txt",
+          "train/pos/12329_10.txt",
+          "train/pos/6063_10.txt"
+        ],
+        "changed": [
+          "train/pos/12042_10.txt",
+          "train/pos/12329_10.txt",
+          "train/pos/6063_10.txt"
+        ],
+        "pair_both_correct": 21
+      },
+      "semantic": {
+        "fixed": [],
+        "regressed": [
+          "train/pos/6063_10.txt"
+        ],
+        "changed": [
+          "train/pos/6063_10.txt"
+        ],
+        "pair_both_correct": 23
+      }
+    }
+  },
+  "by_category": {
+    "complex_relation": {
+      "count": 13,
+      "correct_against_unverified_inherited_labels": {
+        "original": 10,
+        "ordinary": 7,
+        "semantic": 9
+      },
+      "transitions": {
+        "ordinary": {
+          "fixed": [],
+          "regressed": [
+            "train/pos/12042_10.txt",
+            "train/pos/12329_10.txt",
+            "train/pos/6063_10.txt"
+          ],
+          "changed": [
+            "train/pos/12042_10.txt",
+            "train/pos/12329_10.txt",
+            "train/pos/6063_10.txt"
+          ],
+          "pair_both_correct": 7
+        },
+        "semantic": {
+          "fixed": [],
+          "regressed": [
+            "train/pos/6063_10.txt"
+          ],
+          "changed": [
+            "train/pos/6063_10.txt"
+          ],
+          "pair_both_correct": 9
+        }
+      }
+    },
+    "evaluation_target": {
+      "count": 11,
+      "correct_against_unverified_inherited_labels": {
+        "original": 9,
+        "ordinary": 9,
+        "semantic": 9
+      },
+      "transitions": {
+        "ordinary": {
+          "fixed": [],
+          "regressed": [],
+          "changed": [],
+          "pair_both_correct": 9
+        },
+        "semantic": {
+          "fixed": [],
+          "regressed": [],
+          "changed": [],
+          "pair_both_correct": 9
+        }
+      }
+    },
+    "irony": {
+      "count": 6,
+      "correct_against_unverified_inherited_labels": {
+        "original": 5,
+        "ordinary": 5,
+        "semantic": 5
+      },
+      "transitions": {
+        "ordinary": {
+          "fixed": [],
+          "regressed": [],
+          "changed": [],
+          "pair_both_correct": 5
+        },
+        "semantic": {
+          "fixed": [],
+          "regressed": [],
+          "changed": [],
+          "pair_both_correct": 5
+        }
+      }
+    }
+  },
+  "interpretation": "Expression sensitivity on seen training sources with AI-drafted variants; not evidence of training gain or generalization."
+}

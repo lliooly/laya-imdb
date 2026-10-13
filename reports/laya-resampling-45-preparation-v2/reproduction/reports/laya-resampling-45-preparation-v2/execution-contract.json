@@ -1,0 +1,39 @@
+{
+  "state": "selected_local_execution_preparation",
+  "candidate_file": "reports/laya-resampling-45-preparation-v2/frozen-candidates.json",
+  "candidate_sha256": "1040d9b79d20d1212bf8e401c0125d426a356951e3575e24d72036feadf08b37",
+  "candidate_count": 45,
+  "quarantined_ids": [
+    "train/neg/10383_2.txt",
+    "train/pos/7504_7.txt",
+    "train/pos/9854_7.txt"
+  ],
+  "target_configuration": {
+    "warmup_ratio": 0.05,
+    "label_smoothing": 0.05
+  },
+  "model_errors": {
+    "combined_only_wrong": 36,
+    "baseline_only_wrong": 5,
+    "both_wrong": 4
+  },
+  "seed": 43,
+  "epochs": 2,
+  "total_exposures": 44200,
+  "total_updates": 5526,
+  "per_epoch_class_counts": {
+    "0": 11065,
+    "1": 11035
+  },
+  "extra_exposure_percent": 0.10180995475113123,
+  "epoch_ordered_id_sha256": {
+    "control": [
+      "dadeccbcb39471c5f36eb315eb8fc5f89f12b633cd24257ffda2a1149b01e72e",
+      "8689ee03c24d98611f9242f5b287b669a33412001ffe1b629ba3ec7705524524"
+    ],
+    "resampled": [
+      "4b45677f8d6f53b876daabeb865e699c83dd14191267ef50b5e5761722909391",
+      "c70e2db1fa828f7c34f6bba6aefc108d2d18108c01d3fc90a8821020415e60d9"
+    ]
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "as_of": "2026-10-13",
+  "primary_metric": "frozen_development_accuracy",
+  "official_test_evaluated": false,
+  "rows": [
+    {
+      "id": "E01",
+      "idea": "ModernBERT-base 历史全量基线",
+      "protocol": "MLX；256 token；3 轮；s42",
+      "result": "94.64%；第 1/2/3 轮 94.16/94.48/94.64%",
+      "decision": "保留基线；与 Laya 预算不同",
+      "evidence": "model-comparison"
+    },
+    {
+      "id": "E02",
+      "idea": "Laya-RLCD pilot",
+      "protocol": "MPS；512 token；1 轮；小训练预算",
+      "result": "93.72%；公共 2100 条与 CE 配对 p=1",
+      "decision": "保留损失对照；不是全量 RLCD",
+      "evidence": "model-comparison"
+    },
+    {
+      "id": "E03",
+      "idea": "Laya-CE pilot",
+      "protocol": "与 RLCD pilot 同预算",
+      "result": "93.52%；概率指标部分优于 RLCD",
+      "decision": "保留同预算对照",
+      "evidence": "model-comparison"
+    },
+    {
+      "id": "E04",
+      "idea": "Laya-CE Mac 全量一轮",
+      "protocol": "MPS FP32；512 token；s42",
+      "result": "95.76%；106 错",
+      "decision": "历史全量参照",
+      "evidence": "laya-mac-ce-comparison-v1"
+    },
+    {
+      "id": "E05",
+      "idea": "同权重 MLX FP32/FP16 推理",
+      "protocol": "固定一轮 CE 权重；2500 条",
+      "result": "均 95.76%；标签全一致；FP16 端到端提速 2.52–3.68 倍",
+      "decision": "保留 Mac 部署路线；非训练加速证据",
+      "evidence": "laya-backend-comparison"
+    },
+    {
+      "id": "E06",
+      "idea": "CUDA FP32 数值准入与测速",
+      "protocol": "RTX 6000D；小规模训练/重载/Mac 核对",
+      "result": "通过 FP32 准入；训练 FP16 梯度溢出",
+      "decision": "保留 FP32 与有限值保护",
+      "evidence": "cuda-preparation-v1"
+    },
+    {
+      "id": "E07",
+      "idea": "完整 CUDA 一轮参照",
+      "protocol": "RTX 6000D FP32；512 token；s42",
+      "result": "96.28%；与 Mac 推理标签一致",
+      "decision": "保留跨设备参照，非干净方法消融",
+      "evidence": "laya-cuda-reference-ce-l512-s42-fp32-v1"
+    },
+    {
+      "id": "E08",
+      "idea": "Mac 两轮原学习率",
+      "protocol": "MPS FP32；512 token；s42",
+      "result": "96.96%；76 错；较一轮修正 42/退化 12",
+      "decision": "最高历史开发成绩；单种子",
+      "evidence": "laya-mac-ce-comparison-v1"
+    },
+    {
+      "id": "E09",
+      "idea": "Mac 两轮学习率 ×0.6",
+      "protocol": "与 E08 同协议，仅降低初始 LR",
+      "result": "96.12%；较 E08 修正 10/退化 31",
+      "decision": "停止沿此幅度继续搜索",
+      "evidence": "laya-mac-ce-comparison-v1"
+    },
+    {
+      "id": "E10",
+      "idea": "Mac 两轮模型 MLX FP16 核对",
+      "protocol": "E08/E09 固定权重；2500 条",
+      "result": "标签全一致；个别概率差超过 1%",
+      "decision": "分类可用；严格概率核对未通过",
+      "evidence": "laya-mac-ce-comparison-v1"
+    },
+    {
+      "id": "E11",
+      "idea": "RTX 4090 两轮基线",
+      "protocol": "FP32；512 token；s42",
+      "result": "95.88%；103 错",
+      "decision": "CUDA 同期参照",
+      "evidence": "rtx4090-combined-completed-v1"
+    },
+    {
+      "id": "E12",
+      "idea": "标签平滑 0.05",
+      "protocol": "与 E11 同协议",
+      "result": "96.16%；未校准概率更好；校准后 NLL 非全面改善",
+      "decision": "保留概率质量证据",
+      "evidence": "rtx4090-regularization-completed-v1"
+    },
+    {
+      "id": "E13",
+      "idea": "warmup 5%",
+      "protocol": "与 E11 同协议",
+      "result": "96.32%；92 错",
+      "decision": "保留调度候选",
+      "evidence": "rtx4090-regularization-completed-v1"
+    },
+    {
+      "id": "E14",
+      "idea": "warmup＋标签平滑",
+      "protocol": "4090 FP32；两轮；s42",
+      "result": "96.44%；89 错",
+      "decision": "s42 有收益，等待跨 seed 解释",
+      "evidence": "rtx4090-combined-completed-v1"
+    },
+    {
+      "id": "E15",
+      "idea": "R-Drop alpha=1",
+      "protocol": "基于 E14；双前向；s42",
+      "result": "96.08%；5526 更新/11052 前向；低于组合",
+      "decision": "停止默认使用，不追加 alpha 搜索",
+      "evidence": "rtx4090-rdrop-completed-v1"
+    },
+    {
+      "id": "E16",
+      "idea": "基线 seed43 复验",
+      "protocol": "4090 FP32；两轮；默认运行时",
+      "result": "96.48%；第 1 轮 94.76%",
+      "decision": "保留历史基线；不能混同 strict",
+      "evidence": "rtx4090-seed43-completed-v1"
+    },
+    {
+      "id": "E17",
+      "idea": "warmup＋平滑 seed43 复验",
+      "protocol": "与 E16 同协议",
+      "result": "96.48%；第 1 轮 95.24%；对基线净 0/p=1",
+      "decision": "准确率增益未跨 seed 复现",
+      "evidence": "rtx4090-seed43-completed-v1"
+    },
+    {
+      "id": "E18",
+      "idea": "固定权重首尾窗口：基线 s42",
+      "protocol": "不训练；466 评论 token=头233＋尾233",
+      "result": "95.88→96.08%；修正 7/退化 2",
+      "decision": "保留输入策略候选",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E19",
+      "idea": "固定权重首尾窗口：基线 s43",
+      "protocol": "同 E18；s43 权重",
+      "result": "96.48→96.84%；修正 12/退化 3",
+      "decision": "CUDA 固定权重诊断最高，非新训练结果",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E20",
+      "idea": "固定权重首尾窗口：组合 s42",
+      "protocol": "同 E18；组合权重",
+      "result": "96.44→96.68%；修正 9/退化 3",
+      "decision": "保留",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E21",
+      "idea": "固定权重首尾窗口：组合 s43",
+      "protocol": "同 E18；组合权重",
+      "result": "96.48→96.64%；修正 8/退化 4",
+      "decision": "四组均正向；仅两个种子，仍属探索",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E22",
+      "idea": "前缀温度＋偏置校准",
+      "protocol": "仅原 400 校准样本拟合；四组固定权重",
+      "result": "基线 s42/s43=95.80/96.52%；组合=96.44/96.40%",
+      "decision": "Accuracy 不一致，不设默认偏置",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E23",
+      "idea": "首尾＋温度/偏置校准",
+      "protocol": "同 E22；首尾输入",
+      "result": "基线 s42/s43=96.04/96.84%；组合=96.72/96.56%",
+      "decision": "作为概率诊断，不按开发结果挑偏置",
+      "evidence": "laya-posthoc-consolidated-v2"
+    },
+    {
+      "id": "E24",
+      "idea": "训练内难例筛选与审阅",
+      "protocol": "梯度分区隔离；223 条审阅，145 条分歧全覆盖",
+      "result": "二次冻结 48 条；负17/正31；非折外难度",
+      "decision": "保留审阅链路；不是增强收益",
+      "evidence": "laya-train-hardcase-review-v2"
+    },
+    {
+      "id": "E25",
+      "idea": "边界复核后 45 条冻结池",
+      "protocol": "原 48 条再隔离 3 条；原标签不变",
+      "result": "形成 45 条执行池；不修改训练/校准分区",
+      "decision": "后续用固定45池；48池旧配置归档",
+      "evidence": "laya-resampling-45-preparation-v2"
+    },
+    {
+      "id": "E26",
+      "idea": "45 条重采样默认运行时",
+      "protocol": "s43；两轮；同期控制/增强",
+      "result": "95.96→96.16%；修正30/退化25，净+5",
+      "decision": "不足以确认稳定；控制未复现历史96.48%",
+      "evidence": "laya-resampling45-seed43-completed-v1"
+    },
+    {
+      "id": "E27",
+      "idea": "历史控制漂移核查",
+      "protocol": "模型/分区/输入哈希与超参数核对",
+      "result": "历史96.48 vs 本次95.96%，差13条",
+      "decision": "不能简单归因于采样适配器",
+      "evidence": "laya-resampling45-control-drift-audit-v2"
+    },
+    {
+      "id": "E28",
+      "idea": "四次短程重复性诊断",
+      "protocol": "原路径/控制路径各两次；每次16更新",
+      "result": "默认路径首步梯度已不同，前向/RNG匹配",
+      "decision": "定位反向边界；不是完整训练",
+      "evidence": "laya-short-drift-completed-20261012-v1"
+    },
+    {
+      "id": "E29",
+      "idea": "关闭重计算／强制 math 注意力",
+      "protocol": "独立16步重复矩阵",
+      "result": "仍不逐位一致；首步嵌入梯度不同",
+      "decision": "停止把这两项作为修复手段",
+      "evidence": "laya-determinism-completed-20261012-v1"
+    },
+    {
+      "id": "E30",
+      "idea": "strict 运行时协议",
+      "protocol": "CUBLAS workspace＋确定性算法；保留重计算",
+      "result": "原路径/控制路径16步逐位一致",
+      "decision": "保留准入；不声称全两轮逐位复现",
+      "evidence": "laya-determinism-completed-20261012-v1"
+    },
+    {
+      "id": "E31",
+      "idea": "独立嵌入层合成复验",
+      "protocol": "compiled/compiled-strict/eager，四次反向",
+      "result": "compiled 梯度不一致；strict/eager 一致",
+      "decision": "支持算子诊断；非真实首批张量重放",
+      "evidence": "laya-determinism-completed-20261012-v1"
+    },
+    {
+      "id": "E32",
+      "idea": "strict 45 条重采样复验",
+      "protocol": "s43；两轮；两组各5526更新",
+      "result": "96.32→96.40%；修正27/退化25；净+2；p=.8899",
+      "decision": "暂停重采样加码；无稳定收益",
+      "evidence": "laya-strict-pair-result-check-20261013-v1"
+    },
+    {
+      "id": "E33",
+      "idea": "30 组语义成对试制与固定模型探测",
+      "protocol": "训练内来源；原文/B普通/C语义；未训练",
+      "result": "原标签一致24/21/23；B退化3/C退化1",
+      "decision": "仅输入敏感性诊断；非泛化准确率",
+      "evidence": "semantic-pair-pilot-20261013-v2"
+    },
+    {
+      "id": "E34",
+      "idea": "真实人工审核与机械去重",
+      "protocol": "用户接受30组；三版本SHA绑定",
+      "result": "词五元组近重复0匹配；CUDA机械6测试通过",
+      "decision": "审核已更新；旧 pending 表保持历史状态",
+      "evidence": "semantic30-abc-launch-20261013-v1"
+    },
+    {
+      "id": "E35",
+      "idea": "30 来源 A：原文重复",
+      "protocol": "strict s42；5%总曝光；两轮",
+      "result": "96.52%；2413/2500；NLL .133592",
+      "decision": "本轮同期参照；并非无替换基线",
+      "evidence": "semantic30-abc-completed-20261013-v1"
+    },
+    {
+      "id": "E36",
+      "idea": "30 来源 B：普通改写",
+      "protocol": "与 E35 同曝光槽/标签/预算",
+      "result": "96.32%；相对A修正11/退化16；净−5",
+      "decision": "无收益；不继续按小池重放加码",
+      "evidence": "semantic30-abc-completed-20261013-v1"
+    },
+    {
+      "id": "E37",
+      "idea": "30 来源 C：语义改写",
+      "protocol": "与 E35 同协议；平均额外曝光73.67次/源",
+      "result": "96.44%；对A净−2/p=.8388；对B净+3/p=.7011",
+      "decision": "未超A；不自动追加s43，不否定所有语义增强",
+      "evidence": "semantic30-abc-completed-20261013-v1"
+    },
+    {
+      "id": "E38",
+      "idea": "首尾策略一致训练＋推理",
+      "protocol": "未来：先同权重诊断，再strict单因素训练",
+      "result": "未运行；保留512总预算和原冻结分区",
+      "decision": "下一优先级；输入哈希及Mac核对必需",
+      "evidence": "docs/superpowers/specs/2026-10-11-laya-posthoc-headtail-design.md"
+    },
+    {
+      "id": "E39",
+      "idea": "更长输入／分块／集成",
+      "protocol": "不同计算预算的未来独立实验",
+      "result": "未运行；不能靠当前截断错题承诺98%",
+      "decision": "暂缓；不与首尾单因素混做",
+      "evidence": "docs/archive/roadmaps/2026-10-09-research-roadmap.md"
+    },
+    {
+      "id": "E40",
+      "idea": "扩大语义池／一致性训练",
+      "protocol": "原目标至多240来源；新审核与新协议",
+      "result": "未运行；本轮30源不等同正式池",
+      "decision": "暂缓，需独立失败分析后再设计",
+      "evidence": "docs/superpowers/specs/2026-10-13-semantic-pair-pilot-proposal.md"
+    },
+    {
+      "id": "E41",
+      "idea": "ModernBERT-base 公平迁移对照",
+      "protocol": "未来：先512-token CE参照，再迁移有效输入策略",
+      "result": "未运行；历史256-token结果预算不同",
+      "decision": "Laya筛选收尾后执行",
+      "evidence": "docs/experiments/improvement-roadmap.md"
+    },
+    {
+      "id": "E42",
+      "idea": "Laya-RLCD 全量迁移对照",
+      "protocol": "未来：与CE同数据/预算/输入策略",
+      "result": "未运行；现有93.72%只是pilot",
+      "decision": "保留课程方法对照，不将pilot充作全量",
+      "evidence": "docs/experiments/improvement-roadmap.md"
+    },
+    {
+      "id": "E43",
+      "idea": "官方测试与课程交付",
+      "protocol": "冻结最终方案后一次正式测试；Word/视频/源码",
+      "result": "官方测试正文封存；独立应用数据尚无",
+      "decision": "最终阶段；98%仍是研究目标",
+      "evidence": "docs/experiments/current-status.md"
+    }
+  ]
+}

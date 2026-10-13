@@ -1,0 +1,95 @@
+{
+  "state": "completed",
+  "started_utc": "2026-10-13T05:45:03.492104+00:00",
+  "finished_utc": "2026-10-13T07:27:00.236795+00:00",
+  "all_stages_returncode_zero": true,
+  "test_accessed": false,
+  "input_hashes_all_match": true,
+  "paired": {
+    "a_only_correct": 25,
+    "b_only_correct": 27,
+    "both_correct": 2383,
+    "both_wrong": 65,
+    "mcnemar_exact_two_sided_p": 0.8898839652765371
+  },
+  "runs": {
+    "control": {
+      "run_id": "laya-rtx4090-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1",
+      "updates": 5526,
+      "expected_updates": 5526,
+      "optimization_state": "completed",
+      "epochs": [
+        {
+          "epoch": 1,
+          "training_loss": 0.261843685787461,
+          "checkpoint": "/root/sj-tmp/End-IMDB/checkpoints/laya-rtx4090-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/epoch-001",
+          "weights_sha256": "359c5add64b9dc3194ab0904a155bc8981271af45fa909946dc3a3432abbf9ab",
+          "temperature_scope": "pre_final_calibration"
+        },
+        {
+          "epoch": 2,
+          "training_loss": 0.17806194847233262,
+          "checkpoint": "/root/sj-tmp/End-IMDB/checkpoints/laya-rtx4090-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/epoch-002",
+          "weights_sha256": "de61ab12a4e9052c64181ac96335f060d1cf37f428c1f3ccdd2758a13c9bf7f4",
+          "temperature_scope": "pre_final_calibration"
+        }
+      ],
+      "epoch_accuracies": [
+        {
+          "epoch": 1,
+          "accuracy": 0.9468
+        },
+        {
+          "epoch": 2,
+          "accuracy": 0.9632
+        }
+      ],
+      "final_metrics": {
+        "accuracy": 0.9632,
+        "correct": 2408,
+        "count": 2500,
+        "nll": 0.13192697008045762
+      },
+      "final_weight_sha256": "de61ab12a4e9052c64181ac96335f060d1cf37f428c1f3ccdd2758a13c9bf7f4"
+    },
+    "resampled": {
+      "run_id": "laya-rtx4090-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1",
+      "updates": 5526,
+      "expected_updates": 5526,
+      "optimization_state": "completed",
+      "epochs": [
+        {
+          "epoch": 1,
+          "training_loss": 0.264588718944665,
+          "checkpoint": "/root/sj-tmp/End-IMDB/checkpoints/laya-rtx4090-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/epoch-001",
+          "weights_sha256": "c38eb9d8524ab885c64af38ac68fa17e9afee1dd53de5df87b937d67c06fd35d",
+          "temperature_scope": "pre_final_calibration"
+        },
+        {
+          "epoch": 2,
+          "training_loss": 0.17357645785133347,
+          "checkpoint": "/root/sj-tmp/End-IMDB/checkpoints/laya-rtx4090-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/epoch-002",
+          "weights_sha256": "afa21b315cc0f8ebcec3a1350b66f4add8ce989c6a0f600b2e98ad9b57709fa6",
+          "temperature_scope": "pre_final_calibration"
+        }
+      ],
+      "epoch_accuracies": [
+        {
+          "epoch": 1,
+          "accuracy": 0.938
+        },
+        {
+          "epoch": 2,
+          "accuracy": 0.964
+        }
+      ],
+      "final_metrics": {
+        "accuracy": 0.964,
+        "correct": 2410,
+        "count": 2500,
+        "nll": 0.12878870748339355
+      },
+      "final_weight_sha256": "afa21b315cc0f8ebcec3a1350b66f4add8ce989c6a0f600b2e98ad9b57709fa6"
+    }
+  }
+}

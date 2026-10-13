@@ -1,0 +1,270 @@
+{
+  "state": "seed43_verified_seed42_pending_remote_authentication",
+  "models": {
+    "baseline": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.1796556033813152,
+            "ece_15_equal_width_top_label": 0.03180947251155616
+          },
+          "native_temperature": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.11881455576767772,
+            "ece_15_equal_width_top_label": 0.020014134417299684
+          },
+          "temperature_bias": {
+            "accuracy": 0.9652,
+            "correct": 2413,
+            "nll": 0.11913884909761063,
+            "ece_15_equal_width_top_label": 0.020359339581223608
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.16713718140943207,
+            "ece_15_equal_width_top_label": 0.028267729707909105
+          },
+          "native_temperature": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.11116018389085769,
+            "ece_15_equal_width_top_label": 0.01762699972417411
+          },
+          "temperature_bias": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.109203773043812,
+            "ece_15_equal_width_top_label": 0.015122695112684277
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/11336_4.txt",
+          "train/neg/12193_4.txt",
+          "train/neg/12416_3.txt",
+          "train/neg/4124_1.txt",
+          "train/neg/5625_4.txt",
+          "train/neg/6433_3.txt",
+          "train/neg/838_2.txt",
+          "train/pos/10227_10.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/5202_8.txt",
+          "train/pos/5939_7.txt",
+          "train/pos/6029_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/neg/2459_4.txt",
+          "train/neg/3591_4.txt"
+        ],
+        "corrected": 12,
+        "regressed": 3,
+        "paired": {
+          "a_only_correct": 3,
+          "b_only_correct": 12,
+          "both_correct": 2409,
+          "both_wrong": 76,
+          "mcnemar_exact_two_sided_p": 0.03515625
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 22
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 22
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 65
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    },
+    "combined": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.13157844656067244,
+            "ece_15_equal_width_top_label": 0.007573326450768823
+          },
+          "native_temperature": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.1327172002610218,
+            "ece_15_equal_width_top_label": 0.013352829110039845
+          },
+          "temperature_bias": {
+            "accuracy": 0.964,
+            "correct": 2410,
+            "nll": 0.13534557930231586,
+            "ece_15_equal_width_top_label": 0.013667311649781917
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9664,
+            "correct": 2416,
+            "nll": 0.1255226569782907,
+            "ece_15_equal_width_top_label": 0.006803446812940984
+          },
+          "native_temperature": {
+            "accuracy": 0.9664,
+            "correct": 2416,
+            "nll": 0.12635199240167314,
+            "ece_15_equal_width_top_label": 0.011411284579184765
+          },
+          "temperature_bias": {
+            "accuracy": 0.9656,
+            "correct": 2414,
+            "nll": 0.12905076940029958,
+            "ece_15_equal_width_top_label": 0.013485088461993283
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/10287_4.txt",
+          "train/neg/12193_4.txt",
+          "train/neg/4124_1.txt",
+          "train/neg/5392_3.txt",
+          "train/neg/838_2.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/4219_7.txt",
+          "train/pos/5939_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/neg/2459_4.txt",
+          "train/neg/3591_4.txt",
+          "train/pos/9579_8.txt"
+        ],
+        "corrected": 8,
+        "regressed": 4,
+        "paired": {
+          "a_only_correct": 4,
+          "b_only_correct": 8,
+          "both_correct": 2408,
+          "both_wrong": 80,
+          "mcnemar_exact_two_sided_p": 0.3876953125
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 18
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 18
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 72
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 72
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    }
+  },
+  "source_sha256": {
+    "reports/laya-posthoc-baseline-s43-fp32-v1/summary.json": "382c06ad7e4126dbabe46c29000bd5bda35aedab34386daa3aed61dcbedfdbe7",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/analysis.json": "657193cc0ceceed626d1809dbcde8b8481543887216d6deab7b4d29b87b0a909",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/local-recheck.json": "25040a136cf36939b72e45e5aea098a4afdb775b0469987582744d2f3f87da3c",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head.json": "d17757ed3102198853c4f2fca30d80154a3ee9e5b32ea323b9efaff6d5a34d6e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766",
+    "reports/laya-posthoc-combined-s43-fp32-v1/summary.json": "231e05e4f1ee58134be8f0b462583b555c250e5c71b19972c4059458d528cac0",
+    "reports/laya-posthoc-combined-s43-fp32-v1/analysis.json": "9c7b58fe6e427a2474868a8853e5b4f9f881e435a07135c80d8b4db996537211",
+    "reports/laya-posthoc-combined-s43-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-combined-s43-fp32-v1/local-recheck.json": "e9a6f8f5f7f136b01647acc76b32e2af961ead6d7d3fd51bda90e0a39d47a9f4",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head.json": "4f296e0bf04e6c9910d816ab32cdfe6102831033e3d4636d1116597552ea2132",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head_tail.json": "4148ad8ffb6fda699b8edaf7ca0de418dd0f76b3220021d4b423459288260b19",
+    "reports/laya-posthoc-error-review-v1/summary.json": "1d5f39db30d4c0c3b1253775e1823a97a53bcafad223728a0140298cd412bae7"
+  },
+  "checks": {
+    "full_validation_count": 2500,
+    "calibration_count": 400,
+    "short_inputs_and_logits_identical": true,
+    "local_posthoc_tests_passed": 13,
+    "training_performed": false,
+    "test_accessed": false
+  },
+  "seed42_status": "Local runner prepared; remote state not verified in this continuation. SSH authentication unavailable."
+}

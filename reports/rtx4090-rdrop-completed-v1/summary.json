@@ -1,0 +1,173 @@
+{
+  "run_id": "laya-rtx4090-ce-epochs2-warmup005-ls005-rdrop1-l512-s42-fp32-v1",
+  "retrieved_utc": "2026-10-11T08:53:30.100163+00:00",
+  "batch": {
+    "state": "completed",
+    "started_utc": "2026-10-11T07:30:45.875233+00:00",
+    "hourly_price_yuan": 1.24,
+    "stages": [
+      {
+        "run_id": "laya-rtx4090-ce-epochs2-warmup005-ls005-rdrop1-l512-s42-fp32-v1",
+        "stage": "train",
+        "state": "completed",
+        "started_utc": "2026-10-11T07:30:45.875412+00:00",
+        "timeout_seconds": 7200,
+        "log": "warmup005-ls005-rdrop1-train.log",
+        "returncode": 0,
+        "finished_utc": "2026-10-11T08:51:05.138319+00:00"
+      },
+      {
+        "run_id": "laya-rtx4090-ce-epochs2-warmup005-ls005-rdrop1-l512-s42-fp32-v1",
+        "stage": "saved_validation",
+        "state": "completed",
+        "started_utc": "2026-10-11T08:51:05.139305+00:00",
+        "timeout_seconds": 300,
+        "log": "warmup005-ls005-rdrop1-saved_validation.log",
+        "returncode": 0,
+        "finished_utc": "2026-10-11T08:51:54.184448+00:00",
+        "accuracy": 0.9608
+      }
+    ],
+    "test_accessed": false,
+    "mac_parity_checked": false,
+    "finished_utc": "2026-10-11T08:51:54.203512+00:00",
+    "elapsed_seconds": 4868.328106842935,
+    "estimated_process_period_cost_yuan": 1.6768685701347887
+  },
+  "run_status": {
+    "state": "completed",
+    "started_utc": "2026-10-11T07:30:49.408383+00:00",
+    "elapsed_seconds": 4814.038674410433,
+    "mps_driver_allocated_bytes": null
+  },
+  "optimization_diagnostics": {
+    "state": "completed",
+    "test_accessed": false,
+    "optimization": {
+      "warmup_ratio": 0.05,
+      "diagnostics_every": 16,
+      "rdrop_alpha": 1
+    },
+    "label_smoothing": 0.05,
+    "label_smoothing_scope": "gradient_training_only",
+    "completed_optimizer_updates": 5526,
+    "gradient_windows": 5526,
+    "clipped_windows": 2262,
+    "max_gradient_norm": 155.0521697998047,
+    "lr_scope": "Learning rates used by each sampled optimizer update",
+    "sampling": "First 16, warmup boundary +/-1, every diagnostics_every, and final update",
+    "total_optimizer_updates": 5526,
+    "warmup_updates": 277,
+    "peak_learning_rates": [
+      0.000025,
+      0.0001
+    ],
+    "min_lr": 0.000001,
+    "scheduler": "linear_warmup_cosine",
+    "mean_gradient_norm": 4.835981006441918,
+    "clipping_fraction": 0.40933767643865365
+  },
+  "rdrop_diagnostics": {
+    "state": "completed",
+    "test_accessed": false,
+    "alpha": 1,
+    "paired_batches": 5526,
+    "training_forward_calls": 11052,
+    "max_symmetric_kl": 0.0016405719798058271,
+    "loss_definition": "mean(two CE) + alpha * mean(two directional KL)",
+    "inference_changes": false,
+    "mean_ce": 0.21915238716552277,
+    "mean_symmetric_kl": 0.00012983536720764102
+  },
+  "validation": {
+    "state": "completed",
+    "passed": true,
+    "test_accessed": false,
+    "checkpoint_sha256": "fefb71e1f22e3bb0b9fd175b3798000e18d469e61d0e33650ac69c7926a107b6",
+    "validation_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "temperature": 1,
+    "dtype": "float32",
+    "tf32": false,
+    "batch_size": 8,
+    "elapsed_seconds": 41.238459441810846,
+    "raw_metrics": {
+      "count": 2500,
+      "accuracy": 0.9608,
+      "correct": 2402,
+      "macro_f1": 0.9607990968111906,
+      "precision_macro": 0.9608424712421497,
+      "recall_macro": 0.9608,
+      "precision_positive": 0.9564183835182251,
+      "recall_positive": 0.9656,
+      "auroc": 0.99251904,
+      "nll": 0.13993091476085148,
+      "brier_multiclass": 0.06811723881169343,
+      "brier_positive": 0.034058619405846716,
+      "ece_15_equal_width_top_label": 0.009717352071454187,
+      "temperature": 1,
+      "confusion_matrix_actual_rows_predicted_columns": [
+        [
+          1195,
+          55
+        ],
+        [
+          43,
+          1207
+        ]
+      ],
+      "error_mean_confidence": 0.906323839790637,
+      "errors_with_confidence_ge_095": 59
+    },
+    "native_calibrated_metrics": {
+      "count": 2500,
+      "accuracy": 0.9608,
+      "correct": 2402,
+      "macro_f1": 0.9607990968111906,
+      "precision_macro": 0.9608424712421497,
+      "recall_macro": 0.9608,
+      "precision_positive": 0.9564183835182251,
+      "recall_positive": 0.9656,
+      "auroc": 0.99251904,
+      "nll": 0.13993091476085148,
+      "brier_multiclass": 0.06811723881169343,
+      "brier_positive": 0.034058619405846716,
+      "ece_15_equal_width_top_label": 0.009717352071454187,
+      "temperature": 1,
+      "confusion_matrix_actual_rows_predicted_columns": [
+        [
+          1195,
+          55
+        ],
+        [
+          43,
+          1207
+        ]
+      ],
+      "error_mean_confidence": 0.906323839790637,
+      "errors_with_confidence_ge_095": 59
+    },
+    "source_sha256": "ce3ba71488004b1f2a444186e16236fb522e2e7cd5aa65338a9656880fad7f47",
+    "versions": {
+      "torch": "2.14.1",
+      "laya": "0.4.1",
+      "transformers": "4.57.6",
+      "numpy": "2.5.3"
+    }
+  },
+  "input_hashes_match_combined_baseline": true,
+  "paired_combined_baseline_vs_rdrop": {
+    "a_only_correct": 27,
+    "b_only_correct": 18,
+    "both_correct": 2384,
+    "both_wrong": 71,
+    "mcnemar_exact_two_sided_p": 0.23269319190831084
+  },
+  "remote_evidence_sha256": {
+    "manifest.json": "b047f86fe3abfa9d5fcd9deffe26caf0122d9309fa54a7ba6e45ec296e29dded",
+    "cuda-saved-validation.json": "bd0954a9ff968e4bfaf699e55f9787117f183d4c7d3bfaa8a083b5c2e9b20778",
+    "optimizer_updates.jsonl": "fa3391139ba0d30a0f5294cf18efeb928a8d62a9fec44710832065688b5effb4",
+    "rdrop_diagnostics.json": "eb2c7c0233d7a65083c2ed50879d18f7d81f002fc9af56fcbf7bb4aeb56e4f4f"
+  },
+  "balance_yuan_estimate": 2.7195543882999997,
+  "raw_predictions_and_weights_location": "Remote training instance; not downloaded in this status check"
+}

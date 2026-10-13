@@ -1,0 +1,202 @@
+{
+  "scope": "seed43_raw_head_to_head_tail_descriptive_review",
+  "unique_changed_samples": 19,
+  "fixed_unique": 15,
+  "regressed_unique": 4,
+  "both_models_fixed_ids": [
+    "train/neg/12193_4.txt",
+    "train/neg/4124_1.txt",
+    "train/neg/838_2.txt",
+    "train/pos/1838_10.txt",
+    "train/pos/5939_7.txt"
+  ],
+  "both_models_regressed_ids": [
+    "train/neg/1044_4.txt",
+    "train/neg/2459_4.txt",
+    "train/neg/3591_4.txt"
+  ],
+  "per_model": {
+    "baseline": {
+      "head_accuracy": 0.9648,
+      "head_tail_accuracy": 0.9684,
+      "fixed": 12,
+      "regressed": 3,
+      "net_correct": 9,
+      "common65_fixed_ids": [
+        "train/neg/12193_4.txt",
+        "train/neg/4124_1.txt",
+        "train/neg/838_2.txt",
+        "train/pos/10227_10.txt",
+        "train/pos/1838_10.txt",
+        "train/pos/5939_7.txt"
+      ],
+      "stable42_fixed_ids": [
+        "train/neg/838_2.txt",
+        "train/pos/1838_10.txt"
+      ],
+      "six_new_overall_fixed_ids": [
+        "train/neg/11336_4.txt",
+        "train/neg/4124_1.txt",
+        "train/neg/838_2.txt",
+        "train/pos/5939_7.txt"
+      ],
+      "fixed_semantic_categories": {
+        "评价对象或叙事": 5,
+        "剧情叙述后总体评价": 2,
+        "低质量但享受": 2,
+        "褒贬混合": 3
+      },
+      "remaining_common65_errors": 59,
+      "remaining_stable42_errors": 40
+    },
+    "combined": {
+      "head_accuracy": 0.9648,
+      "head_tail_accuracy": 0.9664,
+      "fixed": 8,
+      "regressed": 4,
+      "net_correct": 4,
+      "common65_fixed_ids": [
+        "train/neg/12193_4.txt",
+        "train/neg/4124_1.txt",
+        "train/neg/838_2.txt",
+        "train/pos/1838_10.txt",
+        "train/pos/5939_7.txt"
+      ],
+      "stable42_fixed_ids": [
+        "train/neg/838_2.txt",
+        "train/pos/1838_10.txt"
+      ],
+      "six_new_overall_fixed_ids": [
+        "train/neg/4124_1.txt",
+        "train/neg/838_2.txt",
+        "train/pos/5939_7.txt"
+      ],
+      "fixed_semantic_categories": {
+        "褒贬混合": 4,
+        "评价对象或叙事": 2,
+        "剧情叙述后总体评价": 2
+      },
+      "remaining_common65_errors": 60,
+      "remaining_stable42_errors": 40
+    }
+  },
+  "prior_common65_fixed_union_ids": [
+    "train/neg/12193_4.txt",
+    "train/neg/4124_1.txt",
+    "train/neg/838_2.txt",
+    "train/pos/10227_10.txt",
+    "train/pos/1838_10.txt",
+    "train/pos/5939_7.txt"
+  ],
+  "prior_common65_still_wrong_both": 59,
+  "current_head_tail_total_common_errors": 63,
+  "current_new_common_error_ids_and_original_correctness": {
+    "train/neg/1044_4.txt": {
+      "baseline_head_correct": true,
+      "combined_head_correct": true
+    },
+    "train/neg/2459_4.txt": {
+      "baseline_head_correct": true,
+      "combined_head_correct": true
+    },
+    "train/neg/3591_4.txt": {
+      "baseline_head_correct": true,
+      "combined_head_correct": true
+    },
+    "train/pos/9579_8.txt": {
+      "baseline_head_correct": false,
+      "combined_head_correct": true
+    }
+  },
+  "prior_stable42_still_wrong_both": 40,
+  "six_new_overall_candidates": {
+    "train/neg/11336_4.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      },
+      "combined": {
+        "head_correct": true,
+        "head_tail_correct": true,
+        "changed": false
+      }
+    },
+    "train/neg/2291_4.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": false,
+        "changed": false
+      },
+      "combined": {
+        "head_correct": false,
+        "head_tail_correct": false,
+        "changed": false
+      }
+    },
+    "train/neg/4124_1.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      },
+      "combined": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      }
+    },
+    "train/neg/838_2.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      },
+      "combined": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      }
+    },
+    "train/pos/1264_10.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": false,
+        "changed": false
+      },
+      "combined": {
+        "head_correct": false,
+        "head_tail_correct": false,
+        "changed": false
+      }
+    },
+    "train/pos/5939_7.txt": {
+      "baseline": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      },
+      "combined": {
+        "head_correct": false,
+        "head_tail_correct": true,
+        "changed": true
+      }
+    }
+  },
+  "rules": "Original first466 tokens vs first233+last233 original IDs, fixed weight; raw predictions only, no calibrated bias in this review.",
+  "source_sha256": {
+    "reports/laya-posthoc-baseline-s43-fp32-v1/metadata.json": "bc3278f15b5b454bd4d2a3f6c7cb7b93b343d9a26c683c3c2d4ef27c87d7f545",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head.json": "d17757ed3102198853c4f2fca30d80154a3ee9e5b32ea323b9efaff6d5a34d6e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/analysis.json": "657193cc0ceceed626d1809dbcde8b8481543887216d6deab7b4d29b87b0a909",
+    "reports/laya-posthoc-combined-s43-fp32-v1/metadata.json": "a6782ef63d545386a3046156895d88c8c9dfb276f49c0ef7e268d56ac72e93b7",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head.json": "4f296e0bf04e6c9910d816ab32cdfe6102831033e3d4636d1116597552ea2132",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head_tail.json": "4148ad8ffb6fda699b8edaf7ca0de418dd0f76b3220021d4b423459288260b19",
+    "reports/laya-posthoc-combined-s43-fp32-v1/analysis.json": "9c7b58fe6e427a2474868a8853e5b4f9f881e435a07135c80d8b4db996537211",
+    "data/processed/validation.jsonl": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094"
+  },
+  "test_accessed": false,
+  "training_performed": false,
+  "model_inference_performed_by_reviewer": false,
+  "causal_claim": false
+}

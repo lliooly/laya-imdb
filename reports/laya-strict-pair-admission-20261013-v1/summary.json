@@ -1,0 +1,150 @@
+{
+  "file_count": 22,
+  "bundle_sha256": "6a35dd4dd0e4aed68efa045c8de8068253572b3d06c25f50d24acca78bd66664",
+  "all_file_sha256_verified": true,
+  "summary": {
+    "smokes": {
+      "control": {
+        "checkpoint_reload": {
+          "checkpoint_sha256": "a77b3d40b3e16fe1c6f682ea7c28f033205b4e9bd3374c36c70fb931e2b5665d",
+          "config_max_len": 512,
+          "max_abs_logit_delta_fp32_vs_saved_fp16": 0.0032471418380737305,
+          "predictions_match": true,
+          "validation_items": 32,
+          "weights_match_fp16_representation": true
+        },
+        "manifest_sha256": "23e1049e94ac7dd80e6e81c17aeceb363af3ca2efa8f1be928b079b852aa9350",
+        "passed": true,
+        "runtime": {
+          "cublas_workspace_config": ":4096:8",
+          "cudnn_benchmark": false,
+          "cudnn_deterministic": true,
+          "deterministic_algorithms": true,
+          "profile": "strict",
+          "warn_only": false
+        },
+        "sampling_audit_sha256": "06c1125ab6245513899dd0a371b3b35de35ed882b24da5257999358813ca6ea6",
+        "sampling_count": 128,
+        "sampling_state": "completed",
+        "updates": 32
+      },
+      "resampled": {
+        "checkpoint_reload": {
+          "checkpoint_sha256": "68bb850889d8600c168f9360f31841b5534d8af44b2349c5b9f472f40596ca6b",
+          "config_max_len": 512,
+          "max_abs_logit_delta_fp32_vs_saved_fp16": 0.006811261177062988,
+          "predictions_match": true,
+          "validation_items": 32,
+          "weights_match_fp16_representation": true
+        },
+        "manifest_sha256": "d73c11b2c5f70526ac537334689bcc7f46e621c71d8dc46c2a6f106ab84836bd",
+        "passed": true,
+        "runtime": {
+          "cublas_workspace_config": ":4096:8",
+          "cudnn_benchmark": false,
+          "cudnn_deterministic": true,
+          "deterministic_algorithms": true,
+          "profile": "strict",
+          "warn_only": false
+        },
+        "sampling_audit_sha256": "2c263b94d76e9a9ed34bde18f9694d15da54bba14d155e32ec48981cb2ab219a",
+        "sampling_count": 128,
+        "sampling_state": "completed",
+        "updates": 32
+      }
+    },
+    "state": "admission_passed_full_control_started",
+    "test_accessed": false,
+    "training_results_complete": false
+  },
+  "files": [
+    {
+      "path": "artifacts/resampling45-seed43-strict-20261013-v1/admission-comparison.json",
+      "sha256": "d557201e35555a261cabc6df210333d460a038e890815c8c7ffa59e644ba7897"
+    },
+    {
+      "path": "artifacts/resampling45-seed43-strict-20261013-v1/status.json",
+      "sha256": "ad92cc6ef46fd8ca22aa3f50335b8b6fe00063a1d185e7c274b98cdf2cca123b"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-1-trace/result.json",
+      "sha256": "14f647e34512f621d6afa18601988fc7729395bf30716ab3360e2514546b7d8f"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-1-trace/trace/status.json",
+      "sha256": "bb9d71d55d8106d71ab996b89eadbd02ed277169be0777ee6b897da04a03c624"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-1-trace/trace/model-structure.json",
+      "sha256": "6064adb089167b494b319d16bf7324248ab6a7ae2181dce83028c06b7976464c"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-1-trace/trace/first-gradients.json",
+      "sha256": "edb9ce473940963d6e1df80044767258a36849ff268234390b6d680714d52193"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-1-trace/trace/updates.jsonl",
+      "sha256": "c94571dfc1ab0f46d5a22fd0c28b17b73f02a31f734de3cf9e99b28617c3329d"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-2-trace/result.json",
+      "sha256": "14f647e34512f621d6afa18601988fc7729395bf30716ab3360e2514546b7d8f"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-2-trace/trace/status.json",
+      "sha256": "bb9d71d55d8106d71ab996b89eadbd02ed277169be0777ee6b897da04a03c624"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-2-trace/trace/model-structure.json",
+      "sha256": "6064adb089167b494b319d16bf7324248ab6a7ae2181dce83028c06b7976464c"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-2-trace/trace/first-gradients.json",
+      "sha256": "edb9ce473940963d6e1df80044767258a36849ff268234390b6d680714d52193"
+    },
+    {
+      "path": "reports/resampling45-seed43-strict-20261013-v1-admission-2-trace/trace/updates.jsonl",
+      "sha256": "c94571dfc1ab0f46d5a22fd0c28b17b73f02a31f734de3cf9e99b28617c3329d"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/numerical_audit.json",
+      "sha256": "b86cf682bea63def38e560219b1bbe01dfa7c15e1b6b94e70d9d24bb458335c0"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/epoch_checkpoints.json",
+      "sha256": "6f5d4960f036c14df974246171909676a2f6dd9666529259c8217683f1f4565f"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/optimization_diagnostics.json",
+      "sha256": "a9254ca735624b8cd5023abe9d80ebea16d2db546516d8f62df8f9caa84af383"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/status.json",
+      "sha256": "fd8a3fc999e44b5528be4cce246451add80a6c5a91c87b050ad2837f5e070ddc"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1/result.json",
+      "sha256": "4850a306d59f525d7513b9f2c892ed5b9eaff5a2a55f00a984820bc8f4db3058"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/numerical_audit.json",
+      "sha256": "b055ef5a4cd58b8cd52089adea2531c03030eccf78b24c3a50f3719c5fa776f1"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/epoch_checkpoints.json",
+      "sha256": "cd18a507b0f6455758b7e69ebdd833ed7279a0bb691e04059a0dac9176fc93f5"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/optimization_diagnostics.json",
+      "sha256": "d9165c938215ce16dfba102b1ec5cd4007f96a08d0f7259f0b4ef6f6eed6dc38"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/status.json",
+      "sha256": "55f9e4474823d56233f69b6128a75f5bf50169c1b1f2561b1d945aafd503c5ad"
+    },
+    {
+      "path": "reports/laya-rtx4090-smoke-ce-resampling-resampled-pool45-s43-epochs2-strict-20261013-v1/result.json",
+      "sha256": "759f9162facf1cadb2c260faf413601302ebf2cee572a353e2a76f58f4442ac7"
+    }
+  ]
+}

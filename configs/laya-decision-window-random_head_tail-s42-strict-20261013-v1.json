@@ -1,0 +1,42 @@
+{
+  "run_id": "laya-decision-window-random_head_tail-s42-strict-20261013-v1",
+  "device": "cuda",
+  "train_limit": null,
+  "validation_limit": null,
+  "eval_batch_size": 8,
+  "training": {
+    "epochs": 2,
+    "micro_batch": 8,
+    "grad_accum": 1,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "soft-ce",
+    "rl_samples": 4,
+    "shuffle_options": [
+      "choice"
+    ],
+    "freeze_encoder": false,
+    "calib_max": 400,
+    "calib_frac": 0.1,
+    "calib_seed": 42,
+    "seed": 42,
+    "max_len": 512,
+    "head_max_len": 192,
+    "amp": false,
+    "gradient_checkpointing": true,
+    "log_every": 16,
+    "label_smoothing": 0.05
+  },
+  "optimization": {
+    "warmup_ratio": 0.05,
+    "diagnostics_every": 16
+  },
+  "runtime_profile": "strict",
+  "epoch_checkpoints": true,
+  "window_training": {
+    "mode": "random_head_tail"
+  }
+}

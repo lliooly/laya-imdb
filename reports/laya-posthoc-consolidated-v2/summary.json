@@ -1,0 +1,550 @@
+{
+  "state": "four_exports_verified",
+  "models": {
+    "baseline_s42": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9588,
+            "correct": 2397,
+            "nll": 0.18918002527742436,
+            "ece_15_equal_width_top_label": 0.036061805104607395
+          },
+          "native_temperature": {
+            "accuracy": 0.9588,
+            "correct": 2397,
+            "nll": 0.12290711208292375,
+            "ece_15_equal_width_top_label": 0.018089598204713373
+          },
+          "temperature_bias": {
+            "accuracy": 0.958,
+            "correct": 2395,
+            "nll": 0.1228255897122,
+            "ece_15_equal_width_top_label": 0.015630242400792506
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9608,
+            "correct": 2402,
+            "nll": 0.18095237987807053,
+            "ece_15_equal_width_top_label": 0.03444122807811806
+          },
+          "native_temperature": {
+            "accuracy": 0.9608,
+            "correct": 2402,
+            "nll": 0.11785166037039901,
+            "ece_15_equal_width_top_label": 0.016738935865851907
+          },
+          "temperature_bias": {
+            "accuracy": 0.9604,
+            "correct": 2401,
+            "nll": 0.11737281339852007,
+            "ece_15_equal_width_top_label": 0.01687090642849922
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/10287_4.txt",
+          "train/neg/12314_3.txt",
+          "train/neg/5625_4.txt",
+          "train/neg/838_2.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/5939_7.txt",
+          "train/pos/6029_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/neg/8397_3.txt"
+        ],
+        "corrected": 7,
+        "regressed": 2,
+        "paired": {
+          "a_only_correct": 2,
+          "b_only_correct": 7,
+          "both_correct": 2395,
+          "both_wrong": 96,
+          "mcnemar_exact_two_sided_p": 0.1796875
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 19
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 84
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 20
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 85
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 84
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 85
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    },
+    "combined_s42": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9644,
+            "correct": 2411,
+            "nll": 0.1289246579633936,
+            "ece_15_equal_width_top_label": 0.005253607201969695
+          },
+          "native_temperature": {
+            "accuracy": 0.9644,
+            "correct": 2411,
+            "nll": 0.13041337234353864,
+            "ece_15_equal_width_top_label": 0.011996271265351733
+          },
+          "temperature_bias": {
+            "accuracy": 0.9644,
+            "correct": 2411,
+            "nll": 0.13198200552712483,
+            "ece_15_equal_width_top_label": 0.012767269997655348
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9668,
+            "correct": 2417,
+            "nll": 0.1226149323848704,
+            "ece_15_equal_width_top_label": 0.0046887037859126394
+          },
+          "native_temperature": {
+            "accuracy": 0.9668,
+            "correct": 2417,
+            "nll": 0.12361179820763736,
+            "ece_15_equal_width_top_label": 0.010769349446973511
+          },
+          "temperature_bias": {
+            "accuracy": 0.9672,
+            "correct": 2418,
+            "nll": 0.12557276096096653,
+            "ece_15_equal_width_top_label": 0.012423762372583372
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/12314_3.txt",
+          "train/neg/12416_3.txt",
+          "train/neg/5625_4.txt",
+          "train/neg/6926_4.txt",
+          "train/neg/838_2.txt",
+          "train/neg/8730_3.txt",
+          "train/pos/10576_7.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/5939_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/pos/1710_7.txt",
+          "train/pos/8808_9.txt"
+        ],
+        "corrected": 9,
+        "regressed": 3,
+        "paired": {
+          "a_only_correct": 3,
+          "b_only_correct": 9,
+          "both_correct": 2408,
+          "both_wrong": 80,
+          "mcnemar_exact_two_sided_p": 0.14599609375
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 19
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 20
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 69
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 69
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    },
+    "baseline_s43": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.1796556033813152,
+            "ece_15_equal_width_top_label": 0.03180947251155616
+          },
+          "native_temperature": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.11881455576767772,
+            "ece_15_equal_width_top_label": 0.020014134417299684
+          },
+          "temperature_bias": {
+            "accuracy": 0.9652,
+            "correct": 2413,
+            "nll": 0.11913884909761063,
+            "ece_15_equal_width_top_label": 0.020359339581223608
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.16713718140943207,
+            "ece_15_equal_width_top_label": 0.028267729707909105
+          },
+          "native_temperature": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.11116018389085769,
+            "ece_15_equal_width_top_label": 0.01762699972417411
+          },
+          "temperature_bias": {
+            "accuracy": 0.9684,
+            "correct": 2421,
+            "nll": 0.109203773043812,
+            "ece_15_equal_width_top_label": 0.015122695112684277
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/11336_4.txt",
+          "train/neg/12193_4.txt",
+          "train/neg/12416_3.txt",
+          "train/neg/4124_1.txt",
+          "train/neg/5625_4.txt",
+          "train/neg/6433_3.txt",
+          "train/neg/838_2.txt",
+          "train/pos/10227_10.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/5202_8.txt",
+          "train/pos/5939_7.txt",
+          "train/pos/6029_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/neg/2459_4.txt",
+          "train/neg/3591_4.txt"
+        ],
+        "corrected": 12,
+        "regressed": 3,
+        "paired": {
+          "a_only_correct": 3,
+          "b_only_correct": 12,
+          "both_correct": 2409,
+          "both_wrong": 76,
+          "mcnemar_exact_two_sided_p": 0.03515625
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 22
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 22
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 65
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 13
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 66
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    },
+    "combined_s43": {
+      "metrics": {
+        "head": {
+          "raw": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.13157844656067244,
+            "ece_15_equal_width_top_label": 0.007573326450768823
+          },
+          "native_temperature": {
+            "accuracy": 0.9648,
+            "correct": 2412,
+            "nll": 0.1327172002610218,
+            "ece_15_equal_width_top_label": 0.013352829110039845
+          },
+          "temperature_bias": {
+            "accuracy": 0.964,
+            "correct": 2410,
+            "nll": 0.13534557930231586,
+            "ece_15_equal_width_top_label": 0.013667311649781917
+          }
+        },
+        "head_tail": {
+          "raw": {
+            "accuracy": 0.9664,
+            "correct": 2416,
+            "nll": 0.1255226569782907,
+            "ece_15_equal_width_top_label": 0.006803446812940984
+          },
+          "native_temperature": {
+            "accuracy": 0.9664,
+            "correct": 2416,
+            "nll": 0.12635199240167314,
+            "ece_15_equal_width_top_label": 0.011411284579184765
+          },
+          "temperature_bias": {
+            "accuracy": 0.9656,
+            "correct": 2414,
+            "nll": 0.12905076940029958,
+            "ece_15_equal_width_top_label": 0.013485088461993283
+          }
+        }
+      },
+      "raw_transitions": {
+        "corrected_ids": [
+          "train/neg/10287_4.txt",
+          "train/neg/12193_4.txt",
+          "train/neg/4124_1.txt",
+          "train/neg/5392_3.txt",
+          "train/neg/838_2.txt",
+          "train/pos/1838_10.txt",
+          "train/pos/4219_7.txt",
+          "train/pos/5939_7.txt"
+        ],
+        "regressed_ids": [
+          "train/neg/1044_4.txt",
+          "train/neg/2459_4.txt",
+          "train/neg/3591_4.txt",
+          "train/pos/9579_8.txt"
+        ],
+        "corrected": 8,
+        "regressed": 4,
+        "paired": {
+          "a_only_correct": 4,
+          "b_only_correct": 8,
+          "both_correct": 2408,
+          "both_wrong": 80,
+          "mcnemar_exact_two_sided_p": 0.3876953125
+        }
+      },
+      "groups": {
+        "head_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 18
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 18
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 72
+          }
+        },
+        "head_tail_raw": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 70
+          }
+        },
+        "head_tail_temperature_bias": {
+          "truncated": {
+            "count": 407,
+            "errors": 14
+          },
+          "untruncated": {
+            "count": 2093,
+            "errors": 72
+          }
+        }
+      },
+      "head_parity": {
+        "all_ids_labels_input_hashes_match": true,
+        "all_predictions_match": true,
+        "max_abs_logit_delta": 0.0,
+        "tolerance": 0.0001
+      }
+    }
+  },
+  "two_seed_descriptive_statistics": {
+    "baseline": {
+      "head": {
+        "accuracy_mean": 0.9618,
+        "accuracy_sample_sd": 0.004242640687119289,
+        "seed_count": 2
+      },
+      "head_tail": {
+        "accuracy_mean": 0.9646,
+        "accuracy_sample_sd": 0.005374011537017797,
+        "seed_count": 2
+      }
+    },
+    "combined": {
+      "head": {
+        "accuracy_mean": 0.9646,
+        "accuracy_sample_sd": 0.00028284271247458785,
+        "seed_count": 2
+      },
+      "head_tail": {
+        "accuracy_mean": 0.9666,
+        "accuracy_sample_sd": 0.00028284271247458785,
+        "seed_count": 2
+      }
+    }
+  },
+  "source_sha256": {
+    "reports/laya-rtx4090-ce-epochs2-l512-s42-fp32-v1/cuda-saved-validation.json": "51298f559d3f21836f1ea2d1a82bf517797229a3f18db08273107c9bd3a6718b",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/analysis.json": "f5459cdef1a90a6f052eb658320c6149b34c06171db8ffaed4015926fb16a23a",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/summary.json": "55fac60b04b3249db4203ba444effddb3bfb75953b9359c01c59ce6f8a27f5fe",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/local-recheck.json": "ee79c63612b529ca74a306cf03b71bf3e579adfdb747fd3b03fc2f1d4c550b53",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/metadata.json": "27d374bc8d3b18577ea75dd2618de3c7e066e48efc7ff35e8abf73047fefa11e",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head.json": "1306c36eda8da38142fb9fc4d5f4ec98fcd733d2f95714b0bcc6f1cfa21d2706",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head_tail.json": "440965582500aafeea612fc0f794856d090e72dc47c65c63f7e53b8b0a6dbe2e",
+    "reports/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/cuda-saved-validation.json": "32edf4ee99892e792f7cae9fa5d38952b0ee4f92c7de2f6f0620f6379040454c",
+    "reports/laya-posthoc-combined-s42-fp32-v1/analysis.json": "457a9a677f92646cc5e14a9609174fc6af3ae6a8237f11a9df9fff97160c2b2e",
+    "reports/laya-posthoc-combined-s42-fp32-v1/summary.json": "cd910450e2d7545293a03bfa888042438d1e7bece0bec9d250ae033b5c4d3d1c",
+    "reports/laya-posthoc-combined-s42-fp32-v1/local-recheck.json": "7bdf3cfb8d112d4f19bf9409f0f0c828eaf631b0d21a74f423429652cc63696d",
+    "reports/laya-posthoc-combined-s42-fp32-v1/metadata.json": "4ef1077ee30e543bad3b40fea1d2f609ed94bda91381b18bbd6692c0cfe6927c",
+    "reports/laya-posthoc-combined-s42-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head.json": "2a8d29b599c00f8268339c67140c1a48a00d413e037e64ad98e35aaa95038a1a",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head_tail.json": "3f325cc170c3f2f2238d7e4a921a2ebd91f315836d0d739b5c588cbca348bc8b",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/cuda-saved-validation.json": "0babcdd1383b79247b53073ae09946e964665cb2bda0a88265065d8ec4093e09",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/analysis.json": "657193cc0ceceed626d1809dbcde8b8481543887216d6deab7b4d29b87b0a909",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/summary.json": "382c06ad7e4126dbabe46c29000bd5bda35aedab34386daa3aed61dcbedfdbe7",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/local-recheck.json": "25040a136cf36939b72e45e5aea098a4afdb775b0469987582744d2f3f87da3c",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/metadata.json": "bc3278f15b5b454bd4d2a3f6c7cb7b93b343d9a26c683c3c2d4ef27c87d7f545",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head.json": "d17757ed3102198853c4f2fca30d80154a3ee9e5b32ea323b9efaff6d5a34d6e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766",
+    "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/cuda-saved-validation.json": "d669fd1d37ec1b6b952010e2884e580dfc8196b3b5afb4ee7258a59f440e7426",
+    "reports/laya-posthoc-combined-s43-fp32-v1/analysis.json": "9c7b58fe6e427a2474868a8853e5b4f9f881e435a07135c80d8b4db996537211",
+    "reports/laya-posthoc-combined-s43-fp32-v1/summary.json": "231e05e4f1ee58134be8f0b462583b555c250e5c71b19972c4059458d528cac0",
+    "reports/laya-posthoc-combined-s43-fp32-v1/local-recheck.json": "e9a6f8f5f7f136b01647acc76b32e2af961ead6d7d3fd51bda90e0a39d47a9f4",
+    "reports/laya-posthoc-combined-s43-fp32-v1/metadata.json": "a6782ef63d545386a3046156895d88c8c9dfb276f49c0ef7e268d56ac72e93b7",
+    "reports/laya-posthoc-combined-s43-fp32-v1/head-parity.json": "229ce7b34f906bbf38741918aacefaaf87a277b76a8cb85a0b2ae81a521cfb66",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head.json": "4f296e0bf04e6c9910d816ab32cdfe6102831033e3d4636d1116597552ea2132",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head_tail.json": "4148ad8ffb6fda699b8edaf7ca0de418dd0f76b3220021d4b423459288260b19",
+    "artifacts/posthoc-seed42-20261011-v1/cleanup-verification.json": "3d005969d06cae2ff100b7bb8c82424290adc34ab026f0ec2a9320e1926bb0eb"
+  },
+  "seed42_temporary_remote_weights_absent": {
+    "laya-rtx4090-ce-epochs2-l512-s42-fp32-v1": true,
+    "laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1": true
+  },
+  "training_performed": false,
+  "test_accessed": false,
+  "validation_used_for_fitting": false,
+  "caveat": "Two seeds on the same exploratory development split; no independent generalization claim."
+}

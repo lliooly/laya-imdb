@@ -1,0 +1,187 @@
+{
+  "scope": "train_only_lexical_audit",
+  "gradient_train_count": 22100,
+  "calibration_excluded_count": 400,
+  "validation_excluded_count": 2500,
+  "candidate_union_count": 8890,
+  "candidate_labels": {
+    "0": 6124,
+    "1": 2766
+  },
+  "category_counts": {
+    "mixed_sentiment": {
+      "total": 8201,
+      "negative": 5702,
+      "positive": 2499
+    },
+    "object_switch": {
+      "total": 2306,
+      "negative": 1427,
+      "positive": 879
+    },
+    "low_quality_enjoyment": {
+      "total": 3196,
+      "negative": 2099,
+      "positive": 1097
+    },
+    "irony_proxy": {
+      "total": 368,
+      "negative": 212,
+      "positive": 156
+    }
+  },
+  "category_overlap_counts": {
+    "mixed_sentiment|object_switch|low_quality_enjoyment|irony_proxy": 45,
+    "mixed_sentiment|irony_proxy": 143,
+    "mixed_sentiment": 4010,
+    "mixed_sentiment|low_quality_enjoyment|irony_proxy": 69,
+    "mixed_sentiment|object_switch": 1436,
+    "mixed_sentiment|object_switch|low_quality_enjoyment": 744,
+    "mixed_sentiment|low_quality_enjoyment": 1673,
+    "low_quality_enjoyment": 659,
+    "low_quality_enjoyment|irony_proxy": 6,
+    "mixed_sentiment|object_switch|irony_proxy": 81,
+    "irony_proxy": 24
+  },
+  "review_assignments": 40,
+  "review_unique_samples": 40,
+  "seed": 20261011,
+  "manifest_sha256": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+  "train_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+  "test_accessed": false,
+  "model_inference_performed": false,
+  "labels_changed": false,
+  "sampling_modified": false,
+  "manual_review": {
+    "mixed_sentiment": {
+      "balanced_review_count": 10,
+      "target_matches": 6,
+      "balanced_target_precision": 0.6,
+      "balanced_wilson_95_descriptive": [
+        0.3126695474501864,
+        0.8318224187964902
+      ],
+      "by_label": {
+        "negative": {
+          "reviewed": 5,
+          "target_matches": 2,
+          "target_precision": 0.4,
+          "wilson_95_interval": [
+            0.1176182311592533,
+            0.769280067791163
+          ]
+        },
+        "positive": {
+          "reviewed": 5,
+          "target_matches": 4,
+          "target_precision": 0.8,
+          "wilson_95_interval": [
+            0.3755282641185388,
+            0.9637768390302125
+          ]
+        }
+      },
+      "label_frequency_weighted_point_estimate": 0.5218875746860139,
+      "substantial_ambiguity_confirmed_count": 2
+    },
+    "object_switch": {
+      "balanced_review_count": 10,
+      "target_matches": 7,
+      "balanced_target_precision": 0.7,
+      "balanced_wilson_95_descriptive": [
+        0.39677321997956516,
+        0.892210712513788
+      ],
+      "by_label": {
+        "negative": {
+          "reviewed": 5,
+          "target_matches": 4,
+          "target_precision": 0.8,
+          "wilson_95_interval": [
+            0.3755282641185388,
+            0.9637768390302125
+          ]
+        },
+        "positive": {
+          "reviewed": 5,
+          "target_matches": 3,
+          "target_precision": 0.6,
+          "wilson_95_interval": [
+            0.23071993220883708,
+            0.8823817688407467
+          ]
+        }
+      },
+      "label_frequency_weighted_point_estimate": 0.7237640936686903,
+      "substantial_ambiguity_confirmed_count": 2
+    },
+    "low_quality_enjoyment": {
+      "balanced_review_count": 10,
+      "target_matches": 3,
+      "balanced_target_precision": 0.3,
+      "balanced_wilson_95_descriptive": [
+        0.10778928748621183,
+        0.6032267800204347
+      ],
+      "by_label": {
+        "negative": {
+          "reviewed": 5,
+          "target_matches": 1,
+          "target_precision": 0.2,
+          "wilson_95_interval": [
+            0.03622316096978745,
+            0.6244717358814613
+          ]
+        },
+        "positive": {
+          "reviewed": 5,
+          "target_matches": 2,
+          "target_precision": 0.4,
+          "wilson_95_interval": [
+            0.1176182311592533,
+            0.769280067791163
+          ]
+        }
+      },
+      "label_frequency_weighted_point_estimate": 0.268648310387985,
+      "substantial_ambiguity_confirmed_count": 1
+    },
+    "irony_proxy": {
+      "balanced_review_count": 10,
+      "target_matches": 4,
+      "balanced_target_precision": 0.4,
+      "balanced_wilson_95_descriptive": [
+        0.16817758120350967,
+        0.6873304525498135
+      ],
+      "by_label": {
+        "negative": {
+          "reviewed": 5,
+          "target_matches": 4,
+          "target_precision": 0.8,
+          "wilson_95_interval": [
+            0.3755282641185388,
+            0.9637768390302125
+          ]
+        },
+        "positive": {
+          "reviewed": 5,
+          "target_matches": 0,
+          "target_precision": 0.0,
+          "wilson_95_interval": [
+            0,
+            0.43449149475208104
+          ]
+        }
+      },
+      "label_frequency_weighted_point_estimate": 0.4608695652173913,
+      "substantial_ambiguity_confirmed_count": 0
+    }
+  },
+  "reviewed_target_semantic_matches": 20,
+  "reviewed_substantial_ambiguity_count": 5,
+  "reviewed_substantial_without_label_tension_count": 4,
+  "human_review_not_model_hardness": true,
+  "recommend_direct_rule_resampling": false,
+  "rules_sha256": "c738fd9b878f347a325d746e8c1c7dbcafab3a4460a18da84ca78d38d2555f1f"
+}

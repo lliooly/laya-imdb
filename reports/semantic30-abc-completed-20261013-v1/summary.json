@@ -1,0 +1,50 @@
+{
+  "state": "completed",
+  "finished_utc": "2026-10-13T12:09:15.778524+00:00",
+  "metrics": {
+    "A": {
+      "accuracy": 0.9652,
+      "correct": 2413,
+      "count": 2500,
+      "nll": 0.1335915677778031
+    },
+    "B": {
+      "accuracy": 0.9632,
+      "correct": 2408,
+      "count": 2500,
+      "nll": 0.13639978661945756
+    },
+    "C": {
+      "accuracy": 0.9644,
+      "correct": 2411,
+      "count": 2500,
+      "nll": 0.13539546218688148
+    }
+  },
+  "paired": {
+    "0-1": {
+      "a_only_correct": 16,
+      "b_only_correct": 11,
+      "both_correct": 2397,
+      "both_wrong": 76,
+      "mcnemar_exact_two_sided_p": 0.44206833839416504
+    },
+    "0-2": {
+      "a_only_correct": 13,
+      "b_only_correct": 11,
+      "both_correct": 2400,
+      "both_wrong": 76,
+      "mcnemar_exact_two_sided_p": 0.8388197422027588
+    },
+    "1-2": {
+      "a_only_correct": 12,
+      "b_only_correct": 15,
+      "both_correct": 2396,
+      "both_wrong": 77,
+      "mcnemar_exact_two_sided_p": 0.7011080384254456
+    }
+  },
+  "verified_status_sha256": "8895319d9a86e2b63ae78d2f39e553dd07eec7f419ea4dff999d5aae4c84f212",
+  "weights_local_backup_completed": false,
+  "test_accessed": false
+}

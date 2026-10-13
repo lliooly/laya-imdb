@@ -1,0 +1,23 @@
+{
+  "state": "verified",
+  "verified_prepared_inputs": 90,
+  "mlx_pytorch_input_hashes_identical": true,
+  "training_performed": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "gradient_parent_membership_checked": true,
+  "nonaugmented_positions_identical": 41990,
+  "augmented_positions_label_aligned": 2210,
+  "each_arm_exposures": 44200,
+  "original_coverage_first_epoch": 22100,
+  "new_variant_exact_collision_with_original_training_texts": [],
+  "near_duplicate_audit_completed": false,
+  "semantic_minus_ordinary_tokens": {
+    "min": -11,
+    "max": 21,
+    "mean": 2.7
+  },
+  "pack_sha256": "e7784eb050b9bfcd42305a767d71775e16f49c657ce080f701807b1de2c2d3cb",
+  "predictions_sha256": "66b77825bf306cf9ee1db07f50acbb857fc4d9e792abddbe6b3a9bba46274cf9",
+  "source_manifest_sha256": "cb4f429baa9355cb6237562bb1f0d5532002fb53c3864aaa02df72d5700b10aa"
+}

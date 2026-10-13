@@ -1,0 +1,54 @@
+{
+  "state": "steps_1_and_2_completed_locally",
+  "new_review_count": 87,
+  "cumulative_review_count": 223,
+  "first_pass_dispositions": {
+    "label_or_attitude_tension": 54,
+    "provisional_candidate": 28,
+    "no_confirmed_target_semantics": 3,
+    "missing_decisive_context": 2
+  },
+  "second_pass_count": 56,
+  "original_retained": 23,
+  "original_removed": 5,
+  "new_retained": 25,
+  "new_removed": 3,
+  "frozen_count": 48,
+  "labels": {
+    "0": 17,
+    "1": 31
+  },
+  "semantics": {
+    "object_switch": 24,
+    "irony": 8,
+    "low_quality_enjoyment": 19,
+    "mixed_sentiment": 29
+  },
+  "candidate_sha256": "51684631a97f2e4ff7cfaad5739918a84137c78c38e3885a9aadce31c21d9c38",
+  "planned_extra_exposures_1_5x": 48,
+  "fraction_44200": 0.0010859728506787331,
+  "all_145_training_disagreements_reviewed": true,
+  "training_performed": false,
+  "remote_access": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "labels_changed": false,
+  "independent_annotation": false,
+  "cumulative_final_dispositions": {
+    "label_or_attitude_tension": 112,
+    "missing_decisive_context": 17,
+    "both_models_correct_not_demonstrated_hard": 33,
+    "no_confirmed_target_semantics": 11,
+    "frozen_candidate": 48,
+    "ambiguous_irony_or_enjoyment": 2
+  },
+  "boundary_validation": {
+    "frozen_gradient_count": 22100,
+    "all_223_source_text_hashes_match": true,
+    "all_223_original_labels_match": true,
+    "all_reviewed_ids_in_original_gradient": true,
+    "calibration_overlap": 0,
+    "candidate_exact_duplicate_groups": 0,
+    "all_retained_evidence_in_visible_head": true
+  }
+}

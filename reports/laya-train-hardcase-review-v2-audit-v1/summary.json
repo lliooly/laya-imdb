@@ -1,0 +1,40 @@
+{
+  "scope": "independent_programmatic_audit_and_selected_semantic_spot_review",
+  "created_utc": "2026-10-11T14:37:15.915112+00:00",
+  "candidate_count": 48,
+  "candidate_sha256": "51684631a97f2e4ff7cfaad5739918a84137c78c38e3885a9aadce31c21d9c38",
+  "frozen_list_modified": false,
+  "all_48_source_ids_labels_text_hashes_cal_dev_isolation_verified": true,
+  "all_48_evidence_in_precisely_reconstructed_original_head": true,
+  "all_145_training_disagreements_covered": true,
+  "candidate_labels": {
+    "0": 17,
+    "1": 31
+  },
+  "combo_only_wrong": 39,
+  "baseline_only_wrong": 5,
+  "both_wrong": 4,
+  "semantic_spot_review_ids": [
+    "train/neg/10383_2.txt",
+    "train/neg/1509_2.txt",
+    "train/pos/7504_7.txt",
+    "train/pos/8636_7.txt",
+    "train/pos/9854_7.txt",
+    "train/pos/2228_7.txt",
+    "train/pos/3211_7.txt",
+    "train/pos/3082_10.txt"
+  ],
+  "additional_review_candidates": [
+    "train/neg/10383_2.txt",
+    "train/pos/7504_7.txt",
+    "train/pos/9854_7.txt"
+  ],
+  "candidate_label_error_confirmed": false,
+  "prior_pool_removed": 5,
+  "new_provisional_removed": 3,
+  "planned_extra_exposures_1_5x": 48,
+  "fraction_total_exposures": 0.0010859728506787331,
+  "historical_exposure_plan_candidates": 28,
+  "test_accessed": false,
+  "training_performed": false
+}

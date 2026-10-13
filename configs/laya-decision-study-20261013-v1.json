@@ -1,0 +1,27 @@
+{
+  "run_id": "laya-decision-study-s43-s42-strict-20261013-v1",
+  "device": "cuda",
+  "runtime_profile": "strict",
+  "batch_size": 8,
+  "checkpoints": [
+    {
+      "name": "baseline-s43",
+      "checkpoint": "checkpoints/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json",
+      "weight_sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338",
+      "manifest_sha256": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad"
+    },
+    {
+      "name": "combined-s42",
+      "checkpoint": "checkpoints/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/manifest.json",
+      "weight_sha256": "bf5529167140f4553b560788b740945614c1c4d0fb69aadd9b507565e09c3819",
+      "manifest_sha256": "050ab546ce8109a186af572c8457ff90d4fe04f14d053b3209cabb65001da9f0"
+    }
+  ],
+  "windows": [
+    128,
+    256,
+    466
+  ]
+}

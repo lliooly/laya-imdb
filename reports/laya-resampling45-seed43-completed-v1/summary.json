@@ -1,0 +1,58 @@
+{
+  "seed": 43,
+  "candidate_count": 45,
+  "test_accessed": false,
+  "finished_utc": "2026-10-12T01:43:53.284280+00:00",
+  "metrics": {
+    "control": {
+      "accuracy": 0.9596,
+      "correct": 2399,
+      "count": 2500,
+      "nll": 0.14482638538325263,
+      "ece_15_equal_width_top_label": 0.012329933887142087
+    },
+    "resampled": {
+      "accuracy": 0.9616,
+      "correct": 2404,
+      "count": 2500,
+      "nll": 0.13587064821246422,
+      "ece_15_equal_width_top_label": 0.009808554953430628
+    }
+  },
+  "paired": {
+    "fixed": 30,
+    "regressed": 25,
+    "both_correct": 2374,
+    "both_wrong": 71
+  },
+  "mcnemar_exact_two_sided_p": 0.5900533317766357,
+  "epoch_accuracy": {
+    "control": [
+      {
+        "epoch": 1,
+        "accuracy": 0.942
+      },
+      {
+        "epoch": 2,
+        "accuracy": 0.9596
+      }
+    ],
+    "resampled": [
+      {
+        "epoch": 1,
+        "accuracy": 0.954
+      },
+      {
+        "epoch": 2,
+        "accuracy": 0.9616
+      }
+    ]
+  },
+  "historical_same_config_accuracy": 0.9648,
+  "historical_inputs_and_split_same": true,
+  "historical_score_not_reproduced": true,
+  "historical_drift_cause": "unresolved; do not attribute to nondeterminism without evidence",
+  "weight_backup_status": "verified",
+  "backup_file_count": 57,
+  "backup_verification_file": "artifacts/resampling45-seed43-20261012-backup/verified.json"
+}

@@ -1,0 +1,15 @@
+{
+  "branch": "main",
+  "consolidation_commit": "2b68b0c3698cacd1f11c6c30552aadd4dca48bc2",
+  "merge_commit": "b4804d0482a07730920a7093af66b74b971ff5bb",
+  "merged_dev_commit": "2b68b0c3698cacd1f11c6c30552aadd4dca48bc2",
+  "archive_tag": "archive/dev-semantic-pair-pilot-20261013",
+  "archive_tag_commit": "99912ef7f203e25da371eaa4a87849f33d5cd457",
+  "local_branches": [
+    "main"
+  ],
+  "origin_main": "547a68859c079c09ba80f0a2581cc0950652556e",
+  "remote_pushed": false,
+  "merge_conflicts": false,
+  "working_tree_clean_before_audit_record": true
+}

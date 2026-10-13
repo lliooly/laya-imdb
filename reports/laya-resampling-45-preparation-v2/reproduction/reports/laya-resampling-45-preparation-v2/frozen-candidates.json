@@ -1,0 +1,1394 @@
+{
+  "status": "frozen_user_selected_45_pool",
+  "parent_candidate_sha256": "51684631a97f2e4ff7cfaad5739918a84137c78c38e3885a9aadce31c21d9c38",
+  "quarantined_ids": [
+    "train/neg/10383_2.txt",
+    "train/pos/7504_7.txt",
+    "train/pos/9854_7.txt"
+  ],
+  "original_labels_changed": false,
+  "rows": [
+    {
+      "sample_id": "train/neg/10067_3.txt",
+      "label": 0,
+      "text_sha256": "86a8dae9ce5358b049ed5af60794ac1e8094b4bccccded19e7d41c891c4433b2",
+      "semantic_targets": [
+        "object_switch",
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.00011693303728875122,
+          "entropy": 0.001175565397289187
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.0124922497580533,
+          "entropy": 0.19606106123050493
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 2,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "原日语影片赞扬和英语改编差评对象清楚，前缀含显式extreme sarcasm与crap。",
+      "second_pass_evidence": "they used the same wonderful dubbing methods they used on MSB (extreme sarcasm there) and created this crap.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 1274,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/neg/10207_2.txt",
+      "label": 0,
+      "text_sha256": "048e1eb45a84b18b4b6e176f98bdeee249a0ef146e8b320917b3077e8afa6a60",
+      "semantic_targets": [
+        "object_switch",
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.002073520513740284,
+          "entropy": 0.014869361401869159
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 2.034309796089211,
+          "entropy": 0.3878491723038291
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 74,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "原作好、当前片所谓原创被讽刺，表演逊色，区分被赞对象。",
+      "second_pass_evidence": "what a supreme originality",
+      "evidence_in_visible_head": true,
+      "review_tokens": 254,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/12043_2.txt",
+      "label": 0,
+      "text_sha256": "cf9646924968a9966b3d34bd5e7045ce7a8aed981da8dd7ecb96102afbcd014d",
+      "semantic_targets": [
+        "object_switch",
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 3.612300580491923,
+          "entropy": 0.12411698944143579
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 0.036065324845669114,
+          "entropy": 0.15311391130563323
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 26,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "演员和旧作赞扬不能转移到当前Troy，当前片明确应被遗忘。",
+      "second_pass_evidence": "Fortunately \"Troy\" will soon be forgotten.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 235,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/1509_2.txt",
+      "label": 0,
+      "text_sha256": "5aa2b9255f2ac86ed49d54d0c0b62999f97e1a8810d492d56ab5503f9125185a",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.01733883455526054,
+          "entropy": 0.0868892154885321
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.1134826855423228,
+          "entropy": 0.18182473084786466
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 50,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "艺术9分被明确限定，整片道德立场强烈否定并质疑资助，保留评价维度差异。",
+      "second_pass_evidence": "In purely artistic terms, it is a 9",
+      "evidence_in_visible_head": true,
+      "review_tokens": 134,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/1556_1.txt",
+      "label": 0,
+      "text_sha256": "f2112925de7635bb5836c527631c15c4b044ad6db639b954bac1c7850d27f2e0",
+      "semantic_targets": [
+        "object_switch",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.00019329054043385282,
+          "entropy": 0.001846000640113163
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 0.7147813835013386,
+          "entropy": 0.6929181432228688
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 87,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "电影1分，拍摄乐趣10分；两个明确数值属于不同对象。",
+      "second_pass_evidence": "I give it a 1",
+      "evidence_in_visible_head": true,
+      "review_tokens": 165,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/266_3.txt",
+      "label": 0,
+      "text_sha256": "9da8987b20474e8b2560d1bf3d0d5cbcdf32ed043f28fec29498b5a3c94ccf62",
+      "semantic_targets": [
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.0022616126672497256,
+          "entropy": 0.01602050444132635
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.0256092142803066,
+          "entropy": 0.19415874417830103
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 54,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "改看另一版即使看过的明确建议，赞扬对象是替代选择而非当前片。",
+      "second_pass_evidence": "You'd better choose Paul Verhoeven's",
+      "evidence_in_visible_head": true,
+      "review_tokens": 16,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/4651_3.txt",
+      "label": 0,
+      "text_sha256": "a939c02a9c86b0afea4dc5e543f2e2a7e4307762f542ca622327988cc75822dc",
+      "semantic_targets": [
+        "irony",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.004717625884857566,
+          "entropy": 0.029916732066362726
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.392613169656586,
+          "entropy": 0.14711113485558203
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 44,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "高兴因为演员将停止演出，非高兴观看表演；引用观众欢呼另有对象。",
+      "second_pass_evidence": "enthusiastic about this being his last live performance",
+      "evidence_in_visible_head": true,
+      "review_tokens": 127,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/4917_1.txt",
+      "label": 0,
+      "text_sha256": "ddde7d464f1501067019c5efd1b068bf03b0ec9675081dd6ca6f67f1232c0404",
+      "semantic_targets": [
+        "irony",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.050879634162368174,
+          "entropy": 0.19735627624749932
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.7022842901269555,
+          "entropy": 0.11568502224633148
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 13,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "把悲剧死亡场面描述成喜剧并讽演员前途，反讽负评可见。",
+      "second_pass_evidence": "He never did recover from this.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 258,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/6080_4.txt",
+      "label": 0,
+      "text_sha256": "251a38eaa4baf5d735a9cfe93bc640a7d0cb3ab296127cbac08fd55611568ff6",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.002879344783458604,
+          "entropy": 0.019695698122314757
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.463668515397706,
+          "entropy": 0.13928281459403014
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 42,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "配乐和复杂性肯定后明确艺术平庸，与别片比较不改变负评。",
+      "second_pass_evidence": "unremarkable from an artistic perspective",
+      "evidence_in_visible_head": true,
+      "review_tokens": 320,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/6775_3.txt",
+      "label": 0,
+      "text_sha256": "95c83e97725e92bd0507a6c2b5e66a3fa62aaa309f2a9673a9d5b17c01015db9",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.0006225648430436817,
+          "entropy": 0.005216504601932473
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 1.8043283851191805,
+          "entropy": 0.44719517372685047
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 6,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "turkey及剧本表演否定是整体判断，演员外貌和局部表演优点不改变总评。",
+      "second_pass_evidence": "turkey",
+      "evidence_in_visible_head": true,
+      "review_tokens": 376,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/6988_1.txt",
+      "label": 0,
+      "text_sha256": "44cae8e7b53c88bdd1ce10985cc2b8e665ca542696f3c0127058a1b039f26d2f",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.0065350469963887416,
+          "entropy": 0.03928161411133392
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.640895887152411,
+          "entropy": 0.12137827081137775
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 27,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "片头歌曲及原剧喜欢和片头后整片否定区分，遗忘是负评。",
+      "second_pass_evidence": "How lucky I was that I could forget all I had seen.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 162,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/7108_3.txt",
+      "label": 0,
+      "text_sha256": "aad3b8f18bc1164170de61c8ead0ec629136c775695aaefefac8960660526ca8",
+      "semantic_targets": [
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.024431322294517117,
+          "entropy": 0.11372342944675704
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 2.725320254083373,
+          "entropy": 0.24190714365403876
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 63,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "低期望未失望和推荐助眠配合形成明确无聊差评。",
+      "second_pass_evidence": "this will help you to sleep that sleep",
+      "evidence_in_visible_head": true,
+      "review_tokens": 135,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/7411_4.txt",
+      "label": 0,
+      "text_sha256": "ca2377873b54f78c53a570e021a19b7f92a02c1e5b41af294162f531fba03a26",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.0025094221171212457,
+          "entropy": 0.01751311348643888
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 2.378411845402597,
+          "entropy": 0.30873523230553523
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 71,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "前段很喜欢，最终deeply unsatisfying是整体转折，负类一致。",
+      "second_pass_evidence": "deeply unsatisfying",
+      "evidence_in_visible_head": true,
+      "review_tokens": 254,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/7461_2.txt",
+      "label": 0,
+      "text_sha256": "0e4cc3e8aa5fc9e7b74d79821dd73b6cc17d3de5a50985272922af5167b10def",
+      "semantic_targets": [
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 9.00213397661057,
+          "entropy": 0.0012317225218421157
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.798692193888868,
+          "entropy": 0.10723815811072335
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 7,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "夸张天才赞誉配合荒唐剧情及放屁体现社会不公，前缀足以识别持续反讽。",
+      "second_pass_evidence": "Reminiscent of John Reynolds' performance in `Manos, the Hands of Fate,'",
+      "evidence_in_visible_head": true,
+      "review_tokens": 657,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/neg/9137_1.txt",
+      "label": 0,
+      "text_sha256": "7c48d9d102419bd4f3d2460b325088cd7f7d145d9da8945e90d9ade555ccbf17",
+      "semantic_targets": [
+        "irony"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 9.047993038149324,
+          "entropy": 0.0011819070809782062
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 3.7929684075836843,
+          "entropy": 0.1077233069303114
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 8,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "佛蒙特棕榈树等具体穿帮与不可能的全能天才吹捧构成反讽。",
+      "second_pass_evidence": "I never even knew they had palm trees in Vermont",
+      "evidence_in_visible_head": true,
+      "review_tokens": 356,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/neg/979_4.txt",
+      "label": 0,
+      "text_sha256": "f01a10fa8b231fb510652425ee61aca6442270224bbe0017ebd89209bb226221",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment",
+        "object_switch"
+      ],
+      "overall_attitude": "negative",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 0.00253066321895321,
+          "entropy": 0.01763986265986314
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 2.7111528153521753,
+          "entropy": 0.24438466454104146
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 64,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "有娱乐价值但明确整片sucks及低期待限制，电影质量负评在前缀。",
+      "second_pass_evidence": "still you realize that SOYLENT GREEN sucks",
+      "evidence_in_visible_head": true,
+      "review_tokens": 354,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/10020_8.txt",
+      "label": 1,
+      "text_sha256": "cd06b28b73cf57bed8bc3c08066953845e800aba8e4464d5bc6c25acb5fd2c4e",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment",
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0102864604191888,
+          "entropy": 0.05707283984148237
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.5906131656702347,
+          "entropy": 0.12623168560646333
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 34,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "enjoyably awful和campy hoot明确享受低质量。",
+      "second_pass_evidence": "A real campy hoot.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 274,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/10219_10.txt",
+      "label": 1,
+      "text_sha256": "ff6b85e25cef00867685e8a5f772a5d1a9ef3f55983f7ae78f8f719a5add1d4a",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.010145162296952863,
+          "entropy": 0.056432451693877006
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 2.721659237010792,
+          "entropy": 0.24254535769408153
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 10,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "guilty pleasures明确在前缀，后文高分为加强而非新总评。",
+      "second_pass_evidence": "one of the movie's many guilty pleasures",
+      "evidence_in_visible_head": true,
+      "review_tokens": 688,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/pos/10317_7.txt",
+      "label": 1,
+      "text_sha256": "cfae93c5ca4722848c3b2b589b660c2735ef9affd80c9edd8dcb0d239efe8384",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0008319839278335101,
+          "entropy": 0.006729362489783064
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 2.096049649187349,
+          "entropy": 0.3727443168836876
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 11,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "不及期望但明确不是差片并推荐给角色爱好者。",
+      "second_pass_evidence": "this is not a bad movie",
+      "evidence_in_visible_head": true,
+      "review_tokens": 247,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/12042_10.txt",
+      "label": 1,
+      "text_sha256": "90b06344b74d3be77a9ae637c1c18a84580d0942b46d214f5a5040f66b0dea9d",
+      "semantic_targets": [
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0018838275204207946,
+          "entropy": 0.013690909033269527
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.489733849392774,
+          "entropy": 0.1365070441800762
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 40,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "不再看原因明确不是片差而是恐怖有效，负面恐惧不能等同品质差。",
+      "second_pass_evidence": "not because it is a bad movie",
+      "evidence_in_visible_head": true,
+      "review_tokens": 168,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/12329_10.txt",
+      "label": 1,
+      "text_sha256": "209dc8858c3a3c3abfc2f6a2ddeb46668ac7dcc5dadb8dcaeaa82efe34ab8f47",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 3.458576430890229,
+          "entropy": 0.1398310225371371
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 0.02953999146408596,
+          "entropy": 0.13162751014762542
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 41,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "best parody明确总体赞扬，粗糙特效是戏仿欣赏语境。",
+      "second_pass_evidence": "THE best 7 minute parody",
+      "evidence_in_visible_head": true,
+      "review_tokens": 76,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/2228_7.txt",
+      "label": 1,
+      "text_sha256": "f2b5e621dd872ee82fb2bfde050113a0216d2c75626ac59e045f454527685f9b",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0012137567704531198,
+          "entropy": 0.009357282353843921
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.6738914122208537,
+          "entropy": 0.11828701912522369
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 22,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "前缀含整体C+至B-评分及气氛优点；采用前缀中的证据，尾部推荐并非唯一正评。",
+      "second_pass_evidence": "solid C+ to B-",
+      "evidence_in_visible_head": true,
+      "review_tokens": 566,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/pos/2827_10.txt",
+      "label": 1,
+      "text_sha256": "6468c901ee3a50e63d559ae6f17a8c5d0152c34eb3ba07a6e693bd075d83abc2",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.01358999448054391,
+          "entropy": 0.07151855384417427
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.494634031241278,
+          "entropy": 0.13599085072531028
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 12,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "明确so good和对找差错观众的推荐，低质量与娱乐喜爱并存。",
+      "second_pass_evidence": "It's...terrible. But it's so good!",
+      "evidence_in_visible_head": true,
+      "review_tokens": 205,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/3082_10.txt",
+      "label": 1,
+      "text_sha256": "7bf79773dd42b72c05faeb9e1573218bf4e7ea8fc433fa2208a731902f2c64bb",
+      "semantic_targets": [
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0011255306955075422,
+          "entropy": 0.008762390021265887
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.732130694410836,
+          "entropy": 0.11300666009707303
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 13,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "赞扬所举电视剧，负面态度针对电视台取消和别的真人秀，正负对象不同。",
+      "second_pass_evidence": "shows like Six Degree's and Brothers & Sisters are the true reality TV",
+      "evidence_in_visible_head": true,
+      "review_tokens": 148,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/3211_7.txt",
+      "label": 1,
+      "text_sha256": "ba526dc5585f6a4b5350523409be273e7776f5210b27e242986fc829eee21505",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment",
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 5.075537460328105,
+          "entropy": 0.03793874544275053
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 0.04610864681615093,
+          "entropy": 0.18370987741185862
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 4,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "低质量动作类型的条件式推荐明确，另有主演其他作品对比。",
+      "second_pass_evidence": "It must see this movie leave your mind at the door",
+      "evidence_in_visible_head": true,
+      "review_tokens": 128,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/3485_9.txt",
+      "label": 1,
+      "text_sha256": "4b1bbc8f5c0c8e00836b2526225c1676f033280e6ce63595021e5baa60de7585",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 4.058849362985121,
+          "entropy": 0.08721067908997297
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 0.025887002964831162,
+          "entropy": 0.11893315043491715
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 11,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "Above average和worth it是具体正向总评，覆盖开头失望。",
+      "second_pass_evidence": "Above average...worth it",
+      "evidence_in_visible_head": true,
+      "review_tokens": 93,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/3928_7.txt",
+      "label": 1,
+      "text_sha256": "61e4c7a7d0316b4f5b797e23a929c18f241f3f66e1dae4666fc909e0fc2325f6",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.00026338370770837997,
+          "entropy": 0.0024338449950835894
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.430477169642427,
+          "entropy": 0.14289144536494647
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 14,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "历史人物故事批评后明确good enough及娱乐有效的总评。",
+      "second_pass_evidence": "nothing that entertains me and makes me laugh can be bad",
+      "evidence_in_visible_head": true,
+      "review_tokens": 306,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/5096_7.txt",
+      "label": 1,
+      "text_sha256": "29961539bc0ef3faa352b4d8563d4fc4ba064a42a7c7699c74bda3d982024765",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.000132876947940398,
+          "entropy": 0.0013188605287943744
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 2.673028770024398,
+          "entropy": 0.2511558841643668
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 65,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "享受且6分明确，时长改编不满为局部。",
+      "second_pass_evidence": "except that it's too long, I enjoyed it. 6/10.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 186,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/5230_10.txt",
+      "label": 1,
+      "text_sha256": "5d2d2717730ffd7a255b97fb42ebf768d939bcaf1eb9f63473f25234bce88dac",
+      "semantic_targets": [
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.3642162743570566,
+          "entropy": 0.6152546712903376
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.46081187950149,
+          "entropy": 0.13959011644729374
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 15,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "明确非常喜欢并选择笑而不是关电视，低质量欣赏没有歧义。",
+      "second_pass_evidence": "I liked it, because it`s one of the worse movies ever created.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 117,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/5764_7.txt",
+      "label": 1,
+      "text_sha256": "14d494a6fdeebe9c64bf3ca561a6dcabe6225030e321104f778ee7949ed38001",
+      "semantic_targets": [
+        "mixed_sentiment",
+        "low_quality_enjoyment",
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.011862180434212609,
+          "entropy": 0.06408306964621246
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 2.8503031757871846,
+          "entropy": 0.22094549757439103
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 60,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "昔日turkey差评仍认可但如今已成camp classic，时间变化明确。",
+      "second_pass_evidence": "grown on me over the years as a sort of camp classic",
+      "evidence_in_visible_head": true,
+      "review_tokens": 220,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/5776_10.txt",
+      "label": 1,
+      "text_sha256": "8d72eebb3d8f052c6c7336575f58bfb37374b0fa4b5748089feae7be19d8b9ec",
+      "semantic_targets": [
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.011270072418689341,
+          "entropy": 0.0614761488823099
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.3182063936955966,
+          "entropy": 0.1557317233917656
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 16,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "开头明确最爱及长期喜爱，前缀足够，不依赖后半评价。",
+      "second_pass_evidence": "One of my all-time favorite so-laughably-lousy-that-it's-totally-lovable",
+      "evidence_in_visible_head": true,
+      "review_tokens": 758,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/pos/5934_10.txt",
+      "label": 1,
+      "text_sha256": "8d10f10bfcd5f5c88f7dcddc481e59ca3ef64e51945a817d205f92aaf1e832fa",
+      "semantic_targets": [
+        "object_switch",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.00013053314749918087,
+          "entropy": 0.0012979216806456861
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.559707743701694,
+          "entropy": 0.1293021203891736
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 17,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "hate因预告短片不是长片而失望，制作great job和想看更多明确。",
+      "second_pass_evidence": "I really hated this trailer because it left me wanting for more.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 149,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/6063_10.txt",
+      "label": 1,
+      "text_sha256": "dae723caf4c2d2ef76a178a127a371d3dcc9a6f87dbfa966202a2fc304aded95",
+      "semantic_targets": [
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.4206754442383639,
+          "entropy": 0.6432629064422077
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.5588429407033852,
+          "entropy": 0.12938900999856565
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 18,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "制作BAD但持续看并so bad good，正向体验可见。",
+      "second_pass_evidence": "it's so bad it's good.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 113,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/6065_10.txt",
+      "label": 1,
+      "text_sha256": "2b174a1d88b715e3f45fa9c8d44174955438693f83644c76bef2abf2b25716bc",
+      "semantic_targets": [
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0015738074384575884,
+          "entropy": 0.01172233925353705
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.688097410884178,
+          "entropy": 0.11697849589687241
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 19,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "低质量喜爱角色、购买收藏及期待回归，支持正类。",
+      "second_pass_evidence": "This movie is horrible- in a 'so bad it's good' kind of way.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 347,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/6716_8.txt",
+      "label": 1,
+      "text_sha256": "5aa454aa27e32c5efa1845d2a32c79c2e3f7257cb7e7ebe4117b3c712c192912",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.011321643029110246,
+          "entropy": 0.061704471176645015
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.6945570128872207,
+          "entropy": 0.11638790867088859
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 20,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "全文未截断，贬义制作词由savoured式坎普享受语境限定。",
+      "second_pass_evidence": "cheesiness to be savored in this delectably dreadful doozy.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 459,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/7239_7.txt",
+      "label": 1,
+      "text_sha256": "f7fe4a0e3b164d4050cd4d08f1fd91aedd95aed6a15c7cd9cdc8adc28c201f1f",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.00016906544545040823,
+          "entropy": 0.0016372984135912816
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.6364722444118973,
+          "entropy": 0.12179829373516454
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 28,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "开头gem整体肯定，演技结尾不满与寻找续集并存。",
+      "second_pass_evidence": "What a gem of a movie",
+      "evidence_in_visible_head": true,
+      "review_tokens": 241,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/7298_7.txt",
+      "label": 1,
+      "text_sha256": "20570d4e394b9fbf078c4e3ef7bf7eaf5c9d24ecb0c154323c278acdcea5bc87",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.00857742150543112,
+          "entropy": 0.049182921053500195
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.6226015157917133,
+          "entropy": 0.12312396242560272
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 21,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "stupid与FUN B-movie总评同句，明确条件式正推荐。",
+      "second_pass_evidence": "Overall, if you want a stupid, FUN B-movie",
+      "evidence_in_visible_head": true,
+      "review_tokens": 301,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/7546_7.txt",
+      "label": 1,
+      "text_sha256": "0fbdc2cef475582536cc583c1d72d9ffc8f9d51461263f6cb67ee54036114a55",
+      "semantic_targets": [
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.0005870286830761312,
+          "entropy": 0.004953324537998682
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.577854748762031,
+          "entropy": 0.12749106599958232
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 36,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "有明确观看推荐；残忍和可怕用来描述剧情主题，并非质量差评。",
+      "second_pass_evidence": "tell you to see it for yourself",
+      "evidence_in_visible_head": true,
+      "review_tokens": 164,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/8313_10.txt",
+      "label": 1,
+      "text_sha256": "b40a7d7ff4169cb671a20c58ffecd4e0657b0237d1a4399a685079eb836fb464",
+      "semantic_targets": [
+        "object_switch"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.009790409382630268,
+          "entropy": 0.054815557357849265
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 0.7579877913944428,
+          "entropy": 0.6911750207607561
+        }
+      },
+      "origin": "new_28",
+      "origin_index": 85,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "明确品质与创造力赞扬所举经典；负面人身措辞针对评论者而非影片。",
+      "second_pass_evidence": "quality, creativeness",
+      "evidence_in_visible_head": true,
+      "review_tokens": 157,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/8369_8.txt",
+      "label": 1,
+      "text_sha256": "2cfe8633ff771703ff4638e6b842a4d2bde8115c23a4d245bae31ad9fcb1da4a",
+      "semantic_targets": [
+        "low_quality_enjoyment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.022090033809060532,
+          "entropy": 0.10514596590401659
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.4979551076418316,
+          "entropy": 0.1356420113926456
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 22,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "dumb是购买理由且有真实笑料，正向收藏态度明确。",
+      "second_pass_evidence": "Like I said-it's dumb. That's why I bought the tape.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 306,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/8636_7.txt",
+      "label": 1,
+      "text_sha256": "8b19dd3b06bf8f0e81f43235bf36298cb5c233571b95feea301a44f7dbca6a43",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.023507089182119707,
+          "entropy": 0.11036757664155195
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 1.78712202399116,
+          "entropy": 0.45180588647584624
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 23,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "原文6分明确在前缀，so-so与演员批评不应压过有限正评。",
+      "second_pass_evidence": "Vote: 6",
+      "evidence_in_visible_head": true,
+      "review_tokens": 149,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/9082_10.txt",
+      "label": 1,
+      "text_sha256": "2187fcdb4a081e59e79f0f8e45956cf6a5ecee85e754947afba2c5850979da3f",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 8.45131256157684,
+          "entropy": 0.0020189650784746627
+        },
+        "combined": {
+          "pred_label": 1,
+          "raw_nll": 0.46893513683681715,
+          "entropy": 0.6612209698900475
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 24,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "前缀含10/10、不断笑及值得看，不依赖尾部总结。",
+      "second_pass_evidence": "I give this movie 10 out of 10 for being the most pathetic movie ever created",
+      "evidence_in_visible_head": true,
+      "review_tokens": 513,
+      "truncated": true
+    },
+    {
+      "sample_id": "train/pos/9240_10.txt",
+      "label": 1,
+      "text_sha256": "208e5c579a3663d4454b0a60b45d8e9df4ab2f3e9a010635d37ed5476c1c49d4",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 8.839785958448166,
+          "entropy": 0.0014253193846325161
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.7572776232513037,
+          "entropy": 0.11079448563173665
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 25,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "差制作但真实有趣，末尾明确建议观看。",
+      "second_pass_evidence": "the movie is so bad, it's real fun to watch.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 162,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/9726_7.txt",
+      "label": 1,
+      "text_sha256": "1cc9aafe4761df2223def4003bfc92f02b44124c6f2804a7e05f96ffdd469eb0",
+      "semantic_targets": [
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 1,
+          "raw_nll": 0.00258869560635144,
+          "entropy": 0.017985234380770265
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.557426781930267,
+          "entropy": 0.12953141114515027
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 26,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "首句整体nice surprise明确，后续批评人物和配角并未明确否定整体。",
+      "second_pass_evidence": "Well it was a nice surprise after all.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 209,
+      "truncated": false
+    },
+    {
+      "sample_id": "train/pos/9966_10.txt",
+      "label": 1,
+      "text_sha256": "ecab176a3321885f592c4ed2dfa43e51aaeb645ba326664d99bcdf239f344469",
+      "semantic_targets": [
+        "low_quality_enjoyment",
+        "mixed_sentiment"
+      ],
+      "overall_attitude": "positive",
+      "model_scores": {
+        "baseline": {
+          "pred_label": 0,
+          "raw_nll": 8.691759717958503,
+          "entropy": 0.0016278545259236343
+        },
+        "combined": {
+          "pred_label": 0,
+          "raw_nll": 3.7053091369850097,
+          "entropy": 0.11541094178795318
+        }
+      },
+      "origin": "original_28",
+      "origin_index": 28,
+      "decision": "retain",
+      "reason": "confirmed",
+      "second_pass_note": "十分彩用离奇吸引力标准且每年重看，不能将worst字面等同不喜欢。",
+      "second_pass_evidence": "this movie must get a ten rating because it has to be seen to be believed.",
+      "evidence_in_visible_head": true,
+      "review_tokens": 244,
+      "truncated": false
+    }
+  ],
+  "selected_by": "User explicitly selected 45 candidates and quarantine of the three boundary samples",
+  "proposal_sha256": "d199c9d504ee2d05399309b2cf8566acb86a7444c0f9c046adef4d1e9d847bf0"
+}

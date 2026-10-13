@@ -1,0 +1,37 @@
+{
+  "state": "45_candidate_alternative_prepared_execution_choice_pending",
+  "candidate_count": 45,
+  "labels": {
+    "0": 16,
+    "1": 29
+  },
+  "model_errors": {
+    "combined_only_wrong": 36,
+    "baseline_only_wrong": 5,
+    "both_wrong": 4
+  },
+  "target_configuration": {
+    "warmup_ratio": 0.05,
+    "label_smoothing": 0.05
+  },
+  "candidate_sha256": "d199c9d504ee2d05399309b2cf8566acb86a7444c0f9c046adef4d1e9d847bf0",
+  "extra_candidate_exposures": 45,
+  "percent_of_44200": 0.10180995475113123,
+  "expected_updates_per_arm": 5526,
+  "plan_order_sha256": {
+    "control": [
+      "dadeccbcb39471c5f36eb315eb8fc5f89f12b633cd24257ffda2a1149b01e72e",
+      "8689ee03c24d98611f9242f5b287b669a33412001ffe1b629ba3ec7705524524"
+    ],
+    "resampled": [
+      "4b45677f8d6f53b876daabeb865e699c83dd14191267ef50b5e5761722909391",
+      "c70e2db1fa828f7c34f6bba6aefc108d2d18108c01d3fc90a8821020415e60d9"
+    ]
+  },
+  "existing_48_pool_modified": false,
+  "existing_runtime_adapter_supports_45": false,
+  "configs_or_sampler_modified": false,
+  "remote_access": false,
+  "training_performed": false,
+  "test_accessed": false
+}

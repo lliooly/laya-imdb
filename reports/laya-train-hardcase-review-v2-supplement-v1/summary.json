@@ -1,0 +1,60 @@
+{
+  "state": "local_plans_verified_semantic_review_pending",
+  "plans": {
+    "control": {
+      "status": "local_id_only_dry_run_semantic_review_pending",
+      "mode": "control",
+      "seed": 43,
+      "candidate_file": "reports/laya-train-hardcase-review-v2/frozen-candidates.json",
+      "candidate_file_sha256": "51684631a97f2e4ff7cfaad5739918a84137c78c38e3885a9aadce31c21d9c38",
+      "candidate_count": 48,
+      "source_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+      "manifest_sha256": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+      "sampler_sha256": "e14f0656515cedee7a9e7ccf0ff09fe4595c73474fd7b71547ea50e71d2fcb32",
+      "total_exposures": 44200,
+      "total_updates": 5526,
+      "unique_coverage": 22100,
+      "exposure_histogram": {
+        "2": 22100
+      },
+      "training_performed": false,
+      "test_accessed": false,
+      "epoch_ordered_id_sha256": [
+        "dadeccbcb39471c5f36eb315eb8fc5f89f12b633cd24257ffda2a1149b01e72e",
+        "8689ee03c24d98611f9242f5b287b669a33412001ffe1b629ba3ec7705524524"
+      ]
+    },
+    "resampled": {
+      "status": "local_id_only_dry_run_semantic_review_pending",
+      "mode": "resampled",
+      "seed": 43,
+      "candidate_file": "reports/laya-train-hardcase-review-v2/frozen-candidates.json",
+      "candidate_file_sha256": "51684631a97f2e4ff7cfaad5739918a84137c78c38e3885a9aadce31c21d9c38",
+      "candidate_count": 48,
+      "source_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+      "manifest_sha256": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+      "sampler_sha256": "e14f0656515cedee7a9e7ccf0ff09fe4595c73474fd7b71547ea50e71d2fcb32",
+      "total_exposures": 44200,
+      "total_updates": 5526,
+      "unique_coverage": 22100,
+      "exposure_histogram": {
+        "2": 22004,
+        "3": 48,
+        "1": 48
+      },
+      "training_performed": false,
+      "test_accessed": false,
+      "epoch_ordered_id_sha256": [
+        "f569b6375183940908e237d56fa1bed04a8d8f2caf392e70fc295f3b8cec24ce",
+        "faad775de9bb60cd0147870edd076b9f659967fcc01477c865bac9c449745896"
+      ]
+    }
+  },
+  "candidate_extra_exposures": 48,
+  "extra_exposure_percent": 0.1085972850678733,
+  "pending_boundary_review_count": 3,
+  "frozen_pool_modified": false,
+  "remote_access": false,
+  "training_performed": false,
+  "test_accessed": false
+}

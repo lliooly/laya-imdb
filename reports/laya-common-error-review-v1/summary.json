@@ -1,0 +1,27 @@
+{
+  "count": 47,
+  "negative": 20,
+  "positive": 27,
+  "truncated": 7,
+  "categories": {
+    "反讽或夸张": 5,
+    "评价对象或叙事": 8,
+    "褒贬混合": 19,
+    "长文截断风险": 3,
+    "疑似标签正文冲突": 6,
+    "低质量但享受": 6
+  },
+  "test_accessed": false,
+  "labels_changed": false,
+  "validation_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+  "rdrop_included": false,
+  "intersection_verified": true,
+  "prediction_sources_sha256": {
+    "reports/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/cuda-saved-validation.json": "32edf4ee99892e792f7cae9fa5d38952b0ee4f92c7de2f6f0620f6379040454c",
+    "reports/laya-rtx4090-ce-epochs2-ls005-l512-s42-fp32-v1/cuda-saved-validation.json": "2fce7841a6d2cff14de4477050cfb8221a3bc3cf5c7e63beacc120ce9cddc47c",
+    "reports/laya-rtx4090-ce-epochs2-l512-s42-fp32-v1/cuda-saved-validation.json": "51298f559d3f21836f1ea2d1a82bf517797229a3f18db08273107c9bd3a6718b",
+    "reports/laya-rtx4090-ce-epochs2-warmup005-l512-s42-fp32-v1/cuda-saved-validation.json": "610a366cc4bab0fd3fffb5e02e37057f0af1ba8f2b01e187bf2806954eb9c97f"
+  },
+  "mac_prediction_source_sha256": "7edc7a902b8dcc58226c9d070f0cb7f94be0ddbc1fb6f0bf48beed20b0377d94",
+  "annotation_scope": "manual_candidate_causes_not_confirmed_label_errors"
+}

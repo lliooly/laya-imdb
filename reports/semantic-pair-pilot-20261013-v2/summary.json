@@ -1,0 +1,225 @@
+{
+  "state": "mechanically_validated_pending_human_review",
+  "training_performed": false,
+  "training_data_exported": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "calibration_used_for_augmentation": false,
+  "count": 30,
+  "versions": 90,
+  "category_counts": {
+    "irony": 6,
+    "evaluation_target": 11,
+    "complex_relation": 13
+  },
+  "label_counts": {
+    "0": 13,
+    "1": 17
+  },
+  "source_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+  "manifest_sha256": "cb4f429baa9355cb6237562bb1f0d5532002fb53c3864aaa02df72d5700b10aa",
+  "recipes_sha256": "ee4d800573ed125eba6e868c5cce1aa10ec7851f504746398abad0e9a6df8d36",
+  "pack_sha256": "e7784eb050b9bfcd42305a767d71775e16f49c657ce080f701807b1de2c2d3cb",
+  "script_sha256": "a299c434ab64bfc56169371b8426cf4e871aa509acbb0e3dd306086c8c06e5da",
+  "accepted_review_sha256": null,
+  "total_exposures_per_arm": 44200,
+  "augmented_slots_per_arm": 2210,
+  "epoch_label_counts": [
+    {
+      "0": 11065,
+      "1": 11035
+    },
+    {
+      "1": 11035,
+      "0": 11065
+    }
+  ],
+  "lengths": [
+    {
+      "parent_id": "train/neg/10067_3.txt",
+      "original": 1274,
+      "ordinary": 1272,
+      "semantic": 1274
+    },
+    {
+      "parent_id": "train/neg/10207_2.txt",
+      "original": 254,
+      "ordinary": 254,
+      "semantic": 245
+    },
+    {
+      "parent_id": "train/neg/12043_2.txt",
+      "original": 235,
+      "ordinary": 236,
+      "semantic": 235
+    },
+    {
+      "parent_id": "train/neg/1509_2.txt",
+      "original": 134,
+      "ordinary": 132,
+      "semantic": 130
+    },
+    {
+      "parent_id": "train/neg/1556_1.txt",
+      "original": 165,
+      "ordinary": 165,
+      "semantic": 167
+    },
+    {
+      "parent_id": "train/neg/4651_3.txt",
+      "original": 127,
+      "ordinary": 124,
+      "semantic": 134
+    },
+    {
+      "parent_id": "train/neg/4917_1.txt",
+      "original": 258,
+      "ordinary": 256,
+      "semantic": 259
+    },
+    {
+      "parent_id": "train/neg/6080_4.txt",
+      "original": 320,
+      "ordinary": 311,
+      "semantic": 310
+    },
+    {
+      "parent_id": "train/neg/6775_3.txt",
+      "original": 376,
+      "ordinary": 371,
+      "semantic": 376
+    },
+    {
+      "parent_id": "train/neg/6988_1.txt",
+      "original": 162,
+      "ordinary": 158,
+      "semantic": 154
+    },
+    {
+      "parent_id": "train/neg/7108_3.txt",
+      "original": 135,
+      "ordinary": 137,
+      "semantic": 141
+    },
+    {
+      "parent_id": "train/neg/7411_4.txt",
+      "original": 254,
+      "ordinary": 252,
+      "semantic": 241
+    },
+    {
+      "parent_id": "train/neg/9137_1.txt",
+      "original": 356,
+      "ordinary": 352,
+      "semantic": 354
+    },
+    {
+      "parent_id": "train/pos/10020_8.txt",
+      "original": 274,
+      "ordinary": 273,
+      "semantic": 294
+    },
+    {
+      "parent_id": "train/pos/10317_7.txt",
+      "original": 247,
+      "ordinary": 241,
+      "semantic": 241
+    },
+    {
+      "parent_id": "train/pos/12042_10.txt",
+      "original": 168,
+      "ordinary": 168,
+      "semantic": 179
+    },
+    {
+      "parent_id": "train/pos/12329_10.txt",
+      "original": 76,
+      "ordinary": 77,
+      "semantic": 72
+    },
+    {
+      "parent_id": "train/pos/2827_10.txt",
+      "original": 205,
+      "ordinary": 197,
+      "semantic": 193
+    },
+    {
+      "parent_id": "train/pos/3082_10.txt",
+      "original": 148,
+      "ordinary": 147,
+      "semantic": 154
+    },
+    {
+      "parent_id": "train/pos/3211_7.txt",
+      "original": 128,
+      "ordinary": 129,
+      "semantic": 144
+    },
+    {
+      "parent_id": "train/pos/3928_7.txt",
+      "original": 306,
+      "ordinary": 305,
+      "semantic": 312
+    },
+    {
+      "parent_id": "train/pos/5096_7.txt",
+      "original": 186,
+      "ordinary": 183,
+      "semantic": 179
+    },
+    {
+      "parent_id": "train/pos/5230_10.txt",
+      "original": 117,
+      "ordinary": 112,
+      "semantic": 109
+    },
+    {
+      "parent_id": "train/pos/5764_7.txt",
+      "original": 220,
+      "ordinary": 221,
+      "semantic": 228
+    },
+    {
+      "parent_id": "train/pos/5934_10.txt",
+      "original": 149,
+      "ordinary": 143,
+      "semantic": 157
+    },
+    {
+      "parent_id": "train/pos/6063_10.txt",
+      "original": 113,
+      "ordinary": 101,
+      "semantic": 97
+    },
+    {
+      "parent_id": "train/pos/7239_7.txt",
+      "original": 241,
+      "ordinary": 231,
+      "semantic": 230
+    },
+    {
+      "parent_id": "train/pos/7298_7.txt",
+      "original": 301,
+      "ordinary": 304,
+      "semantic": 310
+    },
+    {
+      "parent_id": "train/pos/8369_8.txt",
+      "original": 306,
+      "ordinary": 307,
+      "semantic": 320
+    },
+    {
+      "parent_id": "train/pos/9240_10.txt",
+      "original": 162,
+      "ordinary": 162,
+      "semantic": 163
+    }
+  ],
+  "limitations": [
+    "AI authored; human semantic review pending",
+    "Selected seen-training candidates; no independent accuracy estimate",
+    "All modified spans visible; this does not prove all decisive evidence is visible",
+    "No syntactic parser or gold long-sentence annotations"
+  ]
+}

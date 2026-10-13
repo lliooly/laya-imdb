@@ -23,12 +23,14 @@ def main():
     parser.add_argument('--config', required=True)
     args = parser.parse_args()
     spec = json.loads((ROOT / args.config).read_text())
-    if spec['device'] != 'cuda' or spec['train_limit'] is None or spec['train_limit'] > 128:
+    effective_limit = (spec.get('sampling') or spec.get('semantic_pairs') or {}).get('smoke_items', spec['train_limit'])
+    if spec['device'] != 'cuda' or effective_limit is None or effective_limit > 128:
         raise ValueError('Audit is limited to small CUDA smoke runs')
     report_dir = ROOT / 'reports' / spec['run_id']
     output_dir = ROOT / 'checkpoints' / spec['run_id']
     if report_dir.exists() or output_dir.exists():
         raise FileExistsError('Use a new run_id; audit never overwrites a run')
+    train_laya.prepare_runtime(spec)
     import torch
     import laya.train as upstream
     train_laya.require_device(torch, 'cuda')
@@ -39,7 +41,7 @@ def main():
              'source_sha256': file_digest(Path(__file__))}
     original_step = torch.optim.AdamW.step
     original_clip = torch.nn.utils.clip_grad_norm_
-    original_schedule = torch.optim.lr_scheduler.CosineAnnealingLR.step
+    original_schedule = torch.optim.lr_scheduler.LRScheduler.step
     original_loss = upstream.soft_ce_loss
     original_save = upstream.save_checkpoint
 
@@ -146,7 +148,7 @@ def main():
 
     torch.optim.AdamW.step = step
     torch.nn.utils.clip_grad_norm_ = clip
-    torch.optim.lr_scheduler.CosineAnnealingLR.step = schedule
+    torch.optim.lr_scheduler.LRScheduler.step = schedule
     upstream.soft_ce_loss = loss
     upstream.save_checkpoint = save
     started = time.monotonic()
@@ -155,7 +157,18 @@ def main():
         sys.argv = ['train_laya.py', '--config', args.config]
         train_laya.main()
         run_manifest = json.loads((report_dir / 'manifest.json').read_text())
-        expected = upstream.optimizer_updates(len(run_manifest['gradient_train_ids']), spec['training']['micro_batch'],
+        actual_count = len(run_manifest['gradient_train_ids'])
+        if spec.get('sampling'):
+            sampling_audit = json.loads((report_dir / 'sampling_audit.json').read_text())
+            if sampling_audit['state'] != 'completed':
+                raise ValueError('Sampling smoke audit did not complete')
+            actual_count = sampling_audit['actual_train_count']
+        if spec.get('semantic_pairs'):
+            semantic_audit = json.loads((report_dir / 'semantic_audit.json').read_text())
+            if semantic_audit['state'] != 'completed':
+                raise ValueError('Semantic smoke audit did not complete')
+            actual_count = semantic_audit['actual_train_count']
+        expected = upstream.optimizer_updates(actual_count, spec['training']['micro_batch'],
                                                spec['training']['grad_accum'], spec['training']['epochs'])
         audit['expected_optimizer_steps'] = expected
         audit['passed'] = (len(audit['optimizer_steps']) == expected
@@ -176,7 +189,7 @@ def main():
         sys.argv = original_argv
         torch.optim.AdamW.step = original_step
         torch.nn.utils.clip_grad_norm_ = original_clip
-        torch.optim.lr_scheduler.CosineAnnealingLR.step = original_schedule
+        torch.optim.lr_scheduler.LRScheduler.step = original_schedule
         upstream.soft_ce_loss = original_loss
         upstream.save_checkpoint = original_save
         audit['elapsed_seconds_with_audit'] = time.monotonic() - started

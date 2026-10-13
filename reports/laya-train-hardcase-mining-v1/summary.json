@@ -1,0 +1,98 @@
+{
+  "scope": "training_candidate_ranking_not_out_of_fold",
+  "count": 22100,
+  "candidate_count": 8890,
+  "both_models_wrong": 101,
+  "models_disagree": 145,
+  "model_errors": {
+    "baseline": 127,
+    "combined": 220
+  },
+  "review_count": 80,
+  "review_cells": [
+    {
+      "label": 0,
+      "category": "object_switch",
+      "population": 1427,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 0,
+      "category": "low_quality_enjoyment",
+      "population": 1625,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 0,
+      "category": "irony_proxy",
+      "population": 94,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 0,
+      "category": "mixed_sentiment",
+      "population": 2978,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 0,
+      "category": "unflagged",
+      "population": 4941,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 1,
+      "category": "object_switch",
+      "population": 879,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 1,
+      "category": "low_quality_enjoyment",
+      "population": 782,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 1,
+      "category": "irony_proxy",
+      "population": 73,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 1,
+      "category": "mixed_sentiment",
+      "population": 1032,
+      "model_priority": 4,
+      "random_remaining": 4
+    },
+    {
+      "label": 1,
+      "category": "unflagged",
+      "population": 8269,
+      "model_priority": 4,
+      "random_remaining": 4
+    }
+  ],
+  "source_sha256": {
+    "reports/laya-train-hardcase-mining-preparation-v1/review-protocol.json": "2259db8d74b1c069d02b836d5fef30006120452baee49820cb9d48f605dd33f6",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "artifacts/train-hardcase-mining-20261011-v1/baseline-gradient-predictions.json": "ca4a4936407dbe9d5a7053c194f61b26e567f280c6ff28879d19167748f2eddf",
+    "artifacts/train-hardcase-mining-20261011-v1/combined-gradient-predictions.json": "dcb9c2bf06388799719a9aba00b2dc524a389ff4ef4fbabd4234260f9f44021e",
+    "reports/laya-train-hardcase-audit-v1/candidates.csv": "ef210f9b8c963306ad4e7304ebaaf4c862ec065291553b9b794b727d04054851"
+  },
+  "analysis_script_sha256": "1cf4901d601cc6f5c7a492556463dba58b48eee2426b69a3e293a7da0bd6a723",
+  "training_performed": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "weights_assigned": false,
+  "review_status": "pending"
+}

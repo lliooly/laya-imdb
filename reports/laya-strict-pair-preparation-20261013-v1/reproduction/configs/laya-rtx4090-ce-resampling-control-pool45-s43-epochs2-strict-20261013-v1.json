@@ -1,0 +1,44 @@
+{
+  "run_id": "laya-rtx4090-ce-resampling-control-pool45-s43-epochs2-strict-20261013-v1",
+  "device": "cuda",
+  "train_limit": null,
+  "validation_limit": null,
+  "eval_batch_size": 8,
+  "training": {
+    "epochs": 2,
+    "micro_batch": 8,
+    "grad_accum": 1,
+    "encoder_lr": 2.5e-05,
+    "head_lr": 0.0001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "loss": "soft-ce",
+    "rl_samples": 4,
+    "shuffle_options": [
+      "choice"
+    ],
+    "freeze_encoder": false,
+    "calib_max": 400,
+    "calib_frac": 0.1,
+    "calib_seed": 42,
+    "seed": 43,
+    "max_len": 512,
+    "head_max_len": 192,
+    "amp": false,
+    "gradient_checkpointing": true,
+    "log_every": 16,
+    "label_smoothing": 0.05
+  },
+  "optimization": {
+    "warmup_ratio": 0.05,
+    "diagnostics_every": 16
+  },
+  "epoch_checkpoints": true,
+  "sampling": {
+    "mode": "control",
+    "candidate_file": "reports/laya-resampling-45-preparation-v2/frozen-candidates.json",
+    "candidate_sha256": "1040d9b79d20d1212bf8e401c0125d426a356951e3575e24d72036feadf08b37"
+  },
+  "runtime_profile": "strict"
+}
