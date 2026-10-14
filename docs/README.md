@@ -8,6 +8,9 @@
 | [当前状态](experiments/current-status.md) | 最佳成绩、默认部署、严格实验、数据与备份状态 |
 | [后续改进路线](experiments/improvement-roadmap.md) | 首尾一致训练／推理、模型迁移、最终评估 |
 | [训练协议](guides/training.md) | 冻结划分、训练入口、精度和复现约束 |
+| [决策因素实验](guides/laya-decision-study.md) | 提案审查、固定权重诊断、窗口对照、N8参数平均及N2/N6多模型融合 |
+| [双模型融合推理](guides/laya-fusion-inference.md) | 冻结融合入口、CUDA与Mac MLX一致性及性能实测 |
+| [冻结后官方测试](guides/laya-frozen-evaluation.md) | 固定候选、一次性25000条官方测试与目标判定 |
 | [Mac推理](guides/inference.md) | checkpoint结构与部署命令 |
 | [CUDA准备](guides/cuda-preparation.md) | 环境、权重锁与训练前检查 |
 | [历史复现流程](guides/historical-reproduction.md) | ModernBERT、Rust和旧课程阶段命令 |

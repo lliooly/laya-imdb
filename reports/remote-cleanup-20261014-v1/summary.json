@@ -1,0 +1,125 @@
+{
+  "completed": true,
+  "audited_at": "2026-10-14T04:54:34.498722+00:00",
+  "old_runs": 26,
+  "backed_up_files": 793,
+  "deleted_weight_paths": 56,
+  "unique_weight_sha256": 24,
+  "physical_bytes_released": 23593058160,
+  "physical_gib_released": 21.97,
+  "protected_prefix": "laya-decision-",
+  "protected_dependency_runs": [
+    "laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+    "laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1"
+  ],
+  "protected_original_weights_sha_unchanged": 8,
+  "old_weights_remaining": [],
+  "disk_before": {
+    "total_bytes": 53687091200,
+    "available_bytes": 8875257856
+  },
+  "disk_after": {
+    "total_bytes": 53687091200,
+    "available_bytes": 25593405440
+  },
+  "local_backup": "/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/artifacts/remote-cleanup-backup-20261014-v1",
+  "local_full_sha_audit_passed": true,
+  "main_transferred_bytes": 5938914940,
+  "initial_policy": {
+    "date": "2026-10-14",
+    "state": "in_progress",
+    "latest_training_prefix_protected": "laya-decision-",
+    "protected_dependency_runs": [
+      "laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+      "laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1"
+    ],
+    "protected_initial_weight_count": 8,
+    "protected_initial_weights": [
+      {
+        "path": "checkpoints/laya-decision-window-prefix-s42-strict-20261013-v1-smoke/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-decision-window-prefix-s42-strict-20261013-v1-smoke/checkpoint_latest/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-decision-window-prefix-s42-strict-20261013-v1-smoke/epoch-001/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-decision-window-random_head_tail-s42-strict-20261013-v1-smoke/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-decision-window-random_head_tail-s42-strict-20261013-v1-smoke/checkpoint_latest/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-decision-window-random_head_tail-s42-strict-20261013-v1-smoke/epoch-001/model.safetensors",
+        "size": 842609220,
+        "sha256": "cb31395b1645288e9ff7b3c7eca364707ee5f6b194773d64b4e08ebcfe8885b8"
+      },
+      {
+        "path": "checkpoints/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/model.safetensors",
+        "size": 842609220,
+        "sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338"
+      },
+      {
+        "path": "checkpoints/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/model.safetensors",
+        "size": 842609220,
+        "sha256": "bf5529167140f4553b560788b740945614c1c4d0fb69aadd9b507565e09c3819"
+      }
+    ],
+    "old_run_count": 26,
+    "eligible_old_weight_paths": 56,
+    "initial_disk": {
+      "total_bytes": 53687091200,
+      "available_bytes": 8875257856
+    },
+    "backup_directory": "artifacts/remote-cleanup-backup-20261014-v1",
+    "delete_condition": "completed old run, full local SHA match, durable local copy, remote SHA match",
+    "source_code_modified": false,
+    "training_interrupted": false,
+    "data_and_reports_deleted": false
+  },
+  "removed_redundant_local_partials": [
+    "checkpoints/semantic30-abc-s42-strict-20261013-v1-C-smoke/checkpoint_latest/model.safetensors.worker1.part",
+    "checkpoints/semantic30-abc-s42-strict-20261013-v1-B/checkpoint_latest/model.safetensors.worker0.part"
+  ],
+  "disk_usage_before_pct": 83.47,
+  "disk_usage_after_pct": 52.33,
+  "final_inspection": {
+    "latest_runs": [
+      {
+        "run": "laya-decision-window-prefix-s42-strict-20261013-v1",
+        "state": "completed",
+        "weight_paths_preserved": 4
+      },
+      {
+        "run": "laya-decision-window-prefix-s42-strict-20261013-v1-smoke",
+        "state": "completed",
+        "weight_paths_preserved": 3
+      },
+      {
+        "run": "laya-decision-window-random_head_tail-s42-strict-20261013-v1",
+        "state": "completed",
+        "weight_paths_preserved": 4
+      },
+      {
+        "run": "laya-decision-window-random_head_tail-s42-strict-20261013-v1-smoke",
+        "state": "completed",
+        "weight_paths_preserved": 3
+      }
+    ],
+    "latest_weight_paths_preserved": 14,
+    "protected_total_weight_paths_present": 16,
+    "active_training_processes": 0,
+    "old_run_weight_paths_present": 0
+  }
+}

@@ -1,0 +1,1872 @@
+{
+  "posthoc_diagnostic_only": true,
+  "selected_ids": [
+    "train/neg/12360_4.txt",
+    "train/neg/12416_3.txt",
+    "train/neg/6424_3.txt",
+    "train/pos/9579_8.txt"
+  ],
+  "aggregates": {
+    "float16/original_batch8": {
+      "view_sample_count": 16,
+      "max_probability_delta_cuda": 0.028079045884066123,
+      "max_logit_delta_cuda": 0.16549932956695557,
+      "class_changes": 0,
+      "probability_over_001": 6,
+      "max_logit_delta_prior_fp16": 0.0
+    },
+    "float16/batch1": {
+      "view_sample_count": 16,
+      "max_probability_delta_cuda": 0.012563468158173663,
+      "max_logit_delta_cuda": 0.061782240867614746,
+      "class_changes": 0,
+      "probability_over_001": 3,
+      "max_logit_delta_prior_fp16": 0.12158203125
+    },
+    "float32/original_batch8": {
+      "view_sample_count": 16,
+      "max_probability_delta_cuda": 0.07742859117382556,
+      "max_logit_delta_cuda": 0.36533892154693604,
+      "class_changes": 0,
+      "probability_over_001": 5,
+      "max_logit_delta_prior_fp16": 0.2781890630722046
+    },
+    "float32/batch1": {
+      "view_sample_count": 16,
+      "max_probability_delta_cuda": 0.06225317699611871,
+      "max_logit_delta_cuda": 0.2896186113357544,
+      "class_changes": 0,
+      "probability_over_001": 3,
+      "max_logit_delta_prior_fp16": 0.26043832302093506
+    }
+  },
+  "records": [
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.06817626953125,
+        0.87548828125
+      ],
+      "probabilities": [
+        0.36566308703937656,
+        0.6343369129606234
+      ],
+      "max_probability_delta_cuda": 0.028079045884066123,
+      "max_logit_delta_cuda": 0.16549932956695557,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.10736083984375,
+        0.9970703125
+      ],
+      "probabilities": [
+        0.34418126817716305,
+        0.655818731822837
+      ],
+      "max_probability_delta_cuda": 0.006597227021852614,
+      "max_logit_delta_cuda": 0.043917298316955566,
+      "max_logit_delta_prior_fp16": 0.12158203125,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/1236_1.txt",
+        "train/neg/12371_1.txt",
+        "train/neg/12387_4.txt",
+        "train/neg/12404_1.txt",
+        "train/neg/12416_3.txt",
+        "train/neg/12419_1.txt",
+        "train/neg/12425_2.txt",
+        "train/neg/12444_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.93310546875,
+        3.49609375
+      ],
+      "probabilities": [
+        0.07007341179884678,
+        0.9299265882011533
+      ],
+      "max_probability_delta_cuda": 0.00010056538648794966,
+      "max_logit_delta_cuda": 0.0014472603797912598,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.92431640625,
+        3.494140625
+      ],
+      "probabilities": [
+        0.0704831396049075,
+        0.9295168603950925
+      ],
+      "max_probability_delta_cuda": 0.0003091624195727949,
+      "max_logit_delta_cuda": 0.00734180212020874,
+      "max_logit_delta_prior_fp16": 0.0087890625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5029296875,
+        0.320068359375
+      ],
+      "probabilities": [
+        0.3821509935004545,
+        0.6178490064995454
+      ],
+      "max_probability_delta_cuda": 0.0014043622543946643,
+      "max_logit_delta_cuda": 0.007834911346435547,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.49658203125,
+        0.251220703125
+      ],
+      "probabilities": [
+        0.39256745612989763,
+        0.6074325438701024
+      ],
+      "max_probability_delta_cuda": 0.00901210037504846,
+      "max_logit_delta_cuda": 0.06101274490356445,
+      "max_logit_delta_prior_fp16": 0.06884765625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9547_9.txt",
+        "train/pos/956_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9582_10.txt",
+        "train/pos/9592_8.txt",
+        "train/pos/9594_10.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        1.9814453125,
+        -0.2142333984375
+      ],
+      "probabilities": [
+        0.7827451301168677,
+        0.21725486988313225
+      ],
+      "max_probability_delta_cuda": 0.0031634365076014526,
+      "max_logit_delta_cuda": 0.016922950744628906,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        1.9814453125,
+        -0.22314453125
+      ],
+      "probabilities": [
+        0.7836284404549169,
+        0.21637155954508322
+      ],
+      "max_probability_delta_cuda": 0.002280126169552421,
+      "max_logit_delta_cuda": 0.016922950744628906,
+      "max_logit_delta_prior_fp16": 0.0089111328125,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.06817626953125,
+        0.87548828125
+      ],
+      "probabilities": [
+        0.36566308703937656,
+        0.6343369129606234
+      ],
+      "max_probability_delta_cuda": 0.028079045884066123,
+      "max_logit_delta_cuda": 0.16549932956695557,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.10736083984375,
+        0.9970703125
+      ],
+      "probabilities": [
+        0.34418126817716305,
+        0.655818731822837
+      ],
+      "max_probability_delta_cuda": 0.006597227021852614,
+      "max_logit_delta_cuda": 0.043917298316955566,
+      "max_logit_delta_prior_fp16": 0.12158203125,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12157_1.txt",
+        "train/neg/12193_4.txt",
+        "train/neg/12212_3.txt",
+        "train/neg/1228_2.txt",
+        "train/neg/12301_4.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        2.517578125,
+        2.046875
+      ],
+      "probabilities": [
+        0.5682647273570144,
+        0.4317352726429857
+      ],
+      "max_probability_delta_cuda": 0.020117396283594324,
+      "max_logit_delta_cuda": 0.08714985847473145,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        2.451171875,
+        2.1640625
+      ],
+      "probabilities": [
+        0.5418024951786239,
+        0.4581975048213762
+      ],
+      "max_probability_delta_cuda": 0.006344835894796286,
+      "max_logit_delta_cuda": 0.030037641525268555,
+      "max_logit_delta_prior_fp16": 0.1171875,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5029296875,
+        0.320068359375
+      ],
+      "probabilities": [
+        0.3821509935004545,
+        0.6178490064995454
+      ],
+      "max_probability_delta_cuda": 0.0014043622543946643,
+      "max_logit_delta_cuda": 0.007834911346435547,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.49658203125,
+        0.251220703125
+      ],
+      "probabilities": [
+        0.39256745612989763,
+        0.6074325438701024
+      ],
+      "max_probability_delta_cuda": 0.00901210037504846,
+      "max_logit_delta_cuda": 0.06101274490356445,
+      "max_logit_delta_prior_fp16": 0.06884765625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9416_10.txt",
+        "train/pos/9444_10.txt",
+        "train/pos/9455_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9653_9.txt",
+        "train/pos/9688_9.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        3.4765625,
+        -1.5087890625
+      ],
+      "probabilities": [
+        0.9483492585390298,
+        0.05165074146097007
+      ],
+      "max_probability_delta_cuda": 0.0001996344705930131,
+      "max_logit_delta_cuda": 0.004898548126220703,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        3.478515625,
+        -1.5078125
+      ],
+      "probabilities": [
+        0.9483771752140294,
+        0.05162282478597059
+      ],
+      "max_probability_delta_cuda": 0.00017171779559346095,
+      "max_logit_delta_cuda": 0.005875110626220703,
+      "max_logit_delta_prior_fp16": 0.001953125,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.1251806616783142,
+        1.0096962451934814
+      ],
+      "probabilities": [
+        0.34018076039194667,
+        0.6598192396080533
+      ],
+      "max_probability_delta_cuda": 0.0025967192366362357,
+      "max_logit_delta_cuda": 0.03129136562347412,
+      "max_logit_delta_prior_fp16": 0.13420796394348145,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.12876352667808533,
+        1.0221202373504639
+      ],
+      "probabilities": [
+        0.3380865546820571,
+        0.6619134453179429
+      ],
+      "max_probability_delta_cuda": 0.000502513526746684,
+      "max_logit_delta_cuda": 0.0188673734664917,
+      "max_logit_delta_prior_fp16": 0.14663195610046387,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/1236_1.txt",
+        "train/neg/12371_1.txt",
+        "train/neg/12387_4.txt",
+        "train/neg/12404_1.txt",
+        "train/neg/12416_3.txt",
+        "train/neg/12419_1.txt",
+        "train/neg/12425_2.txt",
+        "train/neg/12444_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.9264789819717407,
+        3.4910013675689697
+      ],
+      "probabilities": [
+        0.07052050174104875,
+        0.9294794982589513
+      ],
+      "max_probability_delta_cuda": 0.00034652455571404506,
+      "max_logit_delta_cuda": 0.005179226398468018,
+      "max_logit_delta_prior_fp16": 0.006626486778259277,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.9288265705108643,
+        3.491940975189209
+      ],
+      "probabilities": [
+        0.07039482563844007,
+        0.9296051743615599
+      ],
+      "max_probability_delta_cuda": 0.00022084845310543777,
+      "max_logit_delta_cuda": 0.002958059310913086,
+      "max_logit_delta_prior_fp16": 0.004278898239135742,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5316449403762817,
+        0.5825320482254028
+      ],
+      "probabilities": [
+        0.34289824665196517,
+        0.6571017533480349
+      ],
+      "max_probability_delta_cuda": 0.040657109102884115,
+      "max_logit_delta_cuda": 0.2702986001968384,
+      "max_logit_delta_prior_fp16": 0.26246368885040283,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5303090810775757,
+        0.5805066823959351
+      ],
+      "probabilities": [
+        0.34334048767267905,
+        0.656659512327321
+      ],
+      "max_probability_delta_cuda": 0.04021486808217023,
+      "max_logit_delta_cuda": 0.2682732343673706,
+      "max_logit_delta_prior_fp16": 0.26043832302093506,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9547_9.txt",
+        "train/pos/956_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9582_10.txt",
+        "train/pos/9592_8.txt",
+        "train/pos/9594_10.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        1.9948067665100098,
+        -0.22277355194091797
+      ],
+      "probabilities": [
+        0.7849114503324262,
+        0.21508854966757385
+      ],
+      "max_probability_delta_cuda": 0.0009971162920430487,
+      "max_logit_delta_cuda": 0.006573200225830078,
+      "max_logit_delta_prior_fp16": 0.013361454010009766,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        1.9994244575500488,
+        -0.2304597795009613
+      ],
+      "probabilities": [
+        0.7861215510050332,
+        0.21387844899496677
+      ],
+      "max_probability_delta_cuda": 0.0002129843805640519,
+      "max_logit_delta_cuda": 0.0011130273342132568,
+      "max_logit_delta_prior_fp16": 0.017979145050048828,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.1251806616783142,
+        1.0096962451934814
+      ],
+      "probabilities": [
+        0.34018076039194667,
+        0.6598192396080533
+      ],
+      "max_probability_delta_cuda": 0.0025967192366362357,
+      "max_logit_delta_cuda": 0.03129136562347412,
+      "max_logit_delta_prior_fp16": 0.13420796394348145,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        -0.12876352667808533,
+        1.0221202373504639
+      ],
+      "probabilities": [
+        0.3380865546820571,
+        0.6619134453179429
+      ],
+      "max_probability_delta_cuda": 0.000502513526746684,
+      "max_logit_delta_cuda": 0.0188673734664917,
+      "max_logit_delta_prior_fp16": 0.14663195610046387,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12157_1.txt",
+        "train/neg/12193_4.txt",
+        "train/neg/12212_3.txt",
+        "train/neg/1228_2.txt",
+        "train/neg/12301_4.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        2.6479668617248535,
+        1.7686859369277954
+      ],
+      "probabilities": [
+        0.6255759222472456,
+        0.3744240777527544
+      ],
+      "max_probability_delta_cuda": 0.07742859117382556,
+      "max_logit_delta_cuda": 0.36533892154693604,
+      "max_logit_delta_prior_fp16": 0.2781890630722046,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        2.6135592460632324,
+        1.844406247138977
+      ],
+      "probabilities": [
+        0.6104005080695387,
+        0.38959949193046123
+      ],
+      "max_probability_delta_cuda": 0.06225317699611871,
+      "max_logit_delta_cuda": 0.2896186113357544,
+      "max_logit_delta_prior_fp16": 0.20246875286102295,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5316449403762817,
+        0.5825320482254028
+      ],
+      "probabilities": [
+        0.34289824665196517,
+        0.6571017533480349
+      ],
+      "max_probability_delta_cuda": 0.040657109102884115,
+      "max_logit_delta_cuda": 0.2702986001968384,
+      "max_logit_delta_prior_fp16": 0.26246368885040283,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        -0.5303090810775757,
+        0.5805066823959351
+      ],
+      "probabilities": [
+        0.34334048767267905,
+        0.656659512327321
+      ],
+      "max_probability_delta_cuda": 0.04021486808217023,
+      "max_logit_delta_cuda": 0.2682732343673706,
+      "max_logit_delta_prior_fp16": 0.26043832302093506,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9416_10.txt",
+        "train/pos/9444_10.txt",
+        "train/pos/9455_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9653_9.txt",
+        "train/pos/9688_9.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        3.476062297821045,
+        -1.5110679864883423
+      ],
+      "probabilities": [
+        0.9484000956081817,
+        0.05159990439181835
+      ],
+      "max_probability_delta_cuda": 0.00014879740144121967,
+      "max_logit_delta_cuda": 0.002619624137878418,
+      "max_logit_delta_prior_fp16": 0.002278923988342285,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "baseline-s43",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        3.4742236137390137,
+        -1.50419020652771
+      ],
+      "probabilities": [
+        0.9481505202648325,
+        0.05184947973516756
+      ],
+      "max_probability_delta_cuda": 0.0003983727447904317,
+      "max_logit_delta_cuda": 0.009497404098510742,
+      "max_logit_delta_prior_fp16": 0.004598855972290039,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.19921875,
+        -0.71728515625
+      ],
+      "probabilities": [
+        0.9601327285883168,
+        0.03986727141168313
+      ],
+      "max_probability_delta_cuda": 5.646826299235408e-06,
+      "max_logit_delta_cuda": 0.00032645463943481445,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.19921875,
+        -0.71337890625
+      ],
+      "probabilities": [
+        0.9599692988630733,
+        0.04003070113692672
+      ],
+      "max_probability_delta_cuda": 0.0001690765515428294,
+      "max_logit_delta_cuda": 0.0042327046394348145,
+      "max_logit_delta_prior_fp16": 0.00390625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/1236_1.txt",
+        "train/neg/12371_1.txt",
+        "train/neg/12387_4.txt",
+        "train/neg/12404_1.txt",
+        "train/neg/12416_3.txt",
+        "train/neg/12419_1.txt",
+        "train/neg/12425_2.txt",
+        "train/neg/12444_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.81787109375,
+        2.12109375
+      ],
+      "probabilities": [
+        0.03893989335871962,
+        0.9610601066412804
+      ],
+      "max_probability_delta_cuda": 8.411400396546309e-05,
+      "max_logit_delta_cuda": 0.002315998077392578,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.81591796875,
+        2.12109375
+      ],
+      "probabilities": [
+        0.03901970634082937,
+        0.9609802936591707
+      ],
+      "max_probability_delta_cuda": 4.301021855779297e-06,
+      "max_logit_delta_cuda": 0.0003628730773925781,
+      "max_logit_delta_prior_fp16": 0.001953125,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6455078125,
+        1.2783203125
+      ],
+      "probabilities": [
+        0.5988203892141983,
+        0.4011796107858016
+      ],
+      "max_probability_delta_cuda": 0.015125357247681825,
+      "max_logit_delta_cuda": 0.046446919441223145,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6455078125,
+        1.2880859375
+      ],
+      "probabilities": [
+        0.5962585001246903,
+        0.4037414998753098
+      ],
+      "max_probability_delta_cuda": 0.012563468158173663,
+      "max_logit_delta_cuda": 0.036681294441223145,
+      "max_logit_delta_prior_fp16": 0.009765625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9547_9.txt",
+        "train/pos/956_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9582_10.txt",
+        "train/pos/9592_8.txt",
+        "train/pos/9594_10.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        2.04296875,
+        0.6435546875
+      ],
+      "probabilities": [
+        0.8215044427766185,
+        0.17849555722338153
+      ],
+      "max_probability_delta_cuda": 0.01912058061050559,
+      "max_logit_delta_cuda": 0.11402833461761475,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        2.04296875,
+        0.69580078125
+      ],
+      "probabilities": [
+        0.8129935596914125,
+        0.1870064403085875
+      ],
+      "max_probability_delta_cuda": 0.01060969752529961,
+      "max_logit_delta_cuda": 0.061782240867614746,
+      "max_logit_delta_prior_fp16": 0.05224609375,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.19921875,
+        -0.71728515625
+      ],
+      "probabilities": [
+        0.9601327285883168,
+        0.03986727141168313
+      ],
+      "max_probability_delta_cuda": 5.646826299235408e-06,
+      "max_logit_delta_cuda": 0.00032645463943481445,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.19921875,
+        -0.71337890625
+      ],
+      "probabilities": [
+        0.9599692988630733,
+        0.04003070113692672
+      ],
+      "max_probability_delta_cuda": 0.0001690765515428294,
+      "max_logit_delta_cuda": 0.0042327046394348145,
+      "max_logit_delta_prior_fp16": 0.00390625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12157_1.txt",
+        "train/neg/12193_4.txt",
+        "train/neg/12212_3.txt",
+        "train/neg/1228_2.txt",
+        "train/neg/12301_4.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        1.673828125,
+        0.8740234375
+      ],
+      "probabilities": [
+        0.7052614673789824,
+        0.2947385326210176
+      ],
+      "max_probability_delta_cuda": 0.00011151684152221897,
+      "max_logit_delta_cuda": 0.0025582313537597656,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        1.6689453125,
+        0.884765625
+      ],
+      "probabilities": [
+        0.7017060534043559,
+        0.2982939465956441
+      ],
+      "max_probability_delta_cuda": 0.0034438971331043344,
+      "max_logit_delta_cuda": 0.012808680534362793,
+      "max_logit_delta_prior_fp16": 0.0107421875,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6455078125,
+        1.2783203125
+      ],
+      "probabilities": [
+        0.5988203892141983,
+        0.4011796107858016
+      ],
+      "max_probability_delta_cuda": 0.015125357247681825,
+      "max_logit_delta_cuda": 0.046446919441223145,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6455078125,
+        1.2880859375
+      ],
+      "probabilities": [
+        0.5962585001246903,
+        0.4037414998753098
+      ],
+      "max_probability_delta_cuda": 0.012563468158173663,
+      "max_logit_delta_cuda": 0.036681294441223145,
+      "max_logit_delta_prior_fp16": 0.009765625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9416_10.txt",
+        "train/pos/9444_10.txt",
+        "train/pos/9455_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9653_9.txt",
+        "train/pos/9688_9.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        2.30078125,
+        -1.08203125
+      ],
+      "probabilities": [
+        0.9756410675027436,
+        0.024358932497256434
+      ],
+      "max_probability_delta_cuda": 6.039961900883295e-05,
+      "max_logit_delta_cuda": 0.0018143653869628906,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float16",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        2.30078125,
+        -1.08203125
+      ],
+      "probabilities": [
+        0.9756410675027436,
+        0.024358932497256434
+      ],
+      "max_probability_delta_cuda": 6.039961900883295e-05,
+      "max_logit_delta_cuda": 0.0018143653869628906,
+      "max_logit_delta_prior_fp16": 0.0,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.1970279216766357,
+        -0.7094874382019043
+      ],
+      "probabilities": [
+        0.9597135489545028,
+        0.04028645104549724
+      ],
+      "max_probability_delta_cuda": 0.0004248264601133464,
+      "max_logit_delta_cuda": 0.008124172687530518,
+      "max_logit_delta_prior_fp16": 0.007797718048095703,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.196958541870117,
+        -0.70893794298172
+      ],
+      "probabilities": [
+        0.9596874387718868,
+        0.040312561228113254
+      ],
+      "max_probability_delta_cuda": 0.0004509366427293618,
+      "max_logit_delta_cuda": 0.008673667907714844,
+      "max_logit_delta_prior_fp16": 0.00834721326828003,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/1236_1.txt",
+        "train/neg/12371_1.txt",
+        "train/neg/12387_4.txt",
+        "train/neg/12404_1.txt",
+        "train/neg/12416_3.txt",
+        "train/neg/12419_1.txt",
+        "train/neg/12425_2.txt",
+        "train/neg/12444_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.8156501054763794,
+        2.120551347732544
+      ],
+      "probabilities": [
+        0.039052863272598805,
+        0.9609471367274013
+      ],
+      "max_probability_delta_cuda": 2.8855909913798328e-05,
+      "max_logit_delta_cuda": 0.0008001327514648438,
+      "max_logit_delta_prior_fp16": 0.0022209882736206055,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "5e3d158db12398eba99bbe0e53eee19328ae11101beac4a156fca6ebac1bf714",
+      "logits": [
+        -0.8160948753356934,
+        2.121030569076538
+      ],
+      "probabilities": [
+        0.03901505472714176,
+        0.9609849452728583
+      ],
+      "max_probability_delta_cuda": 8.952635543346688e-06,
+      "max_logit_delta_cuda": 0.0005397796630859375,
+      "max_logit_delta_prior_fp16": 0.0017762184143066406,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6409541368484497,
+        1.311711311340332
+      ],
+      "probabilities": [
+        0.5888370546691616,
+        0.4111629453308385
+      ],
+      "max_probability_delta_cuda": 0.005142022702644966,
+      "max_logit_delta_cuda": 0.013055920600891113,
+      "max_logit_delta_prior_fp16": 0.03339099884033203,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.639430046081543,
+        1.3136879205703735
+      ],
+      "probabilities": [
+        0.5879121811402261,
+        0.4120878188597738
+      ],
+      "max_probability_delta_cuda": 0.004217149173709633,
+      "max_logit_delta_cuda": 0.01107931137084961,
+      "max_logit_delta_prior_fp16": 0.035367608070373535,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9547_9.txt",
+        "train/pos/956_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9582_10.txt",
+        "train/pos/9592_8.txt",
+        "train/pos/9594_10.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        2.0388526916503906,
+        0.8307664394378662
+      ],
+      "probabilities": [
+        0.7888255416634179,
+        0.21117445833658197
+      ],
+      "max_probability_delta_cuda": 0.01355832050269501,
+      "max_logit_delta_cuda": 0.07318341732025146,
+      "max_logit_delta_prior_fp16": 0.1872117519378662,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head",
+      "effective_view": "head",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "24139f6370b12713fadff2335da3e4321f11c1fecd6a9693410bff24f512ba88",
+      "logits": [
+        2.0410428047180176,
+        0.714263916015625
+      ],
+      "probabilities": [
+        0.8095884687111384,
+        0.1904115312888615
+      ],
+      "max_probability_delta_cuda": 0.00720460654502561,
+      "max_logit_delta_cuda": 0.043319106101989746,
+      "max_logit_delta_prior_fp16": 0.070709228515625,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12309_3.txt",
+        "train/neg/12311_1.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12326_1.txt",
+        "train/neg/12334_4.txt",
+        "train/neg/12349_4.txt",
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.1970279216766357,
+        -0.7094874382019043
+      ],
+      "probabilities": [
+        0.9597135489545028,
+        0.04028645104549724
+      ],
+      "max_probability_delta_cuda": 0.0004248264601133464,
+      "max_logit_delta_cuda": 0.008124172687530518,
+      "max_logit_delta_prior_fp16": 0.007797718048095703,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/12360_4.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12360_4.txt"
+      ],
+      "padded_length": 203,
+      "input_sha256": "2d045652d2d061f0435200f9eb09a73a690ec52eefe6b3368ee780e4ee973360",
+      "logits": [
+        2.196958541870117,
+        -0.70893794298172
+      ],
+      "probabilities": [
+        0.9596874387718868,
+        0.040312561228113254
+      ],
+      "max_probability_delta_cuda": 0.0004509366427293618,
+      "max_logit_delta_cuda": 0.008673667907714844,
+      "max_logit_delta_prior_fp16": 0.00834721326828003,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/12157_1.txt",
+        "train/neg/12193_4.txt",
+        "train/neg/12212_3.txt",
+        "train/neg/1228_2.txt",
+        "train/neg/12301_4.txt",
+        "train/neg/12312_4.txt",
+        "train/neg/12314_3.txt",
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        1.6439507007598877,
+        0.9091976881027222
+      ],
+      "probabilities": [
+        0.6902989520784023,
+        0.30970104792159764
+      ],
+      "max_probability_delta_cuda": 0.014850998459057907,
+      "max_logit_delta_cuda": 0.03724074363708496,
+      "max_logit_delta_prior_fp16": 0.03517425060272217,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/neg/12416_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/12416_3.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+      "logits": [
+        1.6525274515151978,
+        0.8920279741287231
+      ],
+      "probabilities": [
+        0.6962710320806521,
+        0.3037289679193478
+      ],
+      "max_probability_delta_cuda": 0.008878918456808105,
+      "max_logit_delta_cuda": 0.020071029663085938,
+      "max_logit_delta_prior_fp16": 0.021300673484802246,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/neg/6414_1.txt",
+        "train/neg/641_4.txt",
+        "train/neg/6420_4.txt",
+        "train/neg/6424_3.txt",
+        "train/neg/6431_1.txt",
+        "train/neg/6433_3.txt",
+        "train/neg/6440_3.txt",
+        "train/neg/6454_2.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.6409541368484497,
+        1.311711311340332
+      ],
+      "probabilities": [
+        0.5888370546691616,
+        0.4111629453308385
+      ],
+      "max_probability_delta_cuda": 0.005142022702644966,
+      "max_logit_delta_cuda": 0.013055920600891113,
+      "max_logit_delta_prior_fp16": 0.03339099884033203,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head",
+      "sample_id": "train/neg/6424_3.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/neg/6424_3.txt"
+      ],
+      "padded_length": 342,
+      "input_sha256": "011cecf7c8859b1df57d6cab8f026fbfcf1b9b0a87d0d3c4ef5203377365a0c1",
+      "logits": [
+        1.639430046081543,
+        1.3136879205703735
+      ],
+      "probabilities": [
+        0.5879121811402261,
+        0.4120878188597738
+      ],
+      "max_probability_delta_cuda": 0.004217149173709633,
+      "max_logit_delta_cuda": 0.01107931137084961,
+      "max_logit_delta_prior_fp16": 0.035367608070373535,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "original_batch8",
+      "batch_sample_ids": [
+        "train/pos/9416_10.txt",
+        "train/pos/9444_10.txt",
+        "train/pos/9455_9.txt",
+        "train/pos/9573_8.txt",
+        "train/pos/9577_8.txt",
+        "train/pos/9579_8.txt",
+        "train/pos/9653_9.txt",
+        "train/pos/9688_9.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        2.2983438968658447,
+        -1.08109450340271
+      ],
+      "probabilities": [
+        0.9755534404403199,
+        0.024446559559680062
+      ],
+      "max_probability_delta_cuda": 2.7227443414951785e-05,
+      "max_logit_delta_cuda": 0.0006229877471923828,
+      "max_logit_delta_prior_fp16": 0.0024373531341552734,
+      "class_changed_cuda": false
+    },
+    {
+      "model": "combined-s42",
+      "view": "head_tail",
+      "effective_view": "head_tail",
+      "sample_id": "train/pos/9579_8.txt",
+      "dtype": "float32",
+      "batch": "batch1",
+      "batch_sample_ids": [
+        "train/pos/9579_8.txt"
+      ],
+      "padded_length": 512,
+      "input_sha256": "6ac6b0126886a3d3cb65da2a30ddd25dbf2a04928a498e63a5460dbaeea08a5d",
+      "logits": [
+        2.2982587814331055,
+        -1.0807229280471802
+      ],
+      "probabilities": [
+        0.9755415563626237,
+        0.024458443637376207
+      ],
+      "max_probability_delta_cuda": 3.911152111109664e-05,
+      "max_logit_delta_cuda": 0.0007957220077514648,
+      "max_logit_delta_prior_fp16": 0.0025224685668945312,
+      "class_changed_cuda": false
+    }
+  ],
+  "test_accessed": false,
+  "deployment_changed": false,
+  "full_fp32_validation_performed": false
+}

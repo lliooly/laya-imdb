@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "run_id": "laya-frozen-official-test-20261014-v1",
+  "frozen_utc": "2026-10-14T14:35:38.022581+00:00",
+  "authorization": "User requested freezing and official inference evaluation; conditionally consider ModernBERT afterwards",
+  "primary": "two_model_fitted",
+  "reference": "baseline-s43/head_tail",
+  "coefficient": 0.7020326697613102,
+  "primary_development_accuracy": 0.9696,
+  "reference_development_accuracy": 0.9684,
+  "target_accuracy": 0.98,
+  "primary_selected_before_test": true,
+  "backends": {
+    "cuda": {
+      "config": "configs/laya-fusion-inference-cuda-fp32-20261014-v1.json",
+      "sha256": "4533c6c093e2b1c5ac89446c72ad8982b5f4f09458fdda2739c927424e39f09d"
+    },
+    "mlx-fp32-precise": {
+      "config": "configs/laya-fusion-inference-mlx-fp32-precise-20261014-v1.json",
+      "sha256": "738c800d1a4755cf379526b91614507077f1cc320bca8aeebaf64f59fc2c92ce"
+    }
+  },
+  "backend_selection": "CUDA preferred; precise MLX only if CUDA unavailable before test opened; never selected by test score",
+  "split_manifest": "reports/split_manifest.json",
+  "split_manifest_sha256": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+  "test": {
+    "path": "data/processed/test.jsonl",
+    "sha256": "ab58e99484731abe6f9733a37436fd34c7b951befb870be56f93da7649b15705",
+    "count": 25000
+  },
+  "preflight_tolerance": {
+    "logits_absolute": 0.001,
+    "probabilities_absolute": 0.0001
+  },
+  "source_sha256": {
+    "scripts/evaluate_laya_frozen_test.py": "cccda697f85cf28c3e88db50900052ca6da71f5639f2fcf3ba43887545a0016c",
+    "scripts/common.py": "cb58f328e770428e75162f94065c0568d82d6f9e767296a0142c36bac416e02e",
+    "scripts/train_laya.py": "50530b8b0efd2872ee280bcc80c07b92e090bf9f4d71bbeeafde52808db4f7ec",
+    "scripts/export_laya_posthoc.py": "01415c729d81a20790a0e67e48998f284cacee97d9b30ea6cf2da1b242665505",
+    "scripts/laya_fusion_inference.py": "14dd707998ce533de418b5e351d6b7b216560bf275dd4ce85595522735bd874e",
+    "scripts/laya_probability_fusion.py": "a473a29152f106e2e942bd101696eba3680b59aae20729c86cc9b6c41815f7da",
+    "scripts/laya_decision_views.py": "58cb9b7398ade97addce7a422af824795e5e7f783d8eb359a0c63d801d5454b9",
+    "scripts/comparison_metrics.py": "918ab38a674b0cb7430805eb2c0b9d2269109b3dc064615f2298d8f852abdb61",
+    "scripts/validate_laya_fusion_inference.py": "460428e5c21c79b135c39791277ff83df407b27c1c181f409ca4b7870baa5b5a",
+    "scripts/run_laya_probability_fusion.py": "17fc4427246bd202c5ab9426840327f22e525b27efa1ab6ff5221785019b7a02",
+    "scripts/laya_mlx_fusion_inference.py": "c348ba76233f21951b69ee7bece8d20ff5783209f242e33de2bae7700f4491c2",
+    "scripts/laya_mlx_precise_inference.py": "8be4968b693a71f4012b204a0b61e6bd3b92339de834066213a954cc150bfae9",
+    "uv.lock": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe"
+  },
+  "no_test_based_model_selection_or_tuning": true,
+  "equal_auxiliary_scored_on_test": false,
+  "official_test_results_not_used_to_tune_modernbert": true
+}

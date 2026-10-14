@@ -1,0 +1,67 @@
+{
+  "run_id": "laya-probability-fusion-s43-s42-20261014-v1",
+  "models": [
+    {
+      "name": "baseline-s42",
+      "export": "reports/laya-posthoc-baseline-s42-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-epochs2-l512-s42-fp32-v1/manifest.json",
+      "weight_sha256": "6c43d847e3d90db30057427de2dc16cf86ba8852b7a255c722dc8e5921705a57"
+    },
+    {
+      "name": "combined-s42",
+      "export": "reports/laya-posthoc-combined-s42-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/manifest.json",
+      "weight_sha256": "bf5529167140f4553b560788b740945614c1c4d0fb69aadd9b507565e09c3819"
+    },
+    {
+      "name": "baseline-s43",
+      "export": "reports/laya-posthoc-baseline-s43-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json",
+      "weight_sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338"
+    },
+    {
+      "name": "combined-s43",
+      "export": "reports/laya-posthoc-combined-s43-fp32-v1",
+      "manifest": "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/manifest.json",
+      "weight_sha256": "f5b629314748607b1b8933c4db6ef900830f4ce8a49ebca6936c72a98f91b712"
+    }
+  ],
+  "source_sha256": {
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "data/processed/validation.jsonl": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/calibration-head.json": "588e8f6df879069df572a1867e7150d618492bc0cb1a0d84470158b60dfbc5db",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/calibration-head_tail.json": "77241047200f4b68f2ba42bd9a70319b20d9346a3060b41aa1cf81d5ab2447aa",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/metadata.json": "27d374bc8d3b18577ea75dd2618de3c7e066e48efc7ff35e8abf73047fefa11e",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head.json": "1306c36eda8da38142fb9fc4d5f4ec98fcd733d2f95714b0bcc6f1cfa21d2706",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head_tail.json": "440965582500aafeea612fc0f794856d090e72dc47c65c63f7e53b8b0a6dbe2e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/calibration-head.json": "dc58a1a69922bc10af0ff9739cf923187fb07b0391058c5dfbd856bfe84a48aa",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/calibration-head_tail.json": "96ca396824fec4ddebf92bc5582c938dcf7432d52606611bf81434c32e8648ce",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/metadata.json": "bc3278f15b5b454bd4d2a3f6c7cb7b93b343d9a26c683c3c2d4ef27c87d7f545",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head.json": "d17757ed3102198853c4f2fca30d80154a3ee9e5b32ea323b9efaff6d5a34d6e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766",
+    "reports/laya-posthoc-combined-s42-fp32-v1/calibration-head.json": "6a0b19bc8791e8d00c0f4e6b89e1b62cdb3e0c1dc97de0b4f69a5db2c6bc59ba",
+    "reports/laya-posthoc-combined-s42-fp32-v1/calibration-head_tail.json": "d5ffaa01c1c3b50ab3cf5aeffb57b5437e2b2060b78e0846e696d15b33124142",
+    "reports/laya-posthoc-combined-s42-fp32-v1/metadata.json": "4ef1077ee30e543bad3b40fea1d2f609ed94bda91381b18bbd6692c0cfe6927c",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head.json": "2a8d29b599c00f8268339c67140c1a48a00d413e037e64ad98e35aaa95038a1a",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head_tail.json": "3f325cc170c3f2f2238d7e4a921a2ebd91f315836d0d739b5c588cbca348bc8b",
+    "reports/laya-posthoc-combined-s43-fp32-v1/calibration-head.json": "d5067e4091856b2d03a030283f1d3a44ef5cc817f6b00fdcf4de4e7268d666b3",
+    "reports/laya-posthoc-combined-s43-fp32-v1/calibration-head_tail.json": "d160f2fcd1748d0cdc2e62af315b2e274ae83187824bbb2161c3cd7eaad2604b",
+    "reports/laya-posthoc-combined-s43-fp32-v1/metadata.json": "a6782ef63d545386a3046156895d88c8c9dfb276f49c0ef7e268d56ac72e93b7",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head.json": "4f296e0bf04e6c9910d816ab32cdfe6102831033e3d4636d1116597552ea2132",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head_tail.json": "4148ad8ffb6fda699b8edaf7ca0de418dd0f76b3220021d4b423459288260b19",
+    "reports/laya-posthoc-consolidated-v2/summary.json": "3ca38dfd1da91efd72caea19287eac40181445e54bc16af8d58b95a9dd7d6ea4",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+    "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/manifest.json": "89199a1e271157292a0b47f25e67bcd177b2c6917a72d3922b813bdb721f1aa6",
+    "reports/laya-rtx4090-ce-epochs2-l512-s42-fp32-v1/manifest.json": "70e2cf27fd584cf521c78cf6e9c8eb48d7dfb787b4ca498ef17d811db89fd243",
+    "reports/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/manifest.json": "050ab546ce8109a186af572c8457ff90d4fe04f14d053b3209cabb65001da9f0",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64"
+  },
+  "primary_models": [
+    "baseline-s43",
+    "combined-s42"
+  ],
+  "mixing_l2": 0.01,
+  "primary_reference": "baseline-s43/head_tail",
+  "minimum_delta_pp": 0.1,
+  "maximum_mcnemar_p": 0.05
+}

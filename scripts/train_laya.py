@@ -24,6 +24,8 @@ from laya_epoch_checkpoints import keep_epoch_checkpoints, validate_epoch_checkp
 from laya_resampling import resample_training, validate_sampling
 from laya_runtime import prepare_runtime, apply_runtime
 from laya_semantic_training import validate_semantic, load_semantic, semantic_training
+from laya_decision_views import validate_window_training
+from laya_window_training import window_training
 
 QUESTION = {"type": "choice",
             "instructions": "What is the reviewer's overall opinion of this movie?",
@@ -110,6 +112,16 @@ def main():
     epoch_checkpoints = validate_epoch_checkpoints(spec.get('epoch_checkpoints', False))
     sampling = validate_sampling(spec.get('sampling'))
     semantic = validate_semantic(spec.get('semantic_pairs'))
+    windows = validate_window_training(spec.get('window_training'))
+    if windows and (sampling or semantic or spec.get('runtime_profile') != 'strict'
+                    or spec['training']['loss'] != 'soft-ce' or spec['training']['amp']
+                    or spec['training']['seed'] != 42 or spec['training']['epochs'] != 2
+                    or spec['training']['max_len'] != 512 or spec['training']['head_max_len'] != 192
+                    or spec['training']['calib_max'] != 400 or spec['training']['calib_seed'] != 42
+                    or spec['train_limit'] is not None or spec['validation_limit'] is not None
+                    or not epoch_checkpoints or optimization is None
+                    or optimization.get('rdrop_alpha', 0)):
+        raise ValueError('Window training requires standalone full-source strict seed42 two-epoch CE')
     if semantic:
         if (sampling or spec.get('runtime_profile') != 'strict' or spec['train_limit'] is not None
                 or not epoch_checkpoints or spec['training']['epochs'] != 2
@@ -127,6 +139,7 @@ def main():
     if args.validate_config:
         print(json.dumps({'state': 'config_valid', 'run_id': spec['run_id'],
                           'optimization': optimization, 'accelerator_checked': False,
+                          'window_training': windows,
                           'data_accessed': False, 'model_accessed': False}))
         return
     model_dir = ROOT / lock["local_dir"]
@@ -163,7 +176,7 @@ def main():
     seed = spec["training"]["seed"]
     train, train_info = prepare_rows("train", spec["train_limit"], seed, data_dir, manifest)
     validation, validation_info = prepare_rows("validation", spec["validation_limit"], seed, data_dir, manifest)
-    config = upstream.TrainConfig(**dict(spec["training"], eval_data=str(validation)))
+    config = upstream.TrainConfig(**dict(spec["training"], eval_data=None if windows else str(validation)))
     config.validate()
     gradient_ids, calibration_ids = upstream.split_calibration(
         train_info["ids"], config.calib_max, config.calib_frac, config.calib_seed)
@@ -183,6 +196,10 @@ def main():
                "runtime_adapter_sha256": (file_digest(ROOT / "scripts/laya_runtime.py") if runtime else None),
                "optimization": optimization,
                "semantic_pairs": semantic,
+               "window_training": windows,
+               "development_evaluation_scope": ("separate_final_saved_checkpoint_only" if windows else "upstream_before_after"),
+               "window_adapter_sha256": (file_digest(ROOT / "scripts/laya_window_training.py") if windows else None),
+               "decision_views_sha256": (file_digest(ROOT / "scripts/laya_decision_views.py") if windows else None),
                "semantic_adapter_sha256": (file_digest(ROOT / "scripts/laya_semantic_training.py") if semantic else None),
                "sampling": sampling,
                "sampling_adapter_sha256": (file_digest(ROOT / "scripts/laya_resampling.py") if sampling else None),
@@ -224,7 +241,8 @@ def main():
             print("Full Laya encoder + decision head fine-tuning; objective=" + config.loss, flush=True)
             print("Training rows %d; validation rows %d; calibration is held out FROM TRAINING."
                   % (train_info["count"], validation_info["count"]), flush=True)
-            print("Loading local model; initial validation runs before the first training step.", flush=True)
+            print("Loading local model; " + ("development evaluation deferred to final saved-weight study."
+                  if windows else "initial validation runs before the first training step."), flush=True)
             from cuda_numerics import guard_training
             with ExitStack() as stack:
                 if device.startswith('cuda'):
@@ -234,6 +252,7 @@ def main():
                     label_by_id = {r['id']: r['label'] for r in read_jsonl(ROOT / 'data/processed/train.jsonl') if r['id'] in gradient_id_set}
                     stack.enter_context(resample_training(upstream, sampling, gradient_ids, label_by_id, report_dir))
                 stack.enter_context(semantic_training(upstream, semantic_bundle, report_dir))
+                stack.enter_context(window_training(upstream, windows, gradient_ids, report_dir))
                 stack.enter_context(optimize_training(torch, upstream, optimization, report_dir))
                 stack.enter_context(keep_epoch_checkpoints(upstream, epoch_checkpoints, output, report_dir))
                 summary = upstream.finetune(str(train), str(model_dir), str(output), config, device)

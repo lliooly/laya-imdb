@@ -1,0 +1,288 @@
+{
+  "selected_record": {
+    "model": "baseline-s43",
+    "view": "head_tail",
+    "effective_view": "head_tail",
+    "sample_id": "train/neg/12416_3.txt",
+    "dtype": "float32",
+    "batch": "original_batch8",
+    "batch_sample_ids": [
+      "train/neg/12157_1.txt",
+      "train/neg/12193_4.txt",
+      "train/neg/12212_3.txt",
+      "train/neg/1228_2.txt",
+      "train/neg/12301_4.txt",
+      "train/neg/12312_4.txt",
+      "train/neg/12314_3.txt",
+      "train/neg/12416_3.txt"
+    ],
+    "padded_length": 512,
+    "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+    "logits": [
+      2.6479668617248535,
+      1.7686859369277954
+    ],
+    "probabilities": [
+      0.6255759222472456,
+      0.3744240777527544
+    ],
+    "max_probability_delta_cuda": 0.07742859117382556,
+    "max_logit_delta_cuda": 0.36533892154693604,
+    "max_logit_delta_prior_fp16": 0.2781890630722046,
+    "class_changed_cuda": false
+  },
+  "stages": [
+    {
+      "stage": "embeddings",
+      "max_abs_delta": 9.5367431640625e-07,
+      "rms_delta": 3.8450000516832006e-08,
+      "reference_rms": 0.5613914132118225
+    },
+    {
+      "stage": "op/qkv",
+      "max_abs_delta": 3.814697265625e-06,
+      "rms_delta": 1.8976649585056293e-07,
+      "reference_rms": 1.142883539199829
+    },
+    {
+      "stage": "op/attention",
+      "max_abs_delta": 3.993511199951172e-06,
+      "rms_delta": 3.2633164437356754e-07,
+      "reference_rms": 0.19565778970718384
+    },
+    {
+      "stage": "op/mlp_norm",
+      "max_abs_delta": 1.7620623111724854e-06,
+      "rms_delta": 8.416866137395118e-08,
+      "reference_rms": 0.12383342534303665
+    },
+    {
+      "stage": "op/mlp_in",
+      "max_abs_delta": 9.775161743164062e-06,
+      "rms_delta": 2.9381055810517864e-07,
+      "reference_rms": 0.4898166358470917
+    },
+    {
+      "stage": "op/mlp_out",
+      "max_abs_delta": 4.00543212890625e-05,
+      "rms_delta": 6.478446152868855e-07,
+      "reference_rms": 0.649204671382904
+    },
+    {
+      "stage": "encoder/0",
+      "max_abs_delta": 4.00543212890625e-05,
+      "rms_delta": 7.201157927738677e-07,
+      "reference_rms": 0.9063531160354614
+    },
+    {
+      "stage": "encoder/1",
+      "max_abs_delta": 9.918212890625e-05,
+      "rms_delta": 1.7280412976106163e-06,
+      "reference_rms": 1.158972144126892
+    },
+    {
+      "stage": "encoder/2",
+      "max_abs_delta": 9.1552734375e-05,
+      "rms_delta": 2.292362523803604e-06,
+      "reference_rms": 1.294582724571228
+    },
+    {
+      "stage": "encoder/3",
+      "max_abs_delta": 8.392333984375e-05,
+      "rms_delta": 2.6540469661995303e-06,
+      "reference_rms": 1.4047549962997437
+    },
+    {
+      "stage": "encoder/4",
+      "max_abs_delta": 0.0001049041748046875,
+      "rms_delta": 3.119660277661751e-06,
+      "reference_rms": 1.609442949295044
+    },
+    {
+      "stage": "encoder/5",
+      "max_abs_delta": 0.0010986328125,
+      "rms_delta": 4.3885024751944e-06,
+      "reference_rms": 3.8058102130889893
+    },
+    {
+      "stage": "encoder/6",
+      "max_abs_delta": 0.0028076171875,
+      "rms_delta": 7.62164336265414e-06,
+      "reference_rms": 5.836838245391846
+    },
+    {
+      "stage": "encoder/7",
+      "max_abs_delta": 0.010986328125,
+      "rms_delta": 1.85861463251058e-05,
+      "reference_rms": 8.817501068115234
+    },
+    {
+      "stage": "encoder/8",
+      "max_abs_delta": 0.01153564453125,
+      "rms_delta": 1.9923432773794048e-05,
+      "reference_rms": 9.276056289672852
+    },
+    {
+      "stage": "encoder/9",
+      "max_abs_delta": 0.0115966796875,
+      "rms_delta": 2.0733396013383754e-05,
+      "reference_rms": 9.592464447021484
+    },
+    {
+      "stage": "encoder/10",
+      "max_abs_delta": 0.01153564453125,
+      "rms_delta": 2.1508554709726013e-05,
+      "reference_rms": 9.886431694030762
+    },
+    {
+      "stage": "encoder/11",
+      "max_abs_delta": 0.01153564453125,
+      "rms_delta": 2.1965270207147114e-05,
+      "reference_rms": 9.919811248779297
+    },
+    {
+      "stage": "encoder/12",
+      "max_abs_delta": 0.01068115234375,
+      "rms_delta": 2.1853515136172064e-05,
+      "reference_rms": 9.472536087036133
+    },
+    {
+      "stage": "encoder/13",
+      "max_abs_delta": 0.01068115234375,
+      "rms_delta": 2.376447810092941e-05,
+      "reference_rms": 9.632556915283203
+    },
+    {
+      "stage": "encoder/14",
+      "max_abs_delta": 0.01007080078125,
+      "rms_delta": 2.667849912540987e-05,
+      "reference_rms": 20.120248794555664
+    },
+    {
+      "stage": "encoder/15",
+      "max_abs_delta": 0.00994873046875,
+      "rms_delta": 2.8245187422726303e-05,
+      "reference_rms": 20.275728225708008
+    },
+    {
+      "stage": "encoder/16",
+      "max_abs_delta": 0.0098876953125,
+      "rms_delta": 3.0328345019370317e-05,
+      "reference_rms": 20.49505043029785
+    },
+    {
+      "stage": "encoder/17",
+      "max_abs_delta": 0.009765625,
+      "rms_delta": 3.27569869114086e-05,
+      "reference_rms": 20.551809310913086
+    },
+    {
+      "stage": "encoder/18",
+      "max_abs_delta": 0.029541015625,
+      "rms_delta": 6.457584822783247e-05,
+      "reference_rms": 24.759876251220703
+    },
+    {
+      "stage": "encoder/19",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003811977512668818,
+      "reference_rms": 112.1886978149414
+    },
+    {
+      "stage": "encoder/20",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003815657109953463,
+      "reference_rms": 112.2295150756836
+    },
+    {
+      "stage": "encoder/21",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003826359461527318,
+      "reference_rms": 112.27713775634766
+    },
+    {
+      "stage": "encoder/22",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003845517640002072,
+      "reference_rms": 112.49053955078125
+    },
+    {
+      "stage": "encoder/23",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003858590207528323,
+      "reference_rms": 112.68408966064453
+    },
+    {
+      "stage": "encoder/24",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003897394344676286,
+      "reference_rms": 112.92405700683594
+    },
+    {
+      "stage": "encoder/25",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0003953483246732503,
+      "reference_rms": 113.20698547363281
+    },
+    {
+      "stage": "encoder/26",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.0004032254801131785,
+      "reference_rms": 113.68695068359375
+    },
+    {
+      "stage": "encoder/27",
+      "max_abs_delta": 0.181640625,
+      "rms_delta": 0.00041289738146588206,
+      "reference_rms": 113.88807678222656
+    },
+    {
+      "stage": "final_norm",
+      "max_abs_delta": 0.0013408660888671875,
+      "rms_delta": 9.016512194648385e-06,
+      "reference_rms": 1.1165693998336792
+    },
+    {
+      "stage": "head/0",
+      "max_abs_delta": 0.026611328125,
+      "rms_delta": 0.0009537944570183754,
+      "reference_rms": 131.83493041992188
+    },
+    {
+      "stage": "head/1",
+      "max_abs_delta": 0.0277099609375,
+      "rms_delta": 0.0009693282772786915,
+      "reference_rms": 210.4630889892578
+    }
+  ],
+  "controlled_qkv": {
+    "DeviceType.cpu": {
+      "max_abs_delta": 0.0,
+      "rms_delta": 0.0
+    },
+    "DeviceType.gpu": {
+      "max_abs_delta": 0.0,
+      "rms_delta": 0.0
+    },
+    "weights_exactly_equal": true,
+    "inputs": "Exact copied PyTorch FP32 embedding output; identical across devices"
+  },
+  "cpu_logits": [
+    2.464874505996704,
+    2.1341984272003174
+  ],
+  "mlx_logits": [
+    2.464974880218506,
+    2.134047746658325
+  ],
+  "cuda_logits": [
+    2.464965581893921,
+    2.1340248584747314
+  ],
+  "cpu_probability_delta_cuda": 3.8263988458131504e-05,
+  "mlx_probability_delta_cuda": 1.964893654560207e-06,
+  "mlx_replay_logit_delta": 0.3653618097305298,
+  "elapsed_seconds": 3.268049083999358,
+  "test_accessed": false,
+  "posthoc_diagnostic_only": true
+}

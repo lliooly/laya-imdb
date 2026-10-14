@@ -1,0 +1,276 @@
+{
+  "selected_record": {
+    "model": "baseline-s43",
+    "view": "head_tail",
+    "effective_view": "head_tail",
+    "sample_id": "train/neg/12416_3.txt",
+    "dtype": "float32",
+    "batch": "original_batch8",
+    "batch_sample_ids": [
+      "train/neg/12157_1.txt",
+      "train/neg/12193_4.txt",
+      "train/neg/12212_3.txt",
+      "train/neg/1228_2.txt",
+      "train/neg/12301_4.txt",
+      "train/neg/12312_4.txt",
+      "train/neg/12314_3.txt",
+      "train/neg/12416_3.txt"
+    ],
+    "padded_length": 512,
+    "input_sha256": "de347369b07d8e66a7c1531f341ef35e871c20820f11a50cf7241cbfb126c9d9",
+    "logits": [
+      2.6479668617248535,
+      1.7686859369277954
+    ],
+    "probabilities": [
+      0.6255759222472456,
+      0.3744240777527544
+    ],
+    "max_probability_delta_cuda": 0.07742859117382556,
+    "max_logit_delta_cuda": 0.36533892154693604,
+    "max_logit_delta_prior_fp16": 0.2781890630722046,
+    "class_changed_cuda": false
+  },
+  "stages": [
+    {
+      "stage": "embeddings",
+      "max_abs_delta": 9.5367431640625e-07,
+      "rms_delta": 3.8450000516832006e-08,
+      "reference_rms": 0.5613914132118225
+    },
+    {
+      "stage": "op/qkv",
+      "max_abs_delta": 0.0035157203674316406,
+      "rms_delta": 0.00044098967919126153,
+      "reference_rms": 1.142883539199829
+    },
+    {
+      "stage": "op/attention",
+      "max_abs_delta": 0.004289746284484863,
+      "rms_delta": 0.0005314138252288103,
+      "reference_rms": 0.19565778970718384
+    },
+    {
+      "stage": "op/mlp_norm",
+      "max_abs_delta": 0.002139866352081299,
+      "rms_delta": 0.00013504813250619918,
+      "reference_rms": 0.12383342534303665
+    },
+    {
+      "stage": "op/mlp_in",
+      "max_abs_delta": 0.007799267768859863,
+      "rms_delta": 0.0005025747232139111,
+      "reference_rms": 0.4898166358470917
+    },
+    {
+      "stage": "op/mlp_out",
+      "max_abs_delta": 0.0337677001953125,
+      "rms_delta": 0.0006223114323802292,
+      "reference_rms": 0.649204671382904
+    },
+    {
+      "stage": "encoder/0",
+      "max_abs_delta": 0.0354766845703125,
+      "rms_delta": 0.0008201483287848532,
+      "reference_rms": 0.9063531160354614
+    },
+    {
+      "stage": "encoder/1",
+      "max_abs_delta": 0.080474853515625,
+      "rms_delta": 0.0016027068486437201,
+      "reference_rms": 1.158972144126892
+    },
+    {
+      "stage": "encoder/2",
+      "max_abs_delta": 0.08098602294921875,
+      "rms_delta": 0.002006901428103447,
+      "reference_rms": 1.294582724571228
+    },
+    {
+      "stage": "encoder/3",
+      "max_abs_delta": 0.07930755615234375,
+      "rms_delta": 0.0021164000499993563,
+      "reference_rms": 1.4047549962997437
+    },
+    {
+      "stage": "encoder/4",
+      "max_abs_delta": 0.08177947998046875,
+      "rms_delta": 0.0024193550925701857,
+      "reference_rms": 1.609442949295044
+    },
+    {
+      "stage": "encoder/5",
+      "max_abs_delta": 3.460205078125,
+      "rms_delta": 0.0067950161173939705,
+      "reference_rms": 3.8058102130889893
+    },
+    {
+      "stage": "encoder/6",
+      "max_abs_delta": 3.6326904296875,
+      "rms_delta": 0.00860231090337038,
+      "reference_rms": 5.836838245391846
+    },
+    {
+      "stage": "encoder/7",
+      "max_abs_delta": 10.29449462890625,
+      "rms_delta": 0.019451279193162918,
+      "reference_rms": 8.817501068115234
+    },
+    {
+      "stage": "encoder/8",
+      "max_abs_delta": 15.578277587890625,
+      "rms_delta": 0.025962896645069122,
+      "reference_rms": 9.276056289672852
+    },
+    {
+      "stage": "encoder/9",
+      "max_abs_delta": 20.662033081054688,
+      "rms_delta": 0.03377373889088631,
+      "reference_rms": 9.592464447021484
+    },
+    {
+      "stage": "encoder/10",
+      "max_abs_delta": 22.838726043701172,
+      "rms_delta": 0.040991127490997314,
+      "reference_rms": 9.886431694030762
+    },
+    {
+      "stage": "encoder/11",
+      "max_abs_delta": 6.695915222167969,
+      "rms_delta": 0.03747352957725525,
+      "reference_rms": 9.919811248779297
+    },
+    {
+      "stage": "encoder/12",
+      "max_abs_delta": 4.72845458984375,
+      "rms_delta": 0.03718205913901329,
+      "reference_rms": 9.472536087036133
+    },
+    {
+      "stage": "encoder/13",
+      "max_abs_delta": 4.73406982421875,
+      "rms_delta": 0.04714493080973625,
+      "reference_rms": 9.632556915283203
+    },
+    {
+      "stage": "encoder/14",
+      "max_abs_delta": 8.36572265625,
+      "rms_delta": 0.05054881051182747,
+      "reference_rms": 20.120248794555664
+    },
+    {
+      "stage": "encoder/15",
+      "max_abs_delta": 8.36181640625,
+      "rms_delta": 0.05325651541352272,
+      "reference_rms": 20.275728225708008
+    },
+    {
+      "stage": "encoder/16",
+      "max_abs_delta": 8.36181640625,
+      "rms_delta": 0.054400112479925156,
+      "reference_rms": 20.49505043029785
+    },
+    {
+      "stage": "encoder/17",
+      "max_abs_delta": 8.3671875,
+      "rms_delta": 0.058401308953762054,
+      "reference_rms": 20.551809310913086
+    },
+    {
+      "stage": "encoder/18",
+      "max_abs_delta": 28.04443359375,
+      "rms_delta": 0.08318886905908585,
+      "reference_rms": 24.759876251220703
+    },
+    {
+      "stage": "encoder/19",
+      "max_abs_delta": 95.806640625,
+      "rms_delta": 0.25676754117012024,
+      "reference_rms": 112.1886978149414
+    },
+    {
+      "stage": "encoder/20",
+      "max_abs_delta": 95.80859375,
+      "rms_delta": 0.25887972116470337,
+      "reference_rms": 112.2295150756836
+    },
+    {
+      "stage": "encoder/21",
+      "max_abs_delta": 95.88671875,
+      "rms_delta": 0.264482319355011,
+      "reference_rms": 112.27713775634766
+    },
+    {
+      "stage": "encoder/22",
+      "max_abs_delta": 95.890625,
+      "rms_delta": 0.273806095123291,
+      "reference_rms": 112.49053955078125
+    },
+    {
+      "stage": "encoder/23",
+      "max_abs_delta": 95.916015625,
+      "rms_delta": 0.2804703116416931,
+      "reference_rms": 112.68408966064453
+    },
+    {
+      "stage": "encoder/24",
+      "max_abs_delta": 95.943359375,
+      "rms_delta": 0.3003128170967102,
+      "reference_rms": 112.92405700683594
+    },
+    {
+      "stage": "encoder/25",
+      "max_abs_delta": 95.943359375,
+      "rms_delta": 0.3289821743965149,
+      "reference_rms": 113.20698547363281
+    },
+    {
+      "stage": "encoder/26",
+      "max_abs_delta": 95.9296875,
+      "rms_delta": 0.3666282296180725,
+      "reference_rms": 113.68695068359375
+    },
+    {
+      "stage": "encoder/27",
+      "max_abs_delta": 95.9609375,
+      "rms_delta": 0.4090002477169037,
+      "reference_rms": 113.88807678222656
+    },
+    {
+      "stage": "final_norm",
+      "max_abs_delta": 2.9650707244873047,
+      "rms_delta": 0.018011311069130898,
+      "reference_rms": 1.1165693998336792
+    },
+    {
+      "stage": "head/0",
+      "max_abs_delta": 59.59271240234375,
+      "rms_delta": 1.7287698984146118,
+      "reference_rms": 131.83493041992188
+    },
+    {
+      "stage": "head/1",
+      "max_abs_delta": 61.0487060546875,
+      "rms_delta": 1.776609182357788,
+      "reference_rms": 210.4630889892578
+    }
+  ],
+  "cpu_logits": [
+    2.464874505996704,
+    2.1341984272003174
+  ],
+  "mlx_logits": [
+    2.6479668617248535,
+    1.7686859369277954
+  ],
+  "cuda_logits": [
+    2.464965581893921,
+    2.1340248584747314
+  ],
+  "cpu_probability_delta_cuda": 3.8263988458131504e-05,
+  "mlx_probability_delta_cuda": 0.07742859117382556,
+  "mlx_replay_logit_delta": 0.0,
+  "elapsed_seconds": 2.9217683330061845,
+  "test_accessed": false,
+  "posthoc_diagnostic_only": true
+}

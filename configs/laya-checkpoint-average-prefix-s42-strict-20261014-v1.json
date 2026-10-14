@@ -1,0 +1,28 @@
+{
+  "run_id": "laya-checkpoint-average-prefix-s42-strict-20261014-v1",
+  "source_run": "laya-decision-window-prefix-s42-strict-20261013-v1",
+  "device": "cuda",
+  "runtime_profile": "strict",
+  "batch_size": 8,
+  "weights": [
+    0.5,
+    0.5
+  ],
+  "inference_rule": "head_tail",
+  "temperature_bounds": [
+    0.25,
+    4.0
+  ],
+  "manifest_sha256": "709d70b29bb3bbee59eacb383c785956ecbfb71d3abf4199392da30680b22fbe",
+  "epoch_report_sha256": "821dfc0c20220fe717313f27dfd450b8f71fd22fb24cb0149c032cbfa72b1416",
+  "epoch_weight_sha256": [
+    "db4ea50f7a52692ebf4373d51b05d9c8bf368b810c84938fbb1fdb02eb5d3c37",
+    "c0f4875ccc8bfd3ee7d654240d91450edbc1e84e1ece5afcd20acf802866a047"
+  ],
+  "final_weight_sha256": "c0f4875ccc8bfd3ee7d654240d91450edbc1e84e1ece5afcd20acf802866a047",
+  "reference_sha256": {
+    "protocol.json": "27d4efbdf4f934065f13fece4d0f698c4d437e748686e3f9f453d02e58c85e63",
+    "prefix-trained/calibration-head_tail.json": "e10e81ff975a96442083eda0483717fe7c535bed7f509eff9dd0169db3dba608",
+    "prefix-trained/validation-head_tail.json": "cc3677a1351be01db4ed5a26c1e00063822b8cd2df63b2c20d0cc58d07098f97"
+  }
+}
