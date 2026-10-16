@@ -1,0 +1,15 @@
+{
+  "source_hashes_verified": true,
+  "fusion_replay_bitwise_equal": true,
+  "id_label_truncation_alignment_verified": true,
+  "artifacts_sha256": {
+    "bootstrap.json": "8bf459d86e26edea3bd31070ce5c5fb52ddb1f9b26011628ab5746ea034ed575",
+    "calibration-thresholds.json": "7e7f2959e2ecf107dd2da9eb8cdbc9e8aec2f7a84ec5730aaeee7accac3b90b4",
+    "full-curve.csv": "b848c4a6fbcf119173e22ff6c365e72a453de89d345b280710278abf93bf486a",
+    "protocol.json": "64793c2289863ed78d12ed9524ea1e8fe258644efea44570a90eb0fe21bdf12a",
+    "risk-coverage.png": "7e45f923a88d0dbf94d8980d7dd6f6b1ce71f17616bb7e0d77130a4b29443524",
+    "risk-coverage.svg": "d0b49dc5a3ccdf295a3c95baf66fb8f7fea5c8945d2c85dcf4b1723b4303097e",
+    "strata.json": "2acbcca1a80c37bf059ce6ad40df537fe4fb00e2d68f1084945fa9952f593eb9",
+    "summary.json": "d4039f103808fdb6d2495327b81b4a052b5321d5e20e88fd46a9a5c8231b3b72"
+  }
+}
