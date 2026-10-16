@@ -1,0 +1,250 @@
+{
+  "study_id": "laya-long-context-pilot-20261016-v1",
+  "state": "passed",
+  "test_accessed": false,
+  "development_accessed": false,
+  "formal_training": false,
+  "dtype": "float32",
+  "amp": false,
+  "tf32": false,
+  "gpu": "NVIDIA L40S",
+  "cases": [
+    {
+      "max_len": 512,
+      "micro_batch": 8,
+      "group": "long",
+      "sample_ids": [
+        "train/pos/1175_9.txt",
+        "train/pos/4383_9.txt",
+        "train/pos/10044_9.txt",
+        "train/pos/4076_10.txt",
+        "train/pos/2662_10.txt",
+        "train/neg/1930_4.txt",
+        "train/neg/1929_4.txt",
+        "train/pos/7465_10.txt"
+      ],
+      "review_lengths": [
+        3218,
+        2277,
+        2140,
+        2114,
+        2093,
+        2007,
+        1943,
+        1776
+      ],
+      "input_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512
+      ],
+      "input_retention_verified": true,
+      "initial_state_sha256": "1b7f6f9916d53639303b90df3f3e9e77112912d16eb36af8c51fa88190b6c7e4",
+      "state": "passed",
+      "steps": 3,
+      "warmup_steps": 1,
+      "measured_seconds": [
+        0.524384941000001,
+        0.5223696370000006
+      ],
+      "median_step_seconds": 0.5233772890000008,
+      "loss": [
+        0.3295387625694275,
+        0.00570989865809679,
+        0.00014892251056153327
+      ],
+      "grad_norm": [
+        51.907569885253906,
+        0.5654706954956055,
+        0.014705386944115162
+      ],
+      "peak_allocated_bytes": 8391120384,
+      "peak_reserved_bytes": 8948547584
+    },
+    {
+      "max_len": 2048,
+      "micro_batch": 1,
+      "group": "long",
+      "sample_ids": [
+        "train/pos/1175_9.txt"
+      ],
+      "review_lengths": [
+        3218
+      ],
+      "input_lengths": [
+        2048
+      ],
+      "input_retention_verified": true,
+      "initial_state_sha256": "1b7f6f9916d53639303b90df3f3e9e77112912d16eb36af8c51fa88190b6c7e4",
+      "state": "passed",
+      "steps": 3,
+      "warmup_steps": 1,
+      "measured_seconds": [
+        0.7553620500000022,
+        0.7582132539999975
+      ],
+      "median_step_seconds": 0.7567876519999999,
+      "loss": [
+        0.07614792138338089,
+        7.021180499577895e-05,
+        2.610649426060263e-05
+      ],
+      "grad_norm": [
+        9.325997352600098,
+        0.007797588594257832,
+        0.0027820777613669634
+      ],
+      "peak_allocated_bytes": 11759099392,
+      "peak_reserved_bytes": 12736004096
+    },
+    {
+      "max_len": 2048,
+      "micro_batch": 8,
+      "group": "long",
+      "sample_ids": [
+        "train/pos/1175_9.txt",
+        "train/pos/4383_9.txt",
+        "train/pos/10044_9.txt",
+        "train/pos/4076_10.txt",
+        "train/pos/2662_10.txt",
+        "train/neg/1930_4.txt",
+        "train/neg/1929_4.txt",
+        "train/pos/7465_10.txt"
+      ],
+      "review_lengths": [
+        3218,
+        2277,
+        2140,
+        2114,
+        2093,
+        2007,
+        1943,
+        1776
+      ],
+      "input_lengths": [
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        2048,
+        1989,
+        1822
+      ],
+      "input_retention_verified": true,
+      "initial_state_sha256": "1b7f6f9916d53639303b90df3f3e9e77112912d16eb36af8c51fa88190b6c7e4",
+      "state": "passed",
+      "steps": 3,
+      "warmup_steps": 1,
+      "measured_seconds": [
+        2.610842180000006,
+        2.6156728079999993
+      ],
+      "median_step_seconds": 2.6132574940000026,
+      "loss": [
+        0.19143420457839966,
+        0.0032289770897477865,
+        0.0002612172393128276
+      ],
+      "grad_norm": [
+        11.894967079162598,
+        0.2892407476902008,
+        0.024715036153793335
+      ],
+      "peak_allocated_bytes": 12561969664,
+      "peak_reserved_bytes": 15684599808,
+      "checkpoint": "checkpoints/laya-long-context-pilot-20261016-v1/pilot-2048"
+    },
+    {
+      "max_len": 2048,
+      "micro_batch": 8,
+      "group": "ordinary",
+      "sample_ids": [
+        "train/neg/0_3.txt",
+        "train/neg/10000_4.txt",
+        "train/neg/10001_4.txt",
+        "train/neg/10002_1.txt",
+        "train/neg/10003_1.txt",
+        "train/neg/10004_3.txt",
+        "train/neg/10005_3.txt",
+        "train/neg/10008_2.txt"
+      ],
+      "review_lengths": [
+        135,
+        944,
+        164,
+        195,
+        506,
+        147,
+        443,
+        351
+      ],
+      "input_lengths": [
+        181,
+        990,
+        210,
+        241,
+        552,
+        193,
+        489,
+        397
+      ],
+      "input_retention_verified": true,
+      "initial_state_sha256": "1b7f6f9916d53639303b90df3f3e9e77112912d16eb36af8c51fa88190b6c7e4",
+      "state": "passed",
+      "steps": 3,
+      "warmup_steps": 1,
+      "measured_seconds": [
+        1.017043904000019,
+        1.022261549999996
+      ],
+      "median_step_seconds": 1.0196527270000075,
+      "loss": [
+        0.38980352878570557,
+        0.0013069516280665994,
+        0.0001630547922104597
+      ],
+      "grad_norm": [
+        32.548667907714844,
+        0.1359490156173706,
+        0.01605839468538761
+      ],
+      "peak_allocated_bytes": 10086738432,
+      "peak_reserved_bytes": 11205083136
+    }
+  ],
+  "coverage": [
+    {
+      "max_len": 512,
+      "complete": 18664,
+      "count": 22100
+    },
+    {
+      "max_len": 1024,
+      "complete": 21639,
+      "count": 22100
+    },
+    {
+      "max_len": 1536,
+      "complete": 22083,
+      "count": 22100
+    },
+    {
+      "max_len": 2048,
+      "complete": 22094,
+      "count": 22100
+    },
+    {
+      "max_len": 4096,
+      "complete": 22100,
+      "count": 22100
+    }
+  ],
+  "contract_sha256": "b249dbad697a495aa07dec7604c15645853e284603c75fa4769bde57b06b5572",
+  "same_initialization_verified": true
+}

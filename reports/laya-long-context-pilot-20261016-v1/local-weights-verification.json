@@ -1,0 +1,8 @@
+{
+  "strict_load": true,
+  "device": "cpu",
+  "parameter_count": 421029889,
+  "state_sha256": "8bd0201f0270747a0d5c925a6c0c9cdaef237a8f80f1013f0caf6f7c7f9ce976",
+  "weights_sha256": "eb7067070a614f3e4045502e808bf09daf80dd52e5fa9dadded171ff8edfd78d",
+  "optimizer_verification_pending": false
+}
