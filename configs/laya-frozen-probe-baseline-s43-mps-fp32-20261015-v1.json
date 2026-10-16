@@ -1,0 +1,41 @@
+{
+  "run_id": "laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1",
+  "device": "mps",
+  "batch_size": 8,
+  "checkpoint": "artifacts/remote-backup-20261011/checkpoints/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+  "manifest": "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json",
+  "source_sha256": {
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "data/processed/validation.jsonl": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/calibration-head_tail.json": "96ca396824fec4ddebf92bc5582c938dcf7432d52606611bf81434c32e8648ce",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766"
+  },
+  "asset_sha256": {
+    "model.safetensors": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338",
+    "rl_agent_config.json": "7808d74ee7ec79be8d6e037749886a394e24769df8da8894b3fd3b25f890db1f",
+    "encoder/config.json": "5c887ce4335a901d15b8024f5ead2d0744eb18439da011511df5ae8f7cbf862a",
+    "tokenizer/special_tokens_map.json": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+    "tokenizer/tokenizer.json": "0b3214f8efe1327290428b84e5d344ff3f2442686c1b89fb7b42c13a79ce6779",
+    "tokenizer/tokenizer_config.json": "2966a59b9e9cf122279aec1249e22e5bc7ad8430c754e95031b13fd128d4e560"
+  },
+  "cached_export": "reports/laya-posthoc-baseline-s43-fp32-v1",
+  "lambdas": [
+    1e-05,
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "input_rule": "head_tail",
+  "tolerance": {
+    "logits_absolute": 0.001,
+    "probabilities_absolute": 0.0001
+  },
+  "bootstrap": {
+    "repetitions": 10000,
+    "seed": 20261015
+  }
+}
