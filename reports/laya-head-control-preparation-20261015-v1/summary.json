@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "run_id": "laya-head-control-preparation-20261015-v1",
+  "state": "design_prepared_awaiting_review",
+  "created_utc": "2026-10-15T05:06:18.947749+00:00",
+  "scope": "read-only preparation; not model construction, CUDA admission or training results",
+  "test_body_read": false,
+  "test_predictions_read": false,
+  "training_body_parsed": false,
+  "development_body_parsed": false,
+  "model_forward_rows": 0,
+  "model_backward_steps": 0,
+  "official_training_started": false,
+  "source_assets": {
+    "model.safetensors": {
+      "sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+      "expected_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c"
+    },
+    "rl_agent_config.json": {
+      "sha256": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+      "expected_sha256": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd"
+    },
+    "encoder/config.json": {
+      "sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+      "expected_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979"
+    },
+    "tokenizer/tokenizer.json": {
+      "sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "expected_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30"
+    },
+    "tokenizer/tokenizer_config.json": {
+      "sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+      "expected_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+    }
+  },
+  "source_files": {
+    "train": {
+      "sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+      "expected_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7"
+    },
+    "validation": {
+      "sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+      "expected_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094"
+    }
+  },
+  "partition_counts": {
+    "gradient_train": 22100,
+    "calibration": 400,
+    "validation": 2500
+  },
+  "partition_id_sha256": {
+    "gradient_train": "e1da8492869c48e3d6e200c23df2801f9e2ea4a8ad317a3edfd93f6ed7f2c219",
+    "calibration": "b03e3e8dfd0058492c78955cdfa995689a11ac70aedd972ed4daa2a51c2c63d8",
+    "validation": "abe09a56420ae1e6e8009839ba34bc630b04769b90312b5b6404766443f039fe"
+  },
+  "source_state_elements_by_module": {
+    "act_head": 263938,
+    "encoder": 394781696,
+    "head": 25192448,
+    "scorer": 1052673,
+    "temperature": 3,
+    "type_emb": 3072
+  },
+  "source_state_elements_by_dtype": {
+    "F16": 421293827,
+    "F32": 3
+  },
+  "encoder_declared_dropout": {
+    "attention_dropout": 0.0,
+    "classifier_dropout": 0.0,
+    "embedding_dropout": 0.0,
+    "mlp_dropout": 0.0
+  },
+  "source_encoder_has_prior_laya_joint_training": true,
+  "source_training_metadata": {
+    "updates": 7313,
+    "epochs_completed": 1,
+    "hours": 1.96,
+    "world_size": 1,
+    "fine_tuned_from_checkpoint": true
+  },
+  "planned_trainable_parameters": {
+    "original": 421029889,
+    "linear": 394782720
+  },
+  "planned_training": {
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "conditions": [
+      "original",
+      "linear"
+    ],
+    "epochs": 2,
+    "micro_batch": 8,
+    "grad_accum": 1,
+    "updates_per_epoch": 2763,
+    "updates_per_run": 5526,
+    "updates_all_six_runs": 33156,
+    "gradient_exposures_all_six_runs": 265200,
+    "both_heads_reinitialized": true,
+    "input_rule": "head_tail",
+    "checkpoint_dtype": "float32",
+    "planned_unique_epoch_weights_bytes": 19579502616,
+    "planned_unique_epoch_weights_gib": 18.234832786023617,
+    "all_six_frozen_before_development_evaluation": true
+  },
+  "local_environment": {
+    "platform": "Darwin arm64",
+    "versions": {
+      "torch": "2.14.1",
+      "laya": "0.4.1",
+      "transformers": "4.57.6",
+      "numpy": "2.5.3",
+      "safetensors": "0.8.0"
+    },
+    "cuda_available": false,
+    "mps_visible_inside_sandbox": false,
+    "gpu_training_admission_completed": false
+  },
+  "checks_passed": [
+    "five_published_assets_match_lock",
+    "train_and_validation_bytes_match_frozen_split",
+    "partition_counts_22100_400_2500",
+    "partition_ids_unique_and_disjoint",
+    "gradient_and_calibration_union_equals_original_training_ids",
+    "partition_order_matches_historical_manifest",
+    "source_state_shapes_match_expected_module_counts",
+    "encoder_hidden_size_1024_and_head_layers_2",
+    "all_declared_encoder_dropout_values_zero",
+    "locked_local_dependency_versions_recorded"
+  ],
+  "not_yet_validated": [
+    "new_head_construction_and_parameter_counts",
+    "per_condition_initialization_replay",
+    "new_original_wrapper_upstream_logits_and_gradient_parity",
+    "paired_runtime_input_journals",
+    "new_FP32_save_reload_parity",
+    "CUDA_short_run_determinism_and_finite_updates",
+    "current_remote_GPU_connection_and_capacity",
+    "complete_six_run_experiment"
+  ],
+  "source_code_sha256": {
+    "configs/laya_model_lock.json": "d3626263262f87df7d53c6ea43e0dc95d88e7be655790bc3e2c9120ece6b4896",
+    "uv.lock": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe",
+    "scripts/train_laya.py": "50530b8b0efd2872ee280bcc80c07b92e090bf9f4d71bbeeafde52808db4f7ec",
+    "scripts/laya_window_training.py": "2633c24f6fb730b1dffbfa21f0538c0d2818036d1a98567850dc98bf779c2fa1",
+    "scripts/laya_decision_views.py": "58cb9b7398ade97addce7a422af824795e5e7f783d8eb359a0c63d801d5454b9",
+    "scripts/laya_runtime.py": "62512b97934acc42dcca7fa51ea12bdbe87967e2d44678605926cabda9b9134c",
+    "scripts/cuda_numerics.py": "523d455d6112e2f36ca719bc95e2b7b2b2d00dd6170981b4947a2af48d4f3c08",
+    "scripts/laya_epoch_checkpoints.py": "099300fc595012e66476a1eb81a4dc08df5a01d40a7b9edc4cdaf2134635b935",
+    "scripts/export_laya_posthoc.py": "01415c729d81a20790a0e67e48998f284cacee97d9b30ea6cf2da1b242665505",
+    ".venv/lib/python3.12/site-packages/laya/train.py": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645",
+    ".venv/lib/python3.12/site-packages/laya/common.py": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505"
+  },
+  "baseline_manifest_sha256": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+  "split_manifest_sha256": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+  "git_head": "0aa67f07b87cb47c23a37bc685b1d0cf01ff1261",
+  "design_sha256": "42eddb429fcf172fe4a9904be4b0eb725d0e490213dae3758c8417bdad630b81",
+  "preparation_report_sha256": "f6cf99cc0e8806e167ed89dc40dd865e1141e4591be5d1d9c6790da5af56416a",
+  "delivery_checks": {
+    "local_links_exist": true,
+    "document_whitespace_valid": true,
+    "no_design_placeholders": true,
+    "planned_budget_arithmetic_valid": true,
+    "source_code_hashes_still_match": true,
+    "zero_model_compute": true
+  }
+}

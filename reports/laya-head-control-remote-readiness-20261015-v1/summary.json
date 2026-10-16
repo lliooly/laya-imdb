@@ -1,0 +1,87 @@
+{
+  "run_id": "laya-head-control-remote-readiness-20261015-v1",
+  "state": "ssh_verified_isolated_lock_prepared",
+  "checked_utc": "2026-10-15T05:26:40.183659+00:00",
+  "credentials_saved": false,
+  "read_only_remote_inspection_completed": true,
+  "remote_gpu": {
+    "name": "NVIDIA GeForce RTX 4090",
+    "memory_total_mib": 24564,
+    "memory_used_mib_at_snapshot": 2,
+    "utilization_percent_at_snapshot": 0,
+    "active_compute_processes_at_snapshot": 0,
+    "driver_version": "550.107.02",
+    "driver_cuda_api_version": 12040
+  },
+  "remote_preinstalled_environment": {
+    "python": "3.13.5",
+    "torch": "2.8.0+cu128",
+    "cuda_build": "12.8",
+    "numpy": "2.3.3",
+    "uv_present": false,
+    "laya_present": false,
+    "transformers_present": false,
+    "safetensors_present": false,
+    "project_found_in_inspected_directories": false
+  },
+  "remote_base_environment_gpu_check": {
+    "cuda_available": true,
+    "fp32_ones_16x16_matmul_entry": 16.0,
+    "scope": "base environment smoke only; not L2 training admission"
+  },
+  "disk_free_gib_at_snapshot": {
+    "system": 29.999935150146484,
+    "data": 50.0,
+    "network": 50.0
+  },
+  "network_checks": {
+    "pypi_uv_0_12_15_head_status": 200,
+    "original_locked_torch_wheel_head_status": 200,
+    "huggingface_pinned_config_head_error": "ConnectionError",
+    "official_cu128_torch_index_status": 200,
+    "official_cu128_matching_cp312_x86_64_2_14_1_wheels": 0,
+    "official_cu126_torch_index_status": 200,
+    "official_cu126_matching_wheel": "torch-2.14.1+cu126-cp312-cp312-manylinux_2_28_x86_64.whl",
+    "official_cu126_wheel_sha256_from_index": "75727245346d8f92224a860bf40c56bd681edcfa0456d01d7dfcb0bf6f0cf86c",
+    "wheel_downloaded_and_hash_verified": false
+  },
+  "isolated_lock": {
+    "project": "environments/laya-cu126/pyproject.toml",
+    "project_sha256": "bfee74a583b781df6e5d860a09ddd79b71da7a6b0cd66be8b0de60e49f8188bc",
+    "lock": "environments/laya-cu126/uv.lock",
+    "lock_sha256": "260f07f29246ff27c1aac8846eb583fa47415be6360f8c66a4f88485a5825b33",
+    "original_project_lock_sha256": "0319566283145317974abe9b9d66bcdfc8331e5470fb1988841029efa81b33fe",
+    "package_count": 46,
+    "common_package_version_differences": {
+      "torch": {
+        "original": "2.14.1",
+        "cu126": "2.14.1+cu126"
+      },
+      "cuda-toolkit": {
+        "original": "13.0.3.0",
+        "cu126": "12.6.3"
+      },
+      "cuda-bindings": {
+        "original": "13.4.3",
+        "cu126": "12.9.9"
+      }
+    },
+    "uv_version_used": "0.12.15",
+    "remote_installation_completed": false,
+    "CUDA_12_6_execution_verified": false
+  },
+  "training_started": false,
+  "model_weights_transferred": false,
+  "model_forward_performed": false,
+  "test_body_or_predictions_read": false,
+  "next_steps": [
+    "install isolated Python 3.12 and locked CUDA 12.6 environment",
+    "synchronize original source assets and verify SHA; Hugging Face direct request failed once",
+    "implement and verify paired head training entry",
+    "complete short CUDA training and FP32 reload admission before formal runs"
+  ],
+  "sources": [
+    "https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html",
+    "https://download.pytorch.org/whl/cu126/torch/"
+  ]
+}
