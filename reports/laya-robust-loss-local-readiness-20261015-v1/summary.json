@@ -1,0 +1,47 @@
+{
+  "report_id": "laya-robust-loss-local-readiness-20261015-v1",
+  "created_utc": "2026-10-15T12:56:41.076590+00:00",
+  "state": "local_validation_passed_pending_real_cuda_and_ssh_admission",
+  "user_design_approved": true,
+  "study_id": "laya-robust-loss-cu126-20261015-v1",
+  "contract_sha256": "2d3120612afd822fb3188f4324c1bcfa7986c0399bd7967c54c34740d974243c",
+  "bound_source_files": 111,
+  "legacy_bound_files_verified_unchanged": 103,
+  "published_assets_sha_verified": 5,
+  "tests": {
+    "tests_run": 23,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 11.237859833985567,
+    "passed": true,
+    "modules": [
+      "test_laya_robust_training",
+      "test_laya_checkpoint_delivery",
+      "test_laya_head_control"
+    ]
+  },
+  "platform": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "laya": "0.4.1",
+    "python": "3.12.14"
+  },
+  "local_test_device": "cpu",
+  "real_cuda_admission_passed": false,
+  "real_ssh_transfer_passed": false,
+  "cloud_connections_performed": 0,
+  "formal_training_runs_started": 0,
+  "new_development_or_test_inference": false,
+  "new_formal_weights_available": false,
+  "old_l2_weights_recovered": false,
+  "old_l2_weight_files_local": 0,
+  "local_test_log_sha256": "a7b78300b003a61e4047626734a747c15899c9ca4a527445a8daa1fc436d0984",
+  "remaining_gates": [
+    "New available GPU and working SSH exec/authentication/host key",
+    "Real-model file transfer, durable local strict load and measured bandwidth",
+    "Two loss arms, each continuous and recovered CUDA 32-update admission",
+    "100 GiB producer/receiver reserve; formal budget includes admission transfers"
+  ],
+  "test_note": "400 calibration and 2500 evaluated records in delivery integration are synthetic tiny-model fixtures, not real development/test evaluation."
+}
