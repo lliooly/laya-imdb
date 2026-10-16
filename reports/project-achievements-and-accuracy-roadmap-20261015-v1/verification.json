@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-10-15T13:26:21.820746+08:00",
+  "report_sha256": "a6d12e6ab2d8e936787784817f84609ee93a25925b47bb96c10b20fefe8864a8",
+  "body_han_characters_excluding_references": 9017,
+  "minimum_requested": 3000,
+  "minimum_length_passed": true,
+  "reference_definitions": 49,
+  "local_referenced_files": 39,
+  "external_sources": 10,
+  "all_references_resolved": true,
+  "all_local_reference_targets_exist": true,
+  "key_numeric_and_status_checks": 33,
+  "all_key_checks_passed": true,
+  "runtime_tests_performed": false,
+  "training_performed": false,
+  "new_model_inference_performed": false,
+  "official_test_text_or_row_predictions_read": false,
+  "limits": [
+    "This validates source-linked summary values and report structure, not a fresh reproduction of historical training.",
+    "Historical README/registry status is superseded by dated completion reports where noted."
+  ]
+}

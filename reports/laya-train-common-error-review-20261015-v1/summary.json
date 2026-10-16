@@ -1,0 +1,121 @@
+{
+  "run_id": "laya-train-common-error-review-20261015-v1",
+  "date": "2026-10-15",
+  "state": "training_only_review_and_merge_completed",
+  "selected_count": 94,
+  "legacy_reused_count": 32,
+  "new_review_count": 62,
+  "source_labels": {
+    "0": 49,
+    "1": 45
+  },
+  "category_counts": {
+    "label_conflict_candidate": 58,
+    "ambiguous_attitude": 23,
+    "missing_decisive_context": 6,
+    "model_error_visible": 7
+  },
+  "new_category_counts": {
+    "label_conflict_candidate": 39,
+    "ambiguous_attitude": 17,
+    "missing_decisive_context": 3,
+    "model_error_visible": 3
+  },
+  "legacy_category_counts": {
+    "label_conflict_candidate": 19,
+    "ambiguous_attitude": 6,
+    "missing_decisive_context": 3,
+    "model_error_visible": 4
+  },
+  "new_category_by_confidence": {
+    "label_conflict_candidate": {
+      "high": 35,
+      "medium": 4
+    },
+    "ambiguous_attitude": {
+      "low": 17
+    },
+    "missing_decisive_context": {
+      "high": 2,
+      "medium": 1
+    },
+    "model_error_visible": {
+      "high": 1,
+      "medium": 2
+    }
+  },
+  "category_by_original_label": {
+    "label_conflict_candidate": {
+      "0": 32,
+      "1": 26
+    },
+    "ambiguous_attitude": {
+      "0": 10,
+      "1": 13
+    },
+    "missing_decisive_context": {
+      "0": 3,
+      "1": 3
+    },
+    "model_error_visible": {
+      "0": 4,
+      "1": 3
+    }
+  },
+  "truncated_count": 16,
+  "truncated_by_category": {
+    "label_conflict_candidate": 5,
+    "ambiguous_attitude": 3,
+    "missing_decisive_context": 6,
+    "model_error_visible": 2
+  },
+  "new_semantic_tags": {
+    "genre_affect": 8,
+    "plot_vs_evaluation": 7,
+    "negation_concession": 8,
+    "mixed_sentiment": 32,
+    "low_quality_enjoyment": 7,
+    "irony": 6,
+    "object_switch": 19,
+    "non_evaluative": 3,
+    "quoted_opinion": 1,
+    "global_reversal": 2,
+    "evaluation_dimension": 8,
+    "truncation": 3,
+    "numeric_rating": 5,
+    "temporal_shift": 1,
+    "expectation_reversal": 2,
+    "conditional_recommendation": 3,
+    "cultural_context": 1
+  },
+  "models": {
+    "baseline": {
+      "run_id": "laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+      "seed": 43,
+      "checkpoint_sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338"
+    },
+    "combined": {
+      "run_id": "laya-rtx4090-ce-combined-s43-epochs2-fp32-v1",
+      "seed": 43,
+      "checkpoint_sha256": "f5b629314748607b1b8933c4db6ef900830f4ce8a49ebca6936c72a98f91b712"
+    }
+  },
+  "new_text_annotation_sha256": "356d61b7aab3da6d7eb89fa243b226b12b82f0ef69ecc3ebc2f60aae98f36005",
+  "raw_training_members_verified": 94,
+  "training_input_hashes_verified": 94,
+  "selected_exact_duplicate_groups_in_gradient": 0,
+  "reviewer": "Single AI session; anonymous identifiers in new-text pass; not independent human annotation",
+  "independent_human_annotation": false,
+  "legacy_blinded": false,
+  "new_text_identifiers_labels_logits_hidden_in_initial_pass": true,
+  "full_and_prefix_semantic_assessments_independent": false,
+  "confirmed_label_errors": null,
+  "population_label_noise_rate_estimated": false,
+  "training_performed": false,
+  "model_inference_performed": false,
+  "remote_access": false,
+  "test_accessed": false,
+  "validation_body_accessed": false,
+  "labels_changed": false,
+  "sampling_weights_assigned": false
+}

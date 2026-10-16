@@ -1,0 +1,107 @@
+{
+  "analysis_id": "laya-training-loss-diagnosis-20261015-v1",
+  "created_utc": "2026-10-15T12:31:41.893371+00:00",
+  "state": "cached_prediction_diagnosis_only",
+  "q": 0.7,
+  "gce_mixture_weight": 0.5,
+  "training_performed": false,
+  "new_model_inference": false,
+  "development_or_test_predictions_read": false,
+  "labels_changed": false,
+  "ledger_sha256": "092f6bda25db9d4b21bb7bf58eb53bc4b91aeffbe3645f84e8f71ec58999b5f2",
+  "gradient_quantity": "absolute gradient with respect to binary logit difference; not parameter-gradient norm",
+  "models": {
+    "baseline": {
+      "source_file": "artifacts/train-hardcase-mining-20261011-v1/baseline-gradient-predictions.json",
+      "source_sha256": "ca4a4936407dbe9d5a7053c194f61b26e567f280c6ff28879d19167748f2eddf",
+      "checkpoint_sha256_in_export": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338",
+      "input_rule": "original_head",
+      "count": 22100,
+      "wrong_count": 127,
+      "selected_count": 94,
+      "selected_fraction": 0.004253393665158371,
+      "selected_unsmoothed_ce_loss_share": 0.8039995600308014,
+      "selected_pure_gce_loss_share": 0.6945377958099318,
+      "selected_mixed_loss_share": 0.7826869469998832,
+      "selected_ce_logit_gradient_abs_share": 0.6659139849570043,
+      "selected_pure_gce_logit_gradient_abs_share": 0.11614658409853285,
+      "selected_mixed_logit_gradient_abs_share": 0.594361443535389,
+      "groups": {
+        "ambiguous_attitude": {
+          "count": 23,
+          "median_p_given_label": 0.0019366103723258154,
+          "median_pure_gce_gradient_factor": 0.012616229410459062,
+          "median_mixed_gradient_factor": 0.5063081147052295
+        },
+        "label_conflict_candidate": {
+          "count": 58,
+          "median_p_given_label": 0.001201582192543722,
+          "median_pure_gce_gradient_factor": 0.009031287062135832,
+          "median_mixed_gradient_factor": 0.5045156435310679
+        },
+        "missing_decisive_context": {
+          "count": 6,
+          "median_p_given_label": 0.0003007672377469132,
+          "median_pure_gce_gradient_factor": 0.0034257074747072215,
+          "median_mixed_gradient_factor": 0.5017128537373536
+        },
+        "model_error_visible": {
+          "count": 7,
+          "median_p_given_label": 0.00014811474081171316,
+          "median_pure_gce_gradient_factor": 0.0020865019649857126,
+          "median_mixed_gradient_factor": 0.5010432509824928
+        }
+      }
+    },
+    "combined": {
+      "source_file": "artifacts/train-hardcase-mining-20261011-v1/combined-gradient-predictions.json",
+      "source_sha256": "dcb9c2bf06388799719a9aba00b2dc524a389ff4ef4fbabd4234260f9f44021e",
+      "checkpoint_sha256_in_export": "f5b629314748607b1b8933c4db6ef900830f4ce8a49ebca6936c72a98f91b712",
+      "input_rule": "original_head",
+      "count": 22100,
+      "wrong_count": 220,
+      "selected_count": 94,
+      "selected_fraction": 0.004253393665158371,
+      "selected_unsmoothed_ce_loss_share": 0.26799866090431396,
+      "selected_pure_gce_loss_share": 0.15022538690327028,
+      "selected_mixed_loss_share": 0.2216018312158507,
+      "selected_ce_logit_gradient_abs_share": 0.12184188987614838,
+      "selected_pure_gce_logit_gradient_abs_share": 0.013716264477679402,
+      "selected_mixed_logit_gradient_abs_share": 0.07581880474679148,
+      "groups": {
+        "ambiguous_attitude": {
+          "count": 23,
+          "median_p_given_label": 0.025888199535705043,
+          "median_pure_gce_gradient_factor": 0.07747673189318034,
+          "median_mixed_gradient_factor": 0.5387383659465902
+        },
+        "label_conflict_candidate": {
+          "count": 58,
+          "median_p_given_label": 0.02457006442363326,
+          "median_pure_gce_gradient_factor": 0.07469356796678533,
+          "median_mixed_gradient_factor": 0.5373467839833928
+        },
+        "missing_decisive_context": {
+          "count": 6,
+          "median_p_given_label": 0.023087865668101695,
+          "median_pure_gce_gradient_factor": 0.07150712038672594,
+          "median_mixed_gradient_factor": 0.535753560193363
+        },
+        "model_error_visible": {
+          "count": 7,
+          "median_p_given_label": 0.023347213848468683,
+          "median_pure_gce_gradient_factor": 0.07207166294578002,
+          "median_mixed_gradient_factor": 0.53603583147289
+        }
+      }
+    }
+  },
+  "limitations": [
+    "End-of-training in-sample snapshots, not training trajectories or out-of-fold estimates.",
+    "Both source models use training seed 43 and original_head input.",
+    "CE is recomputed without label smoothing for both snapshots; it is not the recorded combined training objective.",
+    "Work classifications are AI review candidates, not verified noisy labels.",
+    "Static mixed/GCE gradient proxies do not predict retraining outcomes."
+  ],
+  "selection_recomputed_exact_match": true
+}
