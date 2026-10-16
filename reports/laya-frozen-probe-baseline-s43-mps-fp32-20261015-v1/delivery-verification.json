@@ -1,0 +1,41 @@
+{
+  "state": "passed",
+  "run_completed": true,
+  "forward_rows": 25000,
+  "calibration_selection_replayed": true,
+  "frozen_fit_identity_verified": true,
+  "code_unchanged_during_run": true,
+  "document_links_and_whitespace_verified": true,
+  "files_sha256": {
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/REPORT.md": "b21900c153d537cc983bd838eccdb7d4fd23a4a5987abcc861cebf89facc1357",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/calibration-extraction.json": "4a5cb4d695bd309baad921ab89a1e438624c9819ad7019541864dfe5117434ef",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/calibration-grid.json": "8962f62ee537d8910a1eee8590edf6c08998def821f6fbf1f4c3394ace356c44",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/calibration-parity.json": "c63cf29c2de839ef253d2c852e544dacb751f6a2c6ffd14e36b2b521af72e50e",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/discordances.json": "25332a008f85f89c28f5c47dce8b529ca2fa25112166736ca5306658476e543e",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/frozen-fit.json": "6d5df3aaa2192f6a864f91a181a4a155aa2bef406d16ca50d310c1ee6accf06a",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/gradient_train-extraction.json": "d82e33195f568de798abb36f8b64c63c4b7b4a1f629fce66f66ab024db7c5376",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/preflight.json": "30a4016db948a801a3095e062e16c3cd860881d2736ec7699a85ed535d809453",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/protocol.json": "4f02758d59e452187769ff51e0519af05ebbba0dbbf57304c8dfb4dba6ab3f2a",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/export_laya_posthoc.py": "01415c729d81a20790a0e67e48998f284cacee97d9b30ea6cf2da1b242665505",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/laya_decision_views.py": "58cb9b7398ade97addce7a422af824795e5e7f783d8eb359a0c63d801d5454b9",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/laya_frozen_probe.py": "181c3d0e54ff37a6ca3fc9c81eede1358ae0be17f5c3510db41540398cf78d46",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/run_laya_frozen_probe.py": "b7318f4f7ff8ab1f08db12ab649b3e1abb2ef1ad7a91fb223300ea92fa2f392f",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/run_laya_risk_coverage.py": "070646b717ec059c1dfa2e9ca024d887ce6c9ea176818aa0f44835f5fe3774af",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/train_laya.py": "50530b8b0efd2872ee280bcc80c07b92e090bf9f4d71bbeeafde52808db4f7ec",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/upstream-common.py": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/reproduction/upstream-train.py": "c325941f275a90b486d00c3ca28dc4ee1ece795218fdaa7c67818d711ee79645",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/status.json": "ad26de548728aa733c7b66811d0965458783ead976b84454c9fb955204881b87",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/summary.json": "c5ae168b84bc8e8089d9c556470c8a3d14fc3ac0fdef6bbf3a119ceff8738698",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/validation-extraction.json": "49fb196f2b06f9789910ce561288e71160c13f11b150b3a826daaad32587b5fc",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/validation-parity.json": "e2c9dae819aaacb04cb69f83be533391dafc06e5f79e17cc8c31638db15c6623",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/validation-predictions.json": "9e859eedbe3be0623146eac5f42e6200e74b949e9babffe4937d7acfb701bb94",
+    "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/verification.json": "325a51f28e84e3cfa2ef5af95ccaff38e9a375d1bc27fb83ebd6a1879f8a32a9"
+  },
+  "implementation_tests_and_design_sha256": {
+    "scripts/laya_frozen_probe.py": "181c3d0e54ff37a6ca3fc9c81eede1358ae0be17f5c3510db41540398cf78d46",
+    "scripts/run_laya_frozen_probe.py": "b7318f4f7ff8ab1f08db12ab649b3e1abb2ef1ad7a91fb223300ea92fa2f392f",
+    "tests/test_laya_frozen_probe.py": "a0741a95007832a5a1d6e89ceeba7041f177a0b98585c14f893df8984e8e7ed1",
+    "configs/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1.json": "44e097b80a0e40ffa07726971e6b9362728b6becb1350fb7e9984ef976c8c03d",
+    "docs/superpowers/specs/2026-10-15-laya-frozen-probe-design.md": "29c50c4f15b16c3b278d8058ee98a6cf7e735db7564c27618f5c216950f50a50"
+  }
+}

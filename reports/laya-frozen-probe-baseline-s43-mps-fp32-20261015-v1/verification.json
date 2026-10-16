@@ -1,0 +1,16 @@
+{
+  "original_weights_unchanged": true,
+  "original_model_gradients_absent": true,
+  "fit_unchanged_after_validation": true,
+  "fit_frozen_before_validation_body_parsed": true,
+  "test_accessed": false,
+  "protocol_sha256": "4f02758d59e452187769ff51e0519af05ebbba0dbbf57304c8dfb4dba6ab3f2a",
+  "artifacts_sha256": {
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/calibration-index.json": "fd90830ecad0272e764d234c799450feafcc4cbaf42b5f87ebf3008d02177ff3",
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/gradient_train.npz": "9355533d9a3ab823c1418a19121d27bd841c7a44dd85ecff6a48b2b5c37b2321",
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/validation-index.json": "e867e27db2ce90152f92cb83e6bf67cf8562da510ef26d8dfa1ca6eb861d818a",
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/validation.npz": "7248b010b73958ec9432e367f6c7ce4cef63b36d7e994d776b1152f0862d6dbd",
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/gradient_train-index.json": "6a0c16df19f977154f5d49c740dfce79175c0d258fbb6e27b24e163b51295f04",
+    "artifacts/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/calibration.npz": "b62ae7ff85f781e363812f3337142184e1b99cfd8d75e708ec182d07b35e71f2"
+  }
+}
