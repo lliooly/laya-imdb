@@ -1,0 +1,44 @@
+{
+  "completion_id": "laya-robust-loss-modal-evaluation-20261016-v1",
+  "scientific_study_id": "laya-robust-loss-modal-deferred-20261015-v2",
+  "modal_volume": "end-imdb-laya-robust-deferred-20261015-v2",
+  "jobs": [
+    {
+      "seed": 42,
+      "arm": "mixed",
+      "evaluate": true
+    },
+    {
+      "seed": 43,
+      "arm": "mixed",
+      "evaluate": true
+    },
+    {
+      "seed": 43,
+      "arm": "ce",
+      "evaluate": true
+    },
+    {
+      "seed": 44,
+      "arm": "ce",
+      "evaluate": true
+    },
+    {
+      "seed": 44,
+      "arm": "mixed",
+      "evaluate": true
+    }
+  ],
+  "maximum_additional_compute_usd": 1.0,
+  "maximum_total_compute_usd": 25.0,
+  "original_user_confirmed_free_usd": 30.0,
+  "scientific_contract_sha256": "891fc45efeea3d0a96053b937f999524338df768daad201ae2e21324cd0629df",
+  "operational_source_sha256": {
+    "scripts/laya_evaluation_completion.py": "3fc8eb2063007271e124ae9fb8d28e2879e4f9076af080760aac6fd8e6393323",
+    "scripts/modal_laya_evaluation_completion.py": "a9a1d8aac58a9570021346e7916ee71a412a472370b0d7f2380000278abc4718",
+    "tests/test_laya_evaluation_completion.py": "5aff53ead06f70f5e9b7d7f5792c266aa22a2f29b2a02dd8f47c8499c2ea3c58",
+    "docs/superpowers/specs/2026-10-16-laya-evaluation-completion-design.md": "405689d00e1db4c05e29619c054750983de00cf221e2b44d5de3fbcc27bc3cc3"
+  },
+  "scientific_protocol_changed": false,
+  "test_accessed": false
+}
