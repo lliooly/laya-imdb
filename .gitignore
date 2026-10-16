@@ -1,5 +1,7 @@
 # Local environments and generated caches
 .venv/
+.venv-laya-cu126/
+.venv*/
 venv/
 .cache/
 __pycache__/
@@ -15,6 +17,7 @@ htmlcov/
 /data/
 /artifacts/
 /checkpoints/
+/delivery/
 /reports/**/data/
 *.safetensors
 *.pt
@@ -22,6 +25,12 @@ htmlcov/
 *.ckpt
 *.npz
 *.npy
+*.bin
+*.onnx
+*.gguf
+*.ggml
+*.joblib
+*.pkl
 *.zip
 *.tar
 *.tar.gz
@@ -52,6 +61,12 @@ htmlcov/
 *~
 *.tmp
 *.part
+*.partial
+*.log
+
+# Rebuildable machine-specific closeout inventories (not research results).
+/docs/closeout/catalog.json
+/docs/closeout/local-assets.json
 
 # New report runs: publish concise outcomes, keep full diagnostics locally.
 # Existing tracked audit snapshots remain tracked and unchanged.
@@ -59,5 +74,21 @@ htmlcov/
 !/reports/*/
 !/reports/*/REPORT.md
 !/reports/*/summary.json
+!/reports/*/*verification*.json
+!/reports/*/*verification*.md
+!/reports/*/local-delivery.json
+!/reports/*/completion.json
+!/reports/*/evaluation/
+!/reports/*/evaluation/REPORT.md
+!/reports/*/evaluation/summary.json
+!/reports/*/evaluation/*verification*.json
+!/reports/accuracy-improvement-research-20261018-v1/experiment-plan.md
+!/reports/accuracy-improvement-research-20261018-v1/headroom-analysis.md
+!/reports/accuracy-improvement-research-20261018-v1/headroom-summary.json
+!/reports/accuracy-improvement-research-20261018-v1/literature.md
+!/reports/project-closeout-20261018-v1/tests.json
+!/reports/project-closeout-20261018-v1/package-receipt.json
 !/reports/project-consolidation-20261013-v1/*.json
 !/reports/semantic30-abc-completed-20261013-v1/verified-remote-status.json
+!/reports/laya-robust-loss-analysis-20261016-v1/comparison.png
+!/reports/laya-robust-loss-analysis-20261016-v1/comparison.svg
