@@ -1,0 +1,16 @@
+{
+  "state": "incomplete",
+  "study_id": "laya-head-control-cu126-20261015-v2",
+  "statistics_analysis_completed": true,
+  "prediction_and_audit_receipt_verified_files": 68,
+  "model_delivery_completed": false,
+  "expected_formal_weight_files": 12,
+  "local_formal_weight_files": 0,
+  "expected_formal_checkpoint_bytes": 19579771068,
+  "remote_resource_status": "user_reports_unavailable",
+  "current_recovery_possible": false,
+  "permanent_remote_deletion_independently_verified": false,
+  "retry_stopped": true,
+  "automatic_retraining_started": false,
+  "source_prediction_evidence": "reports/laya-head-control-analysis-20261015-v1/summary.json"
+}
