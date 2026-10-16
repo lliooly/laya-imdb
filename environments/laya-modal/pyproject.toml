@@ -1,0 +1,9 @@
+[project]
+name = "end-imdb-laya-modal"
+version = "0.1.0"
+description = "Isolated Python 3.12 Modal controller; reuses the existing login"
+requires-python = ">=3.12,<3.13"
+dependencies = ["modal==1.2.6"]
+
+[tool.uv]
+package = false
