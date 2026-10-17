@@ -1,0 +1,54 @@
+{
+  "study_id": "laya-94-candidates-information-20261017-v1",
+  "state": "94_training_information_exported",
+  "count": 94,
+  "original_labels": {
+    "负向": 49,
+    "正向": 45
+  },
+  "existing_ai_category_counts": {
+    "label_conflict_candidate": 58,
+    "ambiguous_attitude": 23,
+    "model_error_visible": 7,
+    "missing_decisive_context": 6
+  },
+  "truncated_original_prefix": 16,
+  "independent_human_review_completed": false,
+  "confirmed_label_error_count": null,
+  "training_performed": false,
+  "model_inference_performed": false,
+  "development_data_read": false,
+  "test_accessed": false,
+  "labels_changed": false,
+  "models": {
+    "baseline": {
+      "run_id": "laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+      "seed": 43,
+      "checkpoint_sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338"
+    },
+    "combined": {
+      "run_id": "laya-rtx4090-ce-combined-s43-epochs2-fp32-v1",
+      "seed": 43,
+      "checkpoint_sha256": "f5b629314748607b1b8933c4db6ef900830f4ce8a49ebca6936c72a98f91b712"
+    }
+  },
+  "input_and_source_sha256": {
+    "reports/laya-train-common-error-review-20261015-v1/summary.json": "6440b59d64c1d6d7bc899be38a6ada5a685ddd5d89832c140f871ca4b54ff0ca",
+    "reports/laya-train-common-error-review-20261015-v1/merged-review-ledger.json": "092f6bda25db9d4b21bb7bf58eb53bc4b91aeffbe3645f84e8f71ec58999b5f2",
+    "reports/laya-train-common-error-review-20261015-v1/boundary-audit.json": "f500c25af14a7ff58ccf5e8330ab3797f14a1fb1889300ee6300a71c3d5de4a1",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "artifacts/train-hardcase-mining-20261011-v1/baseline-gradient-predictions.json": "ca4a4936407dbe9d5a7053c194f61b26e567f280c6ff28879d19167748f2eddf",
+    "artifacts/train-hardcase-mining-20261011-v1/combined-gradient-predictions.json": "dcb9c2bf06388799719a9aba00b2dc524a389ff4ef4fbabd4234260f9f44021e",
+    "scripts/export_laya_94_candidate_information.py": "cd6902fb60e642f4a8ca711851da4ba9b868c5204ca4a4a63c54839f9a3b36bf"
+  },
+  "output_sha256": {
+    "reports/laya-94-candidates-information-20261017-v1/REPORT.md": "d112af657c87ee0b6eb706b34d57cc7947262d1e601d437e750a51d2ed5e71a8",
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates-full.md": "4d332d6f43f1387bd8caa55e048011560fe3308b2c7e2291faaadf5f49e6b784",
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json": "08ef4ca462a04ece1769940b14628009d9b3c89ebe48c0b1d5dfd2167aebff73"
+  },
+  "previous_boundary_audit": {
+    "training_input_hashes_verified": 94,
+    "raw_train_members_verified": 94
+  }
+}
