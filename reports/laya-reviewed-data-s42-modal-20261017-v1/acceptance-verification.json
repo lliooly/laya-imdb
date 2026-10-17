@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-17T17:23:29.395294+08:00",
+  "study_id": "laya-reviewed-data-s42-modal-20261017-v1",
+  "state": "accepted_local",
+  "predictions_independently_recounted": true,
+  "all_ids_labels_lengths_aligned": true,
+  "finite_logits": true,
+  "evaluation_all_file_sha256_verified": true,
+  "groups": {
+    "all": {
+      "count": 2500,
+      "original_correct": 2408,
+      "revised_correct": 2410,
+      "fixes": 24,
+      "regressions": 22,
+      "mcnemar_exact_two_sided_p": 0.8829959121223965
+    },
+    "truncated_at_512": {
+      "count": 407,
+      "original_correct": 390,
+      "revised_correct": 395,
+      "fixes": 6,
+      "regressions": 1,
+      "mcnemar_exact_two_sided_p": 0.125
+    },
+    "complete_at_512": {
+      "count": 2093,
+      "original_correct": 2018,
+      "revised_correct": 2015,
+      "fixes": 18,
+      "regressions": 21,
+      "mcnemar_exact_two_sided_p": 0.7492586247608415
+    }
+  },
+  "local_delivery_verified": true,
+  "test_accessed": false,
+  "modal_app_observation": {
+    "app_id": "ap-uzYfdtXOXXxIKUv4aM3lXt",
+    "state": "stopped",
+    "tasks": 0,
+    "stopped_at": "2026-10-17 17:02:22+08:00",
+    "source": "modal app list --json"
+  }
+}

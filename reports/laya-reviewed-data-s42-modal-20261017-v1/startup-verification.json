@@ -1,0 +1,14 @@
+{
+  "state": "training_updates_confirmed",
+  "observed_local_time": "2026-10-17 16:12:01 Asia/Shanghai",
+  "epoch": 1,
+  "latest_reported_step": 128,
+  "steps_this_epoch": 2763,
+  "latest_reported_loss": 0.003259,
+  "epoch_training_seconds": 64.8,
+  "receiver_alive": true,
+  "receiver_pid": 9330,
+  "gpu_app_id": "ap-uzYfdtXOXXxIKUv4aM3lXt",
+  "budget_usd": 4,
+  "test_accessed": false
+}
