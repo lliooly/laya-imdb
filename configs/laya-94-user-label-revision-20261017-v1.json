@@ -1,0 +1,574 @@
+{
+  "run_id": "laya-94-user-label-revision-20261017-v1",
+  "decision_policy": "explicit_item_list_over_inconsistent_heading_counts",
+  "declared_counts": {
+    "flip_total": 54,
+    "negative_to_positive": 29,
+    "positive_to_negative": 22,
+    "keep": 9
+  },
+  "effective_counts": {
+    "flip_total": 58,
+    "negative_to_positive": 32,
+    "positive_to_negative": 26,
+    "keep": 9,
+    "unresolved": 27
+  },
+  "source_inventory": "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json",
+  "source_train": "data/processed/train.jsonl",
+  "source_split_manifest": "reports/split_manifest.json",
+  "source_training_manifest": "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json",
+  "output_train": "data/label-revisions/laya-94-user-label-revision-20261017-v1/train.jsonl",
+  "decisions": [
+    {
+      "candidate_id": "C001",
+      "sample_id": "train/neg/10087_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C002",
+      "sample_id": "train/neg/11037_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C003",
+      "sample_id": "train/neg/11315_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C004",
+      "sample_id": "train/neg/11325_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C005",
+      "sample_id": "train/neg/11755_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C006",
+      "sample_id": "train/neg/11940_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C007",
+      "sample_id": "train/neg/11947_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C008",
+      "sample_id": "train/neg/1201_2.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C009",
+      "sample_id": "train/neg/12061_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C011",
+      "sample_id": "train/neg/1435_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C015",
+      "sample_id": "train/neg/2287_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C016",
+      "sample_id": "train/neg/2355_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C017",
+      "sample_id": "train/neg/2356_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C019",
+      "sample_id": "train/neg/2985_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C021",
+      "sample_id": "train/neg/3270_1.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C022",
+      "sample_id": "train/neg/3654_1.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C023",
+      "sample_id": "train/neg/3677_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C024",
+      "sample_id": "train/neg/3843_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C025",
+      "sample_id": "train/neg/3932_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C027",
+      "sample_id": "train/neg/4239_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C028",
+      "sample_id": "train/neg/4407_4.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C029",
+      "sample_id": "train/neg/455_4.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C030",
+      "sample_id": "train/neg/4661_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C031",
+      "sample_id": "train/neg/5558_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C032",
+      "sample_id": "train/neg/6038_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C034",
+      "sample_id": "train/neg/6461_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C035",
+      "sample_id": "train/neg/6473_3.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C036",
+      "sample_id": "train/neg/6601_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C037",
+      "sample_id": "train/neg/7461_2.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C038",
+      "sample_id": "train/neg/801_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C039",
+      "sample_id": "train/neg/8278_1.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C040",
+      "sample_id": "train/neg/8314_1.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C042",
+      "sample_id": "train/neg/8576_1.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C044",
+      "sample_id": "train/neg/8656_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C045",
+      "sample_id": "train/neg/9050_1.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C046",
+      "sample_id": "train/neg/9137_1.txt",
+      "action": "keep",
+      "original_label": 0,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C048",
+      "sample_id": "train/neg/9370_4.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C049",
+      "sample_id": "train/neg/970_1.txt",
+      "action": "flip",
+      "original_label": 0,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C051",
+      "sample_id": "train/pos/1005_10.txt",
+      "action": "keep",
+      "original_label": 1,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C052",
+      "sample_id": "train/pos/10112_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C053",
+      "sample_id": "train/pos/10876_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C055",
+      "sample_id": "train/pos/10921_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C056",
+      "sample_id": "train/pos/11393_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C058",
+      "sample_id": "train/pos/11693_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C059",
+      "sample_id": "train/pos/12232_8.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C060",
+      "sample_id": "train/pos/12276_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C062",
+      "sample_id": "train/pos/1359_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C063",
+      "sample_id": "train/pos/1419_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C064",
+      "sample_id": "train/pos/1778_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C065",
+      "sample_id": "train/pos/245_9.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C066",
+      "sample_id": "train/pos/3372_9.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C067",
+      "sample_id": "train/pos/3653_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C069",
+      "sample_id": "train/pos/4235_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C071",
+      "sample_id": "train/pos/5086_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C072",
+      "sample_id": "train/pos/5149_8.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C073",
+      "sample_id": "train/pos/5206_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C074",
+      "sample_id": "train/pos/5945_10.txt",
+      "action": "keep",
+      "original_label": 1,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C075",
+      "sample_id": "train/pos/6038_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C079",
+      "sample_id": "train/pos/7300_8.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C080",
+      "sample_id": "train/pos/7538_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C082",
+      "sample_id": "train/pos/7782_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C085",
+      "sample_id": "train/pos/8682_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C087",
+      "sample_id": "train/pos/9175_10.txt",
+      "action": "keep",
+      "original_label": 1,
+      "new_label": 1,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C088",
+      "sample_id": "train/pos/9216_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C090",
+      "sample_id": "train/pos/960_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C091",
+      "sample_id": "train/pos/9646_7.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    },
+    {
+      "candidate_id": "C092",
+      "sample_id": "train/pos/9824_10.txt",
+      "action": "flip",
+      "original_label": 1,
+      "new_label": 0,
+      "authority": "explicit_user_item_decision"
+    }
+  ],
+  "unresolved_policy": "retain_original_label_until_explicit_user_decision",
+  "uncertain_attachment": {
+    "source_path": "/Users/shishishi/.antigravity_cockpit/instances/codex/ac848fa228f49ba2/attachments/5b1be051-c4f3-4f28-9d4c-760fbf3c1610/Pasted text.txt",
+    "sha256": "f43e304e3f3ee297ed78f7e009d1f7a155328f265d702818c7c7222944266c16",
+    "role": "tentative_suggestions_only_not_authoritative_changes"
+  },
+  "source_sha256": {
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json": "08ef4ca462a04ece1769940b14628009d9b3c89ebe48c0b1d5dfd2167aebff73",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad"
+  },
+  "preserve_original_frozen_dataset": true,
+  "training_authorized_in_this_task": false
+}

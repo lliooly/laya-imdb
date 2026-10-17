@@ -1,0 +1,65 @@
+{
+  "state": "verified",
+  "run_id": "laya-94-user-label-revision-20261017-v1",
+  "training_rows": 22500,
+  "gradient_rows": 22100,
+  "calibration_rows_unchanged": 400,
+  "changed_labels": 58,
+  "negative_to_positive": 32,
+  "positive_to_negative": 26,
+  "confirmed_keep": 9,
+  "unresolved_retaining_original_label": 27,
+  "original_class_counts": {
+    "0": 11250,
+    "1": 11250
+  },
+  "revised_class_counts": {
+    "0": 11244,
+    "1": 11256
+  },
+  "revised_gradient_class_counts": {
+    "0": 11059,
+    "1": 11041
+  },
+  "only_label_field_changed": true,
+  "unaffected_rows_byte_identical": true,
+  "frozen_sources_sha256_unchanged": true,
+  "row_order_and_all_ids_unchanged": true,
+  "validation_body_accessed": false,
+  "test_accessed": false,
+  "training_performed": false,
+  "dataset_sha256": "3dc6d4b58546713f136f9ac592ed0982146dc6f51b97407dfb9bda29678add1a",
+  "config_path": "configs/laya-94-user-label-revision-20261017-v1.json",
+  "dataset_path": "data/label-revisions/laya-94-user-label-revision-20261017-v1/train.jsonl",
+  "manifest_path": "data/label-revisions/laya-94-user-label-revision-20261017-v1/manifest.json",
+  "unresolved_document": "reports/laya-94-user-label-revision-20261017-v1/unresolved-27.md",
+  "declared_counts": {
+    "flip_total": 54,
+    "negative_to_positive": 29,
+    "positive_to_negative": 22,
+    "keep": 9
+  },
+  "effective_counts": {
+    "flip_total": 58,
+    "negative_to_positive": 32,
+    "positive_to_negative": 26,
+    "keep": 9,
+    "unresolved": 27
+  },
+  "script_sha256": "aa063a302433f39aa11761313e5b7ac732d6ac898bb75cfcc327a27da01f6c5d",
+  "input_sha256": {
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json": "08ef4ca462a04ece1769940b14628009d9b3c89ebe48c0b1d5dfd2167aebff73",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad"
+  },
+  "output_sha256": {
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/manifest.json": "9ac76ac10faf7e92bb4ae0d2cbea3f4380b640da48145593522799cd7f1acfb1",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/label-patch.json": "ddcbc672c4fcb2a2ad910844f55986021d8ac6defa3c7a46c3161e1d9dd1bb53",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/original-labels-94.json": "c5712112f9c10477085326995f561e0fbcfc62e369c7ad9b39576ad177b7eb3d",
+    "reports/laya-94-user-label-revision-20261017-v1/review-ledger.json": "30efc29a675cb9c344abec909872598f3bd6da3aa28de917787da7bb547002c0",
+    "reports/laya-94-user-label-revision-20261017-v1/unresolved-27.md": "ed019471b434ae73941905c56e9d983cfeff06c1e254dfd30ec3af377c825aa6",
+    "reports/laya-94-user-label-revision-20261017-v1/unresolved-27.json": "ec656dab76cd53d469612adeb640baf6fde9a7993d023160fd9de796151584e7",
+    "reports/laya-94-user-label-revision-20261017-v1/REPORT.md": "9ad7197ba0f991a6bcfd42e91c1fd7472e30666bc4f374d0ed811973f545e8c2"
+  }
+}
