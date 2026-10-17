@@ -1,0 +1,58 @@
+{
+  "state": "verified",
+  "run_id": "laya-94-user-label-revision-20261017-v2",
+  "train_count": 22497,
+  "gradient_count": 22097,
+  "calibration_count": 400,
+  "labels_flipped_vs_original": 61,
+  "labels_flipped_vs_v1": 3,
+  "negative_to_positive_vs_original": 33,
+  "positive_to_negative_vs_original": 28,
+  "confirmed_keep": 23,
+  "pending_kept_original": 7,
+  "deleted": 3,
+  "class_counts": {
+    "0": 11243,
+    "1": 11254
+  },
+  "gradient_class_counts": {
+    "0": 11058,
+    "1": 11039
+  },
+  "original_and_v1_source_hashes_unchanged": true,
+  "retained_text_and_id_fields_unchanged": true,
+  "untouched_rows_byte_identical": true,
+  "remaining_order_preserved": true,
+  "calibration_membership_and_labels_unchanged": true,
+  "new_partition_or_resampling": false,
+  "validation_body_accessed": false,
+  "test_accessed": false,
+  "training_performed": false,
+  "dataset_sha256": "a78c8c8a6d2a4408483b7472ec5e983720af643295aacaa48ef4be22dbc5f01b",
+  "dataset_path": "data/label-revisions/laya-94-user-label-revision-20261017-v2/train.jsonl",
+  "manifest_path": "data/label-revisions/laya-94-user-label-revision-20261017-v2/manifest.json",
+  "manual_decision_provider": "user",
+  "C012_final_label": "neg",
+  "source_sha256": {
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json": "08ef4ca462a04ece1769940b14628009d9b3c89ebe48c0b1d5dfd2167aebff73",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/train.jsonl": "3dc6d4b58546713f136f9ac592ed0982146dc6f51b97407dfb9bda29678add1a",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/manifest.json": "9ac76ac10faf7e92bb4ae0d2cbea3f4380b640da48145593522799cd7f1acfb1",
+    "configs/laya-94-user-label-revision-20261017-v1.json": "028c4848a8e96d91ee9612b20ae0e6564f28475d966e9e6821626d667e64599a",
+    "reports/laya-94-user-label-revision-20261017-v1/review-ledger.json": "30efc29a675cb9c344abec909872598f3bd6da3aa28de917787da7bb547002c0",
+    "reports/laya-94-user-label-revision-20261017-v1/summary.json": "9a401e2b750e35efd77be5e46a1af46eb80852d1b959f273c6cf3168e4dc3960",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad"
+  },
+  "script_sha256": "b665728d1d8f613561fe2627cdf71b91a21332a8cf4c9a987d7f5a18db6a2827",
+  "output_sha256": {
+    "data/label-revisions/laya-94-user-label-revision-20261017-v2/manifest.json": "4d06ae803110ee8543cd6881e6e7d2d31ab4faec1cefbf49461b622725ed633c",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v2/cumulative-label-patch.json": "b75bed33a1f8954d375f95bb225f101b422107a711c39df551e98655a5ce120e",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v2/original-labels-94.json": "079b55e4c79696541036bffd55ec9c4eabc678e7fb2a87af4da63800abd33862",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v2/removed-training-rows.jsonl": "a04749573c0bce3baad9eb6e6b409bfc9e1ac6f3fc737f8acf6d97011f4154c8",
+    "reports/laya-94-user-label-revision-20261017-v2/REPORT.md": "8883b72320d39ec3a11c3410a5ef2d7bbf0b5bea1f156b4c7cbf90e64cf34496",
+    "reports/laya-94-user-label-revision-20261017-v2/review-ledger.json": "1bcb7638dbcf169c5f12426fd70766b14377cfdbd0433b9e55b797a6ec219c2e",
+    "reports/laya-94-user-label-revision-20261017-v2/unresolved-7.md": "32817f94d3063398d28ca46b46d1578baf4377a1edd068f7e56932412380ff96",
+    "reports/laya-94-user-label-revision-20261017-v2/unresolved-7.json": "181517dbd6e27c4d230c9a750729c5786658124cd52d5afcad5de2ec4517628f"
+  }
+}

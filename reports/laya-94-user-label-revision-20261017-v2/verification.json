@@ -1,0 +1,32 @@
+{
+  "state": "verified",
+  "run_id": "laya-94-user-label-revision-20261017-v2",
+  "train_count": 22497,
+  "gradient_count": 22097,
+  "calibration_count": 400,
+  "labels_flipped_vs_original": 61,
+  "labels_flipped_vs_v1": 3,
+  "negative_to_positive_vs_original": 33,
+  "positive_to_negative_vs_original": 28,
+  "confirmed_keep": 23,
+  "pending_kept_original": 7,
+  "deleted": 3,
+  "class_counts": {
+    "0": 11243,
+    "1": 11254
+  },
+  "gradient_class_counts": {
+    "0": 11058,
+    "1": 11039
+  },
+  "original_and_v1_source_hashes_unchanged": true,
+  "retained_text_and_id_fields_unchanged": true,
+  "untouched_rows_byte_identical": true,
+  "remaining_order_preserved": true,
+  "calibration_membership_and_labels_unchanged": true,
+  "new_partition_or_resampling": false,
+  "validation_body_accessed": false,
+  "test_accessed": false,
+  "training_performed": false,
+  "dataset_sha256": "a78c8c8a6d2a4408483b7472ec5e983720af643295aacaa48ef4be22dbc5f01b"
+}

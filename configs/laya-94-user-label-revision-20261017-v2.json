@@ -1,0 +1,284 @@
+{
+  "run_id": "laya-94-user-label-revision-20261017-v2",
+  "prior_run_id": "laya-94-user-label-revision-20261017-v1",
+  "prior_config": "configs/laya-94-user-label-revision-20261017-v1.json",
+  "prior_manifest": "data/label-revisions/laya-94-user-label-revision-20261017-v1/manifest.json",
+  "prior_train": "data/label-revisions/laya-94-user-label-revision-20261017-v1/train.jsonl",
+  "original_train": "data/processed/train.jsonl",
+  "source_inventory": "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json",
+  "original_training_manifest": "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json",
+  "output_train": "data/label-revisions/laya-94-user-label-revision-20261017-v2/train.jsonl",
+  "updates": [
+    {
+      "candidate_id": "C010",
+      "sample_id": "train/neg/1428_1.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "反讽而非真心赞美；nostalgia rip-off、made-for-TV、direct-to-video 构成贬义及拆台。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C012",
+      "sample_id": "train/neg/1576_1.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "补充澄清明确选择保持 neg；借经典作品和演员形象的错位进行反讽，不是真心赞美。此补充决定覆盖前文“翻转”。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C013",
+      "sample_id": "train/neg/1577_2.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "what's-her-name、leaky crankcase 及经典情爱作品与失控汽车的错位构成反讽，未见烂片真欣赏锚点。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C014",
+      "sample_id": "train/neg/1892_3.txt",
+      "original_label": 0,
+      "action": "delete",
+      "new_label": null,
+      "reason": "作者仅纠正地理与致谢；Fantastic documentary 是引用他人，不含本人对影片的评价。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C018",
+      "sample_id": "train/neg/2734_4.txt",
+      "original_label": 0,
+      "action": "flip",
+      "new_label": 1,
+      "reason": "改正；本集问题被称可原谅的 hiccups，全文肯定剧集并期待第七季，缺少负向总评。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C020",
+      "sample_id": "train/neg/2990_2.txt",
+      "original_label": 0,
+      "action": "pending",
+      "new_label": 0,
+      "reason": "恶搞差评与烂片粉丝真欣赏两读均成立，缺少明确总评锚点。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C026",
+      "sample_id": "train/neg/4006_4.txt",
+      "original_label": 0,
+      "action": "pending",
+      "new_label": 0,
+      "reason": "角色回归盛赞与政治化批评并存；a little disappointed 与 recommended viewing / still good TV 都是作者总评。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C033",
+      "sample_id": "train/neg/6315_1.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "性教育片题材与 sleek, sexy、edge of your seat、masterpiece 等赞词错位，是恶搞。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C041",
+      "sample_id": "train/neg/8443_4.txt",
+      "original_label": 0,
+      "action": "delete",
+      "new_label": null,
+      "reason": "DVD 封底梗概翻译，无主观判断；剧情中的死亡不能作为作者差评。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C043",
+      "sample_id": "train/neg/8620_2.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "情色 B 级片被当学院奖遗珠并与经典作品并列；10/10 属于假仰慕腔的包袱。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C047",
+      "sample_id": "train/neg/9245_2.txt",
+      "original_label": 0,
+      "action": "keep",
+      "new_label": 0,
+      "reason": "Windows 95 教程讲开始菜单被吹成杰作和金球奖级表演；Overall: 10/10 是包袱。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C050",
+      "sample_id": "train/pos/10027_7.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "二刷厌烦及演员批评不等于全片否定；肯定女主与导演，作者总分 71% 与正类同侧。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C054",
+      "sample_id": "train/pos/10886_10.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "but 将常规质量缺点收为类型趣味，且明确 only one worth seeing；观看体验正向。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C057",
+      "sample_id": "train/pos/11585_10.txt",
+      "original_label": 1,
+      "action": "flip",
+      "new_label": 0,
+      "reason": "改负；配乐、拟音、剧本、剪辑、醉酒导演与 incoherent mess 构成主体差评；单独 Enjoy 不足以判正。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C061",
+      "sample_id": "train/pos/1358_10.txt",
+      "original_label": 1,
+      "action": "pending",
+      "new_label": 1,
+      "reason": "围观快感与伦理反感、奖励缩水和 Watch with caution 并存；缺少整季明确推荐或否定。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C068",
+      "sample_id": "train/pos/4041_7.txt",
+      "original_label": 1,
+      "action": "pending",
+      "new_label": 1,
+      "reason": "喜欢铺垫、结局失望，自评分 C+；未约定字母评分与二分类的对应。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C070",
+      "sample_id": "train/pos/4745_7.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "总评 isn't terrible / a decent film；更推荐另一部作品不取消本片的温和肯定。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C076",
+      "sample_id": "train/pos/6107_7.txt",
+      "original_label": 1,
+      "action": "pending",
+      "new_label": 1,
+      "reason": "演技人物负向、打斗及不用动脑可看正向；6/10 不足以形成干净的正类或负类。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C077",
+      "sample_id": "train/pos/6128_7.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "承认 B 级及俗套但肯定不装神作与重看价值，是有保留的正向评价。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C078",
+      "sample_id": "train/pos/7287_7.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "结尾面向 Ed Wood / Russ Meyer 影迷推荐购买，并给 Four stars for its cheesy-bizarreness alone。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C081",
+      "sample_id": "train/pos/773_7.txt",
+      "original_label": 1,
+      "action": "flip",
+      "new_label": 0,
+      "reason": "改负；failed attempt、俗套、演技无力与 sunk into mediocrity 为作者总判断；条件推荐未取消作者自己的厌烦。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C083",
+      "sample_id": "train/pos/7898_10.txt",
+      "original_label": 1,
+      "action": "pending",
+      "new_label": 1,
+      "reason": "I wouldn't recommend this film 与 quite funny / worthwhile 都明确，无法单边裁定。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C084",
+      "sample_id": "train/pos/8512_7.txt",
+      "original_label": 1,
+      "action": "delete",
+      "new_label": null,
+      "reason": "作者写明 I was in the movie and I haven't seen it yet；正文是拍摄经历，不是已看成片的评价。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C086",
+      "sample_id": "train/pos/90_7.txt",
+      "original_label": 1,
+      "action": "pending",
+      "new_label": 1,
+      "reason": "对影片只有 OK...nothing really outstanding；之后转向批评富家子弟，不支持干净正类或翻负，也未明确要求删除。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C089",
+      "sample_id": "train/pos/9240_10.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "so bad, it's real fun to watch. Go check it out! 明确肯定观看体验。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C093",
+      "sample_id": "train/pos/9894_8.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "总评 a piece of garbage, but I enjoyed it，面向烂砍杀片影迷，体验正向。",
+      "authority": "user_provided_manual_adjudication"
+    },
+    {
+      "candidate_id": "C094",
+      "sample_id": "train/pos/9966_10.txt",
+      "original_label": 1,
+      "action": "keep",
+      "new_label": 1,
+      "reason": "离奇到应给十分、has to be seen，并每年邀人重看，负面工艺词不取消真实欣赏。",
+      "authority": "user_provided_manual_adjudication"
+    }
+  ],
+  "update_counts": {
+    "keep": 14,
+    "pending": 7,
+    "flip": 3,
+    "delete": 3
+  },
+  "expected_cumulative_counts": {
+    "flip": 61,
+    "keep": 23,
+    "delete": 3,
+    "pending": 7
+  },
+  "review_attribution": "Both rounds of final label decisions were provided by the user; earlier AI notes are background, not the final authority.",
+  "C012_clarification": "User selected 按反讽判断，保持 neg; supersedes the earlier 翻转 wording.",
+  "pending_policy": "keep_previous_original_label_and_training_membership",
+  "preserve_original_and_prior_versions": true,
+  "new_training_started": false,
+  "source_sha256": {
+    "artifacts/laya-94-candidates-information-20261017-v1/94-candidates.json": "08ef4ca462a04ece1769940b14628009d9b3c89ebe48c0b1d5dfd2167aebff73",
+    "data/processed/train.jsonl": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/train.jsonl": "3dc6d4b58546713f136f9ac592ed0982146dc6f51b97407dfb9bda29678add1a",
+    "data/label-revisions/laya-94-user-label-revision-20261017-v1/manifest.json": "9ac76ac10faf7e92bb4ae0d2cbea3f4380b640da48145593522799cd7f1acfb1",
+    "configs/laya-94-user-label-revision-20261017-v1.json": "028c4848a8e96d91ee9612b20ae0e6564f28475d966e9e6821626d667e64599a",
+    "reports/laya-94-user-label-revision-20261017-v1/review-ledger.json": "30efc29a675cb9c344abec909872598f3bd6da3aa28de917787da7bb547002c0",
+    "reports/laya-94-user-label-revision-20261017-v1/summary.json": "9a401e2b750e35efd77be5e46a1af46eb80852d1b959f273c6cf3168e4dc3960",
+    "reports/split_manifest.json": "394a70c98334fcbc337d5ff8f35180e7a2b23436a6a77a0e3411232771da1d64",
+    "reports/laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1/manifest.json": "bfd56bf59d0589f5c01e5146bb170f3ffc0b3da923acfb3daeed424bcd6facad"
+  }
+}
