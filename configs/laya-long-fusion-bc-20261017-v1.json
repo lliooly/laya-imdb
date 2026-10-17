@@ -1,0 +1,45 @@
+{
+  "study_id": "laya-long-fusion-bc-20261017-v1",
+  "recorded_before_new_mixture_metrics_unix": 1792168500.138974,
+  "scope": "cached_development_only_posthoc_exploration",
+  "threshold_review_tokens": 466,
+  "b": {
+    "short": "new512",
+    "long": "0.5*new512_calibrated_prob+0.5*new2048_calibrated_prob"
+  },
+  "c_primary": {
+    "short": "old_frozen_primary",
+    "long": "0.5*old_frozen_primary_prob+0.5*new2048_calibrated_prob"
+  },
+  "c_auxiliary": {
+    "short": "old_frozen_equal_auxiliary",
+    "long": "0.5*old_frozen_equal_auxiliary_prob+0.5*new2048_calibrated_prob"
+  },
+  "new_weight": 0.5,
+  "mixture_search": false,
+  "new_calibration_fit": false,
+  "test_accessed": false,
+  "gpu_called": false,
+  "source_sha256": {
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/512-development.json": "177a662843fffc7392dde45ba0e862800a5b17444f8e35fb29a24458b9539c7a",
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/2048-development.json": "a836152639d954e8d0116ee43b627aa9e4ec21fe6e81b3696bd37913e7ba6b31",
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/summary.json": "d6755d15e5b8a97268b2476dd3082fca2622b2f901dddd35edc142cd7cff30e9",
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/bundle.json": "4ab30d96ec84d02851a426b3ee4f0c00b2fe31006dea4376dff788955603aa74",
+    "reports/laya-context-pair-s42-modal-20261016-v1/local-delivery.json": "f72029cbb0bd32f73004e06e60dedc2ac8113c83aa4ceda1f8acf3e612287ca7",
+    "reports/laya-probability-fusion-s43-s42-20261014-v1/validation-fused.json": "2ba6daea3a67fd0e538b8d8435cabd856b30b5e234182651b96a5cd725742955",
+    "reports/laya-probability-fusion-s43-s42-20261014-v1/frozen-fit.json": "8ce4ca74c439b4c1cb102fd43f1c7f9161dc55e97f78c302d254640d64b7dd8e",
+    "reports/laya-probability-fusion-s43-s42-20261014-v1/summary.json": "5d948061e2cc00deb150595fbdb5cb1a74bceb9da6774d8d5357a076bc8d2e6f",
+    "reports/laya-fusion-inference-cuda-fp32-20261014-v1/validation-actual.json": "b7c0788c6a204899624297bcfd67ab4163a548b4f3b6a010a31ac30821e47e8a",
+    "reports/laya-fusion-inference-cuda-fp32-20261014-v1/protocol.json": "c6a2e577106686a77c1514366e80a3fee81b7e6e53a2efb6acf76ab2036b8c7b",
+    "reports/laya-fusion-inference-cuda-fp32-20261014-v1/summary.json": "13c373e4b90f880c7a2f48ab738cbf9ca04798f7f4f8b2e8355f7c67797def5f",
+    "reports/laya-length-router-20261017-v1/summary.json": "541cc41c9ec9fe68f42390b7c28dbf4dbc016651e8b2ab12bcb6f8f6c8ca8fe2"
+  },
+  "comparisons": [
+    "B_vs_new512",
+    "B_vs_fixed_length_router",
+    "C_vs_old_primary",
+    "C_aux_vs_old_equal"
+  ],
+  "bootstrap_draws": 20000,
+  "bootstrap_seed": 20261017
+}
