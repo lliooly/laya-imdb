@@ -1,0 +1,23 @@
+{
+  "run_id": "laya-deberta-calibration-weight-cpu-20261018-v1",
+  "device": "cpu",
+  "mode": "existing_probability_caches_only",
+  "primary": "calibration_nll_weight",
+  "reference": "frozen_50_50",
+  "probability": "alpha * p_laya_main + (1-alpha) * p_deberta",
+  "alpha_bounds": [0.0, 1.0],
+  "fit_objective": "fixed_400_calibration_mean_binary_NLL",
+  "regularization": 0.0,
+  "fit_method": "convex_derivative_bisection_80_steps_with_endpoint_checks",
+  "identical_inputs_tie_alpha": 0.5,
+  "new_temperature_or_bias": false,
+  "new_ngram_fusion": false,
+  "classification_threshold": 0.5,
+  "exact_tie_class": 0,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20261018,
+  "fit_and_evaluate_separate_processes": true,
+  "development_used_for_fit": false,
+  "official_test_access_allowed": false,
+  "historical_development_and_calibration_reused": true
+}
