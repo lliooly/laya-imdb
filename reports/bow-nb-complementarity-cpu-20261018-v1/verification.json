@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "verifier_sha256": "f0a194317599cf4fbf36ff2e1aead7105f0442a0456a740dadd8afca242d6fcd",
+  "frozen_sha256": "b3061c7cc1bc506206f3859be2521dbdd4cc50d49e63fed06e95971f01998562",
+  "summary_sha256": "af1edc9727d0ff53cb240e64f3060ed677d66aace9c03d515971613fbd9c7ff9",
+  "independent_scipy_scalar_optimization": true,
+  "sklearn_metrics_recomputed": true,
+  "source_model_and_data_sha256_verified": true,
+  "partition_ids_disjoint": true,
+  "fit_reads_exclude_development": true,
+  "execution_reads_exclude_official_test": true,
+  "parent_preparation_deviation": "Parent session inadvertently read historical official-test contract IDs; no test text/predictions/distribution used",
+  "checks": {
+    "tfidf_lr": {
+      "calibration_weight_independently_optimized": 0.02317942025614643,
+      "weight_abs_difference": 1.9564728587218028e-09,
+      "accuracy_nll_auroc_recomputed": true,
+      "saved_probabilities_reconstructed": true,
+      "repaired": 3,
+      "damaged": 2,
+      "model_sha256_verified": true
+    },
+    "nb_ngram_lr": {
+      "calibration_weight_independently_optimized": 0.024165128121714934,
+      "weight_abs_difference": 1.0670480991847864e-09,
+      "accuracy_nll_auroc_recomputed": true,
+      "saved_probabilities_reconstructed": true,
+      "repaired": 2,
+      "damaged": 2,
+      "model_sha256_verified": true
+    }
+  }
+}
