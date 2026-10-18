@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "independent_numpy_head_max_abs_logit_difference": {
+    "mlp_dropout1": 1.2394832333839645e-06,
+    "mlp_dropout4": 1.520500690688209e-06
+  },
+  "head_initialization_equal": true,
+  "head_reload_exact": true,
+  "source_model_partition_sha256_verified": true,
+  "sklearn_metrics_recomputed": true,
+  "original_neural_probabilities_bitwise_equal": true,
+  "report_sha256": "5aa865d51aeec4d4a5f08776353b12c5b02dece5d5d8f7fd7ee2558d91f48ead",
+  "summary_sha256": "eb9d521583c53fc2063a3103a10f31059a0560b12bbd723953fc7c49237bc022"
+}

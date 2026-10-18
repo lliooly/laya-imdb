@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "independent_optimizer": "SLSQP numerical derivative versus original bounded L-BFGS-B analytic derivative",
+  "independent_logit_coefficients": [
+    0.5319459644251996,
+    0.5727065724911712,
+    -0.11610350347309706
+  ],
+  "logit_max_abs_gradient": 2.5286282095970947e-10,
+  "independent_context_and_head_mixture_optima": true,
+  "primary_calibration_selection_verified": true,
+  "training_exposures_and_updates_verified": true,
+  "sklearn_metrics_verified": true,
+  "paired_counts_and_holm_verified": true,
+  "access_audit_verified": true,
+  "pair_counts": {
+    "regularized_logit": {
+      "repaired": 3,
+      "damaged": 0,
+      "net": 3
+    },
+    "long_context": {
+      "repaired": 0,
+      "damaged": 0,
+      "net": 0
+    },
+    "mlp_dropout1": {
+      "repaired": 0,
+      "damaged": 1,
+      "net": -1
+    },
+    "mlp_dropout4": {
+      "repaired": 0,
+      "damaged": 1,
+      "net": -1
+    }
+  },
+  "frozen_sha256": "10e3e9a7fcda42b3178b6ae53d66cd649ffbfa4029cdd8073e9f706ec3bd3a9a",
+  "summary_sha256": "eb9d521583c53fc2063a3103a10f31059a0560b12bbd723953fc7c49237bc022",
+  "verifier_sha256": "f4cc09ea3dea37a24a3626b556013972b3f42a1b9d05c96c0944acad9357ebc3"
+}
