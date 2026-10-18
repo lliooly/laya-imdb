@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "independent_calibration_alpha": 0.21941935561489193,
+  "absolute_alpha_difference": 2.9828552128297048e-09,
+  "sklearn_metrics_recomputed": true,
+  "original_probabilities_bitwise_reproduced": true,
+  "source_and_frozen_hashes_verified": true,
+  "report_sha256": "8a143e864e57bff458dcb0dddf15e742a882aa3b4851e5a0011820ca6a5e6906",
+  "summary_sha256": "4931fd3e1c686c4c4314c9fd9d556004e24a4d358836c1386b81d137f9e3068a"
+}
