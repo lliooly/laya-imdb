@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "numpy_float64_forward_max_error": {
+    "mean-s42": 5.880021483051223e-07,
+    "mean-s43": 3.914059254483959e-07,
+    "mean-s44": 7.730510223069587e-07,
+    "dense-s42": 7.800548855740885e-07,
+    "dense-s43": 1.2016601029785079e-06,
+    "dense-s44": 6.532012282178812e-07,
+    "top32-s42": 9.451552833716903e-07,
+    "top32-s43": 4.2808197608934506e-07,
+    "top32-s44": 8.257124619603928e-07
+  },
+  "independent_temperature_and_mixture_optimizers": true,
+  "sklearn_metrics": true,
+  "exact_tests_and_holm": true,
+  "training_exposure_and_same_initialization_verified": true,
+  "access_audit_verified": true,
+  "installed_dependencies_unchanged": true,
+  "ensemble_reconstruction_verified": true,
+  "verifier_sha256": "66408003c780655f4db4fba576c3369ee3ae18da11c04d14a1f0ab71f23d4d7e",
+  "frozen_sha256": "3034edef6b96972bc593226f8b870f27a9ffd0504449da0e5ed86ceef431ec72",
+  "summary_sha256": "85acd40f33351aaf0b3b7dfe40d6bec91ec99c273ffde82fc67103cb7b6ea988"
+}

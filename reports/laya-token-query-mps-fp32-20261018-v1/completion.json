@@ -1,0 +1,18 @@
+{
+  "state": "completed",
+  "test_accessed": false,
+  "unit_tests_passed": 5,
+  "independent_verification_passed": true,
+  "encoder_frozen": true,
+  "sources_sha256": {
+    "scripts/token_query_head.py": "4cf7f02e7c32f2aa0996e73d31a99bfce28e8c9b03219fe79142944063eb5979",
+    "scripts/run_token_query_study.py": "f51690539702491a3a93c717a84babe2cfa7c9b040b7ac399f654eef7ca0f723",
+    "scripts/verify_token_query_study.py": "66408003c780655f4db4fba576c3369ee3ae18da11c04d14a1f0ab71f23d4d7e",
+    "tests/test_token_query_head.py": "46b915bae17fdad6de33569ca78b3c66d92c881d97a7d879bed05709051fb424",
+    "configs/laya-token-query-mps-fp32-20261018-v1.json": "6b9438f99ab53b7e5b2ebc6ec332594b851c297d33cfcd62306fec2e7da7fa52",
+    "docs/superpowers/specs/2026-10-18-token-query-head-design.md": "2ae697293a910a429efb1d8b3eaedf0d982fdbbd7757bb3033c9445724a5bdaa",
+    "docs/experiments/2026-10-18-token-query-head-followup.md": "79f3b3a886886516ee06f57e7cf368445b3119bccfcde754da25c5cd561cbc1a"
+  },
+  "summary_sha256": "85acd40f33351aaf0b3b7dfe40d6bec91ec99c273ffde82fc67103cb7b6ea988",
+  "frozen_sha256": "3034edef6b96972bc593226f8b870f27a9ffd0504449da0e5ed86ceef431ec72"
+}
