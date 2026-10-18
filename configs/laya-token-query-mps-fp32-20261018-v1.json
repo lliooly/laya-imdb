@@ -1,0 +1,21 @@
+{
+  "run_id": "laya-token-query-mps-fp32-20261018-v1",
+  "kinds": ["mean", "dense", "top32"],
+  "primary": "dense",
+  "seeds": [42, 43, 44],
+  "epochs": 5,
+  "batch_size": 32,
+  "extraction_batch_size": 8,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "width": 128,
+  "dropout": 0.1,
+  "gradient_clip": 1.0,
+  "precision": "float32",
+  "encoder_training": false,
+  "temperature_bounds": [0.5, 5.0],
+  "mixture_bounds": [0.0, 0.25],
+  "development_for_fitting": false,
+  "test_access_allowed": false,
+  "continuation": {"minimum_net": 5, "positive_bootstrap_lower": true, "holm_p_lt": 0.05}
+}
