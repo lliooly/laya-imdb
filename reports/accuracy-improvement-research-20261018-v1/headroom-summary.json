@@ -1,0 +1,1665 @@
+{
+ "run_id": "accuracy-improvement-research-20261018-v1/headroom",
+ "generated_utc": "2026-10-18T03:21:46.324268+00:00",
+ "scope_note": "frozen development/calibration artifacts only; no training, no inference, no official-test per-sample access",
+ "inputs": {
+  "dev_path": "data/processed/validation.jsonl",
+  "dev_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+  "cal_manifest": "reports/laya-deberta-calibration-weight-cpu-20261018-v1/frozen.json",
+  "cal_manifest_sha256": "c692c1a45dc78a80e233ee3933dc1014cbd1e0340db736b6b02e8dfdbc81d2b3",
+  "train_path": "data/processed/train.jsonl",
+  "train_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7"
+ },
+ "headline": {
+  "current_best_fusion_50_50": {
+   "correct": 2432,
+   "accuracy": 0.9728,
+   "errors": 68
+  },
+  "laya_main_fusion_correct": 2424,
+  "deberta_correct": 2426,
+  "oracle_classic_22file_18view": {
+   "file_count": 22,
+   "distinct_vector_count": 18,
+   "oracle_correct": 2460,
+   "oracle_accuracy": 0.984,
+   "all_wrong": 40,
+   "grouped": {
+    "0": 40,
+    "1-3": 15,
+    "4-9": 24,
+    "10-16": 84,
+    "17": 12,
+    "all": 2325
+   }
+  },
+  "oracle_all_distinct_views": {
+   "view_count": 57,
+   "oracle_correct": 2481,
+   "oracle_accuracy": 0.9924,
+   "all_wrong": 19
+  },
+  "oracle_single_model_pool": {
+   "view_count": 46,
+   "oracle_correct": 2481,
+   "oracle_accuracy": 0.9924,
+   "all_wrong": 19
+  },
+  "oracle_cumulative_curve": [
+   {
+    "views_added": "laya-main-fusion",
+    "n_views": 1,
+    "oracle_correct": 2424,
+    "oracle_accuracy": 0.9696,
+    "all_wrong": 76
+   },
+   {
+    "views_added": "deberta-s42",
+    "n_views": 2,
+    "oracle_correct": 2447,
+    "oracle_accuracy": 0.9788,
+    "all_wrong": 53
+   },
+   {
+    "views_added": "laya-new-2048(orig-data)",
+    "n_views": 3,
+    "oracle_correct": 2453,
+    "oracle_accuracy": 0.9812,
+    "all_wrong": 47
+   },
+   {
+    "views_added": "laya-revised-labels-512",
+    "n_views": 4,
+    "oracle_correct": 2457,
+    "oracle_accuracy": 0.9828,
+    "all_wrong": 43
+   },
+   {
+    "views_added": "bow-nb/nb_ngram_lr/calibrated",
+    "n_views": 5,
+    "oracle_correct": 2470,
+    "oracle_accuracy": 0.988,
+    "all_wrong": 30
+   },
+   {
+    "views_added": "bow-nb/tfidf_lr/calibrated",
+    "n_views": 6,
+    "oracle_correct": 2473,
+    "oracle_accuracy": 0.9892,
+    "all_wrong": 27
+   },
+   {
+    "views_added": "token-query/mean/branch",
+    "n_views": 7,
+    "oracle_correct": 2474,
+    "oracle_accuracy": 0.9896,
+    "all_wrong": 26
+   },
+   {
+    "views_added": "cpu-alt/mlp_dropout1",
+    "n_views": 8,
+    "oracle_correct": 2474,
+    "oracle_accuracy": 0.9896,
+    "all_wrong": 26
+   }
+  ],
+  "fusion_errors_68": {
+   "count": 68,
+   "fixed_by_at_least_one_existing_view": 49,
+   "wrong_in_every_existing_view": 19,
+   "distribution_views_correct_among_68": {
+    "0": 19,
+    "1": 10,
+    "2": 5,
+    "3": 1,
+    "4": 5,
+    "5": 2,
+    "7": 3,
+    "8": 3,
+    "9": 1,
+    "10": 2,
+    "11": 1,
+    "12": 3,
+    "13": 3,
+    "16": 1,
+    "19": 1,
+    "20": 1,
+    "23": 1,
+    "25": 2,
+    "28": 1,
+    "29": 1,
+    "34": 1,
+    "38": 1
+   },
+   "views_with_zero_fix": 2
+  },
+  "top_fixing_views": [
+   [
+    "bow-nb/nb_ngram_lr/calibrated",
+    27
+   ],
+   [
+    "bow-nb/tfidf_lr/calibrated",
+    22
+   ],
+   [
+    "mac-two-epoch-s42",
+    14
+   ],
+   [
+    "laya-rlcd-pilot",
+    14
+   ],
+   [
+    "combined-s43/head",
+    12
+   ],
+   [
+    "combined-s43/head_tail",
+    12
+   ],
+   [
+    "head-control-original-s44",
+    12
+   ],
+   [
+    "modernbert-best",
+    12
+   ],
+   [
+    "laya-revised-labels-512",
+    12
+   ],
+   [
+    "combined-s42/head",
+    11
+   ]
+  ],
+  "error_classification_ai_counts": {
+   "a_label_conflict": 11,
+   "b_ambiguity": 46,
+   "c_truncation": 1,
+   "d_model_error": 7,
+   "e_uncertain": 3
+  },
+  "error_classification_ai_ids": {
+   "a_label_conflict": [
+    "train/neg/3155_1.txt",
+    "train/neg/7397_4.txt",
+    "train/neg/7647_1.txt",
+    "train/neg/7927_1.txt",
+    "train/neg/9409_4.txt",
+    "train/pos/1230_10.txt",
+    "train/pos/1454_7.txt",
+    "train/pos/1710_7.txt",
+    "train/pos/3160_7.txt",
+    "train/pos/7770_7.txt",
+    "train/pos/8647_7.txt"
+   ],
+   "b_ambiguity": [
+    "train/neg/11233_2.txt",
+    "train/neg/11636_3.txt",
+    "train/neg/12042_2.txt",
+    "train/neg/12360_4.txt",
+    "train/neg/2291_4.txt",
+    "train/neg/2572_1.txt",
+    "train/neg/3182_1.txt",
+    "train/neg/4014_2.txt",
+    "train/neg/5026_3.txt",
+    "train/neg/641_4.txt",
+    "train/neg/6424_3.txt",
+    "train/neg/6608_1.txt",
+    "train/neg/6939_4.txt",
+    "train/neg/7010_4.txt",
+    "train/neg/7026_4.txt",
+    "train/neg/7719_3.txt",
+    "train/neg/792_1.txt",
+    "train/neg/8756_4.txt",
+    "train/neg/9359_4.txt",
+    "train/neg/9896_4.txt",
+    "train/pos/10016_8.txt",
+    "train/pos/11192_10.txt",
+    "train/pos/11447_7.txt",
+    "train/pos/11853_7.txt",
+    "train/pos/12230_9.txt",
+    "train/pos/1264_10.txt",
+    "train/pos/1665_7.txt",
+    "train/pos/1762_7.txt",
+    "train/pos/1831_10.txt",
+    "train/pos/1838_10.txt",
+    "train/pos/2204_10.txt",
+    "train/pos/2229_7.txt",
+    "train/pos/2435_8.txt",
+    "train/pos/3263_7.txt",
+    "train/pos/4185_8.txt",
+    "train/pos/5624_7.txt",
+    "train/pos/5930_7.txt",
+    "train/pos/5988_7.txt",
+    "train/pos/6093_8.txt",
+    "train/pos/6372_7.txt",
+    "train/pos/6588_9.txt",
+    "train/pos/6892_8.txt",
+    "train/pos/6_10.txt",
+    "train/pos/7584_7.txt",
+    "train/pos/8085_7.txt",
+    "train/pos/9579_8.txt"
+   ],
+   "c_truncation": [
+    "train/pos/12208_8.txt"
+   ],
+   "d_model_error": [
+    "train/neg/10566_3.txt",
+    "train/neg/4632_4.txt",
+    "train/neg/6081_4.txt",
+    "train/neg/810_1.txt",
+    "train/pos/10091_7.txt",
+    "train/pos/5506_10.txt",
+    "train/pos/9_7.txt"
+   ],
+   "e_uncertain": [
+    "train/neg/12240_1.txt",
+    "train/pos/12122_7.txt",
+    "train/pos/8527_8.txt"
+   ]
+  },
+  "error_classification_hard_core_counts": {
+   "a_label_conflict": 6,
+   "b_ambiguity": 11,
+   "c_truncation": 1,
+   "d_model_error": 1,
+   "e_uncertain": 0
+  },
+  "label_ceiling_anchors_x_of_68": {
+   "strict_conflict_only_x": 11,
+   "conflict_plus_truncation_x": 12,
+   "broad_conflict_plus_ambiguity_x": 58
+  }
+ },
+ "inventory": {
+  "view_records_total": 85,
+  "curated_views": 75,
+  "autoscan_views": 10,
+  "distinct_prediction_vectors": 57,
+  "autoscan_stats": {
+   "autoscan_files_scanned": 2035,
+   "skipped_test_paths": 587
+  },
+  "label_agreement_check": {
+   "checked": 50,
+   "agree": 50,
+   "disagree": []
+  },
+  "views_compact": [
+   [
+    "baseline-s42/head",
+    "laya512-posthoc-wi",
+    2397,
+    0.9588
+   ],
+   [
+    "baseline-s42/head_tail",
+    "laya512-posthoc-wi",
+    2402,
+    0.9608
+   ],
+   [
+    "baseline-s43/head",
+    "laya512-posthoc-wi",
+    2412,
+    0.9648
+   ],
+   [
+    "baseline-s43/head_tail",
+    "laya512-posthoc-wi",
+    2421,
+    0.9684
+   ],
+   [
+    "combined-s42/head",
+    "laya512-posthoc-wi",
+    2411,
+    0.9644
+   ],
+   [
+    "combined-s42/head_tail",
+    "laya512-posthoc-wi",
+    2417,
+    0.9668
+   ],
+   [
+    "combined-s43/head",
+    "laya512-posthoc-wi",
+    2412,
+    0.9648
+   ],
+   [
+    "combined-s43/head_tail",
+    "laya512-posthoc-wi",
+    2416,
+    0.9664
+   ],
+   [
+    "baseline-s43/head",
+    "laya512-decision-s",
+    2412,
+    0.9648
+   ],
+   [
+    "baseline-s43/head_tail",
+    "laya512-decision-s",
+    2421,
+    0.9684
+   ],
+   [
+    "baseline-s43/reverse",
+    "laya512-decision-s",
+    2414,
+    0.9656
+   ],
+   [
+    "combined-s42/head",
+    "laya512-decision-s",
+    2411,
+    0.9644
+   ],
+   [
+    "combined-s42/head_tail",
+    "laya512-decision-s",
+    2417,
+    0.9668
+   ],
+   [
+    "combined-s42/reverse",
+    "laya512-decision-s",
+    2408,
+    0.9632
+   ],
+   [
+    "prefix-trained/head",
+    "laya512-window-tra",
+    2409,
+    0.9636
+   ],
+   [
+    "prefix-trained/head_tail",
+    "laya512-window-tra",
+    2416,
+    0.9664
+   ],
+   [
+    "prefix-trained/reverse",
+    "laya512-window-tra",
+    2408,
+    0.9632
+   ],
+   [
+    "random-window-trained/head",
+    "laya512-window-tra",
+    2406,
+    0.9624
+   ],
+   [
+    "random-window-trained/head_tail",
+    "laya512-window-tra",
+    2411,
+    0.9644
+   ],
+   [
+    "random-window-trained/reverse",
+    "laya512-window-tra",
+    2407,
+    0.9628
+   ],
+   [
+    "checkpoint-average-s42/head_tail",
+    "laya512-checkpoint",
+    2416,
+    0.9664
+   ],
+   [
+    "frozen-probe-s43/full_model",
+    "laya512-frozen-pro",
+    2421,
+    0.9684
+   ],
+   [
+    "frozen-probe-s43/encoder",
+    "laya512-frozen-pro",
+    2417,
+    0.9668
+   ],
+   [
+    "frozen-probe-s43/post_head",
+    "laya512-frozen-pro",
+    2420,
+    0.968
+   ],
+   [
+    "laya-main-fusion-70_30",
+    "fusion",
+    2424,
+    0.9696
+   ],
+   [
+    "equal-50_50(laya)",
+    "fusion",
+    2425,
+    0.97
+   ],
+   [
+    "primary(laya)",
+    "fusion",
+    2424,
+    0.9696
+   ],
+   [
+    "baseline-s43/head(cuda-actual)",
+    "backend-recheck",
+    2412,
+    0.9648
+   ],
+   [
+    "baseline-s43/head_tail(cuda-actual)",
+    "backend-recheck",
+    2421,
+    0.9684
+   ],
+   [
+    "combined-s42/head(cuda-actual)",
+    "backend-recheck",
+    2411,
+    0.9644
+   ],
+   [
+    "combined-s42/head_tail(cuda-actual)",
+    "backend-recheck",
+    2417,
+    0.9668
+   ],
+   [
+    "head-control-original-s42",
+    "laya512-head-contr",
+    2413,
+    0.9652
+   ],
+   [
+    "head-control-original-s43",
+    "laya512-head-contr",
+    2417,
+    0.9668
+   ],
+   [
+    "head-control-original-s44",
+    "laya512-head-contr",
+    2409,
+    0.9636
+   ],
+   [
+    "head-control-linear-s42",
+    "laya512-head-contr",
+    2418,
+    0.9672
+   ],
+   [
+    "head-control-linear-s43",
+    "laya512-head-contr",
+    2412,
+    0.9648
+   ],
+   [
+    "head-control-linear-s44",
+    "laya512-head-contr",
+    2407,
+    0.9628
+   ],
+   [
+    "mac-one-epoch-s42",
+    "laya512-single-mod",
+    2394,
+    0.9576
+   ],
+   [
+    "mac-two-epoch-s42",
+    "laya512-single-mod",
+    2424,
+    0.9696
+   ],
+   [
+    "mac-two-epoch-s42-lr06",
+    "laya512-single-mod",
+    2403,
+    0.9612
+   ],
+   [
+    "modernbert-best",
+    "other-models",
+    2366,
+    0.9464
+   ],
+   [
+    "modernbert-final",
+    "other-models",
+    2366,
+    0.9464
+   ],
+   [
+    "laya-ce-full",
+    "other-models",
+    2394,
+    0.9576
+   ],
+   [
+    "laya-ce-pilot",
+    "other-models",
+    2338,
+    0.9352
+   ],
+   [
+    "laya-rlcd-pilot",
+    "other-models",
+    2343,
+    0.9372
+   ],
+   [
+    "laya-main-fusion",
+    "fusion",
+    2424,
+    0.9696
+   ],
+   [
+    "deberta-s42",
+    "deberta",
+    2426,
+    0.9704
+   ],
+   [
+    "fusion-50_50(laya+deberta)",
+    "fusion",
+    2432,
+    0.9728
+   ],
+   [
+    "laya-new-512(orig-data)",
+    "laya-new",
+    2408,
+    0.9632
+   ],
+   [
+    "laya-new-2048(orig-data)",
+    "laya-new",
+    2408,
+    0.9632
+   ],
+   [
+    "laya-revised-labels-512",
+    "laya-new",
+    2410,
+    0.964
+   ],
+   [
+    "length-router(512/2048 routed)",
+    "laya-new",
+    2414,
+    0.9656
+   ],
+   [
+    "long-fusion-new512",
+    "fusion-posthoc",
+    2408,
+    0.9632
+   ],
+   [
+    "long-fusion-new2048",
+    "fusion-posthoc",
+    2408,
+    0.9632
+   ],
+   [
+    "long-fusion-A",
+    "fusion-posthoc",
+    2414,
+    0.9656
+   ],
+   [
+    "long-fusion-B",
+    "fusion-posthoc",
+    2413,
+    0.9652
+   ],
+   [
+    "long-fusion-C",
+    "fusion-posthoc",
+    2424,
+    0.9696
+   ],
+   [
+    "long-fusion-C_aux",
+    "fusion-posthoc",
+    2425,
+    0.97
+   ],
+   [
+    "cpu-alt/regularized_logit",
+    "cpu-alternatives",
+    2435,
+    0.974
+   ],
+   [
+    "cpu-alt/long_context",
+    "cpu-alternatives",
+    2432,
+    0.9728
+   ],
+   [
+    "cpu-alt/mlp_dropout1",
+    "cpu-alternatives",
+    2431,
+    0.9724
+   ],
+   [
+    "cpu-alt/mlp_dropout4",
+    "cpu-alternatives",
+    2431,
+    0.9724
+   ],
+   [
+    "bow-nb/neural",
+    "bow-nb",
+    2432,
+    0.9728
+   ],
+   [
+    "bow-nb/tfidf_lr/calibrated",
+    "bow-nb",
+    2278,
+    0.9112
+   ],
+   [
+    "bow-nb/tfidf_lr/fusion",
+    "bow-nb",
+    2433,
+    0.9732
+   ],
+   [
+    "bow-nb/nb_ngram_lr/calibrated",
+    "bow-nb",
+    2306,
+    0.9224
+   ],
+   [
+    "bow-nb/nb_ngram_lr/fusion",
+    "bow-nb",
+    2432,
+    0.9728
+   ],
+   [
+    "token-query/mean/branch",
+    "token-query",
+    2421,
+    0.9684
+   ],
+   [
+    "token-query/mean/fusion",
+    "token-query",
+    2432,
+    0.9728
+   ],
+   [
+    "token-query/dense/branch",
+    "token-query",
+    2421,
+    0.9684
+   ],
+   [
+    "token-query/dense/fusion",
+    "token-query",
+    2432,
+    0.9728
+   ],
+   [
+    "token-query/top32/branch",
+    "token-query",
+    2420,
+    0.968
+   ],
+   [
+    "token-query/top32/fusion",
+    "token-query",
+    2431,
+    0.9724
+   ],
+   [
+    "ldw/p_frozen_50_50",
+    "fusion",
+    2432,
+    0.9728
+   ],
+   [
+    "ldw/p_calibration_nll_weight",
+    "fusion",
+    2429,
+    0.9716
+   ],
+   [
+    "reports/laya-mps-ce-epochs2-l512-s42-fp32-v1/mlx-validation/mlx-fp16-predictions.jsonl",
+    "autoscan",
+    2424,
+    0.9696
+   ],
+   [
+    "reports/laya-backend-comparison/mlx-fp32-predictions.jsonl",
+    "autoscan",
+    2394,
+    0.9576
+   ],
+   [
+    "reports/laya-mps-ce-epochs2-lr06-l512-s42-fp32-v1/mlx-validation/mlx-fp16-predictions.jsonl",
+    "autoscan",
+    2403,
+    0.9612
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/mean-s42",
+    "autoscan",
+    2419,
+    0.9676
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/top32-s42",
+    "autoscan",
+    2418,
+    0.9672
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/mean-s43",
+    "autoscan",
+    2421,
+    0.9684
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/top32-s43",
+    "autoscan",
+    2422,
+    0.9688
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/dense-s44",
+    "autoscan",
+    2422,
+    0.9688
+   ],
+   [
+    "reports/laya-token-query-mps-fp32-20261018-v1/development-heads.json::logits/top32-s44",
+    "autoscan",
+    2423,
+    0.9692
+   ],
+   [
+    "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/development.json::logits",
+    "autoscan",
+    2426,
+    0.9704
+   ]
+  ],
+  "full_per_view_paths": "artifacts/accuracy-improvement-research-20261018-v1/headroom-analysis-data.json"
+ },
+ "v2_candidate_reproduction": {
+  "recomputed_correct": 2435,
+  "recomputed_accuracy": 0.974,
+  "exact_binary_match_with_stored": true,
+  "max_abs_probability_difference_vs_stored": 1.1102230246251565e-16,
+  "fixed_error_ids": [
+   "train/neg/2572_1.txt",
+   "train/neg/5026_3.txt",
+   "train/pos/5506_10.txt"
+  ],
+  "new_error_ids": [],
+  "remaining_errors": 65
+ },
+ "v2_candidate_paired": {
+  "delta_pp": 0.12,
+  "ci95_pp": [
+   0.0,
+   0.27999999999999997
+  ],
+  "fixed": 3,
+  "broke": 0,
+  "mcnemar_exact_p": 0.25,
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20261018,
+  "bootstrap_method": "paired sample bootstrap over the fixed 2500-row development set"
+ },
+ "calibration_ensembles": {
+  "calibration_views": [
+   "laya-main-fusion",
+   "deberta-s42",
+   "laya-new-512",
+   "laya-new-2048",
+   "laya-revised-labels",
+   "tfidf-lr",
+   "nb-ngram-lr",
+   "cpu-alt/mlp_dropout1",
+   "cpu-alt/mlp_dropout4"
+  ],
+  "calibration_provenance_paths": {
+   "laya-main-fusion": "reports/final-cpu-alternatives-20261018-v2/calibration-predictions.json",
+   "deberta-s42": "reports/final-cpu-alternatives-20261018-v2/calibration-predictions.json",
+   "laya-new-512": "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/512-calibration.json",
+   "laya-new-2048": "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/2048-calibration.json",
+   "laya-revised-labels": "reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/512-calibration.json",
+   "tfidf-lr": "reports/bow-nb-complementarity-cpu-20261018-v1/tfidf_lr-calibration.json",
+   "nb-ngram-lr": "reports/bow-nb-complementarity-cpu-20261018-v1/nb_ngram_lr-calibration.json",
+   "cpu-alt/mlp_dropout1": "reports/final-cpu-alternatives-20261018-v2/calibration-predictions.json",
+   "cpu-alt/mlp_dropout4": "reports/final-cpu-alternatives-20261018-v2/calibration-predictions.json"
+  },
+  "logit_stacking": [
+   {
+    "name": "logit2[Laya,DeBERTa] l2=0.01",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42"
+    ],
+    "coefficients": [
+     0.5319458745200957,
+     0.5727065876805407,
+     -0.11610316858559344
+    ],
+    "l2": 0.01,
+    "calibration_loo_accuracy": 0.9875,
+    "dev_correct": 2435,
+    "dev_accuracy": 0.974,
+    "remaining_errors": 65,
+    "paired_vs_fusion": {
+     "delta_pp": 0.12,
+     "ci95_pp": [
+      0.0,
+      0.27999999999999997
+     ],
+     "fixed": 3,
+     "broke": 0,
+     "mcnemar_exact_p": 0.25
+    }
+   },
+   {
+    "name": "logit2[Laya,DeBERTa] l2=0.0",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42"
+    ],
+    "coefficients": [
+     0.5163072138863535,
+     0.6104144665914181,
+     -0.3414337630992623
+    ],
+    "l2": 0.0,
+    "calibration_loo_accuracy": 0.9875,
+    "dev_correct": 2434,
+    "dev_accuracy": 0.9736,
+    "remaining_errors": 66,
+    "paired_vs_fusion": {
+     "delta_pp": 0.08,
+     "ci95_pp": [
+      -0.08,
+      0.24
+     ],
+     "fixed": 3,
+     "broke": 1,
+     "mcnemar_exact_p": 0.625
+    }
+   },
+   {
+    "name": "logit3[Laya,DeBERTa,2048] l2=0.01",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048"
+    ],
+    "coefficients": [
+     0.500594923521814,
+     0.5584544842686496,
+     0.026216713066986884,
+     -0.11684188745034224
+    ],
+    "l2": 0.01,
+    "calibration_loo_accuracy": 0.9875,
+    "dev_correct": 2435,
+    "dev_accuracy": 0.974,
+    "remaining_errors": 65,
+    "paired_vs_fusion": {
+     "delta_pp": 0.12,
+     "ci95_pp": [
+      0.0,
+      0.27999999999999997
+     ],
+     "fixed": 3,
+     "broke": 0,
+     "mcnemar_exact_p": 0.25
+    }
+   },
+   {
+    "name": "logit4[+revised] l2=0.01",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048",
+     "laya-revised-labels"
+    ],
+    "coefficients": [
+     0.45755107987277577,
+     0.5214463642344124,
+     -0.0031244455932760797,
+     0.11509586119031222,
+     -0.13916501258028177
+    ],
+    "l2": 0.01,
+    "calibration_loo_accuracy": 0.99,
+    "dev_correct": 2431,
+    "dev_accuracy": 0.9724,
+    "remaining_errors": 69,
+    "paired_vs_fusion": {
+     "delta_pp": -0.04,
+     "ci95_pp": [
+      -0.2,
+      0.08
+     ],
+     "fixed": 1,
+     "broke": 2,
+     "mcnemar_exact_p": 1.0
+    }
+   },
+   {
+    "name": "logit5[+tfidf] l2=0.01",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048",
+     "laya-revised-labels",
+     "tfidf-lr"
+    ],
+    "coefficients": [
+     0.4506400909748966,
+     0.4740295353963998,
+     -0.018794742559291994,
+     0.11907181110095864,
+     0.08025537646458257,
+     -0.14015631392695566
+    ],
+    "l2": 0.01,
+    "calibration_loo_accuracy": 0.985,
+    "dev_correct": 2433,
+    "dev_accuracy": 0.9732,
+    "remaining_errors": 67,
+    "paired_vs_fusion": {
+     "delta_pp": 0.04,
+     "ci95_pp": [
+      -0.12,
+      0.24
+     ],
+     "fixed": 3,
+     "broke": 2,
+     "mcnemar_exact_p": 1.0
+    }
+   },
+   {
+    "name": "logit8[+nb,+mlp1,+mlp4] l2=0.02",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048",
+     "laya-revised-labels",
+     "tfidf-lr",
+     "nb-ngram-lr",
+     "cpu-alt/mlp_dropout1",
+     "cpu-alt/mlp_dropout4"
+    ],
+    "coefficients": [
+     0.24558160020330747,
+     0.27325823987795556,
+     -0.014374275663967515,
+     0.0852865362199984,
+     0.02983608103785633,
+     0.06567859864115488,
+     0.21310176432456554,
+     0.21297893703838872,
+     -0.09092709380624042
+    ],
+    "l2": 0.02,
+    "calibration_loo_accuracy": 0.985,
+    "dev_correct": 2434,
+    "dev_accuracy": 0.9736,
+    "remaining_errors": 66,
+    "paired_vs_fusion": {
+     "delta_pp": 0.08,
+     "ci95_pp": [
+      -0.08,
+      0.24
+     ],
+     "fixed": 3,
+     "broke": 1,
+     "mcnemar_exact_p": 0.625
+    }
+   }
+  ],
+  "equal_weight": [
+   {
+    "name": "equal[Laya,DeBERTa]",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42"
+    ],
+    "calibration_accuracy": 0.99,
+    "dev_correct": 2432,
+    "dev_accuracy": 0.9728,
+    "remaining_errors": 68,
+    "paired_vs_fusion": {
+     "delta_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "fixed": 0,
+     "broke": 0,
+     "mcnemar_exact_p": 1.0
+    }
+   },
+   {
+    "name": "equal[Laya,DeBERTa,2048]",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048"
+    ],
+    "calibration_accuracy": 0.985,
+    "dev_correct": 2426,
+    "dev_accuracy": 0.9704,
+    "remaining_errors": 74,
+    "paired_vs_fusion": {
+     "delta_pp": -0.24,
+     "ci95_pp": [
+      -0.52,
+      0.04
+     ],
+     "fixed": 4,
+     "broke": 10,
+     "mcnemar_exact_p": 0.1795654296875
+    }
+   },
+   {
+    "name": "equal[Laya,DeBERTa,2048,revised]",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048",
+     "laya-revised-labels"
+    ],
+    "calibration_accuracy": 0.9825,
+    "dev_correct": 2424,
+    "dev_accuracy": 0.9696,
+    "remaining_errors": 76,
+    "paired_vs_fusion": {
+     "delta_pp": -0.32,
+     "ci95_pp": [
+      -0.6799999999999999,
+      0.04
+     ],
+     "fixed": 6,
+     "broke": 14,
+     "mcnemar_exact_p": 0.11531829833984375
+    }
+   },
+   {
+    "name": "equal[Laya,DeBERTa,2048,revised,tfidf]",
+    "inputs": [
+     "laya-main-fusion",
+     "deberta-s42",
+     "laya-new-2048",
+     "laya-revised-labels",
+     "tfidf-lr"
+    ],
+    "calibration_accuracy": 0.9825,
+    "dev_correct": 2422,
+    "dev_accuracy": 0.9688,
+    "remaining_errors": 78,
+    "paired_vs_fusion": {
+     "delta_pp": -0.4,
+     "ci95_pp": [
+      -0.76,
+      -0.04
+     ],
+     "fixed": 5,
+     "broke": 15,
+     "mcnemar_exact_p": 0.04138946533203125
+    }
+   }
+  ],
+  "fixed_rules": [
+   {
+    "name": "mean_prob[Laya,DeBERTa]",
+    "dev_correct": 2432,
+    "dev_accuracy": 0.9728,
+    "paired_vs_fusion": {
+     "delta_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "fixed": 0,
+     "broke": 0,
+     "mcnemar_exact_p": 1.0
+    }
+   },
+   {
+    "name": "majority3[Laya,DeBERTa,2048]",
+    "dev_correct": 2427,
+    "dev_accuracy": 0.9708,
+    "paired_vs_fusion": {
+     "delta_pp": -0.2,
+     "ci95_pp": [
+      -0.52,
+      0.08
+     ],
+     "fixed": 5,
+     "broke": 10,
+     "mcnemar_exact_p": 0.3017578125
+    }
+   },
+   {
+    "name": "majority3[Laya,DeBERTa,revised]",
+    "dev_correct": 2422,
+    "dev_accuracy": 0.9688,
+    "paired_vs_fusion": {
+     "delta_pp": -0.4,
+     "ci95_pp": [
+      -0.76,
+      -0.08
+     ],
+     "fixed": 4,
+     "broke": 14,
+     "mcnemar_exact_p": 0.0308837890625
+    }
+   },
+   {
+    "name": "majority5[Laya,DeBERTa,2048,revised,tfidf]",
+    "dev_correct": 2424,
+    "dev_accuracy": 0.9696,
+    "paired_vs_fusion": {
+     "delta_pp": -0.32,
+     "ci95_pp": [
+      -0.64,
+      0.0
+     ],
+     "fixed": 5,
+     "broke": 13,
+     "mcnemar_exact_p": 0.09625244140625
+    }
+   },
+   {
+    "name": "majority5[Laya,DeBERTa,2048,revised,nb]",
+    "dev_correct": 2427,
+    "dev_accuracy": 0.9708,
+    "paired_vs_fusion": {
+     "delta_pp": -0.2,
+     "ci95_pp": [
+      -0.5599999999999999,
+      0.12
+     ],
+     "fixed": 7,
+     "broke": 12,
+     "mcnemar_exact_p": 0.359283447265625
+    }
+   }
+  ],
+  "calibration_fitted_gates": [
+   {
+    "name": "gate(|p-0.5|<=0.02) -> nb-ngram-lr",
+    "dev_correct": 2433,
+    "dev_accuracy": 0.9732,
+    "paired_vs_fusion": {
+     "delta_pp": 0.04,
+     "ci95_pp": [
+      -0.12,
+      0.2
+     ],
+     "fixed": 3,
+     "broke": 2,
+     "mcnemar_exact_p": 1.0,
+     "bootstrap_replicates": 20000,
+     "bootstrap_seed": 20261018,
+     "bootstrap_method": "paired sample bootstrap over the fixed 2500-row development set"
+    },
+    "threshold_fitted_on": "fixed_400_calibration_accuracy",
+    "calibration_accuracy_at_threshold": 0.985,
+    "calibration_low_confidence_count": 10,
+    "dev_low_confidence_count": 7
+   },
+   {
+    "name": "gate(|p-0.5|<=0.11) -> tfidf-lr",
+    "dev_correct": 2431,
+    "dev_accuracy": 0.9724,
+    "paired_vs_fusion": {
+     "delta_pp": -0.04,
+     "ci95_pp": [
+      -0.36,
+      0.27999999999999997
+     ],
+     "fixed": 7,
+     "broke": 8,
+     "mcnemar_exact_p": 1.0,
+     "bootstrap_replicates": 20000,
+     "bootstrap_seed": 20261018,
+     "bootstrap_method": "paired sample bootstrap over the fixed 2500-row development set"
+    },
+    "threshold_fitted_on": "fixed_400_calibration_accuracy",
+    "calibration_accuracy_at_threshold": 0.9875,
+    "calibration_low_confidence_count": 10,
+    "dev_low_confidence_count": 30
+   },
+   {
+    "name": "gate(|p-0.5|<=0.02) -> laya-new-2048",
+    "dev_correct": 2432,
+    "dev_accuracy": 0.9728,
+    "paired_vs_fusion": {
+     "delta_pp": 0.0,
+     "ci95_pp": [
+      -0.12,
+      0.12
+     ],
+     "fixed": 1,
+     "broke": 1,
+     "mcnemar_exact_p": 1.0,
+     "bootstrap_replicates": 20000,
+     "bootstrap_seed": 20261018,
+     "bootstrap_method": "paired sample bootstrap over the fixed 2500-row development set"
+    },
+    "threshold_fitted_on": "fixed_400_calibration_accuracy",
+    "calibration_accuracy_at_threshold": 0.985,
+    "calibration_low_confidence_count": 10,
+    "dev_low_confidence_count": 7
+   }
+  ]
+ },
+ "pairwise_flips_strong_views": {
+  "laya-main-fusion | deberta-s42": [
+   0.0176,
+   44,
+   2403,
+   21,
+   23,
+   53
+  ],
+  "laya-main-fusion | fusion-50_50(laya+deberta)": [
+   0.0072,
+   18,
+   2419,
+   5,
+   13,
+   63
+  ],
+  "laya-main-fusion | laya-new-512(orig-data)": [
+   0.016,
+   40,
+   2396,
+   28,
+   12,
+   64
+  ],
+  "laya-main-fusion | laya-new-2048(orig-data)": [
+   0.0168,
+   42,
+   2395,
+   29,
+   13,
+   63
+  ],
+  "laya-main-fusion | laya-revised-labels-512": [
+   0.0184,
+   46,
+   2394,
+   30,
+   16,
+   60
+  ],
+  "laya-main-fusion | cpu-alt/regularized_logit": [
+   0.0084,
+   21,
+   2419,
+   5,
+   16,
+   60
+  ],
+  "laya-main-fusion | bow-nb/tfidf_lr/calibrated": [
+   0.0808,
+   202,
+   2250,
+   174,
+   28,
+   48
+  ],
+  "laya-main-fusion | bow-nb/nb_ngram_lr/calibrated": [
+   0.0728,
+   182,
+   2274,
+   150,
+   32,
+   44
+  ],
+  "laya-main-fusion | token-query/mean/branch": [
+   0.0028,
+   7,
+   2419,
+   5,
+   2,
+   74
+  ],
+  "deberta-s42 | fusion-50_50(laya+deberta)": [
+   0.0104,
+   26,
+   2416,
+   10,
+   16,
+   58
+  ],
+  "deberta-s42 | laya-new-512(orig-data)": [
+   0.0208,
+   52,
+   2391,
+   35,
+   17,
+   57
+  ],
+  "deberta-s42 | laya-new-2048(orig-data)": [
+   0.0256,
+   64,
+   2385,
+   41,
+   23,
+   51
+  ],
+  "deberta-s42 | laya-revised-labels-512": [
+   0.0216,
+   54,
+   2391,
+   35,
+   19,
+   55
+  ],
+  "deberta-s42 | cpu-alt/regularized_logit": [
+   0.0092,
+   23,
+   2419,
+   7,
+   16,
+   58
+  ],
+  "deberta-s42 | bow-nb/tfidf_lr/calibrated": [
+   0.08,
+   200,
+   2252,
+   174,
+   26,
+   48
+  ],
+  "deberta-s42 | bow-nb/nb_ngram_lr/calibrated": [
+   0.0744,
+   186,
+   2273,
+   153,
+   33,
+   41
+  ],
+  "deberta-s42 | token-query/mean/branch": [
+   0.0188,
+   47,
+   2400,
+   26,
+   21,
+   53
+  ],
+  "fusion-50_50(laya+deberta) | laya-new-512(orig-data)": [
+   0.0144,
+   36,
+   2402,
+   30,
+   6,
+   62
+  ],
+  "fusion-50_50(laya+deberta) | laya-new-2048(orig-data)": [
+   0.0184,
+   46,
+   2397,
+   35,
+   11,
+   57
+  ],
+  "fusion-50_50(laya+deberta) | laya-revised-labels-512": [
+   0.0184,
+   46,
+   2398,
+   34,
+   12,
+   56
+  ],
+  "fusion-50_50(laya+deberta) | cpu-alt/regularized_logit": [
+   0.0012,
+   3,
+   2432,
+   0,
+   3,
+   65
+  ],
+  "fusion-50_50(laya+deberta) | bow-nb/tfidf_lr/calibrated": [
+   0.0792,
+   198,
+   2256,
+   176,
+   22,
+   46
+  ],
+  "fusion-50_50(laya+deberta) | bow-nb/nb_ngram_lr/calibrated": [
+   0.072,
+   180,
+   2279,
+   153,
+   27,
+   41
+  ],
+  "fusion-50_50(laya+deberta) | token-query/mean/branch": [
+   0.0084,
+   21,
+   2416,
+   16,
+   5,
+   63
+  ],
+  "laya-new-2048(orig-data) | laya-revised-labels-512": [
+   0.0192,
+   48,
+   2385,
+   23,
+   25,
+   67
+  ],
+  "laya-new-2048(orig-data) | cpu-alt/regularized_logit": [
+   0.0196,
+   49,
+   2397,
+   11,
+   38,
+   54
+  ],
+  "laya-new-2048(orig-data) | bow-nb/tfidf_lr/calibrated": [
+   0.0816,
+   204,
+   2241,
+   167,
+   37,
+   55
+  ],
+  "laya-new-2048(orig-data) | bow-nb/nb_ngram_lr/calibrated": [
+   0.076,
+   190,
+   2262,
+   146,
+   44,
+   48
+  ],
+  "laya-new-2048(orig-data) | token-query/mean/branch": [
+   0.0188,
+   47,
+   2391,
+   17,
+   30,
+   62
+  ],
+  "laya-revised-labels-512 | cpu-alt/regularized_logit": [
+   0.0196,
+   49,
+   2398,
+   12,
+   37,
+   53
+  ],
+  "laya-revised-labels-512 | bow-nb/tfidf_lr/calibrated": [
+   0.084,
+   210,
+   2239,
+   171,
+   39,
+   51
+  ],
+  "laya-revised-labels-512 | bow-nb/nb_ngram_lr/calibrated": [
+   0.0784,
+   196,
+   2260,
+   150,
+   46,
+   44
+  ],
+  "laya-revised-labels-512 | token-query/mean/branch": [
+   0.0188,
+   47,
+   2392,
+   18,
+   29,
+   61
+  ],
+  "cpu-alt/regularized_logit | bow-nb/tfidf_lr/calibrated": [
+   0.078,
+   195,
+   2259,
+   176,
+   19,
+   46
+  ],
+  "cpu-alt/regularized_logit | bow-nb/nb_ngram_lr/calibrated": [
+   0.0708,
+   177,
+   2282,
+   153,
+   24,
+   41
+  ],
+  "cpu-alt/regularized_logit | token-query/mean/branch": [
+   0.0096,
+   24,
+   2416,
+   19,
+   5,
+   60
+  ]
+ },
+ "headroom_arithmetic": {
+  "dev": {
+   "current_best_correct": 2432,
+   "current_best_accuracy": 0.9728,
+   "current_best_errors": 68,
+   "target_98pct_correct": 2450,
+   "net_correct_needed": 18,
+   "implied_fix_rate_of_remaining_errors": 0.2647058823529412
+  },
+  "official_test_aggregates_only": {
+   "source": "reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md",
+   "fusion_50_50_correct": 24257,
+   "fusion_50_50_errors": 743,
+   "target_98pct_correct": 24500,
+   "net_correct_needed": 243,
+   "implied_fix_rate_of_remaining_errors": 0.32705248990578734,
+   "dev_minus_test_pp": {
+    "fusion_50_50": 0.25199999999999667,
+    "original_laya_main": 0.6160000000000054,
+    "deberta": 0.10800000000000809
+   }
+  },
+  "label_ceiling_sensitivity_dev": [
+   {
+    "x_unrecoverable_of_68": 20,
+    "max_dev_correct": 2480,
+    "max_dev_accuracy": 0.992,
+    "dev_98pct_still_reachable": true,
+    "required_fix_rate_of_recoverable_errors": 0.375,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9912588235294117
+   },
+   {
+    "x_unrecoverable_of_68": 30,
+    "max_dev_correct": 2470,
+    "max_dev_accuracy": 0.988,
+    "dev_98pct_still_reachable": true,
+    "required_fix_rate_of_recoverable_errors": 0.47368421052631576,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9868882352941176
+   },
+   {
+    "x_unrecoverable_of_68": 40,
+    "max_dev_correct": 2460,
+    "max_dev_accuracy": 0.984,
+    "dev_98pct_still_reachable": true,
+    "required_fix_rate_of_recoverable_errors": 0.6428571428571429,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9825176470588235
+   },
+   {
+    "x_unrecoverable_of_68": 47,
+    "max_dev_correct": 2453,
+    "max_dev_accuracy": 0.9812,
+    "dev_98pct_still_reachable": true,
+    "required_fix_rate_of_recoverable_errors": 0.8571428571428571,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9794582352941176
+   },
+   {
+    "x_unrecoverable_of_68": 50,
+    "max_dev_correct": 2450,
+    "max_dev_accuracy": 0.98,
+    "dev_98pct_still_reachable": true,
+    "required_fix_rate_of_recoverable_errors": 1.0,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9781470588235294
+   },
+   {
+    "x_unrecoverable_of_68": 55,
+    "max_dev_correct": 2445,
+    "max_dev_accuracy": 0.978,
+    "dev_98pct_still_reachable": false,
+    "required_fix_rate_of_recoverable_errors": 1.3846153846153846,
+    "implied_max_official_test_accuracy_if_same_error_mix": 0.9759617647058824
+   }
+  ]
+ },
+ "verification": {
+  "path": "reports/accuracy-improvement-research-20261018-v1/verification.json",
+  "sha256": "6f7b2c59aa038585321b45d1545e0e5f46ef4e959ee35e94c8725d032e61e2aa",
+  "all_checks_pass": true,
+  "reported_dev_accuracies_all_match": true,
+  "n_reported_vs_recomputed_checked": 31,
+  "mismatches": []
+ },
+ "artifact_data_json": {
+  "path": "artifacts/accuracy-improvement-research-20261018-v1/headroom-analysis-data.json",
+  "sha256": "c55e8aba534df157d99850fc3b83524dd81a9c0cb700589ac629de01922ddf67"
+ },
+ "commands": [
+  "UV_CACHE_DIR=/private/tmp/end-imdb-headroom-uv-cache uv run --locked --offline --no-sync python scripts/analyze_accuracy_headroom.py"
+ ],
+ "caveats": [
+  "oracle numbers are label-aware post-hoc upper bounds, not deployable accuracy; the pool contains near-duplicate and post-hoc-derived views",
+  "the 68-error classification is AI qualitative review of review text, not human adjudication",
+  "all new candidate deltas are exploratory; development set was reused across many studies",
+  "official-test counts are aggregate values copied from an existing report"
+ ]
+}

@@ -1,0 +1,278 @@
+{
+ "purpose": "independent re-derivation of the report's headline numbers from frozen local files",
+ "run_id": "accuracy-improvement-research-20261018-v1/headroom",
+ "generated_utc": "2026-10-18T03:21:46.324268+00:00",
+ "checks": {
+  "fusion_50_50_dev_2432": true,
+  "fusion_50_50_dev_errors_68": true,
+  "classic_oracle_2460_98_40pct": true,
+  "classic_22_files_18_vectors": true,
+  "classic_all_wrong_40": true,
+  "classic_grouped_40_15_24_84_12_2325": true,
+  "v2_candidate_recomputed_2435": true,
+  "v2_candidate_exact_binary_match": true,
+  "v2_candidate_fixed3_broke0": true,
+  "official_test_aggregate_arithmetic": true,
+  "reported_dev_accuracies_all_match": true,
+  "calibration_views_all_have_dev_twin": true,
+  "dev_label_agreement_all_sources": true
+ },
+ "all_checks_pass": true,
+ "reported_vs_recomputed_development_correct": [
+  {
+   "view": "baseline-s42/head_tail",
+   "reported_correct": 2402,
+   "recomputed_correct": 2402,
+   "match": true,
+   "source": "all-experiments-metrics M022 (96.08%)"
+  },
+  {
+   "view": "combined-s42/head_tail",
+   "reported_correct": 2417,
+   "recomputed_correct": 2417,
+   "match": true,
+   "source": "all-experiments-metrics M028 (96.68%)"
+  },
+  {
+   "view": "baseline-s43/head_tail",
+   "reported_correct": 2421,
+   "recomputed_correct": 2421,
+   "match": true,
+   "source": "all-experiments-metrics M025 (96.84%)"
+  },
+  {
+   "view": "combined-s43/head_tail",
+   "reported_correct": 2416,
+   "recomputed_correct": 2416,
+   "match": true,
+   "source": "all-experiments-metrics M031 (96.64%)"
+  },
+  {
+   "view": "prefix-trained/head_tail",
+   "reported_correct": 2416,
+   "recomputed_correct": 2416,
+   "match": true,
+   "source": "all-experiments-metrics M047 (96.64%)"
+  },
+  {
+   "view": "random-window-trained/head_tail",
+   "reported_correct": 2411,
+   "recomputed_correct": 2411,
+   "match": true,
+   "source": "all-experiments-metrics M052 (96.44%)"
+  },
+  {
+   "view": "checkpoint-average-s42/head_tail",
+   "reported_correct": 2416,
+   "recomputed_correct": 2416,
+   "match": true,
+   "source": "all-experiments-metrics M056 (96.64%)"
+  },
+  {
+   "view": "laya-main-fusion",
+   "reported_correct": 2424,
+   "recomputed_correct": 2424,
+   "match": true,
+   "source": "deberta-laya-final-analysis REPORT (96.96%)"
+  },
+  {
+   "view": "fusion-50_50(laya+deberta)",
+   "reported_correct": 2432,
+   "recomputed_correct": 2432,
+   "match": true,
+   "source": "deberta-heterogeneous REPORT (97.28%)"
+  },
+  {
+   "view": "deberta-s42",
+   "reported_correct": 2426,
+   "recomputed_correct": 2426,
+   "match": true,
+   "source": "deberta-heterogeneous REPORT (97.04%)"
+  },
+  {
+   "view": "laya-new-512(orig-data)",
+   "reported_correct": 2408,
+   "recomputed_correct": 2408,
+   "match": true,
+   "source": "laya-context-pair REPORT (96.32%)"
+  },
+  {
+   "view": "laya-new-2048(orig-data)",
+   "reported_correct": 2408,
+   "recomputed_correct": 2408,
+   "match": true,
+   "source": "laya-context-pair REPORT (96.32%)"
+  },
+  {
+   "view": "laya-revised-labels-512",
+   "reported_correct": 2410,
+   "recomputed_correct": 2410,
+   "match": true,
+   "source": "laya-reviewed-data REPORT (96.40%)"
+  },
+  {
+   "view": "cpu-alt/regularized_logit",
+   "reported_correct": 2435,
+   "recomputed_correct": 2435,
+   "match": true,
+   "source": "final-cpu-alternatives-v2 REPORT (97.40%)"
+  },
+  {
+   "view": "cpu-alt/long_context",
+   "reported_correct": 2432,
+   "recomputed_correct": 2432,
+   "match": true,
+   "source": "final-cpu-alternatives-v2 REPORT (97.28%)"
+  },
+  {
+   "view": "cpu-alt/mlp_dropout1",
+   "reported_correct": 2431,
+   "recomputed_correct": 2431,
+   "match": true,
+   "source": "final-cpu-alternatives-v2 REPORT (97.24%)"
+  },
+  {
+   "view": "cpu-alt/mlp_dropout4",
+   "reported_correct": 2431,
+   "recomputed_correct": 2431,
+   "match": true,
+   "source": "final-cpu-alternatives-v2 REPORT (97.24%)"
+  },
+  {
+   "view": "bow-nb/tfidf_lr/fusion",
+   "reported_correct": 2433,
+   "recomputed_correct": 2433,
+   "match": true,
+   "source": "bow-nb REPORT (97.32%)"
+  },
+  {
+   "view": "bow-nb/nb_ngram_lr/fusion",
+   "reported_correct": 2432,
+   "recomputed_correct": 2432,
+   "match": true,
+   "source": "bow-nb REPORT (97.28%)"
+  },
+  {
+   "view": "bow-nb/tfidf_lr/calibrated",
+   "reported_correct": 2278,
+   "recomputed_correct": 2278,
+   "match": true,
+   "source": "bow-nb REPORT (91.12%)"
+  },
+  {
+   "view": "bow-nb/nb_ngram_lr/calibrated",
+   "reported_correct": 2306,
+   "recomputed_correct": 2306,
+   "match": true,
+   "source": "bow-nb REPORT (92.24%)"
+  },
+  {
+   "view": "token-query/mean/branch",
+   "reported_correct": 2421,
+   "recomputed_correct": 2421,
+   "match": true,
+   "source": "laya-token-query REPORT (96.84%)"
+  },
+  {
+   "view": "token-query/dense/branch",
+   "reported_correct": 2421,
+   "recomputed_correct": 2421,
+   "match": true,
+   "source": "laya-token-query REPORT (96.84%)"
+  },
+  {
+   "view": "token-query/top32/branch",
+   "reported_correct": 2420,
+   "recomputed_correct": 2420,
+   "match": true,
+   "source": "laya-token-query REPORT (96.80%)"
+  },
+  {
+   "view": "mac-one-epoch-s42",
+   "reported_correct": 2394,
+   "recomputed_correct": 2394,
+   "match": true,
+   "source": "all-experiments-metrics M002 (95.76%)"
+  },
+  {
+   "view": "mac-two-epoch-s42",
+   "reported_correct": 2424,
+   "recomputed_correct": 2424,
+   "match": true,
+   "source": "all-experiments-metrics M005 (96.96%)"
+  },
+  {
+   "view": "head-control-original-s42",
+   "reported_correct": 2413,
+   "recomputed_correct": 2413,
+   "match": true,
+   "source": "laya-head-control M060 (96.52%)"
+  },
+  {
+   "view": "head-control-linear-s42",
+   "reported_correct": 2418,
+   "recomputed_correct": 2418,
+   "match": true,
+   "source": "laya-head-control M061 (96.72%)"
+  },
+  {
+   "view": "frozen-probe-s43/full_model",
+   "reported_correct": 2421,
+   "recomputed_correct": 2421,
+   "match": true,
+   "source": "laya-frozen-probe (96.84%)"
+  },
+  {
+   "view": "frozen-probe-s43/encoder",
+   "reported_correct": 2417,
+   "recomputed_correct": 2417,
+   "match": true,
+   "source": "laya-frozen-probe (96.68%)"
+  },
+  {
+   "view": "frozen-probe-s43/post_head",
+   "reported_correct": 2420,
+   "recomputed_correct": 2420,
+   "match": true,
+   "source": "laya-frozen-probe (96.80%)"
+  }
+ ],
+ "v2_candidate": {
+  "formula_inputs": "positive_probabilities.frozen_main (Laya internal fusion) and positive_probabilities.deberta from reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/predictions.json",
+  "recomputed_correct": 2435,
+  "stored_correct": 2435,
+  "max_abs_probability_difference": 1.1102230246251565e-16,
+  "fixed_error_ids": [
+   "train/neg/2572_1.txt",
+   "train/neg/5026_3.txt",
+   "train/pos/5506_10.txt"
+  ],
+  "new_error_ids": [],
+  "paired": {
+   "delta_pp": 0.12,
+   "ci95_pp": [
+    0.0,
+    0.27999999999999997
+   ],
+   "fixed": 3,
+   "broke": 0,
+   "mcnemar_exact_p": 0.25,
+   "bootstrap_replicates": 20000,
+   "bootstrap_seed": 20261018,
+   "bootstrap_method": "paired sample bootstrap over the fixed 2500-row development set"
+  }
+ },
+ "input_sha256": {
+  "dev_path": "data/processed/validation.jsonl",
+  "dev_sha256": "dbc3205038851d78e3e31ec5e5985005bfc0b53854371bed7eb9c03f764d2094",
+  "cal_manifest": "reports/laya-deberta-calibration-weight-cpu-20261018-v1/frozen.json",
+  "cal_manifest_sha256": "c692c1a45dc78a80e233ee3933dc1014cbd1e0340db736b6b02e8dfdbc81d2b3",
+  "train_path": "data/processed/train.jsonl",
+  "train_sha256": "f39b1e522d3d6375a5f7fc6c254ec3cb2795f956774f09086c6fd755f747acd7"
+ },
+ "method_notes": [
+  "Views are aligned to data/processed/validation.jsonl order by sample_id; every source carrying labels was checked against the canonical labels.",
+  "Official-test per-sample files were never opened. Only aggregate counts copied from reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md are cited.",
+  "McNemar p-values are exact two-sided binomial tests on discordant pairs; bootstrap intervals are paired sample bootstraps over the fixed 2500-row development set."
+ ]
+}

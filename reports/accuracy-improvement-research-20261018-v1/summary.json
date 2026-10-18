@@ -1,0 +1,120 @@
+{
+  "run_id": "accuracy-improvement-research-20261018-v1",
+  "type": "research_synthesis",
+  "date": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "scope": "analysis only: no training, no new inference, no official-test per-sample access; uses frozen development/calibration predictions, published test aggregates, and public literature",
+  "question": "IMDB accuracy 还有多少提升空间，应该如何优化",
+  "headline": "Full-coverage 98% is effectively unreachable under the current fixed splits, sealed test, and local-only compute; the current 97.028% test result is already near the publicly verifiable ceiling and near the human-validated 2.90% test-label-noise ceiling. Realistic remaining full-coverage headroom is ~+0.1-0.3 pp and requires a genuinely new model/training signal, not post-processing. The only verified >=98% result is selective classification: 99.23% retained accuracy at 88.93% actual test coverage.",
+  "baselines": {
+    "official_test_laya_plus_deberta_fusion_50_50": {"correct": 24257, "n": 25000, "accuracy": 0.97028, "wilson95": [0.9681016758508162, 0.9723138214528947]},
+    "official_test_deberta_single": {"correct": 24233, "n": 25000, "accuracy": 0.96932},
+    "official_test_old_laya_main_fusion": {"correct": 24086, "n": 25000, "accuracy": 0.96344},
+    "dev_laya_plus_deberta_fusion": {"correct": 2432, "n": 2500, "accuracy": 0.9728, "errors": 68},
+    "dev_exploratory_best_regularized_logit": {"correct": 2435, "n": 2500, "accuracy": 0.974, "paired_vs_fusion": {"fixed": 3, "broke": 0, "delta_pp": 0.12, "ci95_pp": [0.0, 0.28], "mcnemar_exact_p": 0.25}},
+    "selective_official_test": {"calibration_target_coverage": 0.9, "actual_coverage": 0.88932, "retained": 22233, "correct": 22062, "accuracy": 0.992309},
+    "selective_dev_fixed_coverage": {"coverage_90pct_accuracy": 0.9884, "coverage_80pct_accuracy": 0.9955}
+  },
+  "distance_to_98pct": {
+    "dev": {"correct_needed": 2450, "net_correct_needed_from_2432": 18, "share_of_68_errors": 0.2647, "net_needed_from_2435": 15},
+    "official_test": {"correct_needed": 24500, "net_correct_needed_from_24257": 243, "share_of_743_errors": 0.3271},
+    "dev_test_gap_pp": {"fusion_50_50": 0.252, "old_laya_main": 0.616, "deberta_mixed_backend": 0.108}
+  },
+  "error_structure": {
+    "dev_fusion_errors": 68,
+    "in_common_47_three_pipeline_errors": 47,
+    "fusion_specific_errors": 21,
+    "fixed_by_at_least_one_of_57_views": 49,
+    "wrong_in_all_57_views": 19,
+    "fusion_error_confidence": {"ge_0.95": 29, "ge_0.90": 36, "median": 0.9198},
+    "truncation_among_68": {"laya": 10, "deberta": 8, "both": 8},
+    "ai_qualitative_classification_68": {"label_text_conflict_candidate": 11, "evaluative_ambiguity_irony_axis": 46, "truncation_missing_evidence": 1, "clear_model_error": 7, "uncertain": 3},
+    "caveat": "classification is AI qualitative review, not independent human adjudication; conflicts are candidates, not confirmed mislabels"
+  },
+  "oracles": {
+    "classic_22_files_18_distinct_views": {"oracle_correct": 2460, "n": 2500, "oracle_accuracy": 0.984, "all_wrong": 40, "grouped": {"0": 40, "1-3": 15, "4-9": 24, "10-16": 84, "17": 12, "18": 2325}},
+    "expanded_57_distinct_views": {"oracle_correct": 2481, "n": 2500, "oracle_accuracy": 0.9924, "all_wrong": 19},
+    "single_model_branch_pool_46_views": {"oracle_correct": 2481, "all_wrong": 19},
+    "two_view_laya_deberta": {"oracle_correct": 2447, "oracle_accuracy": 0.9788},
+    "six_robust_loss_models": {"oracle_correct": 2452, "all_wrong": 48},
+    "cumulative": [2424, 2447, 2453, 2457, 2470, 2473, 2474, 2474],
+    "caveat": "label-aware post-hoc upper bounds over a pool containing near-duplicates and post-hoc views; not deployable accuracy"
+  },
+  "postprocessing_saturation": {
+    "calibration_rows": 400,
+    "best_rule_dev_correct": 2435,
+    "rules": {"ridge_logit_l2_0.01": 2435, "ridge_logit_l2_0": 2434, "equal_weight": 2432, "plus_2048": 2435, "plus_revised_labels": 2431, "plus_tfidf": 2433, "plus_nb_and_mlps": 2434, "majority_3_views": 2427, "low_confidence_gate_best": 2433},
+    "best_gain_vs_2435": {"fixed": 3, "broke": 0, "mcnemar_exact_p": 0.25, "ci95_pp": [0.0, 0.28]},
+    "capture_rate_observed_two_model": 0.348,
+    "required_capture_to_reach_dev_98_from_2435": {"of_46_oracle_uplift": 0.326, "of_49_fixable_errors": 0.367},
+    "calibration_optimism_pp": 1.4
+  },
+  "label_noise": {
+    "source": "Northcutt et al., NeurIPS 2021 D&B, arXiv:2103.14749 Table 1/2 (re-checked 2026-10-18); see literature.md",
+    "human_validated_test_mislabel_rate": 0.029,
+    "validated_errors": 725,
+    "correctable": 173,
+    "non_agreement": 552,
+    "simple_noise_ceiling_accuracy": 0.971,
+    "current_test_errors_above_ceiling": 18,
+    "local_training_review": {"candidates": 94, "flipped": 61, "kept": 23, "deleted": 3, "pending": 7, "flip_share_of_adjudicated_confident_errors": 0.671, "caveat": "not a general training-pool noise rate"},
+    "caveat": "2.90% is a human-validated lower-bound estimate; 97.10% is this report's arithmetic ceiling, not a proven bound"
+  },
+  "literature_context": {
+    "comparable_public_official_25k_25k": {"xlnet_large_2019": 0.968, "roberta_large_2024_preprint": 0.9654, "roberta_large_plus_llm_labeled_50k": 0.9668, "pwc_2025_06_top_selfreported": 0.9668},
+    "higher_claims_status": {"dv_cosine_97.42": "corrected to 93.68 (test labels implicitly used)", "bert_bilstm_97.67": "public implementation re-splits merged train/test", "cfa_heterogeneous_ensemble_97.072": "combination/hyperparameters selected on test performance; unreplicated", "sentimentbert_98.12": "protocol unclear / recommender-paper auxiliary module"},
+    "llm_reference": {"gpt4_zeroshot_full_test": 0.964, "llama3_8b_qlora_subset": 0.912},
+    "assessment": "no verified, protocol-compliant, independently replicated full-test >=97.0% result found; 98% full coverage is not supported by public evidence"
+  },
+  "optimization_options": [
+    {"priority": "P1", "name": "new genuinely diverse strong model (DeBERTa-v3-large seed 43 or another family)", "expected_gain_pp": [0.05, 0.25], "local_cost_hours": [10, 13], "gate": "frozen ensemble dev >= 97.55% and net +3 vs 2435 and nested-calibration-CV fluctuation < 0.3 pp", "can_reach_98pct": false},
+    {"priority": "P2", "name": "DAPT/TAPT on official 50k unlabeled reviews (semi-supervised protocol, disclose)", "expected_gain_pp": [0.1, 0.3], "local_cost_hours": [8, 10], "gate": "single model dev >= 97.3% and ensemble >= 97.55%", "can_reach_98pct": false},
+    {"priority": "P3", "name": "retrain on user-revised labels (61 flips, 3 deletions; Laya already +0.08 pp n.s.)", "expected_gain_pp": [0.05, 0.2], "local_cost_hours": [10, 13], "gate": "mean over 2 seeds >= +0.15 pp", "can_reach_98pct": false},
+    {"priority": "P4", "name": "5-fold bagging", "expected_gain_pp": [0.1, 0.4], "local_cost_hours": [19, 23], "gate": "first two folds mean >= 97.5%", "can_reach_98pct": false},
+    {"priority": "delivery", "name": "selective classification with frozen calibration thresholds", "status": "already achieved: 99.23% at 88.93% actual coverage (not full coverage)", "can_reach_98pct": "only with coverage < 100%"}
+  ],
+  "do_not_do": [
+    "more fusion-weight / view / window / calibration search on frozen outputs (saturated at 2435, p=0.25)",
+    "dev-set-driven selection of seed/epoch/TTA/members (dev reused; optimistic)",
+    "official-test tuning, weight changes, or candidate re-selection (test already used; not independent)",
+    "LLM prompting/QLoRA as a classifier (no evidence; local weights absent; GPT-4 zero-shot 96.40%, Llama-3-8B QLoRA 91.2%)",
+    "external labeled data or test-text adaptation (out of scope / violates sealing)",
+    "relabeling dev/test to report higher accuracy",
+    "claiming 98% / SOTA"
+  ],
+  "recommendation": "Stop gain search and package the course deliverables: report 97.028% full-coverage test + 99.23% at 88.93% coverage selective result + error/label-noise analysis + negative results; present 98% as a research aspiration with the three supporting facts (public comparable SOTA ~96.8%, human-validated 2.90% test label noise implying ~97.10% ceiling, two-view oracle 97.88%). If the user explicitly wants one more attempt, run at most P1 or P2 with the predeclared gate; expected test 97.1-97.5%, not 98%.",
+  "verified_by": {
+    "file": "verification.md",
+    "verifier": "independent teammate",
+    "checks_total": 63,
+    "checks_pass": 62,
+    "checks_fail": 0,
+    "discrepancies_found_and_status": [
+      "D1 medium: experiment-plan stale 75% capture argument -> rewritten to 32.6% (15/46) / 36.7% (18/49); fixed post-verification",
+      "D2 low: experiment-plan 'test 90% coverage' -> corrected to calibration target 90% / actual coverage 88.932%; fixed",
+      "D3 low: experiment-plan residual balance direction -> corrected to >=1.43 (worst-case lower bound); fixed",
+      "D4 low: literature 'only higher claim' wording -> qualified; fixed",
+      "D5-D7 minor narrative/denominator wording; disclosed, no impact on headline numbers"
+    ]
+  },
+  "evidence_files": {
+    "synthesis_report": "reports/accuracy-improvement-research-20261018-v1/REPORT.md",
+    "headroom_analysis": "reports/accuracy-improvement-research-20261018-v1/headroom-analysis.md",
+    "headroom_summary": "reports/accuracy-improvement-research-20261018-v1/headroom-summary.json",
+    "literature": "reports/accuracy-improvement-research-20261018-v1/literature.md",
+    "experiment_plan": "reports/accuracy-improvement-research-20261018-v1/experiment-plan.md",
+    "independent_verification": "reports/accuracy-improvement-research-20261018-v1/verification.md",
+    "analysis_script": "scripts/analyze_accuracy_headroom.py",
+    "analysis_data": "artifacts/accuracy-improvement-research-20261018-v1/headroom-analysis-data.json",
+    "error_evidence": "artifacts/accuracy-improvement-research-20261018-v1/fusion-68-error-evidence.json"
+  },
+  "limitations": [
+    "official test is not independent (historically used); its numbers are aggregate copies, not re-verified per sample",
+    "development set was reused across many studies; all dev deltas are exploratory",
+    "oracles are label-aware post-hoc upper bounds, not deployable accuracy",
+    "68-error classification and label-noise anchors are AI qualitative, not human adjudication",
+    "external literature numbers are self-reported and were not re-run by the project; some sources were inaccessible",
+    "inventory completeness relies on the analyst's provenance scan (2,035 files scanned, 587 test-path files skipped)",
+    "no new training/inference was performed in this research round; all P1-P4 expectations are estimates"
+  ]
+}
