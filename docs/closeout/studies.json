@@ -1,0 +1,879 @@
+{
+  "as_of": "2026-10-18",
+  "studies": [
+    {
+      "id": "C01",
+      "title": "数据划分、预处理与分词",
+      "status": "已验证",
+      "evidence": [
+        "reports/project-consolidation-20261013-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/prepare_data.py",
+        "scripts/verify_data.py",
+        "scripts/cache_tokens.py",
+        "scripts/validate_rust_tokenizer.py"
+      ],
+      "design": [],
+      "note": "22100 梯度/400 校准/2500 开发；官方测试 25000。数据目录不进入源码包。"
+    },
+    {
+      "id": "C02",
+      "title": "ModernBERT 历史基线",
+      "status": "历史方案比较",
+      "evidence": [
+        "reports/model-comparison/REPORT.md"
+      ],
+      "code": [
+        "scripts/train_baseline.py",
+        "scripts/modernbert_mlx.py",
+        "scripts/validate_modernbert.py"
+      ],
+      "design": [],
+      "note": "94.64% 是 256-token 历史基线；不是与 Laya 等预算消融。"
+    },
+    {
+      "id": "C03",
+      "title": "Laya CE / RLCD 先导与首次全量",
+      "status": "已完成历史训练",
+      "evidence": [
+        "reports/laya-backend-comparison/REPORT.md",
+        "reports/laya-mac-ce-comparison-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/train_laya.py",
+        "scripts/predict.py"
+      ],
+      "design": [],
+      "note": "默认 predict 仍为 95.76% 历史单模型；全量公平 RLCD 迁移未完成。"
+    },
+    {
+      "id": "C04",
+      "title": "CUDA 数值准入与跨后端",
+      "status": "已验证并保留失败",
+      "evidence": [
+        "reports/cuda-preparation-v1/REPORT.md",
+        "reports/laya-determinism-completed-20261012-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/audit_cuda_training.py",
+        "scripts/cuda_numerics.py",
+        "scripts/laya_determinism.py"
+      ],
+      "design": [],
+      "note": "Laya FP32 准入；AMP FP16 溢出。DeBERTa 后续 BF16 是单独协议，不能混用结论。"
+    },
+    {
+      "id": "C05",
+      "title": "warmup、平滑、R-Drop 与种子",
+      "status": "未检出稳定增益",
+      "evidence": [
+        "reports/rtx4090-regularization-completed-v1/REPORT.md",
+        "reports/rtx4090-combined-completed-v1/REPORT.md",
+        "reports/rtx4090-rdrop-completed-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_optimization.py",
+        "scripts/laya_rdrop.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-11-laya-ce-rdrop-design.md"
+      ],
+      "note": ""
+    },
+    {
+      "id": "C06",
+      "title": "困难样本重采样与严格配对",
+      "status": "负结果与漂移诊断",
+      "evidence": [
+        "reports/laya-strict-pair-result-check-20261013-v1/REPORT.md",
+        "reports/laya-resampling45-control-drift-audit-v2/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_resampling.py",
+        "scripts/run_laya_strict_pair.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-13-laya-strict-pair-design.md"
+      ],
+      "note": ""
+    },
+    {
+      "id": "C07",
+      "title": "人工复核与语义增强",
+      "status": "已完成；收益未复现",
+      "evidence": [
+        "reports/semantic30-abc-completed-20261013-v1/REPORT.md",
+        "reports/semantic-pair-pilot-20261013-v2/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_semantic_training.py",
+        "scripts/run_laya_semantic_abc.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-13-semantic-training-adapter-design.md"
+      ],
+      "note": ""
+    },
+    {
+      "id": "C08",
+      "title": "固定权重首尾视图与校准",
+      "status": "已完成诊断",
+      "evidence": [
+        "reports/laya-posthoc-consolidated-v2/REPORT.md"
+      ],
+      "code": [
+        "scripts/export_laya_posthoc.py",
+        "scripts/laya_posthoc.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-11-laya-posthoc-headtail-design.md"
+      ],
+      "note": "区分固定权重推理变化与重新训练。"
+    },
+    {
+      "id": "C09",
+      "title": "候选顺序、窗口训练、参数平均",
+      "status": "未达继续门槛",
+      "evidence": [
+        "reports/laya-decision-execution-20261014-v1-final-study/summary.json",
+        "reports/laya-checkpoint-average-prefix-s42-strict-20261014-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_decision_views.py",
+        "scripts/run_laya_decision_pipeline.py",
+        "scripts/run_laya_checkpoint_average.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-13-laya-decision-factor-attribution-design.md"
+      ],
+      "note": ""
+    },
+    {
+      "id": "C10",
+      "title": "Laya 内部多视图与双模型融合",
+      "status": "历史正式主方案",
+      "evidence": [
+        "reports/laya-probability-fusion-s43-s42-20261014-v1/REPORT.md",
+        "reports/laya-frozen-official-test-20261014-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_probability_fusion.py",
+        "scripts/predict_laya_fusion.py"
+      ],
+      "design": [
+        "docs/superpowers/plans/2026-10-14-laya-probability-fusion.md"
+      ],
+      "note": "开发 96.96%、旧正式测试 96.344%；97.00% 为预声明辅助方案。"
+    },
+    {
+      "id": "C11",
+      "title": "MLX 概率误差定位与精确 FP32",
+      "status": "数值核验完成",
+      "evidence": [
+        "reports/laya-mlx-precision-diagnosis-20261014-v1/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_mlx_precise_inference.py",
+        "scripts/reproduce_mlx_matmul_precision.py"
+      ],
+      "design": [
+        "docs/superpowers/plans/2026-10-14-laya-mlx-precise-inference.md"
+      ],
+      "note": "类别一致不能替代概率误差准入；吞吐由对应报告定义。"
+    },
+    {
+      "id": "C12",
+      "title": "风险—覆盖与拒答",
+      "status": "已完成；非全覆盖 accuracy",
+      "evidence": [
+        "reports/laya-risk-coverage-20261015-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/run_laya_risk_coverage.py"
+      ],
+      "design": [],
+      "note": "固定覆盖排序曲线与校准阈值部署结果不同；不能与全覆盖 97.028% 混排。"
+    },
+    {
+      "id": "C13",
+      "title": "冻结表示与 L2 决策头配对训练",
+      "status": "统计完成；L2 权重缺失",
+      "evidence": [
+        "reports/laya-frozen-probe-baseline-s43-mps-fp32-20261015-v1/REPORT.md",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-head-control-delivery-status-20261015-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_frozen_probe.py",
+        "scripts/laya_head_control.py",
+        "scripts/run_laya_head_study.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-15-laya-head-control-design.md"
+      ],
+      "note": "原始/线性头均值 96.520/96.493%；L2 的 12 份权重未回传，不称可交付。"
+    },
+    {
+      "id": "C14",
+      "title": "鲁棒损失与逐轮权重交付",
+      "status": "六模型结果完成",
+      "evidence": [
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-robust-loss-modal-recovery-20261016-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_robust_training.py",
+        "scripts/laya_checkpoint_delivery.py",
+        "scripts/laya_modal_recovery.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-15-laya-robust-loss-and-checkpoint-delivery-design.md"
+      ],
+      "note": "CE96.32%、mixed96.40%；最终模型与完整优化器恢复包交付分别认定。"
+    },
+    {
+      "id": "C15",
+      "title": "512/2048 长上下文同预算训练",
+      "status": "已完成最终评估",
+      "evidence": [
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/local-delivery.json"
+      ],
+      "code": [
+        "scripts/laya_context_training.py",
+        "scripts/laya_context_pair.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-16-laya-context-pair-design.md"
+      ],
+      "note": "全局同为 96.32%；长组+6、短组-6。顶层 REPORT 为启动快照。"
+    },
+    {
+      "id": "C16",
+      "title": "94 条训练复核与用户修订 v2",
+      "status": "已完成最终评估",
+      "evidence": [
+        "reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/REPORT.md",
+        "reports/laya-reviewed-data-s42-modal-20261017-v1/local-delivery.json"
+      ],
+      "code": [
+        "scripts/apply_laya_label_revision_v2.py",
+        "scripts/laya_reviewed_data_study.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-17-laya-reviewed-data-training-design.md"
+      ],
+      "note": "61 翻标+3 删除；原始划分与原标签文件保留；开发 96.32→96.40%，p=.883。"
+    },
+    {
+      "id": "C17",
+      "title": "长度路由与长文融合",
+      "status": "探索性缓存分析",
+      "evidence": [
+        "reports/laya-length-router-20261017-v1/REPORT.md",
+        "reports/laya-long-fusion-bc-20261017-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/laya_length_router.py",
+        "scripts/analyze_laya_long_fusion_bc.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-17-laya-length-router-design.md"
+      ],
+      "note": "固定路由 96.56%，对 512 净+6、p=.109；不是已验收部署。"
+    },
+    {
+      "id": "C18",
+      "title": "DeBERTa-v3 异构训练与恢复",
+      "status": "两轮最终模型本地交付",
+      "evidence": [
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/REPORT.md",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/local-delivery.json"
+      ],
+      "code": [
+        "scripts/deberta_inputs.py",
+        "scripts/deberta_budget_training.py",
+        "scripts/deberta_budget_study.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-17-deberta-budget7-design.md"
+      ],
+      "note": "CUDA BF16 开发 97.04%；之前 FP32 中断与试跑记录保留。"
+    },
+    {
+      "id": "C19",
+      "title": "Laya+DeBERTa 固定异构融合",
+      "status": "有开发与正式测试成绩",
+      "evidence": [
+        "reports/deberta-laya-final-analysis-20261018-v1/REPORT.md",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/deberta_final_analysis.py",
+        "scripts/deberta_final_evaluation.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-18-deberta-final-evaluation-design.md"
+      ],
+      "note": "开发 97.28%；正式测试 97.028%，CPU FP32 DeBERTa+旧 CUDA Laya 缓存；不是部署入口成绩。"
+    },
+    {
+      "id": "C20",
+      "title": "CPU TF-IDF / NB-ngram 分支",
+      "status": "互补有限",
+      "evidence": [
+        "reports/bow-nb-complementarity-cpu-20261018-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/bow_nb_branch.py",
+        "scripts/run_bow_nb_study.py",
+        "scripts/verify_bow_nb_study.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-18-bow-nb-complementarity-design.md"
+      ],
+      "note": "TF-IDF 融合 97.32%，净+1，p=1；NB 融合 97.28%。"
+    },
+    {
+      "id": "C21",
+      "title": "BERT+BiLSTM 公开文献代码审计",
+      "status": "静态审计完成",
+      "evidence": [
+        "reports/bert-bilstm-literature-audit-20261018-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/audit_bert_bilstm_literature.py"
+      ],
+      "design": [],
+      "note": "公开代码分区不兼容；未证实电影泄漏或序列退化；不据此否定论文 97.67%。"
+    },
+    {
+      "id": "C22",
+      "title": "置信度与固定校准权重",
+      "status": "未获提升",
+      "evidence": [
+        "reports/laya-deberta-calibration-weight-cpu-20261018-v1/REPORT.md"
+      ],
+      "code": [
+        "scripts/run_laya_deberta_calibration_weight.py"
+      ],
+      "design": [],
+      "note": "校准 NLL 权重开发 97.16%；二模型按绝对置信度选边与 50:50 在二分类下类别相同，不是独立改进。"
+    },
+    {
+      "id": "C23",
+      "title": "正则化 logit、长文分支与多样本 Dropout",
+      "status": "探索性最高分，未达继续门槛",
+      "evidence": [
+        "reports/final-cpu-alternatives-20261018-v2/REPORT.md",
+        "reports/final-cpu-alternatives-20261018-v2/independent-verification.json"
+      ],
+      "code": [
+        "scripts/run_final_cpu_alternatives_v2.py",
+        "scripts/verify_final_cpu_alternatives.py"
+      ],
+      "design": [],
+      "note": "97.40% 仅开发；相对 97.28 净+3，p=.25，NLL/ECE 变差；无对应正式测试。v1 故障保留。"
+    },
+    {
+      "id": "C24",
+      "title": "全 token 情感查询与 Top-32 稀疏聚合",
+      "status": "九个头完成；没有增益",
+      "evidence": [
+        "reports/laya-token-query-mps-fp32-20261018-v1/REPORT.md",
+        "reports/laya-token-query-mps-fp32-20261018-v1/independent-verification.json"
+      ],
+      "code": [
+        "scripts/token_query_head.py",
+        "scripts/run_token_query_study.py",
+        "scripts/verify_token_query_study.py"
+      ],
+      "design": [
+        "docs/superpowers/specs/2026-10-18-token-query-head-design.md"
+      ],
+      "note": "冻结编码器；三种子各 5 轮。稠密 96.84%、融合 97.28%；Top32 融合 97.24%。非 DSA 复现。"
+    }
+  ],
+  "metric_sources": [
+    {
+      "file": "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/summary.json",
+      "group": "长上下文",
+      "protocol": "同 seed42、原标签、两轮 FP32、首尾、最终 epoch2",
+      "split": "development",
+      "seed": 42,
+      "note": "已冻结摘要；不代表独立训练次数。",
+      "entries": [
+        {
+          "label": "Laya 512 token",
+          "keys": [
+            "models",
+            "512",
+            "groups",
+            "all",
+            "calibrated"
+          ],
+          "expected": 0.9632
+        },
+        {
+          "label": "Laya 2048 token",
+          "keys": [
+            "models",
+            "2048",
+            "groups",
+            "all",
+            "calibrated"
+          ],
+          "expected": 0.9632
+        }
+      ]
+    },
+    {
+      "file": "reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/summary.json",
+      "group": "标签修订",
+      "protocol": "61 翻标+3 删除；原始 512 对照；最终 epoch2",
+      "split": "development",
+      "seed": 42,
+      "note": "改标签和删除联合因素，原始数据不覆盖。",
+      "entries": [
+        {
+          "label": "用户修订 v2",
+          "keys": [
+            "groups",
+            "all",
+            "revised",
+            "calibrated"
+          ],
+          "expected": 0.964
+        }
+      ]
+    },
+    {
+      "file": "reports/laya-length-router-20261017-v1/summary.json",
+      "group": "长度路由",
+      "protocol": "原 review tokens<=466 走 512，长文走 2048",
+      "split": "development",
+      "seed": 42,
+      "note": "在观察开发分组后提出；缓存分析，不是独立盲评。",
+      "entries": [
+        {
+          "label": "固定长度路由",
+          "keys": [
+            "groups",
+            "all",
+            "component_temperature_calibrated"
+          ],
+          "expected": 0.9656
+        }
+      ]
+    },
+    {
+      "file": "reports/laya-long-fusion-bc-20261017-v1/summary.json",
+      "group": "长文融合",
+      "protocol": "固定旧模型与长文分支，400 校准后冻结",
+      "split": "development",
+      "seed": "见协议",
+      "note": "已冻结摘要；不代表独立训练次数。",
+      "entries": [
+        {
+          "label": "路由 A",
+          "keys": [
+            "metrics",
+            "A",
+            "all"
+          ],
+          "expected": 0.9656
+        },
+        {
+          "label": "512/2048 融合 B",
+          "keys": [
+            "metrics",
+            "B",
+            "all"
+          ],
+          "expected": 0.9652
+        },
+        {
+          "label": "旧主方案+长文 C",
+          "keys": [
+            "metrics",
+            "C",
+            "all"
+          ],
+          "expected": 0.9696
+        },
+        {
+          "label": "辅助方案+长文 C_aux",
+          "keys": [
+            "metrics",
+            "C_aux",
+            "all"
+          ],
+          "expected": 0.97
+        }
+      ]
+    },
+    {
+      "file": "reports/deberta-laya-final-analysis-20261018-v1/summary.json",
+      "group": "异构融合开发",
+      "protocol": "DeBERTa CUDA BF16；原 Laya 主概率；固定 50:50",
+      "split": "development",
+      "seed": "见协议",
+      "note": "开发后端与正式测试不同，不声称逐位等价。",
+      "entries": [
+        {
+          "label": "Laya 原主方案",
+          "keys": [
+            "metrics",
+            "main"
+          ],
+          "expected": 0.9696
+        },
+        {
+          "label": "DeBERTa-v3-large",
+          "keys": [
+            "metrics",
+            "deberta"
+          ],
+          "expected": 0.9704
+        },
+        {
+          "label": "固定异构融合",
+          "keys": [
+            "metrics",
+            "fusion"
+          ],
+          "expected": 0.9728
+        }
+      ]
+    },
+    {
+      "file": "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "group": "异构融合正式测试",
+      "protocol": "完整官方 25k；CPU FP32 DeBERTa 与旧 CUDA Laya 缓存",
+      "split": "official_test",
+      "seed": "见协议",
+      "note": "只读取既有聚合摘要；不重新打开测试正文或逐样本预测。",
+      "entries": [
+        {
+          "label": "旧 Laya 主方案",
+          "keys": [
+            "groups",
+            "all",
+            "original_laya_main"
+          ],
+          "expected": 0.96344
+        },
+        {
+          "label": "DeBERTa CPU",
+          "keys": [
+            "groups",
+            "all",
+            "deberta_cpu"
+          ],
+          "expected": 0.96932
+        },
+        {
+          "label": "固定异构融合",
+          "keys": [
+            "groups",
+            "all",
+            "fusion_50_50"
+          ],
+          "expected": 0.97028
+        }
+      ]
+    },
+    {
+      "file": "reports/bow-nb-complementarity-cpu-20261018-v1/summary.json",
+      "group": "统计词袋",
+      "protocol": "22100 全文 fit；400 校准温度与权重；CPU",
+      "split": "development",
+      "seed": "见协议",
+      "note": "已冻结摘要；不代表独立训练次数。",
+      "entries": [
+        {
+          "label": "TF-IDF 单分支",
+          "keys": [
+            "results",
+            "tfidf_lr",
+            "sparse"
+          ],
+          "expected": 0.9112
+        },
+        {
+          "label": "NB-ngram 单分支",
+          "keys": [
+            "results",
+            "nb_ngram_lr",
+            "sparse"
+          ],
+          "expected": 0.9224
+        },
+        {
+          "label": "TF-IDF 融合",
+          "keys": [
+            "results",
+            "tfidf_lr",
+            "fusion"
+          ],
+          "expected": 0.9732
+        },
+        {
+          "label": "NB 融合",
+          "keys": [
+            "results",
+            "nb_ngram_lr",
+            "fusion"
+          ],
+          "expected": 0.9728
+        }
+      ]
+    },
+    {
+      "file": "reports/laya-deberta-calibration-weight-cpu-20261018-v1/summary.json",
+      "group": "固定校准融合权重",
+      "protocol": "400 校准最小 NLL；原温度保持",
+      "split": "development",
+      "seed": "见协议",
+      "note": "已冻结摘要；不代表独立训练次数。",
+      "entries": [
+        {
+          "label": "校准概率权重融合",
+          "keys": [
+            "development_metrics",
+            "calibration_nll_weight"
+          ],
+          "expected": 0.9716
+        }
+      ]
+    },
+    {
+      "file": "reports/final-cpu-alternatives-20261018-v2/summary.json",
+      "group": "最后 CPU 候选",
+      "protocol": "校准冻结；MLP 基于两标记缓存；无编码器更新",
+      "split": "development",
+      "seed": "见协议",
+      "note": "97.40% 是探索性开发结果，p=.25；不对应正式测试。",
+      "entries": [
+        {
+          "label": "正则化 logit 融合",
+          "keys": [
+            "results",
+            "regularized_logit",
+            "metrics"
+          ],
+          "expected": 0.974
+        },
+        {
+          "label": "长文辅助分支",
+          "keys": [
+            "results",
+            "long_context",
+            "metrics"
+          ],
+          "expected": 0.9728
+        },
+        {
+          "label": "普通 Dropout 辅助分支",
+          "keys": [
+            "results",
+            "mlp_dropout1",
+            "metrics"
+          ],
+          "expected": 0.9724
+        },
+        {
+          "label": "四次 Dropout 辅助分支",
+          "keys": [
+            "results",
+            "mlp_dropout4",
+            "metrics"
+          ],
+          "expected": 0.9724
+        },
+        {
+          "label": "mlp_dropout1 独立分支",
+          "keys": [
+            "standalone_heads",
+            "mlp_dropout1",
+            "standalone"
+          ],
+          "expected": 0.9684
+        },
+        {
+          "label": "mlp_dropout4 独立分支",
+          "keys": [
+            "standalone_heads",
+            "mlp_dropout4",
+            "standalone"
+          ],
+          "expected": 0.9684
+        }
+      ]
+    },
+    {
+      "file": "reports/laya-token-query-mps-fp32-20261018-v1/summary.json",
+      "group": "全序列查询头",
+      "protocol": "冻结 s43 编码器；FP32 全 token；三个头部种子各 5 轮",
+      "split": "development",
+      "seed": "42/43/44",
+      "note": "三种子概率集成；新方法增量比较相同列，96.84→97.28 不是新增收益。",
+      "entries": [
+        {
+          "label": "均值分支",
+          "keys": [
+            "results",
+            "mean",
+            "branch"
+          ],
+          "expected": 0.9684
+        },
+        {
+          "label": "稠密查询分支",
+          "keys": [
+            "results",
+            "dense",
+            "branch"
+          ],
+          "expected": 0.9684
+        },
+        {
+          "label": "Top32 分支",
+          "keys": [
+            "results",
+            "top32",
+            "branch"
+          ],
+          "expected": 0.968
+        },
+        {
+          "label": "均值融合",
+          "keys": [
+            "results",
+            "mean",
+            "fusion"
+          ],
+          "expected": 0.9728
+        },
+        {
+          "label": "稠密查询融合",
+          "keys": [
+            "results",
+            "dense",
+            "fusion"
+          ],
+          "expected": 0.9728
+        },
+        {
+          "label": "Top32 融合",
+          "keys": [
+            "results",
+            "top32",
+            "fusion"
+          ],
+          "expected": 0.9724
+        },
+        {
+          "label": "mean 单种子 s42",
+          "keys": [
+            "single_seeds",
+            "mean-s42"
+          ],
+          "expected": 0.9676,
+          "seed": 42
+        },
+        {
+          "label": "mean 单种子 s43",
+          "keys": [
+            "single_seeds",
+            "mean-s43"
+          ],
+          "expected": 0.9684,
+          "seed": 43
+        },
+        {
+          "label": "mean 单种子 s44",
+          "keys": [
+            "single_seeds",
+            "mean-s44"
+          ],
+          "expected": 0.9688,
+          "seed": 44
+        },
+        {
+          "label": "dense 单种子 s42",
+          "keys": [
+            "single_seeds",
+            "dense-s42"
+          ],
+          "expected": 0.9676,
+          "seed": 42
+        },
+        {
+          "label": "dense 单种子 s43",
+          "keys": [
+            "single_seeds",
+            "dense-s43"
+          ],
+          "expected": 0.9684,
+          "seed": 43
+        },
+        {
+          "label": "dense 单种子 s44",
+          "keys": [
+            "single_seeds",
+            "dense-s44"
+          ],
+          "expected": 0.9688,
+          "seed": 44
+        },
+        {
+          "label": "top32 单种子 s42",
+          "keys": [
+            "single_seeds",
+            "top32-s42"
+          ],
+          "expected": 0.9672,
+          "seed": 42
+        },
+        {
+          "label": "top32 单种子 s43",
+          "keys": [
+            "single_seeds",
+            "top32-s43"
+          ],
+          "expected": 0.9688,
+          "seed": 43
+        },
+        {
+          "label": "top32 单种子 s44",
+          "keys": [
+            "single_seeds",
+            "top32-s44"
+          ],
+          "expected": 0.9692,
+          "seed": 44
+        }
+      ]
+    }
+  ],
+  "additional_materials": [
+    {
+      "title": "同期新增的Accuracy空间研究建议",
+      "status": "analysis_only_not_new_training",
+      "files": [
+        "reports/accuracy-improvement-research-20261018-v1/REPORT.md",
+        "reports/accuracy-improvement-research-20261018-v1/experiment-plan.md",
+        "reports/accuracy-improvement-research-20261018-v1/headroom-analysis.md",
+        "reports/accuracy-improvement-research-20261018-v1/headroom-summary.json",
+        "reports/accuracy-improvement-research-20261018-v1/literature.md",
+        "reports/accuracy-improvement-research-20261018-v1/summary.json",
+        "reports/accuracy-improvement-research-20261018-v1/verification.json",
+        "reports/accuracy-improvement-research-20261018-v1/verification.md"
+      ],
+      "note": "上限推断、AI定性与预期收益不能作为已测提升或数学界限。"
+    }
+  ]
+}
