@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "script_sha256": "0b009fbd6ef9a364db718dff9d65ef9d13887845f31d38fcbae1d87f5bc5c205",
+  "source_provenance_sha256": "7fff1f72d7aa8ca9a109de4217c868ac434e1029a96d2d2cda31361c00aeb36a",
+  "summary_sha256": "8778483fc1b44b7f524dd672f9657c5509302a326ae71f7175a6b9935d026fb0",
+  "report_sha256": "b95ac2aceaa063899e17982321535f900b6bf09b1953fb36714a82c482e00d70",
+  "ast_parse": true,
+  "source_hashes": true,
+  "split_structure_assertions": true,
+  "synthetic_source_count_assertions": true,
+  "first_batch_return_assertion": true,
+  "token_sequence_expression_assertion": true,
+  "no_third_party_execution": true,
+  "no_imdb_data_access": true,
+  "no_accuracy_reproduction": true
+}

@@ -1,0 +1,158 @@
+{
+  "run_id": "bert-bilstm-literature-audit-20261018-v1",
+  "repository": "gnkhata1/Finetuning-BERT-on-Movie-Reviews-Sentiment-Analysis",
+  "commit": "c4cbd9a179a9526ee952d3e58247d3f1466ff0c6",
+  "commit_date": "2022-06-24T17:19:09Z",
+  "source_files": [
+    {
+      "path": "BERT+BiLSTM-SA.py",
+      "sha256": "4def96afcc0d03c98e630b804c43586370eb0f90cf8ee7b321812ae61631db6b",
+      "bytes": 10795,
+      "url": "https://raw.githubusercontent.com/gnkhata1/Finetuning-BERT-on-Movie-Reviews-Sentiment-Analysis/c4cbd9a179a9526ee952d3e58247d3f1466ff0c6/BERT%2BBiLSTM-SA.py",
+      "github_blob_sha": "9128aeb983bab2466c773e0163513cac8c910f62"
+    },
+    {
+      "path": "README.md",
+      "sha256": "55edac4ac3b46a0a886a2802e07fda9cb9c84dcc1203fea054233cad9f03bbb9",
+      "bytes": 394,
+      "url": "https://raw.githubusercontent.com/gnkhata1/Finetuning-BERT-on-Movie-Reviews-Sentiment-Analysis/c4cbd9a179a9526ee952d3e58247d3f1466ff0c6/README.md",
+      "github_blob_sha": "bb244795e875f05ba0305b7401b4452751cce8ea"
+    },
+    {
+      "path": "Utilities.py",
+      "sha256": "4b2623edf6efc5d59148db40fe7dab1429be764e5dad6c84e2b3a16c530e70ed",
+      "bytes": 2230,
+      "url": "https://raw.githubusercontent.com/gnkhata1/Finetuning-BERT-on-Movie-Reviews-Sentiment-Analysis/c4cbd9a179a9526ee952d3e58247d3f1466ff0c6/Utilities.py",
+      "github_blob_sha": "83e474ce845b300c998a1768bcdc1be46a2d6542"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "priority": "必须修复（若用于官方基准复现）",
+      "status": "confirmed_static",
+      "lines": [
+        60,
+        62,
+        175,
+        178,
+        183,
+        184
+      ],
+      "claim": "Official train/test are concatenated, then split 81/9/10; 15500 official test labels enter gradient training.",
+      "affects": "Published repository cannot implement official 25k/25k evaluation; no claim that exact paper run used this snapshot."
+    },
+    {
+      "id": "F2",
+      "priority": "必须修复（后处理标签对齐）",
+      "status": "confirmed_api_semantics",
+      "lines": [
+        178,
+        267,
+        282,
+        294
+      ],
+      "claim": "Prediction and later label extraction independently traverse a shuffled test Dataset with default reshuffling.",
+      "affects": "Post-hoc paired labels/confusion matrices, not evidence that model.evaluate accuracy is inflated."
+    },
+    {
+      "id": "F3",
+      "priority": "必须修复（后处理覆盖率）",
+      "status": "confirmed_static",
+      "lines": [
+        282,
+        312
+      ],
+      "claim": "extract_labels returns within the outer batch loop; for 5000 rows it returns only 32 labels.",
+      "affects": "Only first-batch post-processing; does not change model.evaluate."
+    },
+    {
+      "id": "F4",
+      "priority": "复现差异",
+      "status": "confirmed_static",
+      "lines": [
+        138,
+        183,
+        225,
+        230,
+        241
+      ],
+      "claim": "Public code length256/lr1e-4/epochs4/repeat2 differs from paper binary length128/lr3e-5/epochs10.",
+      "affects": "Needs exact run configuration and logs before comparing reported 97.67%."
+    },
+    {
+      "id": "H1",
+      "priority": "不支持的怀疑",
+      "status": "not_supported",
+      "lines": [
+        214,
+        216,
+        217
+      ],
+      "claim": "Code reads BERT main-layer sequence output; expected [batch,256,768], not a singleton CLS sequence.",
+      "affects": "No evidence for a degenerate one-step BiLSTM from this source."
+    },
+    {
+      "id": "H2",
+      "priority": "尚未量化",
+      "status": "unknown_without_data",
+      "lines": [
+        52,
+        54,
+        62
+      ],
+      "claim": "No film IDs / grouping audit is supplied; actual movie overlap and numerical effect not measured.",
+      "affects": "Do not state that same-film leakage caused 97.67%."
+    }
+  ],
+  "synthetic_split_derivation": {
+    "gradient": {
+      "total": 40500,
+      "source_counts": {
+        "official_train": 25000,
+        "official_test": 15500
+      }
+    },
+    "validation": {
+      "total": 4500,
+      "source_counts": {
+        "official_test": 4500
+      }
+    },
+    "evaluation": {
+      "total": 5000,
+      "source_counts": {
+        "official_test": 5000
+      }
+    }
+  },
+  "synthetic_inputs_only": true,
+  "split_ratio": 0.9,
+  "sequence_length": 256,
+  "epochs": 4,
+  "train_repeat": 2,
+  "exposures_if_run_to_completion": 324000,
+  "extract_labels_rows_for_5000": 32,
+  "third_party_code_executed": false,
+  "tensorflow_imported": false,
+  "imdb_text_or_predictions_opened": false,
+  "official_test_distribution_computed": false,
+  "model_trained": false,
+  "reported_accuracy_reproduced": false,
+  "paper_97_67_invalidity_proven": false,
+  "public_code_matches_official_protocol": false,
+  "missing": [
+    "paper-specific commit/config",
+    "partition IDs and hashes",
+    "environment lock",
+    "checkpoint and full 25000-row predictions",
+    "seeded repeat runs",
+    "controlled head ablation"
+  ],
+  "external_references": {
+    "paper": "https://arxiv.org/html/2502.20682v1",
+    "dataset_shuffle": "https://www.tensorflow.org/api_docs/python/tf/data/Dataset#shuffle",
+    "bert_output": "https://huggingface.co/docs/transformers/v4.20.1/en/model_doc/bert#transformers.TFBertModel",
+    "lstm_input": "https://keras.io/api/layers/recurrent_layers/lstm/"
+  }
+}
