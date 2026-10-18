@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "local_training_tests_total": 32,
+  "suites": {
+    "runtime": 4,
+    "resampling": 3,
+    "short_trace": 3,
+    "preflight": 5,
+    "epoch_checkpoints": 4,
+    "optimization": 13
+  },
+  "dev_branch_tests": 9,
+  "gpu_pipeline_pid": 123,
+  "remote_transfer_sha256": "c2d2e1c9aa3db1dd5c934cf46fab8c074398bfd39cbd74ecd01c0ed32a8756f2",
+  "remote_install_verified_files": 23,
+  "remote_gpu": "NVIDIA GeForce RTX 4090",
+  "remote_disk_available_gb": 23,
+  "formal_full_training_started_at_record_time": false,
+  "test_accessed": false
+}

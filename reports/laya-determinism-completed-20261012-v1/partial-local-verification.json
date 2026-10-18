@@ -1,0 +1,195 @@
+{
+  "state": "partial_local_verification",
+  "full_backup_completed": false,
+  "baseline_comparison": {
+    "identical": false,
+    "compared_updates": 16,
+    "differences": [
+      {
+        "update": 1,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 2,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 3,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 4,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 5,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 6,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 7,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 8,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 9,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 10,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 11,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 12,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 13,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 14,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 15,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      },
+      {
+        "update": 16,
+        "fields": [
+          "gradient_after_clip_sha256",
+          "gradient_before_clip_sha256",
+          "gradient_norm_before_clipping",
+          "logits_sha256",
+          "loss",
+          "loss_sha256",
+          "model_after_update_sha256"
+        ]
+      }
+    ],
+    "first_gradient_changed_parameters": [
+      "encoder.embeddings.tok_embeddings.weight"
+    ],
+    "first_gradient_changed_modules": {
+      "encoder.embeddings.tok_embeddings": 1
+    },
+    "parameter_count": 205,
+    "first_parameter_in_model_order": "encoder.embeddings.tok_embeddings.weight",
+    "parameter_order_is_not_backward_execution_order": true,
+    "environment_difference_fields": []
+  },
+  "verified_completed_traces": [
+    "baseline-original-1",
+    "baseline-original-2",
+    "no-checkpoint-original-1"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "state": "verified",
+  "historical_summary_hashes_matched": {
+    "reports/laya-posthoc-baseline-s42-fp32-v1/metadata.json": "27d374bc8d3b18577ea75dd2618de3c7e066e48efc7ff35e8abf73047fefa11e",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head.json": "1306c36eda8da38142fb9fc4d5f4ec98fcd733d2f95714b0bcc6f1cfa21d2706",
+    "reports/laya-posthoc-baseline-s42-fp32-v1/validation-head_tail.json": "440965582500aafeea612fc0f794856d090e72dc47c65c63f7e53b8b0a6dbe2e",
+    "reports/laya-posthoc-combined-s42-fp32-v1/metadata.json": "4ef1077ee30e543bad3b40fea1d2f609ed94bda91381b18bbd6692c0cfe6927c",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head.json": "2a8d29b599c00f8268339c67140c1a48a00d413e037e64ad98e35aaa95038a1a",
+    "reports/laya-posthoc-combined-s42-fp32-v1/validation-head_tail.json": "3f325cc170c3f2f2238d7e4a921a2ebd91f315836d0d739b5c588cbca348bc8b",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/metadata.json": "bc3278f15b5b454bd4d2a3f6c7cb7b93b343d9a26c683c3c2d4ef27c87d7f545",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head.json": "d17757ed3102198853c4f2fca30d80154a3ee9e5b32ea323b9efaff6d5a34d6e",
+    "reports/laya-posthoc-baseline-s43-fp32-v1/validation-head_tail.json": "19a8100e58c2ab79a4fba51fdbe5be86ac4e6a621590c706e349959bc5609766",
+    "reports/laya-posthoc-combined-s43-fp32-v1/metadata.json": "a6782ef63d545386a3046156895d88c8c9dfb276f49c0ef7e268d56ac72e93b7",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head.json": "4f296e0bf04e6c9910d816ab32cdfe6102831033e3d4636d1116597552ea2132",
+    "reports/laya-posthoc-combined-s43-fp32-v1/validation-head_tail.json": "4148ad8ffb6fda699b8edaf7ca0de418dd0f76b3220021d4b423459288260b19"
+  },
+  "all_eight_single_view_accuracy_counts_match_history": true,
+  "source_code_snapshots_match_protocol": true,
+  "frozen_fit_sha256_matches": true,
+  "official_test_accessed": false,
+  "input_files_reverified": 28,
+  "related_tests_passed": 21,
+  "primary_correct_count_verified_from_saved_fused_predictions": 2424,
+  "default_deployment_changed": false
+}

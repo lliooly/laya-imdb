@@ -1,0 +1,9 @@
+{
+  "source_hashes_verified": true,
+  "report_sizes_verified": true,
+  "metric_provenance_verified": true,
+  "latest_document_links_verified": true,
+  "python_ast_parse_passed": true,
+  "official_test_inference_or_scoring": false,
+  "models_loaded": false
+}

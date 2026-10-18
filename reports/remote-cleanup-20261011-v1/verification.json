@@ -1,0 +1,31 @@
+{
+  "files": 402,
+  "weight_paths": 36,
+  "unique_weight_hashes": 18,
+  "runs": [
+    "laya-rtx4090-ce-baseline-s43-epochs2-fp32-v1",
+    "laya-rtx4090-ce-combined-s43-epochs2-fp32-v1",
+    "laya-rtx4090-ce-epochs2-l512-s42-fp32-v1",
+    "laya-rtx4090-ce-epochs2-ls005-l512-s42-fp32-v1",
+    "laya-rtx4090-ce-epochs2-warmup005-l512-s42-fp32-v1",
+    "laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1",
+    "laya-rtx4090-ce-epochs2-warmup005-ls005-rdrop1-l512-s42-fp32-v1",
+    "laya-rtx4090-smoke-ce-baseline-s43-epochs2-fp32-v1",
+    "laya-rtx4090-smoke-ce-combined-s43-epochs2-fp32-v1",
+    "laya-rtx4090-smoke-ce-fp32-v1",
+    "laya-rtx4090-smoke-ce-ls005-fp32-v1",
+    "laya-rtx4090-smoke-ce-warmup005-fp32-v1",
+    "laya-rtx4090-smoke-ce-warmup005-ls005-fp32-v1",
+    "laya-rtx4090-smoke-ce-warmup005-ls005-rdrop1-fp32-v1"
+  ],
+  "errors": [],
+  "manifest_path_corrections": [
+    {
+      "original": "checkpoints/laya-rtxepochs2-warmup005-ls005-l512-s42-fp32-v1/model.safetensors",
+      "corrected": "checkpoints/laya-rtx4090-ce-epochs2-warmup005-ls005-l512-s42-fp32-v1/model.safetensors",
+      "reason": "Original inventory path truncated; exact checksum and corrected path confirmed by deletion audit."
+    }
+  ],
+  "partial_files": [],
+  "verified_utc": "2026-10-11T11:25:15.292663+00:00"
+}
