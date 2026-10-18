@@ -1,0 +1,75 @@
+{
+  "run_id": "final-cpu-alternatives-20261018-v2",
+  "scope": "four fixed CPU candidates; no further search",
+  "candidates": [
+    "regularized_logit",
+    "long_context",
+    "mlp_dropout1",
+    "mlp_dropout4"
+  ],
+  "primary_selection": "lowest fixed-400 calibration mixture NLL, candidate order breaks ties",
+  "logit_model": {
+    "probability_logit_clip": 12.0,
+    "weight_bounds": [
+      0.0,
+      2.0
+    ],
+    "bias_bounds": [
+      -1.0,
+      1.0
+    ],
+    "l2": 0.01,
+    "prior": [
+      0.5,
+      0.5,
+      0.0
+    ]
+  },
+  "long_context": {
+    "routing_rule": "original Laya review tokens >466",
+    "extra_branch": "frozen context2048 seed42 epoch2",
+    "short": "original neural 50:50 unchanged",
+    "long_branch_weight_bounds": [
+      0.0,
+      0.5
+    ],
+    "l2_to_zero": 0.01
+  },
+  "heads": {
+    "features": "frozen baseline-s43 raw encoder positive-minus-negative marker vectors, dimension1024",
+    "hidden": 64,
+    "dropout": 0.2,
+    "dropout_samples": [
+      1,
+      4
+    ],
+    "epochs": 10,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "initialization_seed": 42,
+    "order_seed": 20261018,
+    "torch_cpu_threads": 6,
+    "temperature_bounds": [
+      0.5,
+      5.0
+    ],
+    "neural_mixture_head_weight_bounds": [
+      0.0,
+      0.25
+    ]
+  },
+  "feature_validation_cache_expected_sha256": "7248b010b73958ec9432e367f6c7ce4cef63b36d7e994d776b1152f0862d6dbd",
+  "feature_validation_index_expected_sha256": "e867e27db2ce90152f92cb83e6bf67cf8562da510ef26d8dfa1ca6eb861d818a",
+  "continuation_reference": {
+    "minimum_development_delta_pp": 0.2,
+    "positive_conditional_interval_lower_bound": true,
+    "holm_adjusted_p_below": 0.05
+  },
+  "bootstrap_replicates": 20000,
+  "bootstrap_seed": 20261018,
+  "official_test_access_allowed": false,
+  "cloud_compute_allowed": false,
+  "end_to_end_encoder_training": false,
+  "token_attention_pooling_tested": false
+}
