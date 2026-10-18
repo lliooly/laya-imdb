@@ -1,28 +1,34 @@
 # 文档索引
 
-当前状态及决策以本目录中的汇总文档为入口；日期设计和 reports 保留当时的原始结论，后续更新不能反向覆盖历史证据。
+更新：2026-10-18。当前状态以[收尾总览](closeout/README.md)为准。日期设计与原报告保留当时状态；顶层启动快照不替代最终 evaluation 结果。
 
-| 文档 | 内容 |
-| --- | --- |
-| [实验思路与结果总表](experiments/experiment-summary.md) | 43项已完成工作及未完成方向；协议、结果、决策、证据链接 |
-| [当前状态](experiments/current-status.md) | 最佳成绩、默认部署、严格实验、数据与备份状态 |
-| [后续改进路线](experiments/improvement-roadmap.md) | 首尾一致训练／推理、模型迁移、最终评估 |
-| [训练协议](guides/training.md) | 冻结划分、训练入口、精度和复现约束 |
-| [决策因素实验](guides/laya-decision-study.md) | 提案审查、固定权重诊断、窗口对照、N8参数平均及N2/N6多模型融合 |
-| [双模型融合推理](guides/laya-fusion-inference.md) | 冻结融合入口、CUDA与Mac MLX一致性及性能实测 |
-| [冻结后官方测试](guides/laya-frozen-evaluation.md) | 固定候选、一次性25000条官方测试与目标判定 |
-| [Mac推理](guides/inference.md) | checkpoint结构与部署命令 |
-| [CUDA准备](guides/cuda-preparation.md) | 环境、权重锁与训练前检查 |
-| [历史复现流程](guides/historical-reproduction.md) | ModernBERT、Rust和旧课程阶段命令 |
-| [参考文献](guides/references.md) | 模型、方法和数据来源 |
-| [整理与合并记录](../reports/project-consolidation-20261013-v1/REPORT.md) | 路径迁移、代码归档、保护和验证 |
+| 入口 | 用途 |
+|---|---|
+| [收尾总览](closeout/README.md) | 主结论、阅读顺序与交付边界 |
+| [24 类研究台账](closeout/research-ledger.md) | 假设、设计、代码、结果与停止原因 |
+| [指标索引](closeout/metrics.md) / [JSON](closeout/metrics.json) | 旧 123 条与后续补充；条数不是训练次数 |
+| [代码与测试](closeout/code.md) | 模块职责、CLI 和静态局部依赖 |
+| [设计、配置与环境](closeout/designs.md) | 日期设计、计划、配置、依赖锁 |
+| [报告与验证](closeout/reports.md) | 完整本地报告导航，优先最终 evaluation |
+| [文件与本地资产](closeout/files.md) | 源码 SHA、报告元数据、权重存在性 |
+| [复现说明](closeout/reproduction.md) | 安装、检查、材料前提与流程 |
+| [参考资料](closeout/references.md) | 文献、审计、原提案纠正 |
+| [交付清单](closeout/delivery.md) | 源码包与权重边界、后续 Word/视频/模型整合 |
+| [当前状态](experiments/current-status.md) | 简明成绩表与完成状态 |
 
-## 命名与归档规则
+## 最终结果
 
-当前入口采用描述性的 lowercase-kebab-case：`docs/guides/<topic>.md`、`docs/experiments/<topic>.md`。一次性实验协议继续使用已有 `YYYY-MM-DD-<topic>-design.md` 格式；`docs/superpowers/specs/` 和 `plans/` 保留为冻结设计历史，不是当前待办列表。
+- 异构融合：[开发](../reports/deberta-laya-final-analysis-20261018-v1/REPORT.md)、[正式测试](../reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md)。
+- 长上下文：[最终评估](../reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md)；标签修订：[最终评估](../reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/REPORT.md)。
+- 决策头：[三种子分析](../reports/laya-head-control-analysis-20261015-v1/REPORT.md)、[缺失权重说明](../reports/laya-head-control-delivery-status-20261015-v1/REPORT.md)。
+- [鲁棒损失](../reports/laya-robust-loss-analysis-20261016-v1/REPORT.md)、[词袋分支](../reports/bow-nb-complementarity-cpu-20261018-v1/REPORT.md)、[最后 CPU 候选](../reports/final-cpu-alternatives-20261018-v2/REPORT.md)。
+- [全序列查询头](../reports/laya-token-query-mps-fp32-20261018-v1/REPORT.md)、[BERT+BiLSTM 文献审计](../reports/bert-bilstm-literature-audit-20261018-v1/REPORT.md)。
 
-早期阶段计划移至 `docs/archive/plans/day-NN-*.md`，过期路线移至 `docs/archive/roadmaps/YYYY-MM-DD-*.md`。原 docs 路径只保留兼容跳转，供不可改写的历史报告引用。新引用使用规范路径。
+## 指南与历史
 
-已停用且无模块依赖的临时执行入口移至 `archive/legacy-code/`；不从该目录直接重新训练。`scripts/` 保留当前训练、推理、统计和被测试／复现依赖的模块。负结果和无收益思路以总表中的停止理由归档，不删除实验记录。
+- [训练协议](guides/training.md)、[推理现状](guides/inference.md)、[Laya 融合指南](guides/laya-fusion-inference.md)、[历史复现](guides/historical-reproduction.md)。
+- [Modal 训练与回传](guides/laya-modal-training.md)、[鲁棒损失恢复](guides/laya-robust-loss-training.md)、[CUDA 准备](guides/cuda-preparation.md)。
+- [10 月 13 日思路台账](experiments/experiment-summary.md)、[10 月 16 日指标快照](../reports/all-experiments-metrics-20261016-v1/REPORT.md)、[原始参考清单](guides/references.md)。
+- [本次整理前原文](archive/closeout-20261018/)、[历史提案附件说明](archive/source-notes/README.md)。
 
-报告目录和 run_id 不改名：它们被manifest、SHA和数据绑定引用。历史报告的 REPORT.md 名称也保留。新整理文档提供统一入口，而非重命名冻结证据。大文件、逐条诊断、训练正文和权重留在本地并由Git忽略；必要指标、报告、源码和配置进入版本控制。
+run_id、manifest、SHA 和 reproduction 保持原路径；源码整理不重新运行训练或官方测试。完整本地原始材料和精简资料包的范围不同，详见交付清单。
