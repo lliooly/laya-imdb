@@ -1,0 +1,23 @@
+{
+  "state": "completed_local_development_analysis",
+  "date": "2026-10-18T00:19:39.430135+08:00",
+  "tests": "6 focused checks passed",
+  "case_count": 47,
+  "case_ids_unique": true,
+  "case_gradient_train_overlap": 0,
+  "no_label_changes": true,
+  "official_test_results_used_for_development_selection": false,
+  "outputs_sha256": {
+    "REPORT.md": "dd3d5c86f3f279d8bb1750cf1c765d299e659584c2760060194ae921be943bdf",
+    "summary.json": "9141f9b479ac8e065b2baea0ac66f243d98f785fe15d9a0f5cf947a5d22dbaee",
+    "bootstrap.json": "d5390a43ec220c432601cf3369f7dfcccaec2d155d912ab864808c17675690ce",
+    "calibration-thresholds.json": "1c71c9dddeb4e1177499da84de412182914de9c69a0fc2cfaffd3873479d80a5",
+    "full-curves.json": "53c90ba07366519082149aa64ac618aa4586d27fb83124388bc6e8cfdfaee765",
+    "common-47.json": "aa342599bdab25624bdf16644fa4d42d7fdb8b0d266f04530b02440d0c2c72e7",
+    "common-47.md": "7847bb90cb09a4881ff2f9db37151c5efb07e8680af06eb440b5d47c0c623a92",
+    "CASE-STUDY.md": "44989defe331db865d61a28b4c9f7d57433528839e1766410b118ca999ddc5f8",
+    "risk-coverage.png": "b63e961e82825b77ebe552be7f2ec3cb46b3494cc99bba6e0a308aaf5e17059c",
+    "risk-coverage.svg": "5a3066d2553d45572cb2a747f833ad5f3f67daaa869aa215d6eece44d17aaed4",
+    "historical-record-comparison.json": "71e44d5182c87e0e9e6a8dfb4689fcf7f3c56f44c53a974308cd9f3dd65970b4"
+  }
+}
