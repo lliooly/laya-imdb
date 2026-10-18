@@ -1,0 +1,15 @@
+{
+  "kind": "git_archive_plan",
+  "base_head": "0aa67f07b87cb47c23a37bc685b1d0cf01ff1261",
+  "archive_date_is_execution_time": false,
+  "planned_commits": 90,
+  "by_day": {
+    "16": 32,
+    "17": 25,
+    "18": 33
+  },
+  "files": 314,
+  "push": false,
+  "history_rewrite": false,
+  "plan": "docs/closeout/git-archive-20261018.md"
+}

@@ -1,0 +1,63 @@
+{
+  "state": "organized_and_verified",
+  "as_of": "2026-10-18",
+  "completed_utc": "2026-10-18T06:33:16.745382+00:00",
+  "studies": 24,
+  "metric_records": 163,
+  "historical_records": 123,
+  "supplemental_records": 40,
+  "source_files": 416,
+  "report_files": 2604,
+  "report_directories": 199,
+  "local_weight_file_metadata": 194,
+  "validation": {
+    "source_hashes_verified": true,
+    "report_sizes_verified": true,
+    "metric_provenance_verified": true,
+    "latest_document_links_verified": true,
+    "python_ast_parse_passed": true,
+    "official_test_inference_or_scoring": false,
+    "models_loaded": false
+  },
+  "tests": {
+    "modules": 48,
+    "tests": 234,
+    "passed": true,
+    "catalog_tests_rechecked_after_changes": 4
+  },
+  "preservation": {
+    "snapshot_files": 2990,
+    "deleted_existing_files": [],
+    "modified_existing_files": [
+      "docs/README.md",
+      "docs/experiments/experiment-summary.md",
+      "docs/experiments/improvement-roadmap.md",
+      "docs/experiments/current-status.md",
+      "docs/guides/inference.md",
+      "docs/guides/training.md",
+      "README.md"
+    ],
+    "existing_reports_changed": false,
+    "existing_scientific_source_changed": false,
+    "method": "before/after file size and mtime; historical report contents not rewritten"
+  },
+  "git": {
+    "branch": "main",
+    "head": "0aa67f07b87cb47c23a37bc685b1d0cf01ff1261",
+    "commit_created": false,
+    "pushed": false,
+    "worktree_created": false,
+    "default_deployment_changed": false
+  },
+  "new_training": false,
+  "new_model_inference": false,
+  "new_official_test_scoring": false,
+  "package_path": "artifacts/project-closeout-20261018-v1/end-imdb-source-and-research-20261018-v1.zip",
+  "package_receipt": "reports/project-closeout-20261018-v1/package-receipt.json",
+  "remaining": [
+    "final heterogeneous single-review inference integration",
+    "Word report",
+    "training and testing videos",
+    "L2 missing weights disclosed"
+  ]
+}

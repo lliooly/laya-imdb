@@ -187,7 +187,7 @@ def build():
           '| ID | 分区 / 覆盖 | 方法 | Accuracy | 数量 | 协议 | 证据 |','|---|---|---|---:|---:|---|---|']
     for r in rows:
         text.append(f"| {r['id']} | {r['split']} / {r['coverage']:.3f} | {r['method']} | {100*r['metrics']['accuracy']:.3f}% | {r['metrics'].get('count','—')} | {r['protocol']} | {link(r['source']['file'],'摘要')} |")
-    (DOC/'metrics.md').write_text('\n'.join(text)+'\n')
+    (DOC/'metrics.md').write_text('\n'.join(text).rstrip()+'\n')
     text=['# 源码与测试索引','','路径保持不变；模块说明由 AST 静态读取，不导入或执行训练入口。CLI 列只表示定义了 main，执行前仍需阅读对应协议。局部导入包括函数内部的静态导入，不保证运行时全部经过。','']
     for group in sorted({r['category'] for r in inventory if r['path'].startswith(('scripts/','tests/'))}):
         text+=['## '+group,'','| 文件 | 说明 | CLI | 本地依赖 |','|---|---|---|---|']
@@ -196,13 +196,13 @@ def build():
                 desc=r.get('description','').replace('|','／')
                 text.append(f"| {link(r['path'])} | {desc} | {'有' if r.get('has_main') else '—'} | {', '.join(r.get('local_imports',[]))} |")
         text.append('')
-    (DOC/'code.md').write_text('\n'.join(text)+'\n')
+    (DOC/'code.md').write_text('\n'.join(text).rstrip()+'\n')
     text=['# 设计、计划与配置索引','','日期文件记录当时方案，存在文件不表示已执行。执行结论以收尾总览和最终评估为准。','']
     for prefix,title in [('docs/superpowers/specs/','设计规格'),('docs/superpowers/plans/','实现计划'),('configs/','实验配置与模型锁'),('environments/','依赖环境'),('docs/archive/','历史归档')]:
         text+=['## '+title,'']
         text += ['- '+link(r['path']) for r in inventory if r['path'].startswith(prefix)]
         text.append('')
-    (DOC/'designs.md').write_text('\n'.join(text)+'\n')
+    (DOC/'designs.md').write_text('\n'.join(text).rstrip()+'\n')
     text=['# 报告与验证证据索引','','顶层 REPORT 可能是启动快照；若存在 evaluation/REPORT.md，优先阅读最终评估。完整文件元数据见 catalog.json；不改写历史 manifest、哈希或 reproduction。','']
     runs=sorted({Path(r['path']).parts[1] for r in report_inventory if len(Path(r['path']).parts)>2})
     for run in runs:
@@ -215,13 +215,13 @@ def build():
         if not evidence:
             text.append('- 原始材料见 '+link('reports/'+run,'报告目录')+'；不由文件名推断实验成功。')
         text.append('')
-    (DOC/'reports.md').write_text('\n'.join(text)+'\n')
+    (DOC/'reports.md').write_text('\n'.join(text).rstrip()+'\n')
     text=['# 文件清单','','源码、文档、配置、测试和环境锁逐文件记录 SHA256；历史报告只盘点路径和大小。权重只做存在性盘点，不读取数据目录、缓存或测试逐样本预测。','',
         '| 类别 | 文件数 |','|---|---:|']
     text += [f'| {k} | {v} |' for k,v in sorted(Counter(Path(r['path']).parts[0] for r in inventory).items())]
     text += ['', '机器清单：[catalog.json](catalog.json)；本地权重元数据：[local-assets.json](local-assets.json)。', '',
         '路径盘点不证明权重可加载；最终准入仍以各实验保存的验证收据为准。']
-    (DOC/'files.md').write_text('\n'.join(text)+'\n')
+    (DOC/'files.md').write_text('\n'.join(text).rstrip()+'\n')
     catalog=read('docs/closeout/catalog.json')
     catalog['generated_sha256']={name:digest(DOC/name) for name in sorted(GENERATED-{'catalog.json'})}
     write(DOC/'catalog.json',catalog)

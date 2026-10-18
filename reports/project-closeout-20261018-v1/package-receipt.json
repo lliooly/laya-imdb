@@ -1,0 +1,17 @@
+{
+  "path": "artifacts/project-closeout-20261018-v1/end-imdb-source-and-research-20261018-v1.zip",
+  "bytes": 5675044,
+  "sha256": "d28b6ca4987eacb602a792a7285645ebbbe4b2367ee23aa7249131cd5415ca05",
+  "files": 897,
+  "manifest_embedded": true,
+  "every_entry_rehashed": true,
+  "excluded": [
+    "data directories",
+    "weights",
+    "virtual environments",
+    "caches",
+    "individual prediction exports",
+    "full recovery bundles"
+  ],
+  "note": "Historical reports can contain identifiers and limited excerpts; source licenses remain in force. This is not a standalone model bundle."
+}
