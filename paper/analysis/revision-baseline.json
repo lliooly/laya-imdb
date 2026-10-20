@@ -1,0 +1,106 @@
+{
+  "equations": [
+    "\\mathbf z_{m,v}(x)=H_m\\!\\left(E_m\\left(\\operatorname{pack}(v(x),q)\\right)\\right),\\qquad \\hat y=\\arg\\max_{c\\in\\{0,1\\}}z_c.",
+    "\\mathcal L_{\\rm CE}=-\\sum_{c=0}^{1}\\widetilde y_c\\log p_c,\\qquad \\widetilde y_c=(1-\\varepsilon)\\,\\mathbb 1[y=c]+\\varepsilon/2.",
+    "\\bar p_m(x)=\\begin{cases}p_{m,\\mathrm{prefix}}(x),& \\ell_m(x)\\le466,\\\\[2pt]\\frac12\\left[p_{m,\\mathrm{prefix}}(x)+p_{m,\\mathrm{headtail}}(x)\\right],&\\ell_m(x)>466.\\end{cases}",
+    "p_{m,v}(y=1\\mid x)=\\operatorname{softmax}\\!\\left(\\mathbf z_{m,v}(x)/T_m\\right)_1.",
+    "p_{\\rm Laya}(x)=\\lambda\\bar p_{\\rm baseline\\text{-}s43}(x)+(1-\\lambda)\\bar p_{\\rm combined\\text{-}s42}(x).",
+    "p_{\\rm final}(x)=\\tfrac12p_{\\rm Laya}(x)+\\tfrac12p_{\\rm DeBERTa}(x),\\qquad \\hat y=\\mathbb 1[p_{\\rm final}(x)\\ge0.5].",
+    "\\operatorname{NLL}=-\\frac1n\\sum_{i=1}^{n}\\left[y_i\\log p_i+(1-y_i)\\log(1-p_i)\\right],\\qquad \\operatorname{Brier}_{+}=\\frac1n\\sum_i(p_i-y_i)^2.",
+    "\\operatorname{ECE}=\\sum_{b=1}^{15}\\frac{|B_b|}{n}\\left|\\operatorname{acc}(B_b)-\\operatorname{conf}(B_b)\\right|."
+  ],
+  "reference_keys": [
+    "maas",
+    "modernbert",
+    "laya",
+    "deberta",
+    "guo",
+    "wang",
+    "skills"
+  ],
+  "metrics": {
+    "original_laya_main": {
+      "correct": 24086,
+      "count": 25000,
+      "accuracy": 0.96344,
+      "nll": 0.11415867114002272,
+      "wilson95": [
+        0.9610414399701458,
+        0.9656961590568841
+      ],
+      "confusion_matrix": [
+        [
+          12046,
+          454
+        ],
+        [
+          460,
+          12040
+        ]
+      ]
+    },
+    "deberta_cpu": {
+      "correct": 24233,
+      "count": 25000,
+      "accuracy": 0.96932,
+      "nll": 0.09594702043475925,
+      "wilson95": [
+        0.9671091810243531,
+        0.9713866112580691
+      ],
+      "confusion_matrix": [
+        [
+          12064,
+          436
+        ],
+        [
+          331,
+          12169
+        ]
+      ]
+    },
+    "fusion_50_50": {
+      "correct": 24257,
+      "count": 25000,
+      "accuracy": 0.97028,
+      "nll": 0.09261763971566842,
+      "wilson95": [
+        0.9681016758508162,
+        0.9723138214528947
+      ],
+      "confusion_matrix": [
+        [
+          12098,
+          402
+        ],
+        [
+          341,
+          12159
+        ]
+      ]
+    }
+  },
+  "plot_data_hashes": {
+    "partitions": "4cd0c741c3638dbcd657e0e7e2c5f152a298b706ea26553406ac5ccf9ca97155",
+    "test_laya_token_histogram": "67bcc77c6687a2eb61f9c80c9ecdac33f55a084e57ac32836cc61f70f85752bf",
+    "paired_fusion_vs": "b0454ac3d7d4c8f2fd1a4455472ab0c7a5c7d0d70d46800d8b2a6e572b6f8c2b",
+    "test_summary_groups": "e873341c74f4c326b0ca3a1c4c3e65041ffba735903c922899436799fef40449",
+    "development_summary_groups": "21b3752cc434a437ad30178b3be5718198a953187a4199fef61c58cf646c5051",
+    "robust_loss": "e9361254a5110fddc79766a7730d3de54e346544769ad6b90922ed61f101e6fe",
+    "heads": "882054596423effe75d55102549de1bcead3c999a59e57390fed2a239ee27385",
+    "context_net_correct": "83da51cc85e7b4728067cb837ed89cdfcf4f608aa92104c8832d089ed4b8728f",
+    "selective_at_frozen_calibration_thresholds": "3258b773ed706f7953899605530a2bffdb4bcfb3d2391c716546d2571e087cec",
+    "mlx_precise_fp32_reviews_per_second": "a7f0352bc34757edecbe44d9e65bd91bf5d8a47599e0cd76aab48dca4526e457"
+  },
+  "source_sha256": {
+    "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json": "2f2fb8f181b04dd6acf7f6e2cf5e0c8d0a7967a2af9aab957251971fc8ec4686",
+    "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json": "fc89c3c068ffd02d5d7c6899a8a581842a68887592a45aef4c54f1144aa2669c",
+    "reports/laya-frozen-official-test-20261014-v1/test-actual.json": "a69af9cda24800c8a5a7e837dadcfe4475997b5c712874b4c64284034a8fb8ff",
+    "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json": "0384a59965ca2d5a4242f1e56afce53127d9c4106830c651ab7009d9b9f0d1eb",
+    "reports/data_audit.json": "82c3b4d101e4bb48ae9e1653437be80a93c8ffebd8280da78884ec9da3193218",
+    "reports/laya-head-control-analysis-20261015-v1/REPORT.md": "d112f4fd6409f461ec32cc881eff4aa1ec826cf16eb382c7374a2dabb83efee9",
+    "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md": "77d678c896f96df957a0d3ac8e46e50d087c154233c9ff63225490193287e9b7",
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md": "7bf31c02b2d7c0f503324376cbdfbbc8ce7f6e8314ed1a47e52a8ed9ae3faca9",
+    "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md": "f1b313e53cb6b70db4e840e153f9843efb800bb66b5be735adb0a0f01d8f76f7"
+  }
+}

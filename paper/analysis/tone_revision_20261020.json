@@ -1,0 +1,44 @@
+{
+  "revision_date": "2026-10-20",
+  "content_source": "paper/manuscript.py",
+  "pre_revision_snapshot": "paper/review/before-tone-20261020",
+  "scope": "expression and tone revision only; no changes to experimental data, formulas, figures, references, or reported metrics",
+  "preserved": {
+    "equations": 8,
+    "references": 8,
+    "tables": 7,
+    "figures": 11,
+    "main_test_result": "24,257 / 25,000 = 97.028%",
+    "official_test_forward_pass_during_revision": false,
+    "new_training_or_fitting": false
+  },
+  "render": {
+    "tex_pages": 15,
+    "word_render_pages": 18,
+    "tex_render_directory": "paper/qa/tex-tone-20261020",
+    "word_render_directory": "paper/qa/word-tone-20261020"
+  },
+  "document_validation": "paper/analysis/document_validation.json",
+  "outputs": {
+    "IMDB项目报告.docx": {
+      "sha256": "ffa92b245cce0f15bc4f05fe3950fe759dfef93a1ee9c12799a9c7631bd69de5",
+      "bytes": 1896046
+    },
+    "main.pdf": {
+      "sha256": "9724db900353ad5d68f55c2f82685dae9da857bcdcefded3520672bb7d208efc",
+      "bytes": 681274
+    },
+    "main.tex": {
+      "sha256": "c3694d43ffa51ab5056ef1240eb4ba7f8ba80bdac480f29cd706c1edefa4eab1",
+      "bytes": 44005
+    },
+    "manuscript.py": {
+      "sha256": "74e830cb35e0c3ff114b27d29e8cee63ccc4b9dd7af15f3edc89f5b5ee09e570",
+      "bytes": 42107
+    },
+    "validate_report.py": {
+      "sha256": "941c833fa8dfd687bfed7c53f9493c003d68d5b2842dc5238f059238f652e9cb",
+      "bytes": 12170
+    }
+  }
+}

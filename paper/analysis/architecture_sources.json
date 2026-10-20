@@ -1,0 +1,55 @@
+{
+  "laya_encoder": {
+    "name": "answerdotai/ModernBERT-large",
+    "layers": 28,
+    "hidden_size": 1024,
+    "attention_heads": 16,
+    "attention": "local/global RoPE",
+    "checkpoints": [
+      "baseline-s43",
+      "combined-s42"
+    ],
+    "weights_shared_across_checkpoints": false
+  },
+  "laya_head": {
+    "layers": 2,
+    "norm_first": true,
+    "attention_heads": 16,
+    "ffn_width": 4096,
+    "ffn_activation": "ReLU",
+    "type_embedding": "added to every encoder token",
+    "candidate_readout": "gather two MASK positions; shared LayerNorm/Linear/GELU/Linear scorer",
+    "action_head": "exists upstream; unused by this sentiment probability fusion"
+  },
+  "deberta": {
+    "layers": 24,
+    "hidden_size": 1024,
+    "attention_heads": 16,
+    "readout": "first-token ContextPooler, dropout, linear 1024 to 2"
+  },
+  "fusion": {
+    "laya_internal_lambda": 0.7020326697613102,
+    "outer_weights": [
+      0.5,
+      0.5
+    ],
+    "view_averaging": "only reviews over 466 Laya tokens; otherwise reuse prefix",
+    "class_threshold": 0.5
+  },
+  "source_sha256": {
+    ".cache/laya/english/rl_agent_config.json": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+    ".cache/laya/english/encoder/config.json": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979",
+    ".cache/deberta-v3-large/config.json": "ddec8b81d079d218ce9e54fc0af5d1d5937d6d53b5d42e70c1f251a1cebc830d",
+    "configs/laya_model_lock.json": "d3626263262f87df7d53c6ea43e0dc95d88e7be655790bc3e2c9120ece6b4896",
+    "configs/deberta_model_lock.json": "72f246bd0334efe6b7b5602ec465e23c9274cff69d361f6262bebcd02262e486",
+    "scripts/laya_fusion_inference.py": "14dd707998ce533de418b5e351d6b7b216560bf275dd4ce85595522735bd874e",
+    "scripts/laya_decision_views.py": "58cb9b7398ade97addce7a422af824795e5e7f783d8eb359a0c63d801d5454b9",
+    "scripts/deberta_inputs.py": "780f98c8770f8786d52343ad46a8b76f5a37069c0203518e61d4f0915eef9f16",
+    "scripts/deberta_training.py": "68f05b12a52f63121d51b836815249c019fbacba545574a55db0ae16a38c8d10",
+    ".venv/lib/python3.12/site-packages/laya/common.py": "f8e4c7408fb72e4088f4ac6db3c6764b387a955aea978e8360e0c189615a9505",
+    ".venv/lib/python3.12/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py": "f1943e7ef2d179c57b0238b4a390a50484a4901539fec41e33fe3b9ce8831652",
+    ".venv/lib/python3.12/site-packages/transformers/models/modernbert/modeling_modernbert.py": "1b23db2f59d3f80bd9af89fb6df3ce15affd90b5ffc09925e732450e694868ff"
+  },
+  "drawing": "bottom-to-top neural blocks, repeated layer stacks and residual bypasses; original drawing of implemented architecture",
+  "style_reference": "https://arxiv.org/abs/1706.03762; visual grammar only, not a reproduced encoder-decoder architecture"
+}

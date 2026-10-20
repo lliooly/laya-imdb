@@ -1,0 +1,10 @@
+{
+  "scope": "pre-final-check hashes; original files retained in before-tone snapshot and previous revision hashes",
+  "files": {
+    "manuscript.py": "74e830cb35e0c3ff114b27d29e8cee63ccc4b9dd7af15f3edc89f5b5ee09e570",
+    "main.tex": "c3694d43ffa51ab5056ef1240eb4ba7f8ba80bdac480f29cd706c1edefa4eab1",
+    "main.pdf": "9724db900353ad5d68f55c2f82685dae9da857bcdcefded3520672bb7d208efc",
+    "IMDB项目报告.docx": "ffa92b245cce0f15bc4f05fe3950fe759dfef93a1ee9c12799a9c7631bd69de5",
+    "validate_report.py": "941c833fa8dfd687bfed7c53f9493c003d68d5b2842dc5238f059238f652e9cb"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "checked_at": "2026-10-20T11:28:31.551241+08:00",
+  "result": "passed",
+  "reviewer": "assistant; no separate human verification claimed",
+  "corrections": [
+    "abstract calibration/fusion order aligned with equations",
+    "abstract cross-validation claim limited to held-out accuracy parity and lower NLL",
+    "table 3 backend caption clarified"
+  ],
+  "scientific_content": "original scores, all seed groups/policies, intervals, references, formulas and figure data preserved; no new training, fitting or official-test inference",
+  "tests": {
+    "command": "UV_CACHE_DIR=/private/tmp/imdb-uv-cache uv run --locked --offline --no-sync python -m unittest discover -s tests -p 'test_paper_*.py'",
+    "run": 13,
+    "failures": 0,
+    "errors": 0
+  },
+  "document_validation": "paper/analysis/document_validation.json",
+  "layout_review": {
+    "status": "passed",
+    "word_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "tex_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "findings": "Every final-render page inspected; text, tables (including repeated continuation headers), figures, equations and references legible; no clipping, overlap or missing glyphs. Independent pagination: Word 18 pages, XeLaTeX 16 pages."
+  },
+  "first_person": "none found",
+  "comments_and_tracked_changes": "none found",
+  "bibliography": "8 references retained; existing primary-source verification recorded in paper/review/references.json",
+  "identity": "placeholders retained at prior user request",
+  "outputs": {
+    "manuscript.py": {
+      "sha256": "fdeb4e90976a453410e101cd50304052db8d472f282cb56abe5539354e2bea0c",
+      "bytes": 42186
+    },
+    "main.tex": {
+      "sha256": "b82fb7d4d0bedb3550a3cb12ad74a9f00f77ea4804913db95d63cded7cf1679e",
+      "bytes": 44084
+    },
+    "main.pdf": {
+      "sha256": "dc34166fed37e78dfbbc34c311688d69b73281a0cdba14d282d9545ce1916141",
+      "bytes": 681370
+    },
+    "IMDB项目报告.docx": {
+      "sha256": "9f6b281029ef3be8ec5c3ac6862eaf4dd974c48e8fec88dc37b92d2a84b772da",
+      "bytes": 1896070
+    },
+    "build_report.py": {
+      "sha256": "60cca9cdbef9ffa1983049e9c959388c706d9798721fb097826c7687a0b3ca4d",
+      "bytes": 14603
+    },
+    "validate_report.py": {
+      "sha256": "31abb5ff3783b950359cc66ada2c74feeb148f5fc89f86f91d200adb00bef8f0",
+      "bytes": 12172
+    },
+    "analysis/document_validation.json": {
+      "sha256": "0970a652decf8958f5b17ef5ec0cbc2b0deb9d0104cd400cc460a437f9427992",
+      "bytes": 3271
+    },
+    "analysis/source_manifest.json": {
+      "sha256": "42badef2aa269cf47c39f7bbecc4a68134af7a1f8f7a8db68bef18af6cf4fdf7",
+      "bytes": 12643
+    },
+    "analysis/report_content.json": {
+      "sha256": "392de0116d4fb0f7b4fdc54441daddd15246b999980aa6c8287dd4353298649a",
+      "bytes": 48451
+    },
+    "README.md": {
+      "sha256": "9ae944fdf04bc577fc81acdf1c7d930e99f684083eebdb06c707e47000f5517f",
+      "bytes": 6729
+    },
+    "REVISION_NOTES.md": {
+      "sha256": "ed1746e37dbf89287de5990f9c23106f7d5a2c816de19137c4211151caae6dd8",
+      "bytes": 9536
+    }
+  },
+  "rendered_pages": {
+    "qa/word-final-20261020/page-1.png": "6776bf3a5f58dd08cdfeeb5ab7c46aec739c080734f1bf75ed062cc16d0a32e5",
+    "qa/word-final-20261020/page-10.png": "cedb2a1500e20193397176c6a6988935572eee3bc93aa335ff0bac59532cc3fc",
+    "qa/word-final-20261020/page-11.png": "62473aa49434c6ae063f04ffc160538b783d5ad5808d9c4691b0ba83791c4594",
+    "qa/word-final-20261020/page-12.png": "3aff9685044012f47c96e5e06b2b1666dc25e6015524c3b5a5e2394c58a51c1f",
+    "qa/word-final-20261020/page-13.png": "b96799f1eeaba7acba112a0c3ce534c1412ac30799c66f4dad72d96623b1673b",
+    "qa/word-final-20261020/page-14.png": "f2b7424a7b672c67cc27fdb50e45c9957e068a1f4be0919b1d4935975bbb2f7c",
+    "qa/word-final-20261020/page-15.png": "021a096a0d8444396736e6b031c8a93f16c3eaad18a00ea271b9ae3b9349cffa",
+    "qa/word-final-20261020/page-16.png": "69b0f25c77dd559af69e0a266f6d6c4b69baf2a9a2cbeb3d3d209b83112018e6",
+    "qa/word-final-20261020/page-17.png": "990ed2a90c6e79ace904c83936b6497f79c4386d2608c672f7d0ef7421069d51",
+    "qa/word-final-20261020/page-18.png": "d40c3a8e4ed423817f94b778d0d4c8f3e4b838820b4cb893d31d46a92a924dd7",
+    "qa/word-final-20261020/page-2.png": "946831aa5257af769b0ca8985d2769fa2158c51f9185742940b7dc07620d3987",
+    "qa/word-final-20261020/page-3.png": "b6d906cf8be1c08bc5e2e466b04781d30e0560ef81144876dee38b839d8c2c56",
+    "qa/word-final-20261020/page-4.png": "3625b71fb78f9281c16431ea8685d6303230bcf0af6939f96dedbc4ee11862cd",
+    "qa/word-final-20261020/page-5.png": "8472f8bad996d63f7138389390aac3ce820097c839cac5c15a6a2eeb7134fd08",
+    "qa/word-final-20261020/page-6.png": "4b597ab415d046546055e95a534a1e32bd545b607cec162be95e315b8ef07474",
+    "qa/word-final-20261020/page-7.png": "db1f0011f5ea7bd2108ef759df110c455afd117de02d29ae28f0a14ad2be5083",
+    "qa/word-final-20261020/page-8.png": "c64ca5aec20c8a06e0bc936c71449bfc4f822f34856290fff363890f9c0154a9",
+    "qa/word-final-20261020/page-9.png": "ebbb3867de5fad227adaa34553dbf1e1fc1aeb5182082466abac120d6567b6dd",
+    "qa/tex-final-20261020/page-01.png": "bfc5fbc06c5df595f6a1023af0d21093561461e0d43d9369fbe4ccb4c5fb4bf4",
+    "qa/tex-final-20261020/page-02.png": "7327cbb3af587d9ba6824a0c3b2329b38bd87ecdd11346159fa3a7dc2f0956dc",
+    "qa/tex-final-20261020/page-03.png": "5aba8d7a1b5b9ec4225a5c8466b87e7407e89c78593f71d9b23d978e5f7679b1",
+    "qa/tex-final-20261020/page-04.png": "c7e891ceb8a8e436f668302d1b41bd630d65f9a9868c920d2693427cac371fc0",
+    "qa/tex-final-20261020/page-05.png": "7f18dbb3c8199c241cc3c8431b92d8d1d2224c92e3e994a89749d228d93b620b",
+    "qa/tex-final-20261020/page-06.png": "030bd0d23fefae23e05a46950b68300e6a4ddeb693fb82e4d26e561b026c685c",
+    "qa/tex-final-20261020/page-07.png": "bb65f0905105122bc6bccd0b88d253961bd19c499b9b77ef2a1b464e098276aa",
+    "qa/tex-final-20261020/page-08.png": "dff4635e36f8ce7044ab76cd753686f324cfb46bbf7cd009d9cdccb6e90ba0b0",
+    "qa/tex-final-20261020/page-09.png": "bcddee62d69f9e504943e55f4f646ce54dbeacf717cabc54f49112c2ee311f83",
+    "qa/tex-final-20261020/page-10.png": "67d4b9ff93afbc11bfab708398ff87c6740a8449bd5355598358eeb322e046d4",
+    "qa/tex-final-20261020/page-11.png": "a31c51e0f2c2ac54892db7171c5989c0459768a142028fe6323694d65842e4ef",
+    "qa/tex-final-20261020/page-12.png": "57de099328fe1c444ae31d1399de336d0759b4109499d81898fb843065de755d",
+    "qa/tex-final-20261020/page-13.png": "0deb1ee692c7afa0bf3473bc03c9ea1593f0299cd8eb80d0d3b243e19c610bf3",
+    "qa/tex-final-20261020/page-14.png": "1e639c69a0f50315f5d3a1720cc064c9cd1f00e064038f779a1283f0f503dc58",
+    "qa/tex-final-20261020/page-15.png": "ca81724c91d66c65516d26b11c14718ad108687adc3d165a1c2d489cb4dd676b",
+    "qa/tex-final-20261020/page-16.png": "968f9ed092b1944af6f8f8356041906736cea39a13f72f9c5a72793444d1b9ed"
+  }
+}

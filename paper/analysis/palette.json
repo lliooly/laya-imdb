@@ -1,0 +1,17 @@
+{
+  "source": "User-supplied reference image; approximate pastel palette, not an exact colorimetric extraction",
+  "colors": {
+    "rose": "#DEA3BB",
+    "blue": "#8CAFC9",
+    "teal": "#5FA9B9",
+    "light_rose": "#F6CCDF",
+    "light_blue": "#AFD8F0",
+    "lilac": "#D9CEE4"
+  },
+  "series": {
+    "original_laya_main": "#DEA3BB",
+    "deberta_cpu": "#8CAFC9",
+    "fusion_50_50": "#5FA9B9"
+  },
+  "redundant_encoding": "direct labels; line/point markers o, s, ^; dark text on light heatmap"
+}

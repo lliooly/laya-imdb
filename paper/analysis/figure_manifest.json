@@ -1,0 +1,277 @@
+[
+  {
+    "id": "01_pipeline",
+    "description": "Schematic of frozen three-checkpoint inference and probability fusion.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "02_data",
+    "description": "Fixed partition sizes and official-test token-length distribution. Bins are left-closed except the last.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "03_accuracy",
+    "description": "Wilson 95% intervals for fixed-model accuracy; they exclude training and model-selection uncertainty.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "04_errors",
+    "description": "Full official-test confusion matrix and paired prediction transitions relative to old Laya ensemble.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "05_probability",
+    "description": "Official-test NLL, top-label ECE, and positive-class Brier score, with zero-based bar axes.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "06_reliability",
+    "description": "Nonempty original 15 equal-width top-label bins. Low-confidence bins have smaller denominators; see reliability_bins.csv.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "07_strata_ablation",
+    "description": "Test-length descriptive stratification and a separate three-seed development loss ablation; panels are different experiments.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "08_controls",
+    "description": "All seeds in the matched-head experiment; long/short net changes in the separate 512/2048 control.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "09_selective_cost",
+    "description": "Left: actual test coverage using pre-frozen calibration-only thresholds. Right: historical two-Laya MLX benchmark, excluding DeBERTa; not final-system throughput.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+    ]
+  },
+  {
+    "id": "10_training",
+    "description": "Historical combined-s43: two saved epoch observations; not the final combined-s42 fusion member. No smoothing; development n=2500 before final temperature calibration.",
+    "width_inches": 7.0,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+      "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+      "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+      "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+      "reports/data_audit.json",
+      "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+      "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+      "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+      "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md",
+      "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/epoch_validation_curve.json"
+    ]
+  },
+  {
+    "id": "11_architecture",
+    "description": "Implemented heterogeneous classifier and expanded Laya pre-norm decision head; schematic, not a new experiment.",
+    "width_inches": 9.3,
+    "height_inches": 9.6,
+    "palette": {
+      "rose": "#DEA3BB",
+      "blue": "#8CAFC9",
+      "teal": "#5FA9B9",
+      "light_rose": "#F6CCDF",
+      "light_blue": "#AFD8F0",
+      "lilac": "#D9CEE4"
+    },
+    "source_files": [
+      ".cache/laya/english/rl_agent_config.json",
+      ".cache/laya/english/encoder/config.json",
+      ".cache/deberta-v3-large/config.json",
+      "configs/laya_model_lock.json",
+      "configs/deberta_model_lock.json",
+      "scripts/laya_fusion_inference.py",
+      "scripts/laya_decision_views.py",
+      "scripts/deberta_inputs.py",
+      "scripts/deberta_training.py",
+      ".venv/lib/python3.12/site-packages/laya/common.py",
+      ".venv/lib/python3.12/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py",
+      ".venv/lib/python3.12/site-packages/transformers/models/modernbert/modeling_modernbert.py"
+    ],
+    "formats": [
+      "pdf",
+      "png",
+      "svg"
+    ],
+    "drawing_code": "paper/build_architecture.py"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "revision_date": "2026-10-20",
+  "content_source": "paper/manuscript.py",
+  "pre_revision_snapshot": "paper/review/before-supplement-20261020",
+  "historical_formulas_and_figure_captions": "unchanged",
+  "supplementary_tables_added": 1,
+  "table_rows_bound_to_reports": true,
+  "first_person_check": "passed",
+  "new_training_fitting_test_inference_during_revision": false,
+  "document_validation": "paper/analysis/document_validation.json",
+  "scientific_scope": "observed configuration-dependent modest accuracy gains and probability-quality improvements; no demonstrated probability of future gain or independently confirmed accuracy superiority",
+  "outputs": {
+    "IMDB项目报告.docx": {
+      "sha256": "6afa502e1546d2225209937069713145f3759e4da7462ca17699be0aeb6d7703",
+      "bytes": 1894967
+    },
+    "main.pdf": {
+      "sha256": "32a7bf80144ccfda02358dcdfab4f6aa50668c0a2e666b1cf51004da8f988d51",
+      "bytes": 678020
+    },
+    "main.tex": {
+      "sha256": "bd6036578066e147cec87e4ece2057a4467c399289f3726cf3a622140f26ec8c",
+      "bytes": 41627
+    },
+    "manuscript.py": {
+      "sha256": "bbf6e36d0676d2d3ea7f0cefd510cc0938e7c8dfb12f1adcf2fea35bdb63a3c5",
+      "bytes": 39770
+    }
+  }
+}
