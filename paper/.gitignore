@@ -1,0 +1,8 @@
+__pycache__/
+qa/
+*.aux
+*.log
+*.out
+qa-tex-console.txt
+IMDB报告与TeX源码.zip
+/main-*.png

@@ -4,6 +4,11 @@
 # Preserve historical evidence byte-for-byte, including CRLF CSV exports.
 reports/** -text
 
+# Preserve generated CSV evidence and archived paper snapshots with their hashes.
+paper/**/*.csv -text -whitespace
+# Matplotlib SVG path lines legitimately retain trailing spaces.
+paper/figures/*.svg -whitespace
+
 # Binary media and archives.
 *.png binary
 *.jpg binary
