@@ -52,3 +52,7 @@ MLX_ENABLE_TF32=0 uv run --locked --offline --no-sync \
 [完整测试报告](../../reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md) 记录 97.028%；[三组重训](../../reports/paper-gpu-supplement-20261019-v1/REPORT.md) 与 [稳健性分析](../../reports/paper-fusion-robustness-20261020-v1/REPORT.md) 已纳入最终报告。97.40%、80:20 与校准拟合权重均属于开发探索，没有替换最终冻结规则。
 
 本地演示与常规交付检查无需重新执行官方测试。统一三模型加载、编码、概率一致性和性能仍需独立整合验收，见 [交付状态](../closeout/delivery.md)。
+
+## Hugging Face 下载入口
+
+冻结三模型的独立模型包及 CPU 推理命令见 [Hugging Face 模型发布与下载](huggingface.md)。其配套运行代码随模型分发，不替换仓库历史默认单模型命令。

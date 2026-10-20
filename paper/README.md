@@ -15,7 +15,7 @@
 | 核验材料 | [analysis/](analysis/) | 指标、来源 SHA256、图表清单和独立复算 |
 | 修订记录 | [REVISION_NOTES.md](REVISION_NOTES.md) | 历次内容与版式变更 |
 
-封面已按用户提供的信息填写姓名、学号与班级，并移除课程名和指导教师；首页附有可点击的 GitHub 项目链接。导出时若必要身份字段缺失或仍为占位符，将停止生成。报告包含 8 条参考文献、7 张表和 8 个公式；当前页数与检查状态以 [document_validation.json](analysis/document_validation.json) 为准。封面更正的最新核验见 [identity_revision_20261020.json](analysis/identity_revision_20261020.json)，早期审查记录及其输出哈希保留为历史版本。
+封面已按用户提供的信息填写姓名、学号与班级，并移除课程名和指导教师；首页附有可点击的 GitHub 源码链接和 Hugging Face 模型权重链接。导出时若必要身份字段缺失或仍为占位符，将停止生成。报告包含 8 条参考文献、7 张表和 8 个公式；当前页数与检查状态以 [document_validation.json](analysis/document_validation.json) 为准。本轮模型链接核验见 [huggingface_revision_20261020.json](analysis/huggingface_revision_20261020.json)，此前身份更正见 [identity_revision_20261020.json](analysis/identity_revision_20261020.json)，早期审查记录及其输出哈希保留为历史版本。
 
 ## 报告内容
 
@@ -81,3 +81,5 @@ uv run --locked --offline --no-sync python paper/build_package.py
 [final_review_20261020.json](analysis/final_review_20261020.json) 与 [document_validation.json](analysis/document_validation.json) 记录正文、指标、公式、引用、嵌入图像和逐页版式检查。Word 18 页与 PDF 16 页均已检查，二者独立分页。当前 README 的整理不改变报告正文、数据或已有核验结论。
 
 历史审查见 [review/REVIEW.md](review/REVIEW.md)，各轮修订前快照保留在 `review/` 对应子目录。静态审查可在具备其依赖和冻结输入的完整本地环境中运行 `python3 paper/review/audit.py`；它不执行新的模型测试前向。
+
+模型发布与下载：[Hugging Face 模型仓库](https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble)；固定 revision 和远端核验见 [发布记录](../reports/huggingface-release-20261020-v1/REPORT.md)。

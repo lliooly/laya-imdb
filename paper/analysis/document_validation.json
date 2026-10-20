@@ -58,12 +58,14 @@
   "word_embedded_figures_match_current_pngs": "passed",
   "reference_hanging_indent_and_hyperlinks": "passed",
   "project_github_link": "https://github.com/lliooly/laya-imdb",
+  "model_hub_link": "https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble",
   "tex_missing_character_count": 0,
   "tex_overfull_box_count": 0,
   "tex_unresolved_references": 0,
-  "rendered_word_body_sha256": "9ee8be1b31d4a9efcccb8720afae47d41b31856a074489939cf1e083ab70e7b4",
+  "rendered_word_body_sha256": "d626291ac2c8989e5a35b4c340d2e0b8224c0181dbb6992089a7d5bfa7730932",
   "layout_review": {
     "status": "passed",
+    "reviewer": "assistant",
     "visually_reviewed_changed_pages": {
       "word": [
         1
@@ -73,63 +75,48 @@
         2
       ]
     },
-    "pixel_comparison_to_previous_full_page_review": {
-      "word": {
-        "previous_pages": 18,
-        "new_pages": 18,
-        "pixel_identical_to_previously_reviewed": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18
-        ],
-        "require_visual_review": [
-          1
-        ]
-      },
-      "tex": {
-        "previous_pages": 16,
-        "new_pages": 16,
-        "pixel_identical_to_previously_reviewed": [
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16
-        ],
-        "require_visual_review": [
-          1,
-          2
-        ]
-      }
+    "pixel_identical_remaining_pages": {
+      "word": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "tex": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
     },
-    "prior_full_page_review": "paper/analysis/final_review_20261020.json",
-    "findings": "Name, student ID, class and clickable project URL inspected on both covers; no course/instructor fields; changed PDF page 2 inspected. All remaining pages match previously reviewed pixels exactly; no clipping or overlap."
+    "findings": "Both cover links readable and clickable; PDF page 2 reviewed after reflow. Remaining pages match previously reviewed pixels exactly; no clipping or overlap.",
+    "previous_full_review": "paper/analysis/identity_revision_20261020.json"
   },
-  "word_render_directory": "paper/qa/word-identity-20261020",
-  "tex_render_directory": "paper/qa/tex-identity-20261020",
+  "word_render_directory": "paper/qa/word-huggingface-20261020",
+  "tex_render_directory": "paper/qa/tex-huggingface-20261020",
   "compiler": "local XeLaTeX / TeX Live 2026",
   "word_renderer": "bundled LibreOffice with explicit CJK font aliases",
   "target_word_wps_validation": "not performed",

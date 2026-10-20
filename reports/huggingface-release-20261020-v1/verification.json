@@ -1,0 +1,342 @@
+{
+  "state": "passed",
+  "repo_id": "shishishi3/laya-deberta-imdb-ensemble",
+  "revision": "9a20453f3c48854a456a584e7f69c82f495c5c00",
+  "public_access_verified": true,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 128,
+      "sha256": "ff732ca6e2b41b4d12214945f5c1f9c51fe766b7534dcff4ef7ea4f4af88efa1",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "LICENSES.md",
+      "bytes": 1536,
+      "sha256": "54e91294be999509a032c50fd33cfcdd6ffb23c7250874dfa31e5259ea0b6da9",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7755,
+      "sha256": "5373f75c06ea6e2ec49c0d4cff4e984a5800acf9347beb2bebeda20b9f73d0c4",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "frozen-fit.json",
+      "bytes": 181790,
+      "sha256": "8ce4ca74c439b4c1cb102fd43f1c7f9161dc55e97f78c302d254640d64b7dd8e",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "fusion.json",
+      "bytes": 4607,
+      "sha256": "97d224e192b93e41ab212377d41ed1e5aa50a203ba0b0905c61915cb0ad1b013",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/APACHE-2.0.txt",
+      "bytes": 11418,
+      "sha256": "77fd4710def9ec3c0f6225800e0235f15a425abd4a8b03559127fcd782612049",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/DEBERTA_MIT.txt",
+      "bytes": 1141,
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/PROJECT_MIT.txt",
+      "bytes": 1064,
+      "sha256": "4ef13ed8546f9409b574d9516c918801bcb7c1b9ea75937a4054813034b941a0",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/deberta-upstream-model-card.md",
+      "bytes": 3266,
+      "sha256": "f6a88d8dba8986495c8274f7bc142c72919307982bb6b200a81fcf2acd509d17",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/deberta-upstream-verification.json",
+      "bytes": 557,
+      "sha256": "29045934116ecbbff324544f886589eb458be24dab1cf95a3efd0afe01332ab2",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/laya-upstream-model-card.md",
+      "bytes": 23187,
+      "sha256": "00355613796b3f5860b0d5b20392381d26580ec242e04a1fd150c7f116858602",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "licenses/laya-upstream-verification.json",
+      "bytes": 552,
+      "sha256": "84fa52ff678872742f12ae3e8985f3e305db227c6105741bde10dc3f1a58a1c9",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/baseline-s43/encoder/config.json",
+      "bytes": 2117,
+      "sha256": "5c887ce4335a901d15b8024f5ead2d0744eb18439da011511df5ae8f7cbf862a",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/baseline-s43/model.safetensors",
+      "bytes": 842609220,
+      "sha256": "2f8c6635beb15204f247ed3370088054c6d91e4cd6cdcae0ff73e6e5d964f338",
+      "remote_check": "remote LFS SHA-256"
+    },
+    {
+      "path": "models/baseline-s43/rl_agent_config.json",
+      "bytes": 5088,
+      "sha256": "7808d74ee7ec79be8d6e037749886a394e24769df8da8894b3fd3b25f890db1f",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/baseline-s43/tokenizer/special_tokens_map.json",
+      "bytes": 694,
+      "sha256": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/baseline-s43/tokenizer/tokenizer.json",
+      "bytes": 3583325,
+      "sha256": "0b3214f8efe1327290428b84e5d344ff3f2442686c1b89fb7b42c13a79ce6779",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/baseline-s43/tokenizer/tokenizer_config.json",
+      "bytes": 20840,
+      "sha256": "2966a59b9e9cf122279aec1249e22e5bc7ad8430c754e95031b13fd128d4e560",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/combined-s42/encoder/config.json",
+      "bytes": 2117,
+      "sha256": "5c887ce4335a901d15b8024f5ead2d0744eb18439da011511df5ae8f7cbf862a",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/combined-s42/model.safetensors",
+      "bytes": 842609220,
+      "sha256": "bf5529167140f4553b560788b740945614c1c4d0fb69aadd9b507565e09c3819",
+      "remote_check": "remote LFS SHA-256"
+    },
+    {
+      "path": "models/combined-s42/rl_agent_config.json",
+      "bytes": 5130,
+      "sha256": "f7736ec963b54c4d9a55f1023050d4aceb15ad9359be930e8b98f511c2fa57e3",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/combined-s42/tokenizer/special_tokens_map.json",
+      "bytes": 694,
+      "sha256": "ea97ecdbcc73713039d8d64dbb05e3689495c96657fbd9a18f5bed381be81049",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/combined-s42/tokenizer/tokenizer.json",
+      "bytes": 3583325,
+      "sha256": "0b3214f8efe1327290428b84e5d344ff3f2442686c1b89fb7b42c13a79ce6779",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/combined-s42/tokenizer/tokenizer_config.json",
+      "bytes": 20840,
+      "sha256": "2966a59b9e9cf122279aec1249e22e5bc7ad8430c754e95031b13fd128d4e560",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/deberta/assets/tokenizer/added_tokens.json",
+      "bytes": 23,
+      "sha256": "dc046d04c9b0ada7ae6f1dc89c465801799acdf0c9a6aab8c15a1b2d5ca4e91f",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/deberta/assets/tokenizer/special_tokens_map.json",
+      "bytes": 286,
+      "sha256": "9463f61e1b109a8eb4688b829260d7c6b1e6dff04c98ff7269bb89e2b92369b9",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/deberta/assets/tokenizer/spm.model",
+      "bytes": 2464616,
+      "sha256": "c679fbf93643d19aab7ee10c0b99e460bdbc02fedf34b92b05af343b4af586fd",
+      "remote_check": "remote LFS SHA-256"
+    },
+    {
+      "path": "models/deberta/assets/tokenizer/tokenizer_config.json",
+      "bytes": 1315,
+      "sha256": "e6c4c771911c211618a2d46488dc7e9e499f051773cd4ff4faeca6fe55fdf569",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/deberta/config.json",
+      "bytes": 946,
+      "sha256": "6a3eec5eeb9293ba6550d02f18cd553aa59562cbbfc79f6978c848f3fa27157c",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "models/deberta/model.safetensors",
+      "bytes": 1740304440,
+      "sha256": "6f6d960b44251e97d0365f4cd25a8b71f689bba8d3407a1ebe69a850b732fa2c",
+      "remote_check": "remote LFS SHA-256"
+    },
+    {
+      "path": "predict_final.py",
+      "bytes": 5050,
+      "sha256": "f14f143437292deb1b3c926d645efb5a4c4bf561d6da6a180d020804249a77bf",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "provenance/deberta_model_lock.json",
+      "bytes": 612,
+      "sha256": "72f246bd0334efe6b7b5602ec465e23c9274cff69d361f6262bebcd02262e486",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "provenance/laya_model_lock.json",
+      "bytes": 675,
+      "sha256": "d3626263262f87df7d53c6ea43e0dc95d88e7be655790bc3e2c9120ece6b4896",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 223,
+      "sha256": "aa27afc5155e73f9c3b12370a00d9c4c82dd6a3adcb7b38135592286a85ee08b",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/common.py",
+      "bytes": 1246,
+      "sha256": "cb58f328e770428e75162f94065c0568d82d6f9e767296a0142c36bac416e02e",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/comparison_metrics.py",
+      "bytes": 4163,
+      "sha256": "918ab38a674b0cb7430805eb2c0b9d2269109b3dc064615f2298d8f852abdb61",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/cuda_numerics.py",
+      "bytes": 1807,
+      "sha256": "523d455d6112e2f36ca719bc95e2b7b2b2d00dd6170981b4947a2af48d4f3c08",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/deberta_inputs.py",
+      "bytes": 4013,
+      "sha256": "780f98c8770f8786d52343ad46a8b76f5a37069c0203518e61d4f0915eef9f16",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/deberta_training.py",
+      "bytes": 7240,
+      "sha256": "68f05b12a52f63121d51b836815249c019fbacba545574a55db0ae16a38c8d10",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/export_laya_posthoc.py",
+      "bytes": 12148,
+      "sha256": "01415c729d81a20790a0e67e48998f284cacee97d9b30ea6cf2da1b242665505",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_decision_views.py",
+      "bytes": 7457,
+      "sha256": "58cb9b7398ade97addce7a422af824795e5e7f783d8eb359a0c63d801d5454b9",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_epoch_checkpoints.py",
+      "bytes": 2302,
+      "sha256": "099300fc595012e66476a1eb81a4dc08df5a01d40a7b9edc4cdaf2134635b935",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_fusion_inference.py",
+      "bytes": 8810,
+      "sha256": "14dd707998ce533de418b5e351d6b7b216560bf275dd4ce85595522735bd874e",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_head_control.py",
+      "bytes": 14769,
+      "sha256": "8094c29fa5f61b31ef4bc0e4e8dc00259d66db41c2c821344334d0b8c6bc217d",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_optimization.py",
+      "bytes": 9351,
+      "sha256": "96a1021b3024fb8c41c4026e7e04c1d6e110259aa2e56005ca033feaef7be92f",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_probability_fusion.py",
+      "bytes": 4520,
+      "sha256": "a473a29152f106e2e942bd101696eba3680b59aae20729c86cc9b6c41815f7da",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_rdrop.py",
+      "bytes": 4129,
+      "sha256": "d41b37984385baa1acd0edb47f297b89571fb228d8e876292f8e0a8476ce6cd6",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_resampling.py",
+      "bytes": 9459,
+      "sha256": "16381a45e28b6daff67a7fd3e60450adb1dc032f1dc41803c9b24e7eaf7ec70d",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_robust_training.py",
+      "bytes": 10384,
+      "sha256": "6ebb8033ac0e005ab974e81d9038f72088183546bcab19895684199b04d746ed",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_runtime.py",
+      "bytes": 1602,
+      "sha256": "62512b97934acc42dcca7fa51ea12bdbe87967e2d44678605926cabda9b9134c",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_semantic_training.py",
+      "bytes": 13911,
+      "sha256": "6ae093360d33875f2d42b2a598eef711fe0825d9bd36c294ab573cddb5fdc56b",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/laya_window_training.py",
+      "bytes": 6157,
+      "sha256": "2633c24f6fb730b1dffbfa21f0538c0d2818036d1a98567850dc98bf779c2fa1",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/semantic_pair_pilot.py",
+      "bytes": 15763,
+      "sha256": "a299c434ab64bfc56169371b8426cf4e871aa509acbb0e3dd306086c8c06e5da",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "runtime/scripts/train_laya.py",
+      "bytes": 15789,
+      "sha256": "50530b8b0efd2872ee280bcc80c07b92e090bf9f4d71bbeeafde52808db4f7ec",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    },
+    {
+      "path": "FILE_MANIFEST.json",
+      "bytes": 9461,
+      "sha256": "b97c00e5186ae1ca92c8d74f41e81ae58f5c0803bfd19332df7a176e19ac3571",
+      "remote_check": "remote Git blob identity plus local SHA-256 manifest"
+    }
+  ],
+  "download_checks": "all local snapshot payloads SHA-256 checked at pinned revision; exact local weights reused only after matching remote LFS SHA-256",
+  "self_contained_cpu_smoke": "positive probability 0.9918030091682009; same as previously verified wrapper",
+  "new_training_or_fitting": false,
+  "official_test_accessed": false
+}

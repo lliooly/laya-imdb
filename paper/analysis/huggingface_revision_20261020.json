@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-10-20T21:49:04.964563+08:00",
+  "state": "passed",
+  "model_hub_url": "https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble",
+  "scope": "add model publication link; manuscript content, formulas, figures, results and model parameters unchanged",
+  "publication": {
+    "state": "published_and_verified",
+    "url": "https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble",
+    "revision": "9a20453f3c48854a456a584e7f69c82f495c5c00",
+    "files_verified": 55,
+    "public": true
+  },
+  "pdf_uri_annotation": "verified",
+  "docx_external_hyperlink": "verified",
+  "tex_pages": 16,
+  "word_render_pages": 18,
+  "layout_review": {
+    "status": "passed",
+    "reviewer": "assistant",
+    "visually_reviewed_changed_pages": {
+      "word": [
+        1
+      ],
+      "tex": [
+        1,
+        2
+      ]
+    },
+    "pixel_identical_remaining_pages": {
+      "word": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "tex": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    "findings": "Both cover links readable and clickable; PDF page 2 reviewed after reflow. Remaining pages match previously reviewed pixels exactly; no clipping or overlap.",
+    "previous_full_review": "paper/analysis/identity_revision_20261020.json"
+  },
+  "outputs": {
+    "build_report.py": {
+      "bytes": 15608,
+      "sha256": "12bc298d76927dad95f460cefa05feebfe77d56ac71ac2a47956ed6ed83aaeb9"
+    },
+    "validate_report.py": {
+      "bytes": 13771,
+      "sha256": "d1ba23219e3b93245aa4462a41ae1141d44caa389f5c636e35f656e433c1f45a"
+    },
+    "main.tex": {
+      "bytes": 44183,
+      "sha256": "514e2bb2404b4bc561ce8f047e97415097204dc5c6055709227fccb9a99b024c"
+    },
+    "main.pdf": {
+      "bytes": 681709,
+      "sha256": "34b98bbea3c7c968f94c459432cd6a181e1d1ac15a14596c62998c96033ee49d"
+    },
+    "IMDB项目报告.docx": {
+      "bytes": 1896229,
+      "sha256": "a7c7ff9a64d1321a10a41763affe87f90b240b0780058435f14253f751d2e039"
+    },
+    "README.md": {
+      "bytes": 5875,
+      "sha256": "18252b35a28c41c0b1738b58710c6117a414b5765175ccdaa10d09bcec9d326a"
+    },
+    "REVISION_NOTES.md": {
+      "bytes": 10313,
+      "sha256": "6545fe476659b9982d41451a2e5c2b8948828af0993c74a7da7d507594087e19"
+    },
+    "analysis/document_validation.json": {
+      "bytes": 3797,
+      "sha256": "b6e65f800d53e221c58dd6d1aa117c26b43705fab62ab100430b055f012f0132"
+    },
+    "analysis/source_manifest.json": {
+      "bytes": 12643,
+      "sha256": "8aa63963a61a67fdf78862e063fcdaf333c9a1ad9dd3cda6683f0db3e00e5e42"
+    }
+  },
+  "publication_record": "reports/huggingface-release-20261020-v1/summary.json"
+}

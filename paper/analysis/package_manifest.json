@@ -1,32 +1,32 @@
 {
   "archive_root": "IMDB报告",
-  "archive_entry_count": 61,
-  "hashed_payload_count": 60,
+  "archive_entry_count": 62,
+  "hashed_payload_count": 61,
   "files": [
     {
       "path": "main.tex",
-      "bytes": 44088,
-      "sha256": "8f558d925f9b5aa4ecdd0ff91118ebcea9722747b2ca441c9234c4cc6f99d51e"
+      "bytes": 44183,
+      "sha256": "514e2bb2404b4bc561ce8f047e97415097204dc5c6055709227fccb9a99b024c"
     },
     {
       "path": "main.pdf",
-      "bytes": 681518,
-      "sha256": "529bdfc3beb9b0aa4c720485f54107ffb893989a145804f151ad17822dab63dd"
+      "bytes": 681709,
+      "sha256": "34b98bbea3c7c968f94c459432cd6a181e1d1ac15a14596c62998c96033ee49d"
     },
     {
       "path": "IMDB项目报告.docx",
-      "bytes": 1896149,
-      "sha256": "2cb5cab47df1e1a70f77d11f1c9f2e7b8ddedfcd1bae45a3a916daedcb187333"
+      "bytes": 1896229,
+      "sha256": "a7c7ff9a64d1321a10a41763affe87f90b240b0780058435f14253f751d2e039"
     },
     {
       "path": "README.md",
-      "bytes": 5513,
-      "sha256": "99522e353e9740180d6d53209c7e254edd830baf0edf3093125f4dcb2b946f09"
+      "bytes": 5875,
+      "sha256": "18252b35a28c41c0b1738b58710c6117a414b5765175ccdaa10d09bcec9d326a"
     },
     {
       "path": "REVISION_NOTES.md",
-      "bytes": 10023,
-      "sha256": "78840cd72b446e9c7a8177c99b8a7cdd153417ab54c64f60c83a258f0cf17aa1"
+      "bytes": 10313,
+      "sha256": "6545fe476659b9982d41451a2e5c2b8948828af0993c74a7da7d507594087e19"
     },
     {
       "path": "submission.json",
@@ -40,8 +40,8 @@
     },
     {
       "path": "build_report.py",
-      "bytes": 15391,
-      "sha256": "f65650653fcbffc204f64dc8ef987e7bdc2c2133d2cc4cff66abdaea39424d4d"
+      "bytes": 15608,
+      "sha256": "12bc298d76927dad95f460cefa05feebfe77d56ac71ac2a47956ed6ed83aaeb9"
     },
     {
       "path": "build_figures.py",
@@ -60,8 +60,8 @@
     },
     {
       "path": "validate_report.py",
-      "bytes": 13365,
-      "sha256": "5ade303174e5b1213205b767a66675b37b8de23c83e4686bab6131d43479c023"
+      "bytes": 13771,
+      "sha256": "d1ba23219e3b93245aa4462a41ae1141d44caa389f5c636e35f656e433c1f45a"
     },
     {
       "path": "figures/01_pipeline.pdf",
@@ -220,8 +220,8 @@
     },
     {
       "path": "analysis/document_validation.json",
-      "bytes": 4178,
-      "sha256": "f5c133c80b8506371a8f46c00840c0f51f477973ea043ae5912f281351549a07"
+      "bytes": 3797,
+      "sha256": "b6e65f800d53e221c58dd6d1aa117c26b43705fab62ab100430b055f012f0132"
     },
     {
       "path": "analysis/figure-build.log",
@@ -237,6 +237,11 @@
       "path": "analysis/final_review_20261020.json",
       "bytes": 7084,
       "sha256": "779aceb97e23037dbdd7eb4ac3040f80a1ff934eefb9a49e09782d3ce4c7850d"
+    },
+    {
+      "path": "analysis/huggingface_revision_20261020.json",
+      "bytes": 2911,
+      "sha256": "85ebe43da7181371862038d0500ab09c9cbdd1f0994fb243859747ad59a35bb0"
     },
     {
       "path": "analysis/identity_revision_20261020.json",
@@ -286,7 +291,7 @@
     {
       "path": "analysis/source_manifest.json",
       "bytes": 12643,
-      "sha256": "5ee2a17302b92cca00a3434d2f61700109423294b038ce369b713d650290a3d0"
+      "sha256": "8aa63963a61a67fdf78862e063fcdaf333c9a1ad9dd3cda6683f0db3e00e5e42"
     },
     {
       "path": "analysis/supplement_revision_20261020.json",

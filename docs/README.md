@@ -40,3 +40,5 @@
 - [10 月 18 日整理前快照](archive/closeout-20261018/)、`superpowers/` 日期设计与实现计划。
 
 历史报告、manifest、SHA256 和 reproduction 快照按原路径保留，反映记录时的状态。对存在 `evaluation/REPORT.md` 的实验，优先阅读最终评估；准备配置中的“待启动”不代表最终任务仍未完成。
+
+模型权重与独立推理包见 [Hugging Face 发布指南](guides/huggingface.md)。

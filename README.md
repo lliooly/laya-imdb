@@ -2,7 +2,7 @@
 
 基于 **Laya（ModernBERT-large）与 DeBERTa-v3-large** 的 IMDB 英文影评情感分类项目，提供微调代码、多视图概率融合、受控实验、跨后端核验和完整课程报告。
 
-[项目报告](paper/README.md) · [使用与复现](docs/README.md) · [实验结果](docs/experiments/current-status.md) · [交付说明](docs/closeout/delivery.md)
+[模型权重](https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble) · [项目报告](paper/README.md) · [使用与复现](docs/README.md) · [实验结果](docs/experiments/current-status.md) · [交付说明](docs/closeout/delivery.md)
 
 ## 项目概览
 

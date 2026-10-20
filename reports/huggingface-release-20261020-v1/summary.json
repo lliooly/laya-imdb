@@ -1,0 +1,14 @@
+{
+  "state": "published_and_verified",
+  "published_at": "2026-10-20T22:15:45.515661+08:00",
+  "repo_id": "shishishi3/laya-deberta-imdb-ensemble",
+  "url": "https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble",
+  "revision": "9a20453f3c48854a456a584e7f69c82f495c5c00",
+  "public": true,
+  "files_verified": 55,
+  "payload_bytes": 3435622278,
+  "training_performed": false,
+  "parameters_refitted": false,
+  "official_test_accessed": false,
+  "source_runtime_commit": "f39da7f9714a76885ad0dbff1133752549e543ed"
+}

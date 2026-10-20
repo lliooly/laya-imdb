@@ -53,3 +53,7 @@
 - 接收方设备的依赖安装与加载验收；本机随附模型包已核验，历史 L2 权重缺口继续披露。
 
 ModernBERT-base / Laya-RLCD 公平迁移、端到端查询头及领域预训练属于后续研究，不作为已完成交付成果。
+
+## Hugging Face 模型发布
+
+三模型冻结权重、配置、分词器和独立 CPU 推理代码的发布入口为 <https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble>。完整下载步骤见 [模型发布与下载](../guides/huggingface.md)，发布状态和固定 revision 见 [发布记录](../../reports/huggingface-release-20261020-v1/REPORT.md)。GitHub 保存完整源码与论文工程，模型仓库保留组件各自许可。

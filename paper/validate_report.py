@@ -15,8 +15,8 @@ ROOT=HERE.parent
 def read(rel):return json.loads((HERE/rel).read_text())
 def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 def source_json(key):return json.loads((ROOT/SOURCES[key]).read_text())
-word_render=HERE/'qa/word-identity-20261020'
-tex_render=HERE/'qa/tex-identity-20261020'
+word_render=HERE/'qa/word-huggingface-20261020'
+tex_render=HERE/'qa/tex-huggingface-20261020'
 baseline=read('analysis/revision-baseline.json')
 assert [b['tex'] for b in BLOCKS if b['kind']=='equation']==baseline['equations']
 reference_keys=[r[0] for r in REFERENCES]
@@ -109,8 +109,9 @@ with zipfile.ZipFile(docx) as z:
         actual=[[''.join(cell.xpath('.//w:t/text()',namespaces=ns)) for cell in row.xpath('./w:tc',namespaces=ns)] for row in rows]
         assert actual==[block['headers']]+block['rows']
     links=tree.xpath('//w:hyperlink',namespaces=ns)
-    assert len(links)==len(REFERENCES)+1
+    assert len(links)==len(REFERENCES)+2
     assert any('https://github.com/lliooly/laya-imdb' in ''.join(link.itertext()) for link in links)
+    assert any('https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble' in ''.join(link.itertext()) for link in links)
     media_hashes={hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if n.startswith('word/media/')}
     for p in (HERE/'figures').glob('*.png'):assert hashlib.sha256(p.read_bytes()).hexdigest() in media_hashes,p.name
     for p in (HERE/'qa/equations').glob('equation-*.png'):assert hashlib.sha256(p.read_bytes()).hexdigest() in media_hashes,p.name
@@ -153,6 +154,8 @@ for value in identity.values():
 assert f'姓名：{identity["name"]}    学号：{identity["student_id"]}' in paragraphs
 assert f'班级：{identity["class_name"]}' in paragraphs
 assert 'https://github.com/lliooly/laya-imdb' in tex
+assert 'https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble' in tex
+assert any('模型权重：https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble'==p for p in paragraphs)
 assert any('项目源码：https://github.com/lliooly/laya-imdb'==p for p in paragraphs)
 for forbidden in ['待填写','课程名','指导教师','指导老师','自然语言处理课程项目报告']:
     assert forbidden not in tex and not any(forbidden in p for p in paragraphs),forbidden
@@ -183,6 +186,7 @@ result={'tex_pages':len(pdf.pages),'word_render_pages':len(word_pdf.pages), 'ref
     'first_person_prose_check':'passed',
     'word_embedded_figures_match_current_pngs':'passed','reference_hanging_indent_and_hyperlinks':'passed',
     'project_github_link':'https://github.com/lliooly/laya-imdb',
+    'model_hub_link':'https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble',
     'tex_missing_character_count':0,'tex_overfull_box_count':0,'tex_unresolved_references':0,
     'rendered_word_body_sha256':hashlib.sha256(body).hexdigest(),
     'layout_review':'pending latest full-page visual review',

@@ -8,6 +8,7 @@ from manuscript import TITLE, SUBTITLE, BLOCKS, REFERENCES, SOURCES
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent
 REPOSITORY_URL='https://github.com/lliooly/laya-imdb'
+MODEL_HUB_URL='https://huggingface.co/shishishi3/laya-deberta-imdb-ensemble'
 metadata_path=HERE/'submission.json'
 metadata=json.loads(metadata_path.read_text())
 required_identity=('name','student_id','class_name')
@@ -69,7 +70,8 @@ tex=[r'''% Generated from manuscript.py by build_report.py. UTF-8; compile with 
 \vspace{5pt}
 {\small '''+esc(identity_lines[0]).replace('    ',r'\qquad ')+r'''}\par
 {\small '''+esc(identity_lines[1]).replace('    ',r'\qquad ')+r'''}\par
-{\small 项目源码：\url{'''+REPOSITORY_URL+r'''}}
+{\small 项目源码：\url{'''+REPOSITORY_URL+r'''}}\par
+{\small 模型权重：\url{'''+MODEL_HUB_URL+r'''}}
 \end{center}
 \vspace{4pt}
 ''']
@@ -140,13 +142,14 @@ for text in identity_lines:
     p=doc.add_paragraph(text);p.alignment=WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.first_line_indent=Pt(0);p.paragraph_format.space_after=Pt(2)
     for run in p.runs:run.font.size=Pt(9)
-p=doc.add_paragraph('项目源码：');p.alignment=WD_ALIGN_PARAGRAPH.CENTER
-p.paragraph_format.first_line_indent=Pt(0);p.paragraph_format.space_after=Pt(2)
-for run in p.runs:run.font.size=Pt(9)
-from docx.opc.constants import RELATIONSHIP_TYPE as RT
-link=OxmlElement('w:hyperlink');link.set(qn('r:id'),p.part.relate_to(REPOSITORY_URL,RT.HYPERLINK,is_external=True))
-r=OxmlElement('w:r');pr=OxmlElement('w:rPr');size=OxmlElement('w:sz');size.set(qn('w:val'),'18');pr.append(size);r.append(pr)
-t=OxmlElement('w:t');t.text=REPOSITORY_URL;r.append(t);link.append(r);p._p.append(link)
+for label,url in [('项目源码：',REPOSITORY_URL),('模型权重：',MODEL_HUB_URL)]:
+    p=doc.add_paragraph(label);p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.first_line_indent=Pt(0);p.paragraph_format.space_after=Pt(2)
+    for run in p.runs:run.font.size=Pt(9)
+    from docx.opc.constants import RELATIONSHIP_TYPE as RT
+    link=OxmlElement('w:hyperlink');link.set(qn('r:id'),p.part.relate_to(url,RT.HYPERLINK,is_external=True))
+    r=OxmlElement('w:r');pr=OxmlElement('w:rPr');size=OxmlElement('w:sz');size.set(qn('w:val'),'18');pr.append(size);r.append(pr)
+    t=OxmlElement('w:t');t.text=url;r.append(t);link.append(r);p._p.append(link)
 fig_n=tab_n=eq_n=section_n=sub_n=0
 for b in BLOCKS:
     kind=b['kind']
