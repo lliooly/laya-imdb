@@ -1,0 +1,387 @@
+{
+  "count": 25000,
+  "metrics": {
+    "original_laya_main": {
+      "correct": 24086,
+      "count": 25000,
+      "accuracy": 0.96344,
+      "macro_f1": 0.9634399978941439,
+      "brier_positive": 0.029498946375066715,
+      "high_confidence_errors": 375,
+      "high_confidence_error_fraction": 0.4102844638949672,
+      "error_mean_confidence": 0.8380305641527999,
+      "nll": 0.11415867114002272,
+      "wilson95": [
+        0.9610414399701458,
+        0.9656961590568841
+      ],
+      "confusion_matrix": [
+        [
+          12046,
+          454
+        ],
+        [
+          460,
+          12040
+        ]
+      ]
+    },
+    "deberta_cpu": {
+      "correct": 24233,
+      "count": 25000,
+      "accuracy": 0.96932,
+      "macro_f1": 0.9693194587952532,
+      "brier_positive": 0.02500153733990886,
+      "high_confidence_errors": 308,
+      "high_confidence_error_fraction": 0.4015645371577575,
+      "error_mean_confidence": 0.8590018918891646,
+      "nll": 0.09594702043475925,
+      "wilson95": [
+        0.9671091810243531,
+        0.9713866112580691
+      ],
+      "confusion_matrix": [
+        [
+          12064,
+          436
+        ],
+        [
+          331,
+          12169
+        ]
+      ]
+    },
+    "fusion_50_50": {
+      "correct": 24257,
+      "count": 25000,
+      "accuracy": 0.97028,
+      "macro_f1": 0.9702798230579546,
+      "brier_positive": 0.024171950688180587,
+      "high_confidence_errors": 244,
+      "high_confidence_error_fraction": 0.3283983849259758,
+      "error_mean_confidence": 0.8120527889536853,
+      "nll": 0.09261763971566842,
+      "wilson95": [
+        0.9681016758508162,
+        0.9723138214528947
+      ],
+      "confusion_matrix": [
+        [
+          12098,
+          402
+        ],
+        [
+          341,
+          12159
+        ]
+      ]
+    }
+  },
+  "paired_fusion_vs": {
+    "original_laya_main": {
+      "fixed": 265,
+      "broken": 94,
+      "net": 171,
+      "p": 5.53846914502855e-20
+    },
+    "deberta_cpu": {
+      "fixed": 144,
+      "broken": 120,
+      "net": 24,
+      "p": 0.15677553683817175
+    }
+  },
+  "relative_error_reduction_vs_laya": 0.18708971553610504,
+  "verified_against_frozen_summary": true,
+  "sources": {
+    "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json": "2f2fb8f181b04dd6acf7f6e2cf5e0c8d0a7967a2af9aab957251971fc8ec4686",
+    "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json": "fc89c3c068ffd02d5d7c6899a8a581842a68887592a45aef4c54f1144aa2669c",
+    "reports/laya-frozen-official-test-20261014-v1/test-actual.json": "a69af9cda24800c8a5a7e837dadcfe4475997b5c712874b4c64284034a8fb8ff",
+    "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json": "0384a59965ca2d5a4242f1e56afce53127d9c4106830c651ab7009d9b9f0d1eb",
+    "reports/data_audit.json": "82c3b4d101e4bb48ae9e1653437be80a93c8ffebd8280da78884ec9da3193218",
+    "reports/laya-head-control-analysis-20261015-v1/REPORT.md": "d112f4fd6409f461ec32cc881eff4aa1ec826cf16eb382c7374a2dabb83efee9",
+    "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md": "77d678c896f96df957a0d3ac8e46e50d087c154233c9ff63225490193287e9b7",
+    "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md": "7bf31c02b2d7c0f503324376cbdfbbc8ce7f6e8314ed1a47e52a8ed9ae3faca9",
+    "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md": "f1b313e53cb6b70db4e840e153f9843efb800bb66b5be735adb0a0f01d8f76f7",
+    "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/epoch_validation_curve.json": "11b5b2c303a4df9e3bc6ab38eaeff648edd144393eab0d622f996a76da3fc24c"
+  },
+  "figures": [
+    {
+      "id": "01_pipeline",
+      "description": "Schematic of frozen three-checkpoint inference and probability fusion.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "02_data",
+      "description": "Fixed partition sizes and official-test token-length distribution. Bins are left-closed except the last.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "03_accuracy",
+      "description": "Wilson 95% intervals for fixed-model accuracy; they exclude training and model-selection uncertainty.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "04_errors",
+      "description": "Full official-test confusion matrix and paired prediction transitions relative to old Laya ensemble.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "05_probability",
+      "description": "Official-test NLL, top-label ECE, and positive-class Brier score, with zero-based bar axes.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "06_reliability",
+      "description": "Nonempty original 15 equal-width top-label bins. Low-confidence bins have smaller denominators; see reliability_bins.csv.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "07_strata_ablation",
+      "description": "Test-length descriptive stratification and a separate three-seed development loss ablation; panels are different experiments.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "08_controls",
+      "description": "All seeds in the matched-head experiment; long/short net changes in the separate 512/2048 control.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "09_selective_cost",
+      "description": "Left: actual test coverage using pre-frozen calibration-only thresholds. Right: historical two-Laya MLX benchmark, excluding DeBERTa; not final-system throughput.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md"
+      ]
+    },
+    {
+      "id": "10_training",
+      "description": "Historical combined-s43: two saved epoch observations; not the final combined-s42 fusion member. No smoothing; development n=2500 before final temperature calibration.",
+      "width_inches": 7.0,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+        "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json",
+        "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+        "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+        "reports/data_audit.json",
+        "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+        "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+        "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+        "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md",
+        "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/epoch_validation_curve.json"
+      ]
+    },
+    {
+      "id": "11_architecture",
+      "description": "Implemented heterogeneous classifier and expanded Laya pre-norm decision head; schematic, not a new experiment.",
+      "width_inches": 9.3,
+      "height_inches": 9.6,
+      "palette": {
+        "rose": "#DEA3BB",
+        "blue": "#8CAFC9",
+        "teal": "#5FA9B9",
+        "light_rose": "#F6CCDF",
+        "light_blue": "#AFD8F0",
+        "lilac": "#D9CEE4"
+      },
+      "source_files": [
+        ".cache/laya/english/rl_agent_config.json",
+        ".cache/laya/english/encoder/config.json",
+        ".cache/deberta-v3-large/config.json",
+        "configs/laya_model_lock.json",
+        "configs/deberta_model_lock.json",
+        "scripts/laya_fusion_inference.py",
+        "scripts/laya_decision_views.py",
+        "scripts/deberta_inputs.py",
+        "scripts/deberta_training.py",
+        ".venv/lib/python3.12/site-packages/laya/common.py",
+        ".venv/lib/python3.12/site-packages/transformers/models/deberta_v2/modeling_deberta_v2.py",
+        ".venv/lib/python3.12/site-packages/transformers/models/modernbert/modeling_modernbert.py"
+      ],
+      "formats": [
+        "pdf",
+        "png",
+        "svg"
+      ],
+      "drawing_code": "paper/build_architecture.py"
+    }
+  ],
+  "analysis_type": "descriptive recomputation; no new training or fitting",
+  "human_verification": "pending human review; automated verification is not a human sign-off"
+}

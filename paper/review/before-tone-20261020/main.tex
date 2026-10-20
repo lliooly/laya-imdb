@@ -1,0 +1,328 @@
+% Generated from manuscript.py by build_report.py. UTF-8; compile with XeLaTeX.
+\documentclass[UTF8,fontset=fandol,a4paper,11pt]{ctexart}
+\usepackage[margin=23mm,top=22mm,bottom=22mm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,float,adjustbox}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xcolor}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage[section]{placeins}
+\usepackage{flafter}
+\captionsetup{labelsep=space}
+\setstretch{1.18}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\textfloatsep}{12pt}
+\raggedbottom
+\pagestyle{plain}
+\ctexset{section={format=\Large\bfseries},subsection={format=\large\bfseries}}
+\hypersetup{pdftitle={IMDB 情感分类项目报告},pdfauthor={待填写},pdfsubject={分类性能、概率校准与融合稳定性分析},pdfkeywords={IMDB, Laya, DeBERTa-v3, 情感分类, 概率融合}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries 基于多视图 Laya 与 DeBERTa-v3 异构概率融合的 IMDB 电影评论情感分类}\par
+\vspace{7pt}
+{\normalsize 分类性能、概率校准与融合稳定性分析}\par
+\vspace{5pt}
+{\small 自然语言处理课程项目报告\quad 2026 年 10 月}\par
+\vspace{5pt}
+{\small 姓名：待填写\qquad 学号：待填写}\par
+{\small 课程名／班级：待填写\qquad 指导教师：待填写}
+\end{center}
+\vspace{4pt}
+
+\section*{摘要}
+% Evidence: final;supplement;suppweights;supprobust
+本文研究 IMDB 电影评论二分类，构建多视图 Laya 与 DeBERTa-v3-large 的异构概率融合系统。官方训练数据划分为梯度训练、校准和开发子集；Laya 融合前缀与首尾视图，并在温度校准后与 DeBERTa 平均正类概率。固定组合在完整 25,000 条官方测试上正确分类 24,257 条，Accuracy 为 97.028\%，Macro-F1 为 0.970280，NLL 为 0.092618，ECE 为 0.650\%；相对 Laya 双模型融合，准确率增加 0.684 个百分点。相对 DeBERTa，固定组合观察到 0.096 个百分点的提升，差异未达显著。三组完整重训中，等权融合在两组获得 0.08 个百分点增益，三组平均 Accuracy 与 DeBERTa 均为 97.08\%，平均 ECE 从 1.328\% 降至 0.741\%。保守权重与校准权重探索呈现小幅分类增益，但留出检查尚未确认稳定优势。结果显示，异构融合可在部分配置中改善分类结果，并在本次实验中改善概率质量；准确率收益随模型组合和权重设置变化。历史数据复用及重复文本限制了其独立泛化解释。
+
+关键词：电影评论；情感分类；Laya；DeBERTa-v3；概率融合；温度校准
+
+\section{引言}
+电影评论情感分类要判断作者对整部电影的态度，局部褒贬词未必与最终立场一致。作者可能先介绍剧情，再在结尾表态；也可能认可演员却否定电影，或用挖苦表达不满。词频和局部片段容易遗漏评价对象及语用关系。本项目因此同时考察分类准确率、长文本信息保留和模型置信度。
+
+% Evidence: audit;final
+IMDB 官方训练集和测试集各有 25,000 条带标签评论，正负类各占一半\cite{maas}。训练分区内留出开发集与校准集，官方测试分区完整保留。实验保存配置、模型权重身份和逐样本预测，用于核对各方案的评估结果。
+
+% Evidence: locks;comparison
+ModernBERT 的编码器设计兼顾计算效率与较长上下文\cite{modernbert}。Laya 将文本状态与类型化问题联合编码\cite{laya}；本项目锁定的英语模型以 ModernBERT-large 为编码器，软件版本为 laya 0.4.1，模型 revision 为 7b928d828b7b0e022f929d9bd2e44165aa270148。DeBERTa-v3 采用替换词检测和梯度解耦的嵌入共享预训练\cite{deberta}，在表示、分词与训练路径上均与 Laya 不同，可作为互补分支。但结构差异是否带来收益，仍须比较同一批样本的预测变化。
+
+% Evidence: fusion;heads;robust;context;supplement;suppcost;cpufull
+本文给出双视图输入、Laya 内部融合和跨模型融合的计算方法，通过完整测试预测、配对错误变化和概率指标评价组合效果。三组完整重训与校准权重探索进一步考察融合的互补性及稳定性；决策头、损失和上下文长度对照、跨后端数值核验及同平台 GPU 测速，则分别回答组件效果、数值一致性与计算代价问题。研究重点为既有模型的任务适配、组合及可复核的效果分析。
+
+\section{数据集与实验协议}
+\subsection{数据清洗和固定划分}
+% Evidence: audit
+数据来自 Stanford 发布的 Large Movie Review Dataset\cite{maas}。预处理将 HTML 换行标记替换为空格、还原 HTML 实体并压缩连续空白；保留大小写与标点，不使用停用词删除或词干化，以保留否定、程度及反讽线索。训练与开发采用清洗文本分组后的分层划分，冲突标签文本组保留在训练侧。审计记录训练—开发的唯一清洗文本交集为 0。
+
+% Evidence: audit;deberta;final
+\begin{table}[htbp]\centering\caption{固定数据分区及用途}\label{tab:t1}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYY}\toprule
+\textbf{分区} & \textbf{样本数} & \textbf{用途}\\\midrule
+梯度训练 & 22,100 & 模型参数更新\\
+校准 & 400 & 温度、既定权重或拒答阈值\\
+开发 & 2,500 & 方案比较与诊断；已多轮使用\\
+官方测试 & 25,000 & 冻结方案的完整评分\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: audit;deberta;final;reviewaudit
+原官方训练集先按 seed 42 形成 22,500 条训练池和 2,500 条开发集，再按校准随机种子 42 从训练池留出 400 条，得到 22,100 条梯度训练样本。开发集每类 1,250 条；校准集包含 185 条负类和 215 条正类。原官方训练与测试之间存在 123 个唯一清洗文本交集；其中实际梯度训练与测试的交集为 113 个，对应 113 条测试样本。完整官方测试评分保留这些样本，其独立性限制见第 6.2 节。
+
+% Evidence: audit;oldtest
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/02_data.pdf}\caption{数据规模与官方测试评论长度。右图长度来自保存的原 Laya 分词统计，横轴为离散长度区间；长度不代表 DeBERTa 的分词长度。官方测试有 3,713 条超过 Laya 的 466 token 评论预算，占 14.852\%。}\label{fig:f1}\end{figure}
+\subsection{训练、校准与评估的边界}
+% Evidence: final;fusion;deberta
+梯度训练集用于模型参数更新；400 条校准集用于温度、融合系数和拒答阈值的估计；开发集用于方案比较。最终官方测试前固定模型身份、输入策略、温度、融合规则和执行后端。评分时按唯一 sample ID 对齐输入、标签与概率。
+
+% Evidence: comparison;heads
+本文不将不同预算历史模型的差值解释为单个机制的因果效应。例如 ModernBERT-base 历史结果采用 256 token，Laya 采用更大编码器及 512 token 总预算，两者可作方案比较，不能用来单独证明类型化决策头有效。后续头部实验虽然采用共同 Laya 编码器及重新初始化的头，也只回答该预训练编码器与该训练预算下的问题。
+
+\section{模型与方法}
+\subsection{Laya 类型化情感决策}
+% Evidence: comparison;traincode
+Laya 将评论作为 state，问题类型为 choice。实际英文问题为“What is the reviewer's overall opinion of this movie?”；negative 的判定标准为“The reviewer dislikes or criticizes the movie overall.”，positive 为“The reviewer likes or praises the movie overall.”。训练时随机置换候选顺序，评分按候选语义还原为负类和正类。模型采用两层 Transformer 决策头及候选 MASK 位置评分结构\cite{laya}。设编码器为 E，类型化问题模板为 q，决策头为 H，类别分数表示如下。
+
+\begin{equation}\label{eq:e1}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle \mathbf z_{m,v}(x)=H_m\!\left(E_m\left(\operatorname{pack}(v(x),q)\right)\right),\qquad \hat y=\arg\max_{c\in\{0,1\}}z_c.$\end{adjustbox}\end{equation}
+% Evidence: comparison;combinedconfig
+模型主要采用监督交叉熵（cross-entropy，CE）训练。对单条样本，类别目标为 y，预测概率为 p；目标分布为 one-hot 时即为普通 CE。部分组合配方使用 0.05 标签平滑，另有校准决策强化学习（Reinforcement Learning for Calibrated Decisions，RLCD）先导实验\cite{laya}。该先导实验与全量 CE 的训练样本预算不同，两者差值不能作为单独改变损失函数的消融结果。
+
+\begin{equation}\label{eq:e2}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle \mathcal L_{\rm CE}=-\sum_{c=0}^{1}\widetilde y_c\log p_c,\qquad \widetilde y_c=(1-\varepsilon)\,\mathbb 1[y=c]+\varepsilon/2.$\end{adjustbox}\end{equation}
+\subsection{长度约束与双视图概率}
+% Evidence: fusion;oldtest
+主方案将 Laya 的输入总长度上限设为 512 token，决策头长度上限设为 192 token。问题及候选模板占用预算后，评论可用 466 token。两个 Laya 模型训练时均采用前缀输入；推理时增加首尾视图，对超长评论保留原分词序列的首 233 与末 233 token。对不超过评论预算的样本，两种视图使用相同输入并复用一次前向；超长样本再计算首尾视图。式~\eqref{eq:e3}中 m 表示 Laya 模型，\ensuremath{\ell} 表示该模型分词器下的原评论长度。
+
+\begin{equation}\label{eq:e3}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle \bar p_m(x)=\begin{cases}p_{m,\mathrm{prefix}}(x),& \ell_m(x)\le466,\\[2pt]\frac12\left[p_{m,\mathrm{prefix}}(x)+p_{m,\mathrm{headtail}}(x)\right],&\ell_m(x)>466.\end{cases}$\end{adjustbox}\end{equation}
+% Evidence: fusion;deberta
+式~\eqref{eq:e4}中的 p 为正类概率。baseline-s43 与 combined-s42 分别沿用训练阶段在 400 条校准样本上得到的温度 1.7130507231 和 0.9167026281；DeBERTa 的温度为 1.1374971946，由相同校准集上的 NLL 最小化得到。融合阶段沿用这些温度。温度缩放将 logits 同除以正温度 T，再计算 softmax\cite{guo}；它保留单次模型前向的类别排序，同时改变融合所用的概率尺度。
+
+\begin{equation}\label{eq:e4}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle p_{m,v}(y=1\mid x)=\operatorname{softmax}\!\left(\mathbf z_{m,v}(x)/T_m\right)_1.$\end{adjustbox}\end{equation}
+\subsection{Laya 内部融合与 DeBERTa 异构分支}
+% Evidence: fusion;combinedconfig;baseconfig
+Laya 分支使用 baseline-s43 与 combined-s42：前者为 seed 43 的基线配方，后者为 seed 42 的 warmup 与标签平滑组合配方。内部融合系数在 400 条校准样本上最小化 NLL + 0.01(\ensuremath{\lambda}−0.5)²，取值范围为 [0,1]，得到 \ensuremath{\lambda}=0.7020326698。最终系统包含这两个 Laya checkpoint 和一个 DeBERTa checkpoint。
+
+\begin{equation}\label{eq:e5}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle p_{\rm Laya}(x)=\lambda\bar p_{\rm baseline\text{-}s43}(x)+(1-\lambda)\bar p_{\rm combined\text{-}s42}(x).$\end{adjustbox}\end{equation}
+% Evidence: deberta;debertaconfig;final;debertacode;cpufull
+DeBERTa-v3-large 使用独立的 SentencePiece 分词器。512 token 总预算中有 2 个特殊 token，评论预算为 510 token；超长评论保留首 255 与末 255 token。原固定分支以 seed 42 训练两轮，开发推理采用 CUDA BF16，最终测试采用本地 CPU FP32；Laya 测试分支复用已保存的 CUDA FP32 概率。切换前的 400 条校准及 128 条开发准入样本类别均一致。补充核验进一步覆盖相同旧权重与温度下的全部 2,500 条开发样本：DeBERTa 类别变化 1 条，最终融合类别变化 0 条，最大概率绝对差为 0.011909。该结果说明所检查开发样本的融合分类保持一致，但不表示不同精度的概率逐位等价。
+
+\begin{equation}\label{eq:e6}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle p_{\rm final}(x)=\tfrac12p_{\rm Laya}(x)+\tfrac12p_{\rm DeBERTa}(x),\qquad \hat y=\mathbb 1[p_{\rm final}(x)\ge0.5].$\end{adjustbox}\end{equation}
+% Evidence: weight
+式~\eqref{eq:e6}采用测试前固定的 50:50 比例。另一个仅最小化校准 NLL 的单系数对照得到 Laya 21.94\%、DeBERTa 78.06\% 的权重。开发 NLL 从 0.088768 降至 0.088108，准确率从 97.28\% 降至 97.16\%：修复 8 条、退化 11 条，净少正确 3 条，精确 McNemar p=0.6476。该结果说明概率损失与分类正确数对应不同的优化目标。
+
+% Evidence: fusion;deberta;final
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/01_pipeline.pdf}\caption{最终冻结方案的计算流程示意。Laya 分支包含两个模型，DeBERTa 分支包含一个模型；两分支在各自校准后等权融合。该图为方法示意，不表示实测因果机制。}\label{fig:f2}\end{figure}
+% Evidence: architecture;archfacts;locks;debertalock
+图~\ref{fig:f3} 进一步展开模型内部结构。每个 Laya checkpoint 使用 28 层 ModernBERT-large 编码器，在各 token 的输出上加入 choice 类型嵌入，再经过两层前置 LayerNorm 的 Transformer 决策块；最后提取两个候选 [MASK] 位置，由共享评分网络分别得到负类与正类 logits。DeBERTa-v3-large 使用 24 层编码器，经首 token 池化与线性分类头输出两类 logits。图中的 Laya 层堆栈表示共同结构，baseline-s43 与 combined-s42 的参数仍彼此独立。右侧放大图保留自注意力与前馈子层的残差连接，未画入不参与本次情感概率融合的上游 action head。
+
+% Evidence: architecture;archfacts;locks;debertalock
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/11_architecture.pdf}\caption{最终模型架构与 Laya 决策头局部放大。数据流自下而上：左侧为多视图 Laya、DeBERTa 与冻结概率融合，右侧展开标记 [A] 的决策头。堆栈标明编码器层数，×2 表示两个前置 LayerNorm 决策块；两个 Laya checkpoint 使用独立权重。图据锁定配置和实际源码绘制，未表示新的实验或生成式解码器。}\label{fig:f3}\end{figure}
+\section{实验设置与评价指标}
+\subsection{训练配置与运行平台}
+% Evidence: baseconfig;combinedconfig;debertaconfig
+\begin{table}[htbp]\centering\caption{构成最终方案的训练配方摘要}\label{tab:t2}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYY}\toprule
+\textbf{项目} & \textbf{Laya 两个既有模型} & \textbf{DeBERTa-v3-large}\\\midrule
+训练轮数 / seed & 2 轮；43 / 42 & 2 轮；42\\
+最大总长度 & 512；评论预算 466 & 512；扣除自身特殊 token\\
+micro-batch / 累积 & 8 / 1 & 8 / 4\\
+初始学习率 & 编码器 2.5e−5；头 1e−4 & 1e−5\\
+weight decay / clip & 0.01 / 1.0 & 0.01 / 1.0\\
+调度 & 余弦；组合配方 5\% warmup & 线性；83 warmup / 1,382 总更新\\
+平滑系数 & baseline 0；combined 0.05 & 普通监督分类\\
+训练计算精度 & CUDA FP32；AMP 关闭 & CUDA BF16；FP32 主参数\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: comparison;regularization;robust;mlx
+研究在 Apple M5 Pro 的 MPS/MLX、本地 CPU 以及 CUDA GPU 环境进行。历史正则化实验使用 RTX 4090；部分头部、损失和后续训练使用单独锁定的云端环境。各阶段的设备、依赖、精度和计时口径不同，本文仅对同协议的测量作直接比较，不把不同硬件及不同阶段的耗时拼成统一效率排行。
+
+\subsection{分类、概率与不确定性指标}
+% Evidence: final;analysiscode
+主要指标为全覆盖 Accuracy，辅助报告宏平均 F1（Macro-F1）和受试者工作特征曲线下面积（area under the ROC curve，AUROC）。概率质量采用负对数似然（negative log-likelihood，NLL）、正类 Brier score，以及期望校准误差（expected calibration error，ECE）。ECE 使用 15 个等宽置信分箱，按 top-label 口径计算，表中以百分数表示；二分类置信度为 max(p,1−p)，空箱不计入 ECE。AUROC 衡量排序，不能替代 Accuracy 或校准误差。
+
+\begin{equation}\label{eq:e7}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle \operatorname{NLL}=-\frac1n\sum_{i=1}^{n}\left[y_i\log p_i+(1-y_i)\log(1-p_i)\right],\qquad \operatorname{Brier}_{+}=\frac1n\sum_i(p_i-y_i)^2.$\end{adjustbox}\end{equation}
+\begin{equation}\label{eq:e8}\begin{adjustbox}{max width=.94\linewidth}$\displaystyle \operatorname{ECE}=\sum_{b=1}^{15}\frac{|B_b|}{n}\left|\operatorname{acc}(B_b)-\operatorname{conf}(B_b)\right|.$\end{adjustbox}\end{equation}
+% Evidence: final;heads;robust
+单方案 Accuracy 报告 Wilson 95\% 区间。同一批 ID 上的固定方案采用精确双侧 McNemar 检验，并报告修复数、退化数和按类别分层的配对 bootstrap 百分位区间。最终测试使用 20,000 次重采样、随机种子 20261018；三种子头部和损失对照各使用 10,000 次重采样、随机种子 20261015，同一次抽样保留样本在各模型间的对应关系。这些区间固定模型及校准参数，仅描述样本层不确定性。历史模型六组比较及后续融合四候选比较分别采用 Holm 校正，后者调整后 p 值均为 1；整个研究未作跨实验的全族校正。
+
+\section{实验结果与分析}
+\subsection{开发集和完整官方测试}
+% Evidence: deberta;final
+\begin{table}[H]\centering\caption{固定主方案的开发与官方测试结果}\label{tab:t3}\small\renewcommand{\arraystretch}{1.25}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l l r r r r r@{}}\toprule
+\textbf{数据} & \textbf{方案} & \textbf{正确 / 总数} & \textbf{Accuracy} & \textbf{Macro-F1} & \textbf{NLL} & \textbf{ECE}\\\midrule
+开发 & Laya 双模型融合 & 2,424 / 2,500 & 96.960\% & 0.969599 & 0.106593 & 1.292\%\\
+开发 & DeBERTa BF16 & 2,426 / 2,500 & 97.040\% & 0.970400 & 0.093473 & 1.326\%\\
+开发 & 固定异构融合 & 2,432 / 2,500 & 97.280\% & 0.972800 & 0.088768 & 0.916\%\\
+测试 & Laya 双模型融合 & 24,086 / 25,000 & 96.344\% & 0.963440 & 0.114159 & 1.204\%\\
+测试 & DeBERTa FP32 & 24,233 / 25,000 & 96.932\% & 0.969319 & 0.095947 & 1.363\%\\
+测试 & 固定异构融合 & 24,257 / 25,000 & 97.028\% & 0.970280 & 0.092618 & 0.650\%\\
+\bottomrule\end{tabular*}\end{table}
+% Evidence: final
+如表~\ref{tab:t3} 和图~\ref{fig:f4} 所示，原固定融合的完整官方测试 Accuracy 为 97.028\%，Wilson 95\% 区间为 [96.810\%, 97.231\%]；Macro-F1 为 0.970280，AUROC 为 0.994350。Laya 双模型融合的 AUROC 为 0.992436，DeBERTa 为 0.994449。固定组合在分类正确数及多项概率指标上观察到收益，排序性能则与 DeBERTa 接近但略低，体现了不同评价目标之间的权衡。
+
+% Evidence: deberta;final
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/03_accuracy.pdf}\caption{固定模型的准确率与 Wilson 95\% 区间。横轴采用明确标出的局部尺度；开发与测试分开显示。误差线不包含训练或模型选择不确定性，也不用于单独判断配对差异。}\label{fig:f4}\end{figure}
+% Evidence: alternatives;bow
+开发集上的正则化 logit 探索曾达到 97.40\%，相对固定 97.28\% 方案只净多正确 3 条，名义 McNemar p=0.25，四候选 Holm 调整后 p=1，且 NLL/ECE 变差，没有对应的完整正式测试结果。TF-IDF 分支融合达到 97.32\%，净增 1 条、p=1；NB-ngram 融合为 97.28\%。这些结果可说明探索覆盖范围，却不足以替代预先冻结的最终方案。词袋分支借鉴 NB 加权 n-gram 思路\cite{wang}，不等于原论文所有模型的精确复现。
+
+\subsection{配对错误变化与收益来源}
+% Evidence: final
+相对Laya 双模型融合，最终融合修复 265 条错误，同时将原来正确的 94 条改错，净变化为 +171 条；Accuracy 增加 0.684 个百分点，条件配对 bootstrap 95\% 区间为 [+0.536,+0.832] 个百分点，精确 McNemar p=5.538\ensuremath{\times10^{-20}}。旧方案错误数 914 条，最终为 743 条，相对错误减少率为 171/914\ensuremath{\approx}18.71\%。这一比较支持本项目既有系统的实测改进。
+
+% Evidence: analysiscode;final
+相对 DeBERTa 单分支，最终融合修复 144 条、退化 120 条，净多正确 24 条，即 +0.096 个百分点；从冻结概率独立复算的精确 McNemar p=0.1568，未达到常用的 0.05 阈值。引入 DeBERTa 后相对Laya 双模型 的系统改进，与融合是否稳定优于最强单分支，是两个不同问题。前一比较的极小 p 值不能用于后一比较，本次对后者的证据仍较弱。
+
+% Evidence: final
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/04_errors.pdf}\caption{左：最终融合的官方测试混淆矩阵，行是真实标签、列是预测标签，每行分母为 12,500。右：相对Laya 双模型 的样本级修复、退化和净增量；二者都保留，避免只统计修复。}\label{fig:f5}\end{figure}
+% Evidence: final
+最终混淆矩阵为负类正确 12,098、负类误报正类 402；正类漏报负类 341、正类正确 12,159。两类召回分别为 96.784\% 与 97.272\%，差异为 0.488 个百分点。类别平衡使 Accuracy 与 Macro-F1 接近，但仍需关注具体方向的错误；该矩阵本身不能解释模型内部为何误判。
+
+\subsection{概率校准和置信度}
+% Evidence: final
+完整测试上，最终融合的 NLL 为 0.092618，低于Laya 双模型 的 0.114159 和 DeBERTa 的 0.095947；ECE 为 0.650\%，也低于两分支的 1.204\% 和 1.363\%。正类 Brier score 分别为融合 0.024172、DeBERTa 0.025002、Laya 双模型 0.029499。图~\ref{fig:f6} 同时展示这三项指标，以免校准判断只依赖一种分箱统计。
+
+% Evidence: final
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/05_probability.pdf}\caption{完整官方测试的三项概率指标。条形轴从零开始；NLL、ECE 与 Brier 越低越好。ECE 是有限样本、依赖分箱的描述量，不是单条预测的正确概率保证。}\label{fig:f6}\end{figure}
+% Evidence: final
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/06_reliability.pdf}\caption{官方测试可靠性曲线。沿用原始 15 等宽置信分箱，只绘制非空箱；低置信箱样本较少，局部折线波动不能直接解释为稳定规律。每箱分母与数值保存在 analysis/reliability\_bins.csv。}\label{fig:f7}\end{figure}
+% Evidence: final;devanalysis
+将置信度不低于 0.95 的误分类样本定义为高置信度错误，其比例以全部错误为分母。最终融合为 244/743=32.8\%，Laya 双模型 为 375/914=41.0\%，DeBERTa 为 308/767=40.2\%；最终融合错误样本的平均置信度为 0.812。这些结果表明，本次冻结方案缓和了部分过度自信。置信度排序可用于人工复核与选择性输出，但全覆盖分类、固定覆盖排序曲线和按校准阈值部署后的实际覆盖率具有不同分母，不能混报。
+
+\subsection{文本长度与误差分层}
+% Evidence: final
+\begin{table}[htbp]\centering\caption{按原 Laya 评论预算分层的官方测试 Accuracy}\label{tab:t4}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYYYY}\toprule
+\textbf{分组} & \textbf{n} & \textbf{Laya 双模型} & \textbf{DeBERTa} & \textbf{最终融合}\\\midrule
+\ensuremath{\le}466 token & 21,287 & 96.345\% & 96.970\% & 97.050\%\\
+>466 token & 3,713 & 96.337\% & 96.714\% & 96.903\%\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: final
+最终融合在未截断与截断两组均高于Laya 双模型，分别净多正确 150 与 21 条。该分层仅按 Laya tokenizer 的 466 token 预算定义；DeBERTa 使用自己的分词器，因此不能把两组直接叫作两个模型都读全或都截断。分层差值是描述性结果，未单独建立长度交互效应的确认检验。
+
+% Evidence: final;robust
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/07_strata_ablation.pdf}\caption{左：官方测试长度分层；右：独立的三随机种子 CE / mixed 开发对照，显示全部种子而非只取最好种子。两面板对应不同实验与样本口径。}\label{fig:f8}\end{figure}
+\subsection{受控消融与配置敏感性}
+% Evidence: heads;robust;context;reviewed;weight;alternatives
+\begin{table}[htbp]\centering\caption{主要受控实验与探索结果概览}\label{tab:t5}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYY}\toprule
+\textbf{实验} & \textbf{观察结果} & \textbf{证据解释}\\\midrule
+决策头：3 seeds & 原始 96.520\%；线性 96.493\% & 均值差 +0.027 pp；方向不一致\\
+鲁棒损失：3 seeds & CE 96.32\%；mixed 96.40\% & 均值差 +0.08 pp；区间跨零\\
+512 → 2048 & 全体 96.32\% → 96.32\% & 长组 +6，短组 −6\\
+训练标签修订 v2 & 96.32\% → 96.40\% & 净 +2；p=0.883\\
+校准拟合外层权重 & 97.28\% → 97.16\% & NLL 改善，Accuracy 降低\\
+正则化 logit 探索 & 开发 97.40\% & 净 +3；p=0.25；无正式测试\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: heads
+决策头对照使用相同的预训练编码器、训练输入和预算，比较重新初始化的原始头与线性头。seed 42、43、44 下，原始头减线性头的 Accuracy 差分别为 −0.20、+0.20、+0.08 个百分点，均值 +0.0267，条件 95\% 区间为 [−0.2533,+0.3067]。该结果尚不能确定两种头的稳定优劣。线性头平均训练进程耗时少 6.81\%（包含两轮训练及保存）、峰值 allocated 显存少 4.94\%、可训练参数少 6.23\%；推理吞吐收益尚无独立测量。
+
+% Evidence: robust
+鲁棒损失采用 0.5 CE + 0.5 GCE(q=0.7)，其中 GCE 为广义交叉熵（generalized cross-entropy）\cite{gce}。单样本 GCE 等于 1 减去真实类别预测概率的 q 次幂，再除以 q。三个种子的 Accuracy 差为 +0.16、0.00、+0.08 个百分点，平均 +0.08，条件区间为 [−0.174,+0.347]；截断组平均下降 0.328 个百分点。现有结果未提供稳定准确率收益的证据。
+
+% Evidence: context
+长度对照采用固定 seed 42、两轮和共同样本曝光预算，512 与 2048 的全体准确率均为 96.32\%；2048 修复 23 条并退化 23 条。截断组净增 6 条、未截断组净减 6 条，说明上下文增加在该配置下产生收益与代价抵消。这里的同预算指训练样本与轮数，不表示 token 运算量、显存或实际训练耗时相同。
+
+% Evidence: heads;context
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/08_controls.pdf}\caption{左：共同预算下原始头与线性头的全部种子成绩，纵轴为局部尺度。右：独立长度对照中 2048 相对 512 的净正确数变化；全体净变化为零。}\label{fig:f9}\end{figure}
+% Evidence: reviewed
+训练数据修订单独保存派生版本：94 条复核候选最终包含 61 条翻标、3 条删除，原始标签及划分保留。按原开发标签评估，准确率从 96.32\% 到 96.40\%，p=0.883。复核可能提高局部语义一致性，但现有实验不足以证明其带来稳定泛化收益。本文没有因开发或测试案例而改写最终评分标签。
+
+\subsection{跨后端数值核验与工程成本}
+% Evidence: mlx
+跨后端评估同时比较 logits、概率和类别。历史 MLX FP16 候选未通过概率门槛；后续候选采用全 FP32，并关闭降低精度的矩阵运算路径。在 400 条校准及 2,500 条开发样本上，相对 CUDA 缓存的最大 logits 绝对差为 0.0003574，最大概率绝对差为 0.00006253，类别差异为 0，满足预设的 logits 差不超过 0.1、概率差不超过 0.01 和类别一致条件。
+
+% Evidence: mlx
+同一历史 MLX 精确 FP32 benchmark 采用 128 条校准样本、batch 8、两轮预热与五轮测量，计入编码、传输、前向及融合，不计模型加载。单 Laya 吞吐为 17.030 条/秒，两个 Laya 融合为 7.531 条/秒；峰值 MLX 活跃分配分别为 3.37 与 4.94 GiB。该测量不包含 DeBERTa，不能据此报告最终异构系统的端到端吞吐；MLX 活跃分配也不等于进程总内存。
+
+% Evidence: suppcost
+补充 GPU 测速使用 RTX 4090 和第一组新训练权重，在共同的前 64 条固定开发记录上以 batch 8 预热两次、测量五次。计时包含 CPU 分词准备、传输、真实前向与融合，不含模型加载；该批记录均为负类，测量范围受样本组成与长度限制。DeBERTa、双 Laya 和三模型融合的吞吐分别为 78.576、28.234、20.683 条/秒，峰值已分配显存分别为 2.447、3.499、5.586 GiB。三模型融合的批处理摊销耗时约为 DeBERTa 的 3.80 倍，因此其应用价值应结合概率质量和计算预算评价；这些摊销值不等于单请求延迟。
+
+\subsection{选择性输出与错误案例}
+% Evidence: final
+拒答阈值在原 400 条校准集上确定，并于本轮测试前封存。对最终融合，校准目标覆盖 90\% 对应阈值 0.9713223，实际测试保留 22,233 条，占 88.932\%；其中正确 22,062 条，选择性 Accuracy 为 99.231\%。提高选择性准确率的代价是拒绝 2,767 条，因此该数字不能代替全覆盖 97.028\%，也不附加有限样本总体风险保证。
+
+% Evidence: final;mlx
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/09_selective_cost.pdf}\caption{左：以校准集冻结阈值获得的测试实际覆盖率与保留样本准确率；不是在测试上选择阈值。右：独立历史 MLX 精确 FP32 测量，仅比较单 Laya 与两个 Laya 融合，不能解释为最终三 checkpoint 系统的成本。}\label{fig:f10}\end{figure}
+% Evidence: cases
+\begin{table}[htbp]\centering\caption{开发集有目的选取的错误案例：原标签保持不变}\label{tab:t6}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYYY}\toprule
+\textbf{样本 ID（train/ 后）} & \textbf{原标签} & \textbf{融合 p(pos)} & \textbf{定性解释}\\\midrule
+neg/10566\_3.txt & 负 & 0.6833 & 系列好评干扰当前电影差评\\
+neg/11233\_2.txt & 负 & 0.9834 & 廉价锚定中的挖苦与有限认可\\
+pos/12230\_9.txt & 正 & 0.0580 & 制作差但观看体验愉快\\
+pos/3160\_7.txt & 正 & 0.0054 & 正文自评分与标签冲突候选\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: cases;devanalysis
+以上案例来自原 Laya 主融合、2048 视角和 DeBERTa 三条明确流水线共同错误的 47 条开发样本集合，并非最终融合全部 68 条开发错误的同义集合。47 条中 43 条在 Laya 与 DeBERTa 两种分词器下都未截断，因而不能把所有共错归因于上下文不足。模型一致也不等于标签错误：评价对象、讽刺、观看乐趣与制作质量的分离均可能导致真实语义误判。
+
+% Evidence: cases
+案例经过有目的选择，用于解释可能的失败方式，没有第二位标注者盲审，也没有从它们估计总体错标率。所谓正文—标签冲突只标记待核实的数据问题，不作为修改开发标签、扣除错误或推导模型能力上限的依据。
+
+\subsection{完整重训重复与权重探索}
+% Evidence: supplement;suppprotocol
+为考察模型组合变化后的效果，在固定的 22,100 条梯度训练、400 条校准和 2,500 条开发划分上，预先固定三组种子：按 baseline、combined 与 DeBERTa 的顺序分别为（43,42,42）、（143,142,142）、（243,242,242）。九个模型均训练两轮并使用第二轮权重，通过独立重载与校准后统一冻结，再评价开发集。全部重训在单张 RTX 4090 上完成，Laya 采用 FP32 训练，DeBERTa 采用 BF16 计算与 FP32 主参数，外层初始比例保持 50:50。三个重复共享开发样本，不能视为 7,500 条独立记录。
+
+% Evidence: supplement;suppweights
+\begin{table}[htbp]\centering\caption{三组完整重训与事后权重探索的开发 Accuracy}\label{tab:t7}\small\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{YYYYY}\toprule
+\textbf{方案} & \textbf{第一组} & \textbf{第二组} & \textbf{第三组} & \textbf{均值}\\\midrule
+DeBERTa & 97.00\% & 97.28\% & 96.96\% & 97.080\%\\
+等权融合 & 97.08\% & 97.36\% & 96.80\% & 97.080\%\\
+DeBERTa 80\% & 97.04\% & 97.32\% & 97.04\% & 97.133\%\\
+校准拟合权重 & 97.04\% & 97.36\% & 97.04\% & 97.147\%\\
+\bottomrule\end{tabularx}\end{table}
+% Evidence: supplement
+等权融合在前两组各净多正确 2 条，在第三组净少正确 4 条，表明互补收益会随训练组合变化。三组平均 NLL 由 DeBERTa 的 0.091995 降至融合的 0.089649，平均 ECE 由 1.328\% 降至 0.741\%，且三组 ECE 均较低。相较单次正确数的变化，概率质量改善在本组实验中表现出更一致的方向。
+
+% Evidence: suppweights
+在上述重复完成后，固定增加 DeBERTa 80\% 的保守组合，以及仅在原 400 条校准数据上最小化 NLL 的单系数对照；模型温度及 Laya 内部系数沿用封存值，所有候选和重复均保留。拟合得到的 DeBERTa 权重依次为 94.984\%、87.278\%、69.267\%，未使用开发标签选权重。80:20 方案相对 DeBERTa 分别净多正确 1、1、2 条；校准拟合方案分别净多正确 1、2、2 条。这些结果提示，减小较弱分支的影响是获取小幅增益的一种可研究方向。
+
+% Evidence: supprobust
+进一步按清洗文本组进行 10,000 次配对重采样，三组模型共享样本抽样，80:20 与校准拟合方案的平均准确率差条件 95\% 区间分别为 [−0.040,+0.160] 和 [−0.027,+0.160] 个百分点。区间固定模型及后处理参数，不包含训练、参数拟合和研究选择的不确定性。
+
+% Evidence: supprobust
+在原 400 条校准数据上重复 10 次五折检查，每折仅在训练部分重拟合温度、内部与外层权重。相对 DeBERTa，等权融合的三组平均留出 Accuracy 变化为 −0.325、−0.600、−0.100 个百分点；80:20 三组均持平，且 NLL 均较低；校准拟合方案的三组准确率变化为 0、0、−0.150 个百分点。该检查采用相同 NLL 目标与 [0.5,5] 温度范围，以凸二分替代 Laya 上游 LBFGS 求解。300 次校准样本组重采样亦显示拟合权重对样本变化敏感。因此，当前结果为保守组合与概率质量改善提供了研究线索，候选规则的分类增益仍需独立数据检验。
+
+% Evidence: suppcases;suppweights
+第三组等权融合相对 DeBERTa 修复 11 条错误、产生 15 条退化；15 条退化记录中，两个 Laya 模型均给出相同类别，13 条双 Laya 置信度至少为 90\%，11 条在 Laya 下未被截断。案例阅读可见褒贬混合、反讽以及剧情情绪与作品评价交织。提高 DeBERTa 权重在该组减少退化，也会失去部分原有纠错：80:20 保留 2 次修复且没有新增退化。上述观察解释了当前概率平均的阈值变化，不构成对语义错误机制的因果证明。
+
+\section{讨论、局限与可复现性}
+\subsection{有效操作与创新边界}
+% Evidence: final;supplement;suppweights;supprobust;suppcost
+异构组合为当前 Laya 系统带来了明确的实测改进：原固定测试中净多正确 171 条，同时降低 NLL 和 ECE。相对 DeBERTa，原组合及部分重训、权重配置呈现小幅准确率增益，而跨配置的平均收益与波动范围提示其条件性。三组重训中 ECE 改善方向一致，表明概率校准是本方案值得关注的收益。类型化决策头、DeBERTa、温度缩放与概率平均均为已有技术；本研究的价值在于将其适配到共同任务，并通过完整重复、误差变化和成本测量明确适用条件。
+
+\subsection{结果的适用范围}
+% Evidence: final;audit;reviewaudit;supplement;suppweights;supprobust
+官方测试、开发集及校准集曾用于历史研究，存在数据复用与方案选择影响。实际梯度训练集与测试集有 113 条相同清洗文本，测试内部还有 201 条重复额外记录；原官方测试区间未按文本组处理相关性，补充开发区间则已按清洗文本组配对抽样。三组完整重训增加了训练变化的观察范围，但原官方测试仍对应一组固定权重；新增权重探索和交叉验证也没有形成新的独立测试。因此，“部分配置观察到小幅提升”不等于已经估计其在未来训练中获益的概率。
+
+% Evidence: cpufull;suppcost
+结果主要适用于二元、强极性的英语电影评论。完整开发后端核验与同平台 GPU 测速补充了数值实现和计算代价证据；有限的测速样本、固定 batch 以及不同运行后端仍限制其部署外推。对于更弱极性、其他语言或其他领域的数据，融合比例和校准效果需要重新评价。
+
+\subsection{复现材料}
+% Evidence: traincode;debertaconfig;final;suppprotocol;suppweights;supprobust
+复现实验分为数据准备、模型训练、独立重载与校准、评估和融合诊断等步骤。各运行保存数据划分、训练配置、锁定依赖、模型身份和逐样本预测；原固定评估、完整重训与事后权重检查分别归档，便于核对结果及追溯输入。
+
+% Evidence: analysiscode
+图表由冻结摘要和逐样本预测生成，并复算正确数、混淆矩阵和概率指标。Scientific Agent Skills 用于写作与图表审查辅助\cite{skills}。
+
+\subsection{已保留的逐轮训练记录}
+% Evidence: curve
+图~\ref{fig:f11} 展示历史 combined-s43 两轮训练中保存的平均训练损失与原始开发准确率。该运行采用 seed 43，不是最终融合所用的 combined-s42；开发指标取自最终温度校准前的逐轮 checkpoint，不能替代最终方案成绩。图中仅有两个逐轮观测点，连线用于识别顺序，不据此推断逐步收敛过程，也不将训练 CE 与校准后的 NLL 混为一项损失。
+
+% Evidence: curve
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{figures/10_training.pdf}\caption{历史 combined-s43 的逐轮训练损失与开发准确率。每轮开发分母为 2,500，指标未经最终温度校准；此运行不是最终融合成员。仅绘制保存的两轮观测，不补造训练步骤。}\label{fig:f11}\end{figure}
+\section{结论}
+% Evidence: final;supplement;suppweights
+本文构建并评估了多视图 Laya 与 DeBERTa-v3 的 IMDB 情感分类方案。原固定融合在完整官方测试上获得 97.028\% Accuracy、0.970280 Macro-F1、0.092618 NLL 和 0.650\% ECE，相对双 Laya 净多正确 171 条，相对 DeBERTa 净多正确 24 条，后者 McNemar p=0.1568。三组完整重训及权重探索进一步表明，该方案在部分配置中可以取得小幅准确率增益；三组等权融合的平均 Accuracy 与 DeBERTa 同为 97.08\%，平均 ECE 则从 1.328\% 降至 0.741\%。这些结果支持将误差互补与概率质量作为融合方案的主要评价维度，而非预设每次组合都提高分类正确数。
+
+% Evidence: heads;robust;context;suppweights;supprobust;cpufull;suppcost
+保守权重与校准权重在本次开发记录上获得了小幅正向变化，完整后处理留出检查和配对区间则提示收益仍具有配置与样本依赖性。结合三模型推理开销，融合更适合在重视概率质量且计算预算允许的场景中继续研究。受控消融、跨后端核验与同平台测速共同提供了可复核的实验依据；后续重点是在独立数据上检验候选规则的可迁移性，并探索更经济的组合方式。
+
+\FloatBarrier\begin{thebibliography}{99}
+\bibitem{maas} Maas A L, Daly R E, Pham P T, Huang D, Ng A Y, Potts C. Learning Word Vectors for Sentiment Analysis. ACL, 2011: 142–150. \url{https://aclanthology.org/P11-1015/}
+\bibitem{modernbert} Warner B, Chaffin A, Clavié B, et al. Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference. arXiv:2412.13663, 2024. \url{https://arxiv.org/abs/2412.13663}
+\bibitem{laya} Convai Innovations. Laya（英语模型）[模型]. Hugging Face. 访问日期：2026-10-19. \url{https://huggingface.co/convaiinnovations/laya}
+\bibitem{deberta} He P, Gao J, Chen W. DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing. ICLR, 2023; arXiv:2111.09543. \url{https://arxiv.org/abs/2111.09543}
+\bibitem{guo} Guo C, Pleiss G, Sun Y, Weinberger K Q. On Calibration of Modern Neural Networks. ICML, PMLR 70, 2017: 1321–1330. \url{https://proceedings.mlr.press/v70/guo17a.html}
+\bibitem{wang} Wang S, Manning C. Baselines and Bigrams: Simple, Good Sentiment and Topic Classification. ACL (Volume 2: Short Papers), 2012: 90–94. \url{https://aclanthology.org/P12-2018/}
+\bibitem{skills} Kassis T, Agarwal V, He Y, Patel D, Brueckner A M. Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents. arXiv:2609.00065, 2026. \url{https://doi.org/10.48550/arXiv.2609.00065}
+\bibitem{gce} Zhang Z, Sabuncu M R. Generalized Cross Entropy Loss for Training Deep Neural Networks with Noisy Labels. Advances in Neural Information Processing Systems 31, 2018. \url{https://papers.nips.cc/paper/2018/hash/f2925f97bc13ad2852a7a551802feea0-Abstract.html}
+\end{thebibliography}\end{document}

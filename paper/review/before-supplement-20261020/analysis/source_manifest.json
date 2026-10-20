@@ -1,0 +1,205 @@
+{
+  "reviewaudit": {
+    "path": "paper/review/audit.json",
+    "sha256": "3b472be97b7874c0f73d7c9a86806aa8c5a0019252b3e288b29534a2c4c0328f",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "architecture": {
+    "path": "paper/build_architecture.py",
+    "sha256": "c9049df6cb4003d0629d43a55930e0c3a4ea527205bfd5bba092031969713fd8",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "archfacts": {
+    "path": "paper/analysis/architecture_sources.json",
+    "sha256": "449d127f6da7b4b2a884ce6672b427da3340c3e9b7859f8de3b9d8f8aede39ce",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "debertalock": {
+    "path": "configs/deberta_model_lock.json",
+    "sha256": "72f246bd0334efe6b7b5602ec465e23c9274cff69d361f6262bebcd02262e486",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "curve": {
+    "path": "reports/laya-rtx4090-ce-combined-s43-epochs2-fp32-v1/epoch_validation_curve.json",
+    "sha256": "11b5b2c303a4df9e3bc6ab38eaeff648edd144393eab0d622f996a76da3fc24c",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "audit": {
+    "path": "reports/data_audit.json",
+    "sha256": "82c3b4d101e4bb48ae9e1653437be80a93c8ffebd8280da78884ec9da3193218",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "final": {
+    "path": "reports/deberta-laya-final-cpu-evaluation-20261018-v1/summary.json",
+    "sha256": "2f2fb8f181b04dd6acf7f6e2cf5e0c8d0a7967a2af9aab957251971fc8ec4686",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "oldtest": {
+    "path": "reports/laya-frozen-official-test-20261014-v1/test-actual.json",
+    "sha256": "a69af9cda24800c8a5a7e837dadcfe4475997b5c712874b4c64284034a8fb8ff",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "deberta": {
+    "path": "reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/summary.json",
+    "sha256": "0384a59965ca2d5a4242f1e56afce53127d9c4106830c651ab7009d9b9f0d1eb",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "fusion": {
+    "path": "reports/laya-probability-fusion-s43-s42-20261014-v1/REPORT.md",
+    "sha256": "f4033d4ece966e6843eac7485447be36ec407cd559ae24ae6661354c442dff64",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "heads": {
+    "path": "reports/laya-head-control-analysis-20261015-v1/REPORT.md",
+    "sha256": "d112f4fd6409f461ec32cc881eff4aa1ec826cf16eb382c7374a2dabb83efee9",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "robust": {
+    "path": "reports/laya-robust-loss-analysis-20261016-v1/REPORT.md",
+    "sha256": "77d678c896f96df957a0d3ac8e46e50d087c154233c9ff63225490193287e9b7",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "context": {
+    "path": "reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md",
+    "sha256": "7bf31c02b2d7c0f503324376cbdfbbc8ce7f6e8314ed1a47e52a8ed9ae3faca9",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "mlx": {
+    "path": "reports/laya-fusion-inference-mlx-fp32-precise-20261014-v1/REPORT.md",
+    "sha256": "f1b313e53cb6b70db4e840e153f9843efb800bb66b5be735adb0a0f01d8f76f7",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "reviewed": {
+    "path": "reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/REPORT.md",
+    "sha256": "e5019a9c4a399a6230ba950027e87c93eba66dfdb710223969aa62e690621ffb",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "comparison": {
+    "path": "reports/model-comparison/REPORT.md",
+    "sha256": "799ddadcb129ff5c948105f3e66fc54e37d565050af2b8f2b1ba7d7f7e1db175",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "weight": {
+    "path": "reports/laya-deberta-calibration-weight-cpu-20261018-v1/REPORT.md",
+    "sha256": "8a143e864e57bff458dcb0dddf15e742a882aa3b4851e5a0011820ca6a5e6906",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "alternatives": {
+    "path": "reports/final-cpu-alternatives-20261018-v2/REPORT.md",
+    "sha256": "5aa865d51aeec4d4a5f08776353b12c5b02dece5d5d8f7fd7ee2558d91f48ead",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "bow": {
+    "path": "reports/bow-nb-complementarity-cpu-20261018-v1/REPORT.md",
+    "sha256": "1fb44328886f9b5810a5e0793c6c3f7736614d65ff72fd3971b8c1d11c398511",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "cases": {
+    "path": "reports/deberta-laya-final-analysis-20261018-v1/CASE-STUDY.md",
+    "sha256": "44989defe331db865d61a28b4c9f7d57433528839e1766410b118ca999ddc5f8",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "devanalysis": {
+    "path": "reports/deberta-laya-final-analysis-20261018-v1/REPORT.md",
+    "sha256": "dd3d5c86f3f279d8bb1750cf1c765d299e659584c2760060194ae921be943bdf",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "literature": {
+    "path": "reports/bert-bilstm-literature-audit-20261018-v1/REPORT.md",
+    "sha256": "b95ac2aceaa063899e17982321535f900b6bf09b1953fb36714a82c482e00d70",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "delivery": {
+    "path": "docs/closeout/delivery.md",
+    "sha256": "47980c815de830ff39c118c2b3d23a3cef0252ed6d319af1720749d2a84dd2c8",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "locks": {
+    "path": "configs/laya_model_lock.json",
+    "sha256": "d3626263262f87df7d53c6ea43e0dc95d88e7be655790bc3e2c9120ece6b4896",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "traincode": {
+    "path": "scripts/train_laya.py",
+    "sha256": "50530b8b0efd2872ee280bcc80c07b92e090bf9f4d71bbeeafde52808db4f7ec",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "analysiscode": {
+    "path": "paper/build_figures.py",
+    "sha256": "29a6c30fe658e86ba85241143cee9406002f7693fa346c34dc06417ac47810b3",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "debertacode": {
+    "path": "scripts/deberta_inputs.py",
+    "sha256": "780f98c8770f8786d52343ad46a8b76f5a37069c0203518e61d4f0915eef9f16",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "regularization": {
+    "path": "reports/rtx4090-regularization-completed-v1/REPORT.md",
+    "sha256": "3595d94c0b038763ba6f9619f54d95be08764d43c38ff40921bbd5601bf1c8a9",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "baseconfig": {
+    "path": "configs/laya-rtx4090-ce-baseline-s43-epochs2-fp32.json",
+    "sha256": "53d1aa9095158775f9e086ccb9e37898a4e92fbf760402afed889bdcdb69773f",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "combinedconfig": {
+    "path": "configs/laya-rtx4090-ce-epochs2-warmup005-ls005-fp32.json",
+    "sha256": "221061656dc0daa582cafbe5fc8b22e7bbdf7f0780f330152cf521764405b038",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "debertaconfig": {
+    "path": "configs/deberta-heterogeneous-bf16-budget7-s42-20261017-v1.json",
+    "sha256": "bd2145113867d61470b4ca36990ed018e2d1862eb6b34ece638f115eb8db7deb",
+    "verification": "opened and checked by assistant; human review not recorded"
+  },
+  "ref_maas": {
+    "reference": "Maas A L, Daly R E, Pham P T, Huang D, Ng A Y, Potts C. Learning Word Vectors for Sentiment Analysis. ACL, 2011: 142–150.",
+    "url": "https://aclanthology.org/P11-1015/",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_modernbert": {
+    "reference": "Warner B, Chaffin A, Clavié B, et al. Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference. arXiv:2412.13663, 2024.",
+    "url": "https://arxiv.org/abs/2412.13663",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_laya": {
+    "reference": "Convai Innovations. Laya（英语模型）[模型]. Hugging Face. 访问日期：2026-10-19.",
+    "url": "https://huggingface.co/convaiinnovations/laya",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_deberta": {
+    "reference": "He P, Gao J, Chen W. DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training with Gradient-Disentangled Embedding Sharing. ICLR, 2023; arXiv:2111.09543.",
+    "url": "https://arxiv.org/abs/2111.09543",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_guo": {
+    "reference": "Guo C, Pleiss G, Sun Y, Weinberger K Q. On Calibration of Modern Neural Networks. ICML, PMLR 70, 2017: 1321–1330.",
+    "url": "https://proceedings.mlr.press/v70/guo17a.html",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_wang": {
+    "reference": "Wang S, Manning C. Baselines and Bigrams: Simple, Good Sentiment and Topic Classification. ACL (Volume 2: Short Papers), 2012: 90–94.",
+    "url": "https://aclanthology.org/P12-2018/",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_skills": {
+    "reference": "Kassis T, Agarwal V, He Y, Patel D, Brueckner A M. Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents. arXiv:2609.00065, 2026.",
+    "url": "https://doi.org/10.48550/arXiv.2609.00065",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  },
+  "ref_gce": {
+    "reference": "Zhang Z, Sabuncu M R. Generalized Cross Entropy Loss for Training Deep Neural Networks with Noisy Labels. Advances in Neural Information Processing Systems 31, 2018.",
+    "url": "https://papers.nips.cc/paper/2018/hash/f2925f97bc13ad2852a7a551802feea0-Abstract.html",
+    "access_date": "2026-10-19",
+    "verification": "primary page opened by assistant; human review not recorded"
+  }
+}

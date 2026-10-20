@@ -1,0 +1,65 @@
+{
+  "tex_pages": 14,
+  "word_render_pages": 15,
+  "references": 8,
+  "figures": 11,
+  "tables": 6,
+  "equations": 8,
+  "docx_images": 19,
+  "architecture_source_config_and_code_sha256": "passed",
+  "formula_and_reference_key_preservation": "passed",
+  "original_nine_figure_data_preservation": "passed",
+  "frozen_metric_recomputation": "passed",
+  "new_probability_claims": {
+    "original_laya_main": {
+      "errors": 914,
+      "high_confidence_errors": 375,
+      "fraction": 0.4102844638949672,
+      "error_mean_confidence": 0.8380305641527999,
+      "brier_positive": 0.029498946375066712
+    },
+    "deberta_cpu": {
+      "errors": 767,
+      "high_confidence_errors": 308,
+      "fraction": 0.4015645371577575,
+      "error_mean_confidence": 0.8590018918891646,
+      "brier_positive": 0.02500153733990886
+    },
+    "fusion_50_50": {
+      "errors": 743,
+      "high_confidence_errors": 244,
+      "fraction": 0.3283983849259758,
+      "error_mean_confidence": 0.8120527889536853,
+      "brier_positive": 0.024171950688180587
+    }
+  },
+  "calibration_weight_paired_comparison": {
+    "fixed": 8,
+    "broken": 11,
+    "net": -3,
+    "p": 0.6476058959960938
+  },
+  "source_sha256_check": "passed",
+  "tex_word_body_and_tables": "passed",
+  "word_embedded_figures_match_current_pngs": "passed",
+  "reference_hanging_indent_and_hyperlinks": "passed",
+  "tex_missing_character_count": 0,
+  "tex_overfull_box_count": 0,
+  "tex_unresolved_references": 0,
+  "rendered_word_body_sha256": "5f85447b122576a8b79e767e02793b1cf7aff44a586d2472620eb0e4f3561d47",
+  "layout_review": "reviewed all 15 Word pages and 14 TeX pages; corrected reliability point displayed; no clipping, overlap, missing glyphs or unresolved citations found",
+  "word_render_directory": "paper/qa/word-review",
+  "tex_render_directory": "paper/qa/tex-review",
+  "compiler": "local XeLaTeX / TeX Live 2026",
+  "word_renderer": "bundled LibreOffice with explicit CJK font aliases",
+  "target_word_wps_validation": "not performed",
+  "identity": "all fields deliberately left 待填写 at user request",
+  "scope": "report only; no historical report edits, training, fitting, new test forward pass, videos, deployment or project source repack",
+  "reliability_axis_correction": {
+    "figure": "06_reliability",
+    "previous_ymin": 0.45,
+    "current_ymin": 0,
+    "previously_clipped_bin_accuracy": 0.32432432432432434,
+    "data_and_ece_unchanged": true
+  }
+}

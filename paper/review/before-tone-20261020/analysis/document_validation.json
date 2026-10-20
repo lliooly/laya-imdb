@@ -1,0 +1,111 @@
+{
+  "tex_pages": 15,
+  "word_render_pages": 17,
+  "references": 8,
+  "figures": 11,
+  "tables": 7,
+  "equations": 8,
+  "docx_images": 19,
+  "architecture_source_config_and_code_sha256": "passed",
+  "formula_and_reference_key_preservation": "passed",
+  "original_nine_figure_data_preservation": "passed",
+  "frozen_metric_recomputation": "passed",
+  "new_probability_claims": {
+    "original_laya_main": {
+      "errors": 914,
+      "high_confidence_errors": 375,
+      "fraction": 0.4102844638949672,
+      "error_mean_confidence": 0.8380305641527999,
+      "brier_positive": 0.029498946375066712
+    },
+    "deberta_cpu": {
+      "errors": 767,
+      "high_confidence_errors": 308,
+      "fraction": 0.4015645371577575,
+      "error_mean_confidence": 0.8590018918891646,
+      "brier_positive": 0.02500153733990886
+    },
+    "fusion_50_50": {
+      "errors": 743,
+      "high_confidence_errors": 244,
+      "fraction": 0.3283983849259758,
+      "error_mean_confidence": 0.8120527889536853,
+      "brier_positive": 0.024171950688180587
+    }
+  },
+  "calibration_weight_paired_comparison": {
+    "fixed": 8,
+    "broken": 11,
+    "net": -3,
+    "p": 0.6476058959960938
+  },
+  "source_sha256_check": "passed",
+  "tex_word_body_and_tables": "passed",
+  "supplementary_table_and_probability_means": {
+    "deberta": {
+      "accuracy": 0.9708,
+      "nll": 0.09199455613150069,
+      "ece_15_equal_width_top_label": 0.013275988735627896
+    },
+    "fusion": {
+      "accuracy": 0.9708,
+      "nll": 0.08964875266371218,
+      "ece_15_equal_width_top_label": 0.007406168064579898
+    }
+  },
+  "supplementary_intervals_cross_validation_benchmark_and_cpu_parity": "passed",
+  "first_person_prose_check": "passed",
+  "word_embedded_figures_match_current_pngs": "passed",
+  "reference_hanging_indent_and_hyperlinks": "passed",
+  "tex_missing_character_count": 0,
+  "tex_overfull_box_count": 0,
+  "tex_unresolved_references": 0,
+  "rendered_word_body_sha256": "a1ace7f0cedbe602e0dc3466fb130dd6471ef3afa2c2caff247377938057ba8a",
+  "layout_review": {
+    "status": "passed",
+    "word_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "tex_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "findings": "All pages visually inspected; headings, tables, equations, figures and references legible; no clipped text or overlapping content. Word and TeX paginate independently."
+  },
+  "word_render_directory": "paper/qa/word-supplement-20261020",
+  "tex_render_directory": "paper/qa/tex-supplement-20261020",
+  "compiler": "local XeLaTeX / TeX Live 2026",
+  "word_renderer": "bundled LibreOffice with explicit CJK font aliases",
+  "target_word_wps_validation": "not performed",
+  "identity": "all fields deliberately left 待填写 at user request",
+  "scope": "report revision incorporates already completed supplementary experiments; this revision performs no training, fitting or new test forward pass and changes no historical experimental reports"
+}
