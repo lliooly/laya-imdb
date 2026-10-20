@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-20",
+  "archive": "artifacts/delivery-preparation-20261020-v1/laya-imdb-source-and-research-20261020-v1.zip",
+  "bytes": 19871964,
+  "sha256": "9d01761249bdf19538e574e90cc19fefa86335146a4b4deb4f2ee159919f8c1c",
+  "payload_files": 1161,
+  "archive_entries": 1162,
+  "zip_crc_passed": true,
+  "every_payload_sha256_verified": true,
+  "embedded_manifest": true,
+  "weights_data_environments_and_videos_excluded": true,
+  "includes_current_paper": true,
+  "git_commit_or_push_performed": false
+}

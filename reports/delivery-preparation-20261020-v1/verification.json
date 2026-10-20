@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "changed_markdown_files": 13,
+  "local_links_and_images_passed": true,
+  "script_names_passed": true,
+  "tests": [
+    {
+      "module": "test_closeout_catalog.py",
+      "passed": true,
+      "tests": 4
+    },
+    {
+      "module": "test_paper_supplementary_validation.py",
+      "passed": true,
+      "tests": 4
+    },
+    {
+      "module": "test_paper_gpu_supplement.py",
+      "passed": true,
+      "tests": 3
+    },
+    {
+      "module": "test_paper_fusion_diagnostics.py",
+      "passed": true,
+      "tests": 3
+    },
+    {
+      "module": "test_paper_fusion_robustness.py",
+      "passed": true,
+      "tests": 3
+    }
+  ],
+  "total_tests": 17,
+  "isolated_process_per_module": true,
+  "training_config_validation": "passed: no dataset, model or accelerator accessed",
+  "predict_help": "passed",
+  "uv_lock_check": "passed: existing lock unchanged",
+  "new_training": false,
+  "official_test_forward_or_scoring": false,
+  "historical_reports_modified": false,
+  "headline_metrics_match_frozen_aggregates": true,
+  "manuscript_tex_pdf_docx_match_existing_final_review": true,
+  "existing_historical_report_bytes_unchanged": true,
+  "reader_review": {
+    "status": "passed after correction",
+    "correction": "Full-suite prerequisites now include untracked tokenizers, processed data and historical predictions."
+  }
+}

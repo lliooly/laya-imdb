@@ -1,61 +1,72 @@
-# 复现、环境与核验
+# 环境、数据与复现
 
-所有命令在仓库根目录执行。使用 Python 3.12、uv 和版本锁。源码包本身不包含数据、模型、全部预测缓存或优化器恢复包；历史实验精确复现需要从对应本地备份恢复协议所绑定的材料。
+使用 Python 3.12、uv 和提交的依赖锁；所有命令从仓库根目录执行。Git 仓库不包含数据、微调权重和完整预测缓存，复现历史成绩前须恢复对应资产。
 
-## 环境分工
+## 环境安装
 
-| 锁文件 | 用途 | 边界 |
-|---|---|---|
-| 根 pyproject.toml / uv.lock | Mac PyTorch、Laya、MLX 及主要测试 | laya / laya-mlx 是可选依赖；安装相应 extra |
-| environments/bow-cpu/uv.lock | NumPy、SciPy、sklearn 的词袋与统计核验 | 与主环境分开，禁止无记录地混装 NumPy 版本 |
-| environments/laya-cu126/uv.lock | Linux CUDA 12.6 L2 对照 | 不在 Mac 安装；L2 权重交付缺口另列 |
-| environments/laya-modal/uv.lock | Modal 运行时与权重接收 | 旧预算记录不代表本次获准启动云端 |
-| environments/deberta-prep/uv.lock | DeBERTa 准备与分词 | 需要本地锁定模型材料 |
-| environments/deberta-cu126/uv.lock | DeBERTa CUDA 训练 | FP32/BF16 按各实验契约，不沿用 Laya 的 AMP 结论 |
+| 环境 | 安装命令 | 用途 |
+| --- | --- | --- |
+| 根环境：Mac Laya / MLX | `uv sync --locked --extra laya --extra laya-mlx` | Apple Silicon 训练、单模型及双 Laya 推理 |
+| 根环境：图表 | `uv sync --locked --extra laya --extra laya-mlx --extra analysis` | 在主环境保留模型依赖并增加图表工具 |
+| 词袋与统计 | `uv sync --project environments/bow-cpu --locked` | NumPy、SciPy、scikit-learn，独立核验 |
+| DeBERTa 准备 | `uv sync --project environments/deberta-prep --locked` | DeBERTa 分词与模型准备 |
+| Laya CUDA | `uv sync --project environments/laya-cu126 --locked` | Linux CUDA 12.6；按原实验协议使用 |
+| DeBERTa CUDA | `uv sync --project environments/deberta-cu126 --locked` | Linux CUDA 训练；区分 FP32 / BF16 |
 
-首次安装需网络；本次只使用已有环境运行离线检查：
+首次安装需要网络。已有环境运行时使用 `uv run --locked --offline --no-sync`，不自动安装缺失依赖。CUDA 环境不在 Mac 上安装；其他用途见 [环境说明](../../environments/README.md)。
 
-```bash
-uv sync --locked --extra laya --extra laya-mlx
-uv sync --project environments/bow-cpu --locked
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py build
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py verify
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py test
-```
+## 数据与模型
 
-测试按模块各开子进程，因为部分科学边界测试安装永久 Python audit hook。词袋及校准权重模块使用 bow-cpu，其他模块使用主锁。测试日志与计数保存在本次整理报告目录，不能把 CPU 测试通过写成 GPU 训练通过。
+使用 [Stanford IMDB 官方数据](https://ai.stanford.edu/~amaas/data/sentiment/)。原官方训练 25,000 条按清洗文本组固定划分为 22,500 条训练、2,500 条开发；训练部分再留出 400 条校准，实际梯度训练 22,100 条。官方测试为 25,000 条。
 
-## 复现材料先核对
-
-1. 从官方来源获得模型与数据，或恢复既有本地材料。模型 revision、分词器及 SHA 见 configs 中的锁和各原 manifest。
-2. 恢复冻结派生划分与 reports/split_manifest.json；使用原预处理方式校验，避免重建得到不同样本或标签顺序。数据文件不在源码包内。
-3. 恢复对应 checkpoint、逐轮恢复包或预测缓存，并核对契约所列 SHA。仅有 summary 和源码不保证精确恢复随机状态。
-4. 阅读日期设计和最终报告：某些脚本 run_id 硬编码，复制 JSON 并不足以建立新实验。新 run_id、源码及输入需重新绑定，不能覆盖历史目录。
-5. 训练前执行该入口的配置和设备准入；纯--validate-config 不代替真实有限梯度、保存重载和同输入核验。
-
-## 按研究路线定位
-
-| 路线 | 核心入口 | 最终证据 |
-|---|---|---|
-| Laya 训练 | train_laya.py + 配方配置 | [训练指南](../guides/training.md)及[设计索引](designs.md) |
-| 长上下文 | laya_context_pair.py / laya_context_training.py | [最终评估](../../reports/laya-context-pair-s42-modal-20261016-v1/evaluation/REPORT.md) |
-| 数据修订 | laya_reviewed_data_study.py | [最终评估](../../reports/laya-reviewed-data-s42-modal-20261017-v1/evaluation/REPORT.md) |
-| DeBERTa 两轮 | deberta_budget_study.py / deberta_budget_training.py | [最终评估](../../reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/REPORT.md) |
-| 固定异构融合 | deberta_final_analysis.py / deberta_final_evaluation.py | [开发](../../reports/deberta-laya-final-analysis-20261018-v1/REPORT.md)、[已完成测试](../../reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md) |
-| 词袋互补 | run_bow_nb_study.py / verify_bow_nb_study.py | [报告](../../reports/bow-nb-complementarity-cpu-20261018-v1/REPORT.md) |
-| 最后 CPU 候选 | run_final_cpu_alternatives_v2.py | [报告](../../reports/final-cpu-alternatives-20261018-v2/REPORT.md) |
-| 全 token 查询头 | run_token_query_study.py | [报告](../../reports/laya-token-query-mps-fp32-20261018-v1/REPORT.md) |
-
-这里列出入口用于定位，不是批量执行命令。官方测试已经完成，本次整理不再次运行；完整历史逐条导出可在本地报告目录查找，源码包只保留选定摘要、来源和验证材料。
-
-## 重建索引与资料包
+首次准备数据及原始 Laya 模型的入口如下；已有冻结资产时应恢复并校验，不重新覆盖已有记录：
 
 ```bash
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py build
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py verify
-uv run --locked --offline --no-sync python scripts/build_closeout_catalog.py package
+# 会下载缺失的官方数据，并读取测试文本做完整性/重复审计，不执行模型评分
+uv run --locked --no-sync python scripts/prepare_data.py
+
+# 下载锁定 revision 的原始 Laya；这不是已微调的交付模型
+uv run --locked --no-sync python scripts/prepare_laya.py
 ```
 
-build 重新生成本次目录索引，不改历史报告。package 拒绝覆盖同名归档；新的封包应使用新命名。修改源码或文档后先重建 catalog，再核验，最后封包。归档内 PACKAGE-MANIFEST.json 逐文件记录 SHA；这不是可直接部署的模型包。
+数据划分身份见 `reports/split_manifest.json`；模型来源和文件哈希见 `configs/laya_model_lock.json`、`configs/deberta_model_lock.json`。微调模型不能由上面的下载命令获得，须从训练输出或对应备份恢复。
 
-生成的 `docs/closeout/catalog.json` 与 `local-assets.json` 属于本机清单，不进入 Git；首次检查前先运行 build。
+单模型推理默认需要 `checkpoints/laya-l512-s42-ce/`，包含 `model.safetensors`、`rl_agent_config.json`、`encoder/config.json` 及完整 `tokenizer/`。其他实验的 checkpoint、逐轮恢复包与预测缓存按原报告的输入契约匹配。
+
+## 配置检查与训练
+
+```bash
+# 仅检查配置与已安装训练器，不读取数据或加载模型
+uv run --locked --offline --no-sync python scripts/train_laya.py \
+  --config configs/laya-full-ce.json --validate-config
+
+# 进一步检查本地资产和 MPS，不启动训练
+uv run --locked --offline --no-sync python scripts/train_laya.py \
+  --config configs/laya-full-ce.json --check-only
+```
+
+`laya-full-ce.json` 是历史一轮 CE 配方，对应开发 95.76% 的单模型。需要重训时，先复制配置、使用新 `run_id`，完成设备准入后，再以 `scripts/train_laya.py --config configs/NEW_RUN.json` 启动；它不会产生最终三模型融合。真实有限梯度、保存重载和同输入验证不能由配置检查替代。
+
+| 路线 | 代码与协议 | 结果 |
+| --- | --- | --- |
+| 原双 Laya | `train_laya.py`、baseline-s43 / combined-s42 配置；[推理协议](../guides/laya-fusion-inference.md) | 开发 96.96%、测试 96.344% |
+| DeBERTa 两轮 | `deberta_budget_study.py` / `deberta_budget_training.py` | [最终评估](../../reports/deberta-heterogeneous-bf16-budget7-s42-20261017-v1/evaluation/REPORT.md) |
+| 固定异构融合 | `deberta_final_analysis.py` / `deberta_final_evaluation.py` | [开发](../../reports/deberta-laya-final-analysis-20261018-v1/REPORT.md)、[测试](../../reports/deberta-laya-final-cpu-evaluation-20261018-v1/REPORT.md) |
+| 三组完整重训 | `paper_gpu_supplement.py` / `paper_gpu_evaluate.py`；[设计](../superpowers/specs/2026-10-19-paper-supplementary-validation-design.md) | [完成报告](../../reports/paper-gpu-supplement-20261019-v1/REPORT.md) |
+| 权重与稳健性 | `paper_fusion_diagnostics.py` / `paper_fusion_robustness.py` | [诊断](../../reports/paper-fusion-diagnostics-20261020-v1/REPORT.md)、[稳健性](../../reports/paper-fusion-robustness-20261020-v1/REPORT.md) |
+
+这些入口用于定位代码；日期脚本可能硬编码运行身份、资产路径及 SHA，执行前须阅读协议，不能只改配置文件名或批量启动。官方测试结果已完成，常规安装检查不需要重新执行测试集前向。
+
+## 推理、测试与报告
+
+- [推理指南](../guides/inference.md)：历史单模型、双 Laya 与异构评估的实际入口。
+- [测试说明](../../tests/README.md)：按模块隔离执行和独立统计环境。
+- [报告说明](../../paper/README.md)：编译现有 TeX，或使用完整本地材料重建图表与 Word。
+
+报告的已有 TeX 和图表可独立编译；重新计算图表需要未进入 Git 的完整冻结预测。配置检查、单元测试和论文静态复算均不等于重新通过 GPU 训练或部署验收。
+
+## 历史目录与资料包
+
+`scripts/build_closeout_catalog.py` 的 `build / verify / test / package` 绑定 10 月 18 日整理目录。`build` 会重写历史生成索引，`verify` 和 `test` 会写入该日期的报告位置；日常交付检查优先使用直接 CLI 与独立模块测试。`package` 输出旧日期的源码资料包且不含完整 `paper/`，不能用来代表本次最终材料。
+
+需要重新制作当前版本源码包时，使用新的输出目录与文件名，收录当前文档、源码、锁文件和最终报告，记录清单并逐文件核验；保留历史包与收据。数据、权重、缓存和视频按 [交付说明](delivery.md) 单独处理。

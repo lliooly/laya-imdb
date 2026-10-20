@@ -1,7 +1,21 @@
-# 配置与模型锁
+# 实验配置与模型锁
 
-保留全部历史 JSON 与 run_id，含先导、冒烟、失败和完整训练；文件存在不等于任务完成。[设计与配置索引](../docs/closeout/designs.md)提供完整导航，[研究台账](../docs/closeout/research-ledger.md)指向最终结果。
+本目录保存训练、推理、评估配置与模型版本。历史配置按原运行身份保留，包含先导、冒烟、失败及已完成实验；最终状态由对应报告确认。
 
-model_lock、laya_model_lock、deberta_model_lock 等记录不同模型来源；各日期配置的 SHA 绑定与设备协议按对应报告判断。复跑不能只改输出目录而忽略脚本内硬编码身份或科学绑定。
+| 配置 | 用途 |
+| --- | --- |
+| `laya_model_lock.json`、`deberta_model_lock.json` | 模型来源、revision 和文件哈希 |
+| `model_lock.json`、`tokenizer_lock.json` | 早期 ModernBERT 与分词基线 |
+| `laya-full-ce.json` | 历史一轮 Laya-CE，开发 95.76% |
+| `laya-rtx4090-ce-baseline-s43-epochs2-fp32.json` | 双 Laya 的 baseline-s43 配方 |
+| `laya-rtx4090-ce-epochs2-warmup005-ls005-fp32.json` | 双 Laya 的 combined-s42 配方 |
+| `laya-fusion-inference-*.json` | 双 Laya 多视图推理；设备、精度与资产分别绑定 |
+| `deberta-heterogeneous-bf16-budget7-s42-20261017-v1.json` | 原 DeBERTa 两轮训练 |
+| `deberta-laya-final-cpu-evaluation-20261018-v1.json` | 原固定 50:50 融合测试评估 |
+| `paper-supplementary-preparation-20261019-v1.json` | 九次补训练的准备快照与固定种子；执行完成状态见下方报告 |
+| `final-cpu-alternatives-20261018-v2.json` | 97.40% 开发探索，非最终测试方案 |
+| `laya-token-query-mps-fp32-20261018-v1.json` | 冻结编码器的查询头对照 |
 
-最新 token 查询配置只用于冻结编码器实验；final-cpu-alternatives-v2 是 97.40% 开发探索候选；deberta-laya-final-cpu-evaluation 是已完成的固定测试评估协议。整理不重新运行这些任务。
+九次补训练、回传和测速已经完成，见 [补实验报告](../reports/paper-gpu-supplement-20261019-v1/REPORT.md)。准备快照中的“待启动”和原机器字段反映当时状态，不反向改写实验契约。
+
+复跑前核对脚本内运行身份、模型与输入 SHA、设备准入和原报告。单独复制 JSON 或更改输出路径不足以建立新实验。完整历史导航见 [设计与配置索引](../docs/closeout/designs.md)，当前读者入口见 [文档索引](../docs/README.md)。

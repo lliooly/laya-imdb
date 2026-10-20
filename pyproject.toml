@@ -1,7 +1,7 @@
 [project]
 name = "end-imdb"
 version = "0.1.0"
-description = "Reproducible IMDB sentiment experiments on Apple Silicon"
+description = "IMDB sentiment classification with Laya, DeBERTa, multi-view fusion and reproducible evaluation"
 requires-python = ">=3.12,<3.13"
 dependencies = ["huggingface-hub>=0.30,<2", "tokenizers>=0.21,<1", "numpy>=2,<3"]
 
