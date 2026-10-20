@@ -57,57 +57,91 @@
   "first_person_prose_check": "passed",
   "word_embedded_figures_match_current_pngs": "passed",
   "reference_hanging_indent_and_hyperlinks": "passed",
+  "project_github_link": "https://github.com/lliooly/laya-imdb",
   "tex_missing_character_count": 0,
   "tex_overfull_box_count": 0,
   "tex_unresolved_references": 0,
-  "rendered_word_body_sha256": "0e5a5a81a9581374e8457a2c6abf943f98a16aae5d9e83934b2ce203f946ce26",
+  "rendered_word_body_sha256": "9ee8be1b31d4a9efcccb8720afae47d41b31856a074489939cf1e083ab70e7b4",
   "layout_review": {
     "status": "passed",
-    "word_pages_reviewed": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "tex_pages_reviewed": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16
-    ],
-    "findings": "Every final-render page inspected; text, tables (including repeated continuation headers), figures, equations and references legible; no clipping, overlap or missing glyphs. Independent pagination: Word 18 pages, XeLaTeX 16 pages."
+    "visually_reviewed_changed_pages": {
+      "word": [
+        1
+      ],
+      "tex": [
+        1,
+        2
+      ]
+    },
+    "pixel_comparison_to_previous_full_page_review": {
+      "word": {
+        "previous_pages": 18,
+        "new_pages": 18,
+        "pixel_identical_to_previously_reviewed": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "require_visual_review": [
+          1
+        ]
+      },
+      "tex": {
+        "previous_pages": 16,
+        "new_pages": 16,
+        "pixel_identical_to_previously_reviewed": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "require_visual_review": [
+          1,
+          2
+        ]
+      }
+    },
+    "prior_full_page_review": "paper/analysis/final_review_20261020.json",
+    "findings": "Name, student ID, class and clickable project URL inspected on both covers; no course/instructor fields; changed PDF page 2 inspected. All remaining pages match previously reviewed pixels exactly; no clipping or overlap."
   },
-  "word_render_directory": "paper/qa/word-final-20261020",
-  "tex_render_directory": "paper/qa/tex-final-20261020",
+  "word_render_directory": "paper/qa/word-identity-20261020",
+  "tex_render_directory": "paper/qa/tex-identity-20261020",
   "compiler": "local XeLaTeX / TeX Live 2026",
   "word_renderer": "bundled LibreOffice with explicit CJK font aliases",
   "target_word_wps_validation": "not performed",
-  "identity": "all fields deliberately left 待填写 at user request",
+  "identity": {
+    "status": "complete",
+    "fields": [
+      "name",
+      "student_id",
+      "class_name"
+    ],
+    "course_and_instructor": "omitted at user request",
+    "pdf_and_word_author": "verified"
+  },
   "scope": "report revision incorporates already completed supplementary experiments; this revision performs no training, fitting or new test forward pass and changes no historical experimental reports"
 }

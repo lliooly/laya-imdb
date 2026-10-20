@@ -1,0 +1,145 @@
+{
+  "checked_at": "2026-10-20T11:56:14.620524+08:00",
+  "state": "passed",
+  "scope": "submission identity and repository-link correction only",
+  "identity": {
+    "name": "王凯平",
+    "student_id": "240165201043",
+    "class_name": "软件工程鲲鹏二班"
+  },
+  "removed_fields": [
+    "course",
+    "instructor"
+  ],
+  "github_url": "https://github.com/lliooly/laya-imdb",
+  "github_pdf_annotation": "verified",
+  "pdf_author": "王凯平",
+  "docx_author": "verified by validate_report.py",
+  "no_placeholders_in_current_exports": true,
+  "export_guard_checks": {
+    "missing_required_field": "rejected before report output",
+    "placeholder_value": "rejected before report output",
+    "complete_identity": "export passed"
+  },
+  "scientific_content": "manuscript, report content, numerical evidence and figures unchanged",
+  "source_manifest_rebinding": {
+    "changed_entries": [
+      "delivery"
+    ],
+    "reason": "delivery.md updated to current submission identity, companion inference and user-reported Desktop video status; only delivery binding refreshed; scientific source hashes unchanged"
+  },
+  "layout_review": {
+    "status": "passed",
+    "visually_reviewed_changed_pages": {
+      "word": [
+        1
+      ],
+      "tex": [
+        1,
+        2
+      ]
+    },
+    "pixel_comparison_to_previous_full_page_review": {
+      "word": {
+        "previous_pages": 18,
+        "new_pages": 18,
+        "pixel_identical_to_previously_reviewed": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "require_visual_review": [
+          1
+        ]
+      },
+      "tex": {
+        "previous_pages": 16,
+        "new_pages": 16,
+        "pixel_identical_to_previously_reviewed": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "require_visual_review": [
+          1,
+          2
+        ]
+      }
+    },
+    "prior_full_page_review": "paper/analysis/final_review_20261020.json",
+    "findings": "Name, student ID, class and clickable project URL inspected on both covers; no course/instructor fields; changed PDF page 2 inspected. All remaining pages match previously reviewed pixels exactly; no clipping or overlap."
+  },
+  "tex_pages": 16,
+  "word_render_pages": 18,
+  "outputs": {
+    "submission.json": {
+      "bytes": 102,
+      "sha256": "7d90b371e41510136b1f73d573f7794ad28f3bd89dc4dd90ab1ee410399e36cb"
+    },
+    "build_report.py": {
+      "bytes": 15391,
+      "sha256": "f65650653fcbffc204f64dc8ef987e7bdc2c2133d2cc4cff66abdaea39424d4d"
+    },
+    "validate_report.py": {
+      "bytes": 13365,
+      "sha256": "5ade303174e5b1213205b767a66675b37b8de23c83e4686bab6131d43479c023"
+    },
+    "main.tex": {
+      "bytes": 44088,
+      "sha256": "8f558d925f9b5aa4ecdd0ff91118ebcea9722747b2ca441c9234c4cc6f99d51e"
+    },
+    "main.pdf": {
+      "bytes": 681518,
+      "sha256": "529bdfc3beb9b0aa4c720485f54107ffb893989a145804f151ad17822dab63dd"
+    },
+    "IMDB项目报告.docx": {
+      "bytes": 1896149,
+      "sha256": "2cb5cab47df1e1a70f77d11f1c9f2e7b8ddedfcd1bae45a3a916daedcb187333"
+    },
+    "analysis/document_validation.json": {
+      "bytes": 4178,
+      "sha256": "f5c133c80b8506371a8f46c00840c0f51f477973ea043ae5912f281351549a07"
+    },
+    "analysis/source_manifest.json": {
+      "bytes": 12643,
+      "sha256": "5ee2a17302b92cca00a3434d2f61700109423294b038ce369b713d650290a3d0"
+    },
+    "analysis/report_content.json": {
+      "bytes": 48451,
+      "sha256": "392de0116d4fb0f7b4fdc54441daddd15246b999980aa6c8287dd4353298649a"
+    },
+    "README.md": {
+      "bytes": 5513,
+      "sha256": "99522e353e9740180d6d53209c7e254edd830baf0edf3093125f4dcb2b946f09"
+    },
+    "REVISION_NOTES.md": {
+      "bytes": 10023,
+      "sha256": "78840cd72b446e9c7a8177c99b8a7cdd153417ab54c64f60c83a258f0cf17aa1"
+    }
+  }
+}

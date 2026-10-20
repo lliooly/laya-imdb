@@ -146,7 +146,7 @@
   },
   "delivery": {
     "path": "docs/closeout/delivery.md",
-    "sha256": "47980c815de830ff39c118c2b3d23a3cef0252ed6d319af1720749d2a84dd2c8",
+    "sha256": "164fe25a2b8ba9dbcd5f54ee83ca1be0233d3c3e1c2ae71ba6f8191de548f81c",
     "verification": "opened and checked by assistant; human review not recorded"
   },
   "locks": {

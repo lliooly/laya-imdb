@@ -7,11 +7,16 @@ from manuscript import TITLE, SUBTITLE, BLOCKS, REFERENCES, SOURCES
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parent
+REPOSITORY_URL='https://github.com/lliooly/laya-imdb'
 metadata_path=HERE/'submission.json'
-metadata=json.loads(metadata_path.read_text()) if metadata_path.exists() else {}
-identity={k:metadata.get(k) or '待填写' for k in ['name','student_id','course_class','instructor']}
+metadata=json.loads(metadata_path.read_text())
+required_identity=('name','student_id','class_name')
+if any(not isinstance(metadata.get(k),str) or not metadata[k].strip()
+       or re.search(r'待填写|TODO|TBD',metadata[k],re.I) for k in required_identity):
+    raise ValueError('Complete name, student_id and class_name in submission.json before exporting.')
+identity={k:metadata[k].strip() for k in required_identity}
 identity_lines=[f'姓名：{identity["name"]}    学号：{identity["student_id"]}',
-                f'课程名／班级：{identity["course_class"]}    指导教师：{identity["instructor"]}']
+                f'班级：{identity["class_name"]}']
 build_time=datetime.now(ZoneInfo('Asia/Shanghai'))
 author=identity['name']
 def esc(s):
@@ -60,10 +65,11 @@ tex=[r'''% Generated from manuscript.py by build_report.py. UTF-8; compile with 
 \vspace{7pt}
 {\normalsize '''+esc(SUBTITLE)+r'''}\par
 \vspace{5pt}
-{\small 自然语言处理课程项目报告\quad 2026 年 10 月}\par
+{\small 2026 年 10 月}\par
 \vspace{5pt}
 {\small '''+esc(identity_lines[0]).replace('    ',r'\qquad ')+r'''}\par
-{\small '''+esc(identity_lines[1]).replace('    ',r'\qquad ')+r'''}
+{\small '''+esc(identity_lines[1]).replace('    ',r'\qquad ')+r'''}\par
+{\small 项目源码：\url{'''+REPOSITORY_URL+r'''}}
 \end{center}
 \vspace{4pt}
 ''']
@@ -128,12 +134,19 @@ for name,size in [('Title',19),('Heading 1',15),('Heading 2',12),('Caption',9)]:
     if name!='Caption':pf.keep_with_next=True
 p=doc.add_paragraph(style='Title');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.add_run(TITLE)
 p=doc.add_paragraph(SUBTITLE);p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.first_line_indent=Pt(0)
-p=doc.add_paragraph('自然语言处理课程项目报告  ·  2026 年 10 月');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.first_line_indent=Pt(0)
+p=doc.add_paragraph('2026 年 10 月');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.first_line_indent=Pt(0)
 for run in p.runs:run.font.size=Pt(10)
 for text in identity_lines:
     p=doc.add_paragraph(text);p.alignment=WD_ALIGN_PARAGRAPH.CENTER
     p.paragraph_format.first_line_indent=Pt(0);p.paragraph_format.space_after=Pt(2)
     for run in p.runs:run.font.size=Pt(9)
+p=doc.add_paragraph('项目源码：');p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+p.paragraph_format.first_line_indent=Pt(0);p.paragraph_format.space_after=Pt(2)
+for run in p.runs:run.font.size=Pt(9)
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
+link=OxmlElement('w:hyperlink');link.set(qn('r:id'),p.part.relate_to(REPOSITORY_URL,RT.HYPERLINK,is_external=True))
+r=OxmlElement('w:r');pr=OxmlElement('w:rPr');size=OxmlElement('w:sz');size.set(qn('w:val'),'18');pr.append(size);r.append(pr)
+t=OxmlElement('w:t');t.text=REPOSITORY_URL;r.append(t);link.append(r);p._p.append(link)
 fig_n=tab_n=eq_n=section_n=sub_n=0
 for b in BLOCKS:
     kind=b['kind']

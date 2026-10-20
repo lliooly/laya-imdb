@@ -15,8 +15,8 @@ ROOT=HERE.parent
 def read(rel):return json.loads((HERE/rel).read_text())
 def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 def source_json(key):return json.loads((ROOT/SOURCES[key]).read_text())
-word_render=HERE/'qa/word-final-20261020'
-tex_render=HERE/'qa/tex-final-20261020'
+word_render=HERE/'qa/word-identity-20261020'
+tex_render=HERE/'qa/tex-identity-20261020'
 baseline=read('analysis/revision-baseline.json')
 assert [b['tex'] for b in BLOCKS if b['kind']=='equation']==baseline['equations']
 reference_keys=[r[0] for r in REFERENCES]
@@ -109,7 +109,8 @@ with zipfile.ZipFile(docx) as z:
         actual=[[''.join(cell.xpath('.//w:t/text()',namespaces=ns)) for cell in row.xpath('./w:tc',namespaces=ns)] for row in rows]
         assert actual==[block['headers']]+block['rows']
     links=tree.xpath('//w:hyperlink',namespaces=ns)
-    assert len(links)==len(REFERENCES)
+    assert len(links)==len(REFERENCES)+1
+    assert any('https://github.com/lliooly/laya-imdb' in ''.join(link.itertext()) for link in links)
     media_hashes={hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if n.startswith('word/media/')}
     for p in (HERE/'figures').glob('*.png'):assert hashlib.sha256(p.read_bytes()).hexdigest() in media_hashes,p.name
     for p in (HERE/'qa/equations').glob('equation-*.png'):assert hashlib.sha256(p.read_bytes()).hexdigest() in media_hashes,p.name
@@ -144,7 +145,20 @@ pages=list(word_render.glob('page-*.png'))
 assert len(pages)==len(word_pdf.pages)
 assert len(list(tex_render.glob('page-*.png')))==len(pdf.pages)
 identity=read('submission.json')
-assert pdf.metadata.author==(identity.get('name') or '待填写') and pdf.metadata.subject
+assert set(identity)=={'name','student_id','class_name'}
+assert all(isinstance(v,str) and v.strip() and not re.search(r'待填写|TODO|TBD',v,re.I) for v in identity.values())
+assert pdf.metadata.author==identity['name'] and pdf.metadata.subject
+for value in identity.values():
+    assert value in tex and any(value in p for p in paragraphs),value
+assert f'姓名：{identity["name"]}    学号：{identity["student_id"]}' in paragraphs
+assert f'班级：{identity["class_name"]}' in paragraphs
+assert 'https://github.com/lliooly/laya-imdb' in tex
+assert any('项目源码：https://github.com/lliooly/laya-imdb'==p for p in paragraphs)
+for forbidden in ['待填写','课程名','指导教师','指导老师','自然语言处理课程项目报告']:
+    assert forbidden not in tex and not any(forbidden in p for p in paragraphs),forbidden
+with zipfile.ZipFile(docx) as z:
+    core=etree.fromstring(z.read('docProps/core.xml'))
+    assert core.find('{http://purl.org/dc/elements/1.1/}creator').text==identity['name']
 
 # Patch only document properties after rendering; the rendered body is unchanged.
 with zipfile.ZipFile(docx) as z:entries=[(info,z.read(info.filename)) for info in z.infolist()]
@@ -168,12 +182,13 @@ result={'tex_pages':len(pdf.pages),'word_render_pages':len(word_pdf.pages), 'ref
     'supplementary_intervals_cross_validation_benchmark_and_cpu_parity':'passed',
     'first_person_prose_check':'passed',
     'word_embedded_figures_match_current_pngs':'passed','reference_hanging_indent_and_hyperlinks':'passed',
+    'project_github_link':'https://github.com/lliooly/laya-imdb',
     'tex_missing_character_count':0,'tex_overfull_box_count':0,'tex_unresolved_references':0,
     'rendered_word_body_sha256':hashlib.sha256(body).hexdigest(),
     'layout_review':'pending latest full-page visual review',
     'word_render_directory':word_render.relative_to(ROOT).as_posix(),'tex_render_directory':tex_render.relative_to(ROOT).as_posix(),
     'compiler':'local XeLaTeX / TeX Live 2026','word_renderer':'bundled LibreOffice with explicit CJK font aliases',
-    'target_word_wps_validation':'not performed','identity':'all fields deliberately left 待填写 at user request',
+    'target_word_wps_validation':'not performed','identity':{'status':'complete','fields':['name','student_id','class_name'],'course_and_instructor':'omitted at user request','pdf_and_word_author':'verified'},
     'scope':'report revision incorporates already completed supplementary experiments; this revision performs no training, fitting or new test forward pass and changes no historical experimental reports'}
 (HERE/'analysis/document_validation.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps(result,indent=2,ensure_ascii=False))
