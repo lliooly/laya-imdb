@@ -1,0 +1,18 @@
+{
+  "state": "completed",
+  "instance": "PxqE7xkQ",
+  "platform_state": "已关机",
+  "platform_billing_state": "已暂停计费",
+  "platform_stop_verified_utc": "2026-10-19T18:58:20Z",
+  "automation_id": "imdb",
+  "automation_status": "PAUSED",
+  "pre_shutdown_verification_sha256": "2e1e9f6cb7ec0e571ff0eb79226bde25e5990c9532bdd821e54e092a42f998ee",
+  "screenshot": "/Users/shishishi/Dev-Project/NLP-Homework/End-IMDB/reports/paper-gpu-supplement-20261019-v1/platform-stopped-20261020.png",
+  "screenshot_sha256": "410815e7456283e2a7dba7898b8684c13fc707addcca914292d5d83766e776d1",
+  "platform_text_sha256": "4f748cec3207a252320a784caec05df6c638dbc51002ff23d15b3d2408e2b823",
+  "final_models": 9,
+  "recovery_bundles": 3,
+  "report_files_sha256_verified": 129,
+  "instance_released": false,
+  "official_test_accessed": false
+}
