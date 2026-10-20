@@ -1,0 +1,28 @@
+{
+  "state": "passed",
+  "sample_identity_and_count": "passed",
+  "independent_correct_count_and_nll": {
+    "cuda_bf16": {
+      "correct": 2426,
+      "nll": 0.09347276500838175
+    },
+    "cpu_fp32": {
+      "correct": 2427,
+      "nll": 0.0934185284889849
+    },
+    "fusion_cuda_bf16": {
+      "correct": 2432,
+      "nll": 0.08876776532849347
+    },
+    "fusion_cpu_fp32": {
+      "correct": 2432,
+      "nll": 0.08873747439953755
+    }
+  },
+  "frozen_source_sha256": "passed",
+  "class_changes": 1,
+  "fusion_class_changes": 0,
+  "test_forward_pass": false,
+  "model_training": false,
+  "calibration_refitting": false
+}

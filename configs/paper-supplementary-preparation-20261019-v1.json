@@ -1,0 +1,63 @@
+{
+  "format": "paper-supplementary-preparation-v1",
+  "date": "2026-10-19",
+  "state": "prepared_waiting_for_user_server",
+  "authorized_total_budget_cny_max": 300,
+  "recommended_gpu": "1 x L40S 48GB",
+  "minimum_host_ram_gb": 32,
+  "recommended_free_remote_disk_gb": 150,
+  "paid_compute_started": false,
+  "server_connection_available": false,
+  "remote_gpu_entrypoint_validated": false,
+  "remote_pending": [
+    "server connection and hourly price",
+    "driver and locked environment admission",
+    "seed-aware initialization and ordering entrypoint validation",
+    "runtime/cost pilot before nine-run schedule"
+  ],
+  "system_repetitions": [
+    {
+      "repeat": 1,
+      "baseline_seed": 43,
+      "combined_seed": 42,
+      "deberta_seed": 42
+    },
+    {
+      "repeat": 2,
+      "baseline_seed": 143,
+      "combined_seed": 142,
+      "deberta_seed": 142
+    },
+    {
+      "repeat": 3,
+      "baseline_seed": 243,
+      "combined_seed": 242,
+      "deberta_seed": 242
+    }
+  ],
+  "new_training_runs": 9,
+  "epochs_each": 2,
+  "selection_policy": "all fixed runs; no best-seed/epoch/weight selection",
+  "official_test_in_new_training_upload": false,
+  "new_independent_evaluation_data_available": false,
+  "local_cpu_status_path": "reports/paper-deberta-cpu-development-parity-20261019-v2/status.json",
+  "local_sensitivity_report": "reports/paper-duplicate-sensitivity-20261019-v1/REPORT.md",
+  "ssh_public_key": "/private/tmp/imdb-paper-ssh-20261019/id_ed25519.pub",
+  "source_sha256": {
+    "docs/superpowers/specs/2026-10-19-paper-supplementary-validation-design.md": "a0e252be27ac311bf65105c5e97925778adbb8789c06d5dce093cb201b73d829",
+    "docs/guides/paper-supplementary-handoff.md": "347c8c85f61a880069e6180dfeeef093c72c5dca6ed195f0a2fd82ecbe279fa2",
+    "scripts/paper_supplementary_validation.py": "951cd3069bbebfa1a865facfb88f7afb7d23cf1ba08c4afd088022fbb510cbde",
+    "tests/test_paper_supplementary_validation.py": "1dec862ed9a04750a0ba58c683b8005cb75ac067cfebf8cc081c459c0a3bc4a2",
+    "configs/laya_model_lock.json": "d3626263262f87df7d53c6ea43e0dc95d88e7be655790bc3e2c9120ece6b4896",
+    "configs/deberta_model_lock.json": "72f246bd0334efe6b7b5602ec465e23c9274cff69d361f6262bebcd02262e486",
+    "configs/laya-rtx4090-ce-baseline-s43-epochs2-fp32.json": "53d1aa9095158775f9e086ccb9e37898a4e92fbf760402afed889bdcdb69773f",
+    "configs/laya-rtx4090-ce-epochs2-warmup005-ls005-fp32.json": "221061656dc0daa582cafbe5fc8b22e7bbdf7f0780f330152cf521764405b038",
+    "configs/deberta-heterogeneous-bf16-budget7-s42-20261017-v1.json": "bd2145113867d61470b4ca36990ed018e2d1862eb6b34ece638f115eb8db7deb",
+    "environments/laya-cu126/uv.lock": "260f07f29246ff27c1aac8846eb583fa47415be6360f8c66a4f88485a5825b33",
+    "environments/deberta-cu126/uv.lock": "e926e2e3cc492d9e753b6128b0c610bcaac1ee8ef515cbd14e855eb1b7d5d4aa",
+    "reports/paper-duplicate-sensitivity-20261019-v1/summary.json": "49ed177e90125702d6cba9211ff208019132f3106d06473318aeb5eb5da90fb4"
+  },
+  "local_cpu_validation_completed": true,
+  "local_cpu_report": "reports/paper-deberta-cpu-development-parity-20261019-v2/REPORT.md",
+  "asset_manifest": "reports/paper-supplementary-preparation-20261019-v1/asset-manifest.json"
+}

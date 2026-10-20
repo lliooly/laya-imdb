@@ -1,0 +1,33 @@
+{
+  "sensitivity_frozen_source_hashes": {
+    "reports/deberta-laya-final-cpu-evaluation-20261018-v1/test-fused-predictions.json": true,
+    "data/processed/train.jsonl": true,
+    "data/processed/validation.jsonl": true,
+    "data/processed/test.jsonl": true,
+    "docs/superpowers/specs/2026-10-19-paper-supplementary-validation-design.md": true,
+    "scripts/paper_supplementary_validation.py": true,
+    "scripts/comparison_metrics.py": true
+  },
+  "preparation_source_hashes": {
+    "docs/superpowers/specs/2026-10-19-paper-supplementary-validation-design.md": true,
+    "docs/guides/paper-supplementary-handoff.md": true,
+    "scripts/paper_supplementary_validation.py": true,
+    "tests/test_paper_supplementary_validation.py": true,
+    "configs/laya_model_lock.json": true,
+    "configs/deberta_model_lock.json": true,
+    "configs/laya-rtx4090-ce-baseline-s43-epochs2-fp32.json": true,
+    "configs/laya-rtx4090-ce-epochs2-warmup005-ls005-fp32.json": true,
+    "configs/deberta-heterogeneous-bf16-budget7-s42-20261017-v1.json": true,
+    "environments/laya-cu126/uv.lock": true,
+    "environments/deberta-cu126/uv.lock": true,
+    "reports/paper-duplicate-sensitivity-20261019-v1/summary.json": true
+  },
+  "unit_tests_passed": 4,
+  "asset_count": 38,
+  "asset_gib": 4.841624092310667,
+  "paid_gpu_compute_started": false,
+  "remote_entrypoint_validation": "pending server admission",
+  "independent_data": "not yet available",
+  "cpu_development_parity_verification": "passed; class changes 1, fusion changes 0",
+  "state": "local_preparation_complete_waiting_for_server"
+}
