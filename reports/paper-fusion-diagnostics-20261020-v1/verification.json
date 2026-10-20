@@ -1,0 +1,36 @@
+{
+  "state": "passed",
+  "checks": [
+    {
+      "repeat": 1,
+      "all_correct_counts_independently_recomputed": true,
+      "original_equal_probabilities_match": true,
+      "calibration_fit_beats_dense_grid": true
+    },
+    {
+      "repeat": 2,
+      "all_correct_counts_independently_recomputed": true,
+      "original_equal_probabilities_match": true,
+      "calibration_fit_beats_dense_grid": true
+    },
+    {
+      "repeat": 3,
+      "all_correct_counts_independently_recomputed": true,
+      "original_equal_probabilities_match": true,
+      "calibration_fit_beats_dense_grid": true
+    }
+  ],
+  "source_file_count": 21,
+  "source_hashes_unchanged": true,
+  "weights_bound_before_development": true,
+  "all_four_candidates_reported": true,
+  "official_test_accessed": false,
+  "output_sha256": {
+    "summary.json": "3de0bdc98639febc31983863cdf6dc2aae4aee6e4977fdae0ee8a9ee50c6f9f8",
+    "changed-cases.json": "4275281232386f8f60163bb020b51af98f29c57d1c0f7d5103a18c79ce246f5f",
+    "strata.json": "67a5d2713f857d1490235bcdbb3f52e4ca2cdc2f01ff9c92e4abd79cb77b6919",
+    "weights-frozen-before-development.json": "2c365055fbf7220da9ccca5b69ebca4c3fdfac04b149fb91692e8fd2ffb7eecc",
+    "interpretation.json": "b2266f2a5beff575cfa53010c88b3c13c8b4d8c5d25e0ca0a122475bd98882f6",
+    "INTERPRETATION.md": "5555cf9c0502e29b27b67ebc5d3a145a67574dfb4be4e2620c995bae842d11b1"
+  }
+}

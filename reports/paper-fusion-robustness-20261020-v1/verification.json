@@ -1,0 +1,106 @@
+{
+  "state": "passed",
+  "input_hashes_unchanged": true,
+  "source_bound": true,
+  "cv_partitions": 10,
+  "each_partition_covers_400_ids_once": true,
+  "all_candidate_methods_retained": true,
+  "bootstrap_quantiles_independently_recomputed": true,
+  "calibration_text_groups": 400,
+  "development_text_groups": 2487,
+  "official_test_accessed": false,
+  "full_calibration_temperature_solver_comparison": [
+    {
+      "repeat": 1,
+      "old_temperatures": {
+        "baseline": 1.9022444486618042,
+        "combined": 0.9353874921798706,
+        "deberta": 1.1544890029419532
+      },
+      "new_temperatures": {
+        "baseline": 1.9029614169922473,
+        "combined": 0.9350649770577205,
+        "deberta": 1.1544890029419532
+      },
+      "absolute_temperature_differences": {
+        "baseline": 0.0007169683304431018,
+        "combined": 0.00032251512215009104,
+        "deberta": 0.0
+      },
+      "full_calibration_refit": {
+        "temperatures": {
+          "baseline": 1.9029614169922473,
+          "combined": 0.9350649770577205,
+          "deberta": 1.1544890029419532
+        },
+        "laya_coefficient": 0.6449095452381615,
+        "outer_deberta_weight": 0.9498537005368861
+      }
+    },
+    {
+      "repeat": 2,
+      "old_temperatures": {
+        "baseline": 1.8074491024017334,
+        "combined": 0.9481970071792603,
+        "deberta": 1.1646224423050204
+      },
+      "new_temperatures": {
+        "baseline": 1.8085571427735907,
+        "combined": 0.9477586264078608,
+        "deberta": 1.1646224423050204
+      },
+      "absolute_temperature_differences": {
+        "baseline": 0.0011080403718572995,
+        "combined": 0.0004383807713994603,
+        "deberta": 0.0
+      },
+      "full_calibration_refit": {
+        "temperatures": {
+          "baseline": 1.8085571427735907,
+          "combined": 0.9477586264078608,
+          "deberta": 1.1646224423050204
+        },
+        "laya_coefficient": 0.7948274593046816,
+        "outer_deberta_weight": 0.8728926986199077
+      }
+    },
+    {
+      "repeat": 3,
+      "old_temperatures": {
+        "baseline": 1.8871957063674927,
+        "combined": 0.9168868660926819,
+        "deberta": 1.1815651166413523
+      },
+      "new_temperatures": {
+        "baseline": 1.888231217147547,
+        "combined": 0.9163726788914888,
+        "deberta": 1.1815651166413523
+      },
+      "absolute_temperature_differences": {
+        "baseline": 0.0010355107800543717,
+        "combined": 0.000514187201193117,
+        "deberta": 0.0
+      },
+      "full_calibration_refit": {
+        "temperatures": {
+          "baseline": 1.888231217147547,
+          "combined": 0.9163726788914888,
+          "deberta": 1.1815651166413523
+        },
+        "laya_coefficient": 0.56880737520221,
+        "outer_deberta_weight": 0.6926143417156079
+      }
+    }
+  ],
+  "output_sha256": {
+    "summary.json": "c5f8a063a9d333ff8857f86d42b2bb2359ff442663dfeb82c29b51c0cdbb7277",
+    "grouped-folds.json": "1f71a931552ac2bb90f358172800bbc044cef77730d03733f1db1be51b9a3984",
+    "REPORT.md": "3d65d71b43b6876a0c47447af5f8825dd61d4e090bf153291756b4331c6654f0",
+    "input-contract.json": "4df4bfe2b911593c525eec9e34338c2eca6b41f5dd5255c0b328a4906fb44847",
+    "calibration-parameter-bootstrap.json": "63eebea6776e6874a042c1ccab749db0d3601bb01f81882c9daab6f4d5560d52",
+    "calibration-cross-validation.json": "d54595e22330c0755e0ccb828a1efddb4338a9e778238a1a7cad2e44d62c3e12",
+    "development-bootstrap-samples.json": "2cd747c2aa93c37f1298f53f962304e8a2af6b7e16f9c387e41ba76fc42ca63d",
+    "development-conditional-intervals.json": "50f288ce929826587fdfeeca66d15011ead169b39d11307afeed8b416c36a7ff",
+    "INTERPRETATION.md": "ea9c3a0d00d08e1cb4472c1409b39499aa06bf0147546df0f9ac0a6cabbb5421"
+  }
+}

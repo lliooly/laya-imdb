@@ -1,0 +1,233 @@
+{
+  "state": "completed",
+  "calibration_count": 400,
+  "calibration_unique_text_groups": 400,
+  "development_count": 2500,
+  "development_unique_text_groups": 2487,
+  "calibration_cross_validation": [
+    {
+      "training_repeat": 1,
+      "statistics": {
+        "deberta": {
+          "accuracy_mean": 0.985,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06607836605095771
+        },
+        "equal": {
+          "accuracy_mean": 0.9817500000000001,
+          "delta_mean_pp": -0.3249999999999964,
+          "delta_range_pp": [
+            -0.5000000000000004,
+            -0.24999999999999467
+          ],
+          "nll_mean": 0.06915891941498892
+        },
+        "fixed_deberta_080": {
+          "accuracy_mean": 0.985,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06529085035652168
+        },
+        "calibration_nll": {
+          "accuracy_mean": 0.985,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06721675918951817
+        }
+      }
+    },
+    {
+      "training_repeat": 2,
+      "statistics": {
+        "deberta": {
+          "accuracy_mean": 0.99,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.05790814721595977
+        },
+        "equal": {
+          "accuracy_mean": 0.984,
+          "delta_mean_pp": -0.5999999999999972,
+          "delta_range_pp": [
+            -0.7499999999999951,
+            -0.24999999999999467
+          ],
+          "nll_mean": 0.05548673274336632
+        },
+        "fixed_deberta_080": {
+          "accuracy_mean": 0.99,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.05205322334191911
+        },
+        "calibration_nll": {
+          "accuracy_mean": 0.99,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06007390003105699
+        }
+      }
+    },
+    {
+      "training_repeat": 3,
+      "statistics": {
+        "deberta": {
+          "accuracy_mean": 0.9825000000000002,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06568638658505802
+        },
+        "equal": {
+          "accuracy_mean": 0.9814999999999999,
+          "delta_mean_pp": -0.10000000000000231,
+          "delta_range_pp": [
+            -0.2500000000000058,
+            0.0
+          ],
+          "nll_mean": 0.06275146193495632
+        },
+        "fixed_deberta_080": {
+          "accuracy_mean": 0.9825000000000002,
+          "delta_mean_pp": 0.0,
+          "delta_range_pp": [
+            0.0,
+            0.0
+          ],
+          "nll_mean": 0.06225771871729967
+        },
+        "calibration_nll": {
+          "accuracy_mean": 0.9809999999999999,
+          "delta_mean_pp": -0.15000000000000235,
+          "delta_range_pp": [
+            -0.5000000000000004,
+            0.24999999999999467
+          ],
+          "nll_mean": 0.06587403313003948
+        }
+      }
+    }
+  ],
+  "calibration_parameter_sensitivity": [
+    {
+      "training_repeat": 1,
+      "outer_deberta_weight": {
+        "median": 0.9579744259138735,
+        "percentile_95": [
+          0.4466196133191736,
+          1.0
+        ],
+        "frequency_at_zero": 0.0,
+        "frequency_at_one": 0.37333333333333335
+      }
+    },
+    {
+      "training_repeat": 2,
+      "outer_deberta_weight": {
+        "median": 0.8766044225622416,
+        "percentile_95": [
+          0.3733762267383085,
+          1.0
+        ],
+        "frequency_at_zero": 0.0033333333333333335,
+        "frequency_at_one": 0.2866666666666667
+      }
+    },
+    {
+      "training_repeat": 3,
+      "outer_deberta_weight": {
+        "median": 0.6767247219380444,
+        "percentile_95": [
+          0.0026981740729973523,
+          1.0
+        ],
+        "frequency_at_zero": 0.02666666666666667,
+        "frequency_at_one": 0.04
+      }
+    }
+  ],
+  "development_conditional_intervals": {
+    "equal": {
+      "mean_delta_pp": -1.7763568394002505e-17,
+      "percentile_95_pp": [
+        -0.29444221420615396,
+        0.2933333333333333
+      ],
+      "bootstrap_samples": 10000,
+      "unique_text_groups": 2487,
+      "sample_count": 2500,
+      "seed": 20261020,
+      "repetitions_averaged": 3,
+      "fixed_models_and_postprocessing": true,
+      "includes_training_uncertainty": false,
+      "accounts_for_adaptive_research_selection": false,
+      "independent_confirmation": false
+    },
+    "fixed_deberta_080": {
+      "mean_delta_pp": 0.05333333333333332,
+      "percentile_95_pp": [
+        -0.040016006402561026,
+        0.15974600447514098
+      ],
+      "bootstrap_samples": 10000,
+      "unique_text_groups": 2487,
+      "sample_count": 2500,
+      "seed": 20261020,
+      "repetitions_averaged": 3,
+      "fixed_models_and_postprocessing": true,
+      "includes_training_uncertainty": false,
+      "accounts_for_adaptive_research_selection": false,
+      "independent_confirmation": false
+    },
+    "calibration_nll": {
+      "mean_delta_pp": 0.06666666666666667,
+      "percentile_95_pp": [
+        -0.026698705112802024,
+        0.16019383516630212
+      ],
+      "bootstrap_samples": 10000,
+      "unique_text_groups": 2487,
+      "sample_count": 2500,
+      "seed": 20261020,
+      "repetitions_averaged": 3,
+      "fixed_models_and_postprocessing": true,
+      "includes_training_uncertainty": false,
+      "accounts_for_adaptive_research_selection": false,
+      "independent_confirmation": false
+    }
+  },
+  "new_training": false,
+  "official_test_accessed": false,
+  "independent_confirmation": false,
+  "best_policy_selected": false,
+  "duration_seconds": 2.6510569999809377,
+  "limitations": [
+    "historically reused calibration and development data",
+    "analysis plan informed by previous development results",
+    "CV folds refit postprocessing but not base models",
+    "repeated folds are not independent datasets",
+    "conditional development intervals exclude training/fit/adaptive-selection uncertainty",
+    "Laya temperature solver changed from LBFGS to convex inverse-temperature bisection with same NLL/bounds"
+  ]
+}
