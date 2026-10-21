@@ -1,6 +1,6 @@
 {
   "tex_pages": 16,
-  "word_render_pages": 18,
+  "word_render_pages": 17,
   "references": 8,
   "figures": 11,
   "tables": 7,
@@ -62,64 +62,14 @@
   "tex_missing_character_count": 0,
   "tex_overfull_box_count": 0,
   "tex_unresolved_references": 0,
-  "rendered_word_body_sha256": "d626291ac2c8989e5a35b4c340d2e0b8224c0181dbb6992089a7d5bfa7730932",
-  "layout_review": {
-    "status": "passed",
-    "reviewer": "assistant",
-    "visually_reviewed_changed_pages": {
-      "word": [
-        1
-      ],
-      "tex": [
-        1,
-        2
-      ]
-    },
-    "pixel_identical_remaining_pages": {
-      "word": [
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18
-      ],
-      "tex": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16
-      ]
-    },
-    "findings": "Both cover links readable and clickable; PDF page 2 reviewed after reflow. Remaining pages match previously reviewed pixels exactly; no clipping or overlap.",
-    "previous_full_review": "paper/analysis/identity_revision_20261020.json"
-  },
-  "word_render_directory": "paper/qa/word-huggingface-20261020",
+  "rendered_word_body_sha256": "47e42fb0fb8a399968902fb6f66d941bf2e4cf4bbc8e9bf343cf277756e4d835",
+  "layout_review": "passed: all 17 LibreOffice-rendered pages inspected at full resolution; final render images match reviewed image hashes; no clipping or overlap observed",
+  "word_render_directory": "paper/qa/word-font-fixed-20261020",
   "tex_render_directory": "paper/qa/tex-huggingface-20261020",
   "compiler": "local XeLaTeX / TeX Live 2026",
-  "word_renderer": "bundled LibreOffice with explicit CJK font aliases",
-  "target_word_wps_validation": "not performed",
+  "word_renderer": "bundled LibreOffice using Microsoft Word bundled SimSun and SimHei fonts",
+  "word_font_and_chinese_language_check": "passed: explicit SimSun/SimHei, no theme font attributes, zh-CN",
+  "target_word_wps_validation": "Microsoft Word for Mac: corrected document opened; first page inspected; native font dialog confirmed SimSun / Times New Roman / Regular / 11 pt for body. Full-page layout reviewed separately in bundled LibreOffice. Windows and WPS not tested.",
   "identity": {
     "status": "complete",
     "fields": [

@@ -6,7 +6,7 @@
 
 | 材料 | 文件 | 说明 |
 | --- | --- | --- |
-| 可编辑报告 | [IMDB项目报告.docx](IMDB项目报告.docx) | 正文、表格与公式；本机渲染 18 页 |
+| 可编辑报告 | [IMDB项目报告.docx](IMDB项目报告.docx) | 正文、表格与公式；LibreOffice 渲染 17 页，Word for Mac 显示 15 页 |
 | PDF 报告 | [main.pdf](main.pdf) | XeLaTeX 编译，16 页 |
 | TeX 源码 | [main.tex](main.tex) | UTF-8，以 XeLaTeX 编译 |
 | 图表 | [figures/](figures/) | 11 幅图，PDF / 300 DPI PNG；架构图另有 SVG |
@@ -62,7 +62,7 @@ python3 paper/build_report.py
 
 该步骤生成 Word 与 TeX，随后按上方命令编译 PDF。`build_architecture.py` 还会核对本机模型配置和依赖源码，单独重建架构图需恢复其绑定资产；结构证据见 [architecture_sources.json](analysis/architecture_sources.json)。
 
-Word 使用宋体／黑体字体名称；本机 LibreOffice 通过 `qa/fonts.conf` 做字体映射。不同设备的字体和分页可能不同，Word/WPS 实机检查仍待完成。
+Word 通过 `word_typography.py` 明确设置正文宋体（SimSun）、标题黑体（SimHei）、西文 Times New Roman，并将东亚语言设为简体中文（zh-CN），不依赖模板主题字体。本机 LibreOffice 使用已安装 Microsoft Word 自带的 SimSun／SimHei 字体渲染；已在 Microsoft Word for Mac 打开检查首页及正文实际字体。不同软件可能独立分页，Windows 和 WPS 未实机检查。
 
 ## 报告材料包
 
@@ -78,7 +78,7 @@ uv run --locked --offline --no-sync python paper/build_package.py
 
 ## 核验记录
 
-[final_review_20261020.json](analysis/final_review_20261020.json) 与 [document_validation.json](analysis/document_validation.json) 记录正文、指标、公式、引用、嵌入图像和逐页版式检查。Word 18 页与 PDF 16 页均已检查，二者独立分页。当前 README 的整理不改变报告正文、数据或已有核验结论。
+[document_validation.json](analysis/document_validation.json) 记录当前正文、指标、公式、引用、嵌入图像和版式检查。最新字体修正见 [word_font_revision_20261020.json](analysis/word_font_revision_20261020.json)：LibreOffice 17 页渲染已逐页检查，原 PDF 16 页保持不变。此前 [final_review_20261020.json](analysis/final_review_20261020.json) 保留为历史核验。
 
 历史审查见 [review/REVIEW.md](review/REVIEW.md)，各轮修订前快照保留在 `review/` 对应子目录。静态审查可在具备其依赖和冻结输入的完整本地环境中运行 `python3 paper/review/audit.py`；它不执行新的模型测试前向。
 

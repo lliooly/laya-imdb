@@ -15,7 +15,7 @@ ROOT=HERE.parent
 def read(rel):return json.loads((HERE/rel).read_text())
 def digest(value):return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 def source_json(key):return json.loads((ROOT/SOURCES[key]).read_text())
-word_render=HERE/'qa/word-huggingface-20261020'
+word_render=HERE/'qa/word-font-fixed-20261020'
 tex_render=HERE/'qa/tex-huggingface-20261020'
 baseline=read('analysis/revision-baseline.json')
 assert [b['tex'] for b in BLOCKS if b['kind']=='equation']==baseline['equations']
@@ -97,6 +97,16 @@ ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 docx=HERE/'IMDB项目报告.docx'
 with zipfile.ZipFile(docx) as z:
     body=z.read('word/document.xml');tree=etree.fromstring(body)
+    settings=etree.fromstring(z.read('word/settings.xml'))
+    assert settings.find('w:themeFontLang',ns).get('{'+ns['w']+'}eastAsia')=='zh-CN'
+    for name in ['word/document.xml','word/styles.xml']+[n for n in z.namelist() if re.fullmatch(r'word/footer\d+\.xml',n)]:
+        xml=etree.fromstring(z.read(name))
+        for fonts in xml.xpath('//w:rFonts',namespaces=ns):
+            assert fonts.get('{'+ns['w']+'}eastAsia') in ['SimSun','SimHei']
+            assert not any('theme' in etree.QName(k).localname.lower() for k in fonts.attrib)
+        assert all(lang.get('{'+ns['w']+'}eastAsia')=='zh-CN' for lang in xml.xpath('//w:lang',namespaces=ns))
+        if name!='word/styles.xml':
+            assert all(r.find('w:rPr/w:rFonts',ns) is not None for r in xml.xpath('//w:r',namespaces=ns))
     paragraphs=[''.join(p.itertext()) for p in tree.xpath('//w:body/w:p',namespaces=ns)]
     # itertext is independent of python-docx and includes the inline hyperlink text.
     for block in BLOCKS:
@@ -191,8 +201,10 @@ result={'tex_pages':len(pdf.pages),'word_render_pages':len(word_pdf.pages), 'ref
     'rendered_word_body_sha256':hashlib.sha256(body).hexdigest(),
     'layout_review':'pending latest full-page visual review',
     'word_render_directory':word_render.relative_to(ROOT).as_posix(),'tex_render_directory':tex_render.relative_to(ROOT).as_posix(),
-    'compiler':'local XeLaTeX / TeX Live 2026','word_renderer':'bundled LibreOffice with explicit CJK font aliases',
-    'target_word_wps_validation':'not performed','identity':{'status':'complete','fields':['name','student_id','class_name'],'course_and_instructor':'omitted at user request','pdf_and_word_author':'verified'},
+    'compiler':'local XeLaTeX / TeX Live 2026','word_renderer':'bundled LibreOffice using Microsoft Word bundled SimSun and SimHei fonts',
+    'word_font_and_chinese_language_check':'passed: explicit SimSun/SimHei, no theme font attributes, zh-CN',
+    'target_word_wps_validation':'Microsoft Word for Mac: corrected document opened; first page inspected; native font dialog confirmed SimSun / Times New Roman / Regular / 11 pt for body. Full-page layout reviewed separately in bundled LibreOffice. Windows and WPS not tested.',
+    'identity':{'status':'complete','fields':['name','student_id','class_name'],'course_and_instructor':'omitted at user request','pdf_and_word_author':'verified'},
     'scope':'report revision incorporates already completed supplementary experiments; this revision performs no training, fitting or new test forward pass and changes no historical experimental reports'}
 (HERE/'analysis/document_validation.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps(result,indent=2,ensure_ascii=False))

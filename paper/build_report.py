@@ -121,7 +121,7 @@ for el in doc.element.xpath('.//w:pBdr | .//w:docGrid'):
     el.getparent().remove(el)
 sec.page_width=Cm(21);sec.page_height=Cm(29.7)
 sec.top_margin=sec.bottom_margin=Cm(2.1);sec.left_margin=sec.right_margin=Cm(2.3)
-def fonts(style,east='宋体',western='Times New Roman',size=11):
+def fonts(style,east='SimSun',western='Times New Roman',size=11):
     style.font.name=western;style.font.size=Pt(size)
     style.element.get_or_add_rPr().get_or_add_rFonts().set(qn('w:eastAsia'),east)
 fonts(doc.styles['Normal']);normal=doc.styles['Normal'].paragraph_format
@@ -129,7 +129,7 @@ normal.line_spacing=1.15;normal.space_after=Pt(4);normal.first_line_indent=Cm(.7
 normal.widow_control=True
 snap=OxmlElement('w:snapToGrid');snap.set(qn('w:val'),'0');doc.styles['Normal'].element.get_or_add_pPr().append(snap)
 for name,size in [('Title',19),('Heading 1',15),('Heading 2',12),('Caption',9)]:
-    fonts(doc.styles[name],east='黑体' if name!='Caption' else '宋体',size=size)
+    fonts(doc.styles[name],east='SimHei' if name!='Caption' else 'SimSun',size=size)
     doc.styles[name].font.color.rgb=RGBColor(0,0,0)
     if name=='Caption':doc.styles[name].font.bold=False
     pf=doc.styles[name].paragraph_format;pf.first_line_indent=Pt(0);pf.space_before=Pt(10);pf.space_after=Pt(6)
@@ -234,6 +234,8 @@ doc.core_properties.title=TITLE;doc.core_properties.subject=SUBTITLE;doc.core_pr
 doc.core_properties.created=doc.core_properties.modified=build_time.astimezone(timezone.utc)
 doc.core_properties.keywords='IMDB; Laya; DeBERTa-v3; 情感分类; 概率融合'
 doc.core_properties.comments=''
+from word_typography import normalize_word_fonts
+normalize_word_fonts(doc)
 doc.save(HERE/'IMDB项目报告.docx')
 
 source_manifest={}

@@ -1,7 +1,7 @@
 {
   "archive_root": "IMDB报告",
-  "archive_entry_count": 62,
-  "hashed_payload_count": 61,
+  "archive_entry_count": 64,
+  "hashed_payload_count": 63,
   "files": [
     {
       "path": "main.tex",
@@ -15,18 +15,18 @@
     },
     {
       "path": "IMDB项目报告.docx",
-      "bytes": 1896229,
-      "sha256": "a7c7ff9a64d1321a10a41763affe87f90b240b0780058435f14253f751d2e039"
+      "bytes": 1898900,
+      "sha256": "e1521068c70256debe080e9bb09fc61a9cff7582a5f4ba30366c85d3760e674e"
     },
     {
       "path": "README.md",
-      "bytes": 5875,
-      "sha256": "18252b35a28c41c0b1738b58710c6117a414b5765175ccdaa10d09bcec9d326a"
+      "bytes": 6224,
+      "sha256": "1dc501eadfef0adf7f41516fceff61bb5169666c85c698ca3cda8d41f15a9ada"
     },
     {
       "path": "REVISION_NOTES.md",
-      "bytes": 10313,
-      "sha256": "6545fe476659b9982d41451a2e5c2b8948828af0993c74a7da7d507594087e19"
+      "bytes": 10973,
+      "sha256": "6277c665b55df5b149d53bfeb830828476785ec5e0df92c0c5fae80f37ba2411"
     },
     {
       "path": "submission.json",
@@ -40,8 +40,8 @@
     },
     {
       "path": "build_report.py",
-      "bytes": 15608,
-      "sha256": "12bc298d76927dad95f460cefa05feebfe77d56ac71ac2a47956ed6ed83aaeb9"
+      "bytes": 15683,
+      "sha256": "4798b40f7f1e1d3d1f9a8ab1da93a910a9177424bfeec271155cb7c0f25b2cb0"
     },
     {
       "path": "build_figures.py",
@@ -55,13 +55,18 @@
     },
     {
       "path": "build_package.py",
-      "bytes": 2125,
-      "sha256": "bfc5dd412c5e7f073187be41d265615c55ddbd12bf6b96270b4edb04d5e00d0f"
+      "bytes": 2146,
+      "sha256": "1a1dc1c01244de9d97fafa9d70e159d747117493ee7fb32a92c91451737633c9"
     },
     {
       "path": "validate_report.py",
-      "bytes": 13771,
-      "sha256": "d1ba23219e3b93245aa4462a41ae1141d44caa389f5c636e35f656e433c1f45a"
+      "bytes": 14933,
+      "sha256": "ef14a9984a6b3f7e7d1ad4742a65921eb6d588875a14ae9f88175764f4fb2ce2"
+    },
+    {
+      "path": "word_typography.py",
+      "bytes": 3697,
+      "sha256": "f49be306665a94082414c194a428f1041d74dd772d86b00bae0a7973ece578ca"
     },
     {
       "path": "figures/01_pipeline.pdf",
@@ -220,8 +225,8 @@
     },
     {
       "path": "analysis/document_validation.json",
-      "bytes": 3797,
-      "sha256": "b6e65f800d53e221c58dd6d1aa117c26b43705fab62ab100430b055f012f0132"
+      "bytes": 3422,
+      "sha256": "56f8a480fc7510af8a28a76b57899dd4749fba1783a3938f9b054580c57358fc"
     },
     {
       "path": "analysis/figure-build.log",
@@ -307,6 +312,11 @@
       "path": "analysis/verification.json",
       "bytes": 16233,
       "sha256": "b5584302e5ef0d93b0cb15538a826d3ddf0b041f76edd1eb3a2d378ff785c76d"
+    },
+    {
+      "path": "analysis/word_font_revision_20261020.json",
+      "bytes": 2928,
+      "sha256": "afdc47920f71c69323426df50a097f0039c22d9f05a296f29ea493b971c1f9c1"
     },
     {
       "path": "analysis/package_manifest.json",

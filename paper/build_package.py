@@ -6,7 +6,7 @@ import zipfile
 
 HERE=Path(__file__).resolve().parent
 files=[HERE/name for name in ['main.tex','main.pdf','IMDB项目报告.docx','README.md',
-    'REVISION_NOTES.md','submission.json','manuscript.py','build_report.py','build_figures.py','build_architecture.py','build_package.py','validate_report.py']]
+    'REVISION_NOTES.md','submission.json','manuscript.py','build_report.py','build_figures.py','build_architecture.py','build_package.py','validate_report.py','word_typography.py']]
 files+=sorted((HERE/'figures').glob('*.pdf'))+sorted((HERE/'figures').glob('*.png'))
 files+=sorted((HERE/'figures').glob('*.svg'))
 files += [HERE/name for name in ['review/REVIEW.md', 'review/audit.py', 'review/audit.json',
